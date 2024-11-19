@@ -122,6 +122,7 @@
             // 
             // linkRegister
             // 
+            linkRegister.ActiveLinkColor = Color.White;
             linkRegister.AutoSize = true;
             linkRegister.BackColor = Color.FromArgb(27, 73, 69);
             linkRegister.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -132,6 +133,7 @@
             linkRegister.TabIndex = 4;
             linkRegister.TabStop = true;
             linkRegister.Text = "Registrese aquí";
+            linkRegister.LinkClicked += linkRegister_LinkClicked;
             // 
             // pictureBox6
             // 

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIFloristeria", "UIFloristeria\UIFloristeria.csproj", "{EEFBFE5F-21F3-4B7D-B2D1-1E7404CC8CFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UIFloristeria", "UIFloristeria\UIFloristeria.csproj", "{EEFBFE5F-21F3-4B7D-B2D1-1E7404CC8CFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{BCF69F91-4E8C-48FB-8E3C-EA0E64B1BC8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo\Modelo.csproj", "{BCF69F91-4E8C-48FB-8E3C-EA0E64B1BC8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controladores", "Controladores\Controladores.csproj", "{8775F2AD-3E45-4C48-B156-FEEC707CBE3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controladores", "Controladores\Controladores.csproj", "{8775F2AD-3E45-4C48-B156-FEEC707CBE3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
