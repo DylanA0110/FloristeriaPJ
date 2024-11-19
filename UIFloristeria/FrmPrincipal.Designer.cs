@@ -337,6 +337,7 @@
             Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPrincipal";
@@ -368,8 +369,8 @@
         private Button btnCerrarSession;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.Timer sidebarTransition;
-        private Panel panelContenedor;
         private PictureBox pictureBox1;
         private Panel panel2;
+        private Panel panelContenedor;
     }
 }
