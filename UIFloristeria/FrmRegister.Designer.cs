@@ -52,6 +52,9 @@
             pictureBox9 = new PictureBox();
             txtConfirmPass = new TextBox();
             label4 = new Label();
+            button1 = new Button();
+            btnMin = new Button();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -71,7 +74,7 @@
             label1.Location = new Point(320, 9);
             label1.Name = "label1";
             label1.Size = new Size(147, 36);
-            label1.TabIndex = 0;
+            label1.TabIndex = 1;
             label1.Text = "REGISTRO";
             // 
             // pictureBox2
@@ -94,7 +97,7 @@
             txtPrimerNombre.Location = new Point(12, 101);
             txtPrimerNombre.Name = "txtPrimerNombre";
             txtPrimerNombre.Size = new Size(186, 20);
-            txtPrimerNombre.TabIndex = 4;
+            txtPrimerNombre.TabIndex = 3;
             txtPrimerNombre.Text = "Primer Nombre";
             txtPrimerNombre.Enter += txtPrimerNombre_Enter;
             txtPrimerNombre.Leave += txtPrimerNombre_Leave;
@@ -361,12 +364,57 @@
             label4.TabIndex = 32;
             label4.Text = "Telefono:";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(347, 411);
+            button1.Name = "button1";
+            button1.Size = new Size(142, 27);
+            button1.TabIndex = 2;
+            button1.Text = "Registrar";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // btnMin
+            // 
+            btnMin.BackColor = Color.FromArgb(24, 64, 57);
+            btnMin.FlatAppearance.BorderColor = Color.FromArgb(27, 73, 69);
+            btnMin.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
+            btnMin.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = Properties.Resources.menos1;
+            btnMin.Location = new Point(740, 9);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(21, 22);
+            btnMin.TabIndex = 35;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click_1;
+            // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.FromArgb(24, 64, 57);
+            btnClose.FlatAppearance.BorderColor = Color.FromArgb(27, 73, 69);
+            btnClose.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
+            btnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Image = Properties.Resources.x;
+            btnClose.Location = new Point(767, 9);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(21, 22);
+            btnClose.TabIndex = 34;
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click_1;
+            // 
             // FrmRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.login__Community___1_;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnMin);
+            Controls.Add(btnClose);
+            Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(pictureBox9);
             Controls.Add(txtConfirmPass);
@@ -395,6 +443,7 @@
             Name = "FrmRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRegister";
+            MouseDown += FrmRegister_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -433,5 +482,8 @@
         private PictureBox pictureBox9;
         private TextBox txtConfirmPass;
         private Label label4;
+        private Button button1;
+        private Button btnMin;
+        private Button btnClose;
     }
 }

@@ -123,17 +123,17 @@ namespace UIFloristeria
         }
         private void txtUser_Enter(object sender, EventArgs e)
         {
-            if (txtPrimerNombre.Text == "Username")
+            if (txtUser.Text == "Username")
             {
-                txtPrimerNombre.Text = "";
+                txtUser.Text = "";
             }
         }
 
         private void txtUser_Leave(object sender, EventArgs e)
         {
-            if (txtPrimerNombre.Text == "")
+            if (txtUser.Text == "")
             {
-                txtPrimerNombre.Text = "Username";
+                txtUser.Text = "Username";
             }
         }
 
@@ -172,5 +172,14 @@ namespace UIFloristeria
             }
         }
 
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnMin_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
