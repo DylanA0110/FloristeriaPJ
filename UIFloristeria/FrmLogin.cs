@@ -87,6 +87,13 @@ namespace UIFloristeria
             FrmRegister frmregist = new FrmRegister();
             frmregist.ShowDialog();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Show();
+            this.Hide();
+        }
     }
 }
 

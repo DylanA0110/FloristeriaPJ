@@ -119,6 +119,7 @@
             btnLogin.Size = new Size(330, 30);
             btnLogin.TabIndex = 1;
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // linkRegister
             // 
