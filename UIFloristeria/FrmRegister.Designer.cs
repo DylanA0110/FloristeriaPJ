@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegister));
             label1 = new Label();
             pictureBox2 = new PictureBox();
             txtPrimerNombre = new TextBox();
@@ -440,6 +441,7 @@
             Controls.Add(txtPrimerNombre);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRegister";
