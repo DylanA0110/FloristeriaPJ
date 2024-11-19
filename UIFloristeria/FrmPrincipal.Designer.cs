@@ -44,7 +44,7 @@
             button8 = new Button();
             panel3 = new Panel();
             button3 = new Button();
-            button10 = new Button();
+            btnCerrarSession = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
@@ -64,6 +64,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(824, 34);
             panel1.TabIndex = 0;
+            panel1.MouseDown += panel1_MouseDown;
             // 
             // nightControlBox1
             // 
@@ -108,7 +109,7 @@
             sidebar.Controls.Add(button4);
             sidebar.Controls.Add(button8);
             sidebar.Controls.Add(panel3);
-            sidebar.Controls.Add(button10);
+            sidebar.Controls.Add(btnCerrarSession);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 34);
             sidebar.Name = "sidebar";
@@ -274,22 +275,23 @@
             button3.Text = "Configuracion";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnCerrarSession
             // 
-            button10.BackColor = Color.FromArgb(28, 76, 56);
-            button10.FlatAppearance.BorderColor = Color.Black;
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(3, 322);
-            button10.Name = "button10";
-            button10.Size = new Size(214, 37);
-            button10.TabIndex = 4;
-            button10.Text = "Cerrar Session";
-            button10.UseVisualStyleBackColor = false;
+            btnCerrarSession.BackColor = Color.FromArgb(28, 76, 56);
+            btnCerrarSession.FlatAppearance.BorderColor = Color.Black;
+            btnCerrarSession.FlatAppearance.BorderSize = 0;
+            btnCerrarSession.FlatStyle = FlatStyle.Flat;
+            btnCerrarSession.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCerrarSession.ForeColor = Color.White;
+            btnCerrarSession.Image = (Image)resources.GetObject("btnCerrarSession.Image");
+            btnCerrarSession.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCerrarSession.Location = new Point(3, 322);
+            btnCerrarSession.Name = "btnCerrarSession";
+            btnCerrarSession.Size = new Size(214, 37);
+            btnCerrarSession.TabIndex = 4;
+            btnCerrarSession.Text = "Cerrar Session";
+            btnCerrarSession.UseVisualStyleBackColor = false;
+            btnCerrarSession.Click += btnCerrarSession_Click;
             // 
             // menuTransition
             // 
@@ -313,6 +315,7 @@
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPrincipal";
+            MouseDown += FrmPrincipal_MouseDown;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btHamn).EndInit();
             sidebar.ResumeLayout(false);
@@ -337,7 +340,7 @@
         private Button button7;
         private Button btnMenu;
         private Panel panel3;
-        private Button button10;
+        private Button btnCerrarSession;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.Timer sidebarTransition;
     }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,12 @@ namespace UIFloristeria
 {
     public partial class FrmPrincipal : Form
     {
+        [DllImport("user32.dll")]
+        private static extern int ReleaseCapture();
+        [DllImport("user32.dll")]
+        private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -71,6 +78,31 @@ namespace UIFloristeria
         private void btHamn_Click(object sender, EventArgs e)
         {
             sidebarTransition.Start();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void FrmPrincipal_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void btnCerrarSession_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin login = new FrmLogin();
+            login.Show();
         }
     }
 }
