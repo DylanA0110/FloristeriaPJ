@@ -22,7 +22,10 @@ namespace UIFloristeria
         public FrmPrincipal()
         {
             InitializeComponent();
+       
         }
+
+     
         bool menuExpand = false;
         private void menuTransition_Tick(object sender, EventArgs e)
         {
@@ -50,7 +53,27 @@ namespace UIFloristeria
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
+            Form1 frmClientes = new Form1();
+            AbrirFormularioEnPanel(frmClientes);
+
         }
+
+
+        private void AbrirFormularioEnPanel(Form formulario)
+        {
+            // Limpiar el panel antes de cargar un nuevo formulario
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls[0].Dispose();
+
+            formulario.TopLevel = false;
+            formulario.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(formulario);
+            this.panelContenedor.Tag = formulario;
+            formulario.Show();
+        }
+
+
+
 
         bool sidebarExpand = true;
         private void sidebarTransition_Tick(object sender, EventArgs e)

@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelo", "Modelo\Modelo.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controladores", "Controladores\Controladores.csproj", "{8775F2AD-3E45-4C48-B156-FEEC707CBE3A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controlador", "Controlador", "{2E977B9F-D342-4141-8BBF-0C57B700ED67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modelo", "Modelo", "{DD4279F7-0B90-4EE6-8772-7DB1009961B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vista", "Vista", "{C18B4539-815A-4F80-BA4A-C1B3F2C7FFA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEFBFE5F-21F3-4B7D-B2D1-1E7404CC8CFB} = {C18B4539-815A-4F80-BA4A-C1B3F2C7FFA8}
+		{BCF69F91-4E8C-48FB-8E3C-EA0E64B1BC8C} = {DD4279F7-0B90-4EE6-8772-7DB1009961B9}
+		{8775F2AD-3E45-4C48-B156-FEEC707CBE3A} = {2E977B9F-D342-4141-8BBF-0C57B700ED67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3AA2797-CD39-43A8-BD7B-829B27173FAA}
