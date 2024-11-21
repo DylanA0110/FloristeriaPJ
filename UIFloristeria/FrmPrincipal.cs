@@ -22,10 +22,10 @@ namespace UIFloristeria
         public FrmPrincipal()
         {
             InitializeComponent();
-       
+
         }
 
-     
+
         bool menuExpand = false;
         private void menuTransition_Tick(object sender, EventArgs e)
         {
@@ -53,8 +53,7 @@ namespace UIFloristeria
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
-            FrmEmpleado frmClientes = new FrmEmpleado();
-            AbrirFormularioEnPanel(frmClientes);
+           
 
         }
 
@@ -126,6 +125,17 @@ namespace UIFloristeria
             this.Hide();
             FrmLogin login = new FrmLogin();
             login.Show();
+        }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            FrmEmpleado frmClientes = new FrmEmpleado();
+            AbrirFormularioEnPanel(frmClientes);
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
