@@ -66,7 +66,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(824, 34);
+            panel1.Size = new Size(1053, 34);
             panel1.TabIndex = 0;
             panel1.MouseDown += panel1_MouseDown;
             // 
@@ -94,7 +94,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(685, 0);
+            nightControlBox1.Location = new Point(914, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -127,7 +127,7 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 34);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(201, 460);
+            sidebar.Size = new Size(201, 498);
             sidebar.TabIndex = 1;
             // 
             // menuContainer
@@ -324,7 +324,7 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(201, 34);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(623, 460);
+            panelContenedor.Size = new Size(852, 498);
             panelContenedor.TabIndex = 2;
             // 
             // FrmPrincipal
@@ -332,7 +332,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(824, 494);
+            ClientSize = new Size(1053, 532);
             Controls.Add(panelContenedor);
             Controls.Add(sidebar);
             Controls.Add(panel1);

@@ -1,6 +1,6 @@
 ﻿namespace UIFloristeria
 {
-    partial class Form1
+    partial class FrmEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(397, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 23);
+            label1.TabIndex = 1;
+            label1.Text = "Empleado";
+            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 34);
+            dataGridView1.Location = new Point(246, 176);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 287);
-            dataGridView1.TabIndex = 0;
-         //   dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 2;
             // 
-            // Form1
+            // FrmEmpleado
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(900, 532);
             Controls.Add(dataGridView1);
-            Name = "Form1";
+            Controls.Add(label1);
+            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
+            Name = "FrmEmpleado";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
+        private Label label1;
         private DataGridView dataGridView1;
     }
 }

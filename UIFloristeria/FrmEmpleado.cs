@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UIFloristeria
 {
-    public partial class Form1 : Form
+    public partial class FrmEmpleado : Form
     {
-        public Form1()
+        public FrmEmpleado()
         {
             InitializeComponent();
         }
