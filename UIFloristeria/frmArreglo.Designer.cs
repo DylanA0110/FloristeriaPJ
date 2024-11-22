@@ -39,15 +39,17 @@
             Column2 = new DataGridViewTextBoxColumn();
             btnAggArreglo = new Button();
             label1 = new Label();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Ellipse_1;
-            pictureBox3.Location = new Point(712, 361);
+            pictureBox3.Location = new Point(712, 380);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(192, 162);
             pictureBox3.TabIndex = 71;
@@ -94,11 +96,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(232, 135);
+            dataGridView1.Location = new Point(177, 123);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 40;
-            dataGridView1.Size = new Size(485, 193);
+            dataGridView1.Size = new Size(498, 204);
             dataGridView1.TabIndex = 69;
             // 
             // Column1
@@ -142,6 +144,15 @@
             label1.TabIndex = 67;
             label1.Text = "Arreglos";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-60, 10);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(260, 188);
+            pictureBox2.TabIndex = 72;
+            pictureBox2.TabStop = false;
+            // 
             // frmArreglo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -153,6 +164,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(btnAggArreglo);
             Controls.Add(label1);
+            Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmArreglo";
             Text = "frmArreglos";
@@ -160,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,5 +186,6 @@
         private DataGridViewTextBoxColumn Column2;
         private Button btnAggArreglo;
         private Label label1;
+        private PictureBox pictureBox2;
     }
 }
