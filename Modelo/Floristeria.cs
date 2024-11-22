@@ -1,7 +1,9 @@
-﻿using Microsoft.IdentityModel.Protocols;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Protocols;
 using NLog.Internal;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

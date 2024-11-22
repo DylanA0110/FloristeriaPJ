@@ -36,9 +36,9 @@
             btHamn = new PictureBox();
             sidebar = new FlowLayoutPanel();
             menuContainer = new Panel();
-            button7 = new Button();
+            btnProveedor = new Button();
             btnMenu = new Button();
-            button1 = new Button();
+            btnEmpleado = new Button();
             button2 = new Button();
             button4 = new Button();
             button8 = new Button();
@@ -66,7 +66,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(824, 34);
+            panel1.Size = new Size(1053, 34);
             panel1.TabIndex = 0;
             panel1.MouseDown += panel1_MouseDown;
             // 
@@ -94,7 +94,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(685, 0);
+            nightControlBox1.Location = new Point(914, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -127,37 +127,38 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 34);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(201, 460);
+            sidebar.Size = new Size(201, 498);
             sidebar.TabIndex = 1;
             // 
             // menuContainer
             // 
             menuContainer.BackColor = Color.FromArgb(28, 76, 56);
-            menuContainer.Controls.Add(button7);
+            menuContainer.Controls.Add(btnProveedor);
             menuContainer.Controls.Add(btnMenu);
-            menuContainer.Controls.Add(button1);
+            menuContainer.Controls.Add(btnEmpleado);
             menuContainer.Location = new Point(3, 3);
             menuContainer.Name = "menuContainer";
             menuContainer.Size = new Size(213, 37);
             menuContainer.TabIndex = 2;
             // 
-            // button7
+            // btnProveedor
             // 
-            button7.BackColor = Color.FromArgb(50, 84, 68);
-            button7.FlatAppearance.BorderColor = Color.Black;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.White;
-            button7.Image = (Image)resources.GetObject("button7.Image");
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(0, 68);
-            button7.Margin = new Padding(0);
-            button7.Name = "button7";
-            button7.Size = new Size(216, 37);
-            button7.TabIndex = 8;
-            button7.Text = "Proveedor";
-            button7.UseVisualStyleBackColor = false;
+            btnProveedor.BackColor = Color.FromArgb(50, 84, 68);
+            btnProveedor.FlatAppearance.BorderColor = Color.Black;
+            btnProveedor.FlatAppearance.BorderSize = 0;
+            btnProveedor.FlatStyle = FlatStyle.Flat;
+            btnProveedor.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProveedor.ForeColor = Color.White;
+            btnProveedor.Image = (Image)resources.GetObject("btnProveedor.Image");
+            btnProveedor.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProveedor.Location = new Point(0, 80);
+            btnProveedor.Margin = new Padding(0);
+            btnProveedor.Name = "btnProveedor";
+            btnProveedor.Size = new Size(216, 37);
+            btnProveedor.TabIndex = 8;
+            btnProveedor.Text = "Proveedor";
+            btnProveedor.UseVisualStyleBackColor = false;
+            btnProveedor.Click += btnProveedor_Click;
             // 
             // btnMenu
             // 
@@ -169,7 +170,7 @@
             btnMenu.ForeColor = Color.White;
             btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
             btnMenu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenu.Location = new Point(-3, -3);
+            btnMenu.Location = new Point(0, 0);
             btnMenu.Margin = new Padding(0);
             btnMenu.Name = "btnMenu";
             btnMenu.Size = new Size(204, 40);
@@ -178,23 +179,24 @@
             btnMenu.UseVisualStyleBackColor = false;
             btnMenu.Click += btnMenu_Click;
             // 
-            // button1
+            // btnEmpleado
             // 
-            button1.BackColor = Color.FromArgb(50, 84, 68);
-            button1.FlatAppearance.BorderColor = Color.Black;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.Employee1;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 31);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(213, 37);
-            button1.TabIndex = 0;
-            button1.Text = "Empleados";
-            button1.UseVisualStyleBackColor = false;
+            btnEmpleado.BackColor = Color.FromArgb(50, 84, 68);
+            btnEmpleado.FlatAppearance.BorderColor = Color.Black;
+            btnEmpleado.FlatAppearance.BorderSize = 0;
+            btnEmpleado.FlatStyle = FlatStyle.Flat;
+            btnEmpleado.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEmpleado.ForeColor = Color.White;
+            btnEmpleado.Image = Properties.Resources.Employee1;
+            btnEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmpleado.Location = new Point(0, 43);
+            btnEmpleado.Margin = new Padding(0);
+            btnEmpleado.Name = "btnEmpleado";
+            btnEmpleado.Size = new Size(213, 37);
+            btnEmpleado.TabIndex = 0;
+            btnEmpleado.Text = "Empleados";
+            btnEmpleado.UseVisualStyleBackColor = false;
+            btnEmpleado.Click += btnEmpleado_Click;
             // 
             // button2
             // 
@@ -324,7 +326,7 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(201, 34);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(623, 460);
+            panelContenedor.Size = new Size(852, 498);
             panelContenedor.TabIndex = 2;
             // 
             // FrmPrincipal
@@ -332,7 +334,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(824, 494);
+            ClientSize = new Size(1053, 532);
             Controls.Add(panelContenedor);
             Controls.Add(sidebar);
             Controls.Add(panel1);
@@ -358,13 +360,13 @@
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private FlowLayoutPanel sidebar;
         private Panel menuContainer;
-        private Button button1;
+        private Button btnEmpleado;
         private Button button3;
         private Button button4;
         private Button button2;
         private Button button5;
         private Button button8;
-        private Button button7;
+        private Button btnProveedor;
         private Button btnMenu;
         private Button btnCerrarSession;
         private System.Windows.Forms.Timer menuTransition;
