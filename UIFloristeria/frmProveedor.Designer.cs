@@ -48,6 +48,7 @@
             // btnAbrirfrmAgg
             // 
             btnAbrirfrmAgg.BackColor = Color.White;
+            btnAbrirfrmAgg.FlatAppearance.BorderSize = 0;
             btnAbrirfrmAgg.FlatStyle = FlatStyle.Popup;
             btnAbrirfrmAgg.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAbrirfrmAgg.Image = Properties.Resources.Add_Shopping_Cart;
