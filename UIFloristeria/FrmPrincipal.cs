@@ -53,8 +53,8 @@ namespace UIFloristeria
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
-            Form1 frmClientes = new Form1();
-            AbrirFormularioEnPanel(frmClientes);
+            frmProveedor frmProveedor = new frmProveedor();
+            AbrirFormularioEnPanel(frmProveedor);
 
         }
 

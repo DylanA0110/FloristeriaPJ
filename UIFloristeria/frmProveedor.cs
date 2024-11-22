@@ -1,9 +1,9 @@
 ﻿using Controladores;
-using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,17 +12,16 @@ using System.Windows.Forms;
 
 namespace UIFloristeria
 {
-    public partial class Form1 : Form
+    public partial class frmProveedor : Form
     {
-        public Form1()
+        public frmProveedor()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmProveedor_Load(object sender, EventArgs e)
         {
-
-            string query = "SELECT TOP 10 * FROM Empleado"; // Cambia esta consulta según tu necesidad
+            string query = "SELECT TOP 10 * FROM Proveedor"; // Cambia esta consulta según tu necesidad
 
             try
             {
@@ -45,8 +44,27 @@ namespace UIFloristeria
             {
                 MessageBox.Show($"Error al cargar los datos: {ex.Message}");
             }
+
+            AdjustDatagridViewHeihgt();
         }
 
 
+        private void AdjustDatagridViewHeihgt()
+        {
+            /* var height = dataGridView1.ColumnHeadersHeight;
+             foreach (DataGridViewRow row in dataGridView1.Rows)
+             {
+                 height += row.Height;
+             }
+             dataGridView1.Height = height;*/
+        }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            frmAgregarProveedor frmAgregar = new frmAgregarProveedor();
+
+            // Abrir el formulario como cuadro de diálogo
+            frmAgregar.ShowDialog();
+        }
     }
 }
