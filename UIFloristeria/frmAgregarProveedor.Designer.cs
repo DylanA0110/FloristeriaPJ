@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarProveedor));
             btnAggProveedor = new Button();
-            label2 = new Label();
             label4 = new Label();
             mtxtTelefono = new MaskedTextBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
             btnMin = new Button();
             btnClose = new Button();
+            txtNombreProveedor = new TextBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnAggProveedor
@@ -44,44 +47,32 @@
             btnAggProveedor.BackColor = Color.White;
             btnAggProveedor.FlatStyle = FlatStyle.Popup;
             btnAggProveedor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAggProveedor.Location = new Point(226, 224);
+            btnAggProveedor.Location = new Point(237, 278);
             btnAggProveedor.Name = "btnAggProveedor";
             btnAggProveedor.Size = new Size(142, 27);
             btnAggProveedor.TabIndex = 88;
             btnAggProveedor.Text = "Agregar";
             btnAggProveedor.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century Gothic", 12F);
-            label2.ForeColor = Color.FromArgb(24, 64, 57);
-            label2.Location = new Point(105, 122);
-            label2.Name = "label2";
-            label2.Size = new Size(189, 21);
-            label2.TabIndex = 87;
-            label2.Text = "Nombre del Proveedor:";
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Century Gothic", 12F);
-            label4.ForeColor = Color.FromArgb(24, 64, 57);
-            label4.Location = new Point(359, 122);
+            label4.BackColor = Color.FromArgb(222, 151, 54);
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(359, 112);
             label4.Name = "label4";
-            label4.Size = new Size(80, 21);
+            label4.Size = new Size(78, 19);
             label4.TabIndex = 86;
             label4.Text = "Telefono:";
             // 
             // mtxtTelefono
             // 
-            mtxtTelefono.BackColor = Color.FromArgb(24, 64, 57);
+            mtxtTelefono.BackColor = Color.FromArgb(222, 151, 54);
             mtxtTelefono.BorderStyle = BorderStyle.None;
             mtxtTelefono.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mtxtTelefono.ForeColor = Color.White;
-            mtxtTelefono.Location = new Point(373, 151);
+            mtxtTelefono.Location = new Point(359, 148);
             mtxtTelefono.Mask = "0000-0000";
             mtxtTelefono.Name = "mtxtTelefono";
             mtxtTelefono.Size = new Size(78, 20);
@@ -89,9 +80,9 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox2.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox2.Image = Properties.Resources.Loading;
-            pictureBox2.Location = new Point(105, 149);
+            pictureBox2.Location = new Point(104, 148);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(186, 22);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -103,8 +94,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(24, 64, 57);
-            label1.Location = new Point(128, 67);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(168, 12);
             label1.Name = "label1";
             label1.Size = new Size(286, 36);
             label1.TabIndex = 83;
@@ -114,6 +105,7 @@
             // 
             btnMin.BackColor = Color.Transparent;
             btnMin.FlatAppearance.BorderColor = Color.FromArgb(27, 73, 69);
+            btnMin.FlatAppearance.BorderSize = 0;
             btnMin.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
             btnMin.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
             btnMin.FlatStyle = FlatStyle.Flat;
@@ -129,6 +121,7 @@
             // 
             btnClose.BackColor = Color.Transparent;
             btnClose.FlatAppearance.BorderColor = Color.FromArgb(27, 73, 69);
+            btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
             btnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
             btnClose.FlatStyle = FlatStyle.Flat;
@@ -140,13 +133,40 @@
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
+            // txtNombreProveedor
+            // 
+            txtNombreProveedor.BackColor = Color.FromArgb(222, 151, 54);
+            txtNombreProveedor.BorderStyle = BorderStyle.None;
+            txtNombreProveedor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNombreProveedor.ForeColor = Color.White;
+            txtNombreProveedor.Location = new Point(104, 122);
+            txtNombreProveedor.Name = "txtNombreProveedor";
+            txtNombreProveedor.Size = new Size(186, 20);
+            txtNombreProveedor.TabIndex = 89;
+            txtNombreProveedor.Text = "Nombre Proveedor";
+            txtNombreProveedor.Enter += txtNombreProveedor_Enter;
+            txtNombreProveedor.Leave += txtNombreProveedor_Leave;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(222, 151, 54);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(89, 8);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(60, 58);
+            pictureBox1.TabIndex = 90;
+            pictureBox1.TabStop = false;
+            // 
             // frmAgregarProveedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            BackgroundImage = Properties.Resources.Dashboard_Login;
             ClientSize = new Size(591, 334);
+            Controls.Add(pictureBox1);
+            Controls.Add(txtNombreProveedor);
             Controls.Add(btnAggProveedor);
-            Controls.Add(label2);
             Controls.Add(label4);
             Controls.Add(mtxtTelefono);
             Controls.Add(pictureBox2);
@@ -157,7 +177,9 @@
             Name = "frmAgregarProveedor";
             StartPosition = FormStartPosition.CenterParent;
             Text = "frmAgregarProveedor";
+            MouseDown += frmAgregarProveedor_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,12 +187,13 @@
         #endregion
 
         private Button btnAggProveedor;
-        private Label label2;
         private Label label4;
         private MaskedTextBox mtxtTelefono;
         private PictureBox pictureBox2;
         private Label label1;
         private Button btnMin;
         private Button btnClose;
+        private TextBox txtNombreProveedor;
+        private PictureBox pictureBox1;
     }
 }

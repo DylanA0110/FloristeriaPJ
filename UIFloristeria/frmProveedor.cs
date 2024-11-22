@@ -12,18 +12,14 @@ using System.Windows.Forms;
 
 namespace UIFloristeria
 {
-<<<<<<<< HEAD:UIFloristeria/frmProveedor.cs
+
     public partial class frmProveedor : Form
     {
         public frmProveedor()
-========
-    public partial class FrmEmpleado : Form
-    {
-        public FrmEmpleado()
->>>>>>>> f7522ef1c387f8696a03c5f9be90ab37d97f9b96:UIFloristeria/FrmEmpleado.cs
         {
             InitializeComponent();
         }
+
 
         private void frmProveedor_Load(object sender, EventArgs e)
         {

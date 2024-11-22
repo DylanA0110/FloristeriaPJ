@@ -127,8 +127,8 @@
   <data name="Services" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Services.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Employee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Employee1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rectangle 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,6 +139,9 @@
   <data name="Rectangle 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ellipse 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ellipse 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LOGIN-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,14 +151,29 @@
   <data name="Employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Buying" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Buying.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FloristeriaSacuanjocheLogo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FloristeriaSacuanjocheLogo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Subtract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Subtract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Collaborator Male" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Collaborator Male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Employee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Employee1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Add Shopping Cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add Shopping Cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login (Community) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login (Community) (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +184,7 @@
   <data name="LOGIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FloristeriaSacuanjocheLogo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FloristeriaSacuanjocheLogo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dashboard Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -151,7 +151,7 @@
             btnProveedor.ForeColor = Color.White;
             btnProveedor.Image = (Image)resources.GetObject("btnProveedor.Image");
             btnProveedor.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProveedor.Location = new Point(0, 80);
+            btnProveedor.Location = new Point(0, 71);
             btnProveedor.Margin = new Padding(0);
             btnProveedor.Name = "btnProveedor";
             btnProveedor.Size = new Size(216, 37);
@@ -189,7 +189,7 @@
             btnEmpleado.ForeColor = Color.White;
             btnEmpleado.Image = Properties.Resources.Employee1;
             btnEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmpleado.Location = new Point(0, 43);
+            btnEmpleado.Location = new Point(0, 34);
             btnEmpleado.Margin = new Padding(0);
             btnEmpleado.Name = "btnEmpleado";
             btnEmpleado.Size = new Size(213, 37);
