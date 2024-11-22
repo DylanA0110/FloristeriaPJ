@@ -156,6 +156,7 @@
             btnAuditoria.TabIndex = 72;
             btnAuditoria.Text = "Auditoria";
             btnAuditoria.UseVisualStyleBackColor = false;
+            btnAuditoria.Click += btnAuditoria_Click;
             // 
             // frmEmpleado
             // 

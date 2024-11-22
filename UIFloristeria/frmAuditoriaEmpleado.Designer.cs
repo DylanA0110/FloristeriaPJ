@@ -80,6 +80,7 @@
             btnMin.Size = new Size(21, 22);
             btnMin.TabIndex = 92;
             btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
             // 
             // btnClose
             // 
@@ -95,6 +96,7 @@
             btnClose.Size = new Size(21, 22);
             btnClose.TabIndex = 91;
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // dataGridView1
             // 

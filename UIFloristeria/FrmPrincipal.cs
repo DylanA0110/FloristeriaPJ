@@ -143,5 +143,17 @@ namespace UIFloristeria
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmArreglo frmProveedor = new frmArreglo();
+            AbrirFormularioEnPanel(frmProveedor);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmCliente frmProveedor = new frmCliente();
+            AbrirFormularioEnPanel(frmProveedor);
+        }
     }
 }
