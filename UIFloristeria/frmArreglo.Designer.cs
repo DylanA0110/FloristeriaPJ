@@ -49,7 +49,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Ellipse_1;
-            pictureBox3.Location = new Point(712, 380);
+            pictureBox3.Location = new Point(717, 375);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(192, 162);
             pictureBox3.TabIndex = 71;
