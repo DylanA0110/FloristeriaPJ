@@ -43,7 +43,6 @@
             button4 = new Button();
             button8 = new Button();
             button5 = new Button();
-            button3 = new Button();
             panel2 = new Panel();
             btnCerrarSession = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
@@ -54,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)btHamn).BeginInit();
             sidebar.SuspendLayout();
             menuContainer.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -122,8 +120,8 @@
             sidebar.Controls.Add(button4);
             sidebar.Controls.Add(button8);
             sidebar.Controls.Add(button5);
-            sidebar.Controls.Add(button3);
             sidebar.Controls.Add(panel2);
+            sidebar.Controls.Add(btnCerrarSession);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 34);
             sidebar.Name = "sidebar";
@@ -267,29 +265,11 @@
             button5.Text = "Pedido";
             button5.UseVisualStyleBackColor = false;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(28, 75, 68);
-            button3.FlatAppearance.BorderColor = Color.Black;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(3, 212);
-            button3.Name = "button3";
-            button3.Size = new Size(199, 37);
-            button3.TabIndex = 3;
-            button3.Text = "Configuracion";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
-            panel2.Controls.Add(btnCerrarSession);
-            panel2.Location = new Point(3, 255);
+            panel2.Location = new Point(3, 212);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 120);
+            panel2.Size = new Size(200, 222);
             panel2.TabIndex = 5;
             // 
             // btnCerrarSession
@@ -302,7 +282,7 @@
             btnCerrarSession.ForeColor = Color.White;
             btnCerrarSession.Image = (Image)resources.GetObject("btnCerrarSession.Image");
             btnCerrarSession.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSession.Location = new Point(0, 67);
+            btnCerrarSession.Location = new Point(0, 437);
             btnCerrarSession.Margin = new Padding(0);
             btnCerrarSession.Name = "btnCerrarSession";
             btnCerrarSession.Size = new Size(199, 53);
@@ -350,7 +330,6 @@
             ((System.ComponentModel.ISupportInitialize)btHamn).EndInit();
             sidebar.ResumeLayout(false);
             menuContainer.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -362,7 +341,6 @@
         private FlowLayoutPanel sidebar;
         private Panel menuContainer;
         private Button btnEmpleado;
-        private Button button3;
         private Button button4;
         private Button button2;
         private Button button5;
