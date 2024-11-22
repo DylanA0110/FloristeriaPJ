@@ -56,15 +56,17 @@ namespace UIFloristeria
                 txtNombreProveedor.Text = "";
             }
         }
-            
+
 
         private void txtNombreProveedor_Leave(object sender, EventArgs e)
         {
-           
-                if (txtNombreProveedor.Text == "")
-                {
-                    txtNombreProveedor.Text = "Nombre Proveedor";
-                }
+
+            if (txtNombreProveedor.Text == "")
+            {
+                txtNombreProveedor.Text = "Nombre Proveedor";
             }
         }
+
+       
+    }
 }
