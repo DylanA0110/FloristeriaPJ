@@ -34,8 +34,6 @@
             btnAbrirfrmAgg = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -93,7 +91,6 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 45;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
@@ -109,20 +106,6 @@
             dataGridView1.RowTemplate.Height = 40;
             dataGridView1.Size = new Size(485, 193);
             dataGridView1.TabIndex = 63;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Nombre del Proveedor";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 250;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Número de télefono";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 150;
             // 
             // pictureBox1
             // 
@@ -181,8 +164,6 @@
         private Button btnAbrirfrmAgg;
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
