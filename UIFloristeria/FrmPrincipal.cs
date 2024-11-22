@@ -53,8 +53,8 @@ namespace UIFloristeria
         private void btnMenu_Click(object sender, EventArgs e)
         {
             menuTransition.Start();
-          
- 
+
+
         }
 
 
@@ -129,13 +129,18 @@ namespace UIFloristeria
 
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             frmProveedor frmProveedor = new frmProveedor();
             AbrirFormularioEnPanel(frmProveedor);
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

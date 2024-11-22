@@ -35,10 +35,6 @@
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             btHamn = new PictureBox();
             sidebar = new FlowLayoutPanel();
-            menuContainer = new Panel();
-            btnProveedor = new Button();
-            btnMenu = new Button();
-            btnEmpleado = new Button();
             button2 = new Button();
             button4 = new Button();
             button8 = new Button();
@@ -46,6 +42,10 @@
             button3 = new Button();
             panel2 = new Panel();
             btnCerrarSession = new Button();
+            menuContainer = new Panel();
+            btnProveedor = new Button();
+            btnMenu = new Button();
+            btnEmpleado = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panelContenedor = new Panel();
@@ -53,8 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btHamn).BeginInit();
             sidebar.SuspendLayout();
-            menuContainer.SuspendLayout();
             panel2.SuspendLayout();
+            menuContainer.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -116,7 +116,7 @@
             // 
             // sidebar
             // 
-            sidebar.BackColor = Color.FromArgb(28, 76, 56);
+            sidebar.BackColor = Color.FromArgb(28, 75, 68);
             sidebar.Controls.Add(menuContainer);
             sidebar.Controls.Add(button2);
             sidebar.Controls.Add(button4);
@@ -129,6 +129,119 @@
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(201, 498);
             sidebar.TabIndex = 1;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(28, 75, 68);
+            button2.FlatAppearance.BorderColor = Color.Black;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(3, 46);
+            button2.Name = "button2";
+            button2.Size = new Size(201, 37);
+            button2.TabIndex = 4;
+            button2.Text = "Factura";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(28, 75, 68);
+            button4.FlatAppearance.BorderColor = Color.Black;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            button4.ForeColor = Color.White;
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(3, 89);
+            button4.Name = "button4";
+            button4.Size = new Size(201, 37);
+            button4.TabIndex = 5;
+            button4.Text = "Arreglos";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(28, 75, 68);
+            button8.FlatAppearance.BorderColor = Color.Black;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            button8.ForeColor = Color.White;
+            button8.Image = (Image)resources.GetObject("button8.Image");
+            button8.ImageAlign = ContentAlignment.MiddleLeft;
+            button8.Location = new Point(0, 129);
+            button8.Margin = new Padding(0);
+            button8.Name = "button8";
+            button8.Size = new Size(201, 37);
+            button8.TabIndex = 9;
+            button8.Text = "Clientes";
+            button8.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(28, 75, 68);
+            button5.FlatAppearance.BorderColor = Color.Black;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            button5.ForeColor = Color.White;
+            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.ImageAlign = ContentAlignment.MiddleLeft;
+            button5.Location = new Point(3, 169);
+            button5.Name = "button5";
+            button5.Size = new Size(198, 37);
+            button5.TabIndex = 6;
+            button5.Text = "Pedido";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(28, 75, 68);
+            button3.FlatAppearance.BorderColor = Color.Black;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            button3.ForeColor = Color.White;
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(3, 212);
+            button3.Name = "button3";
+            button3.Size = new Size(199, 37);
+            button3.TabIndex = 3;
+            button3.Text = "Configuracion";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnCerrarSession);
+            panel2.Location = new Point(3, 255);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 120);
+            panel2.TabIndex = 5;
+            // 
+            // btnCerrarSession
+            // 
+            btnCerrarSession.BackColor = Color.FromArgb(28, 75, 68);
+            btnCerrarSession.FlatAppearance.BorderColor = Color.Black;
+            btnCerrarSession.FlatAppearance.BorderSize = 0;
+            btnCerrarSession.FlatStyle = FlatStyle.Flat;
+            btnCerrarSession.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            btnCerrarSession.ForeColor = Color.White;
+            btnCerrarSession.Image = (Image)resources.GetObject("btnCerrarSession.Image");
+            btnCerrarSession.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCerrarSession.Location = new Point(0, 67);
+            btnCerrarSession.Margin = new Padding(0);
+            btnCerrarSession.Name = "btnCerrarSession";
+            btnCerrarSession.Size = new Size(199, 53);
+            btnCerrarSession.TabIndex = 4;
+            btnCerrarSession.Text = "Cerrar Session";
+            btnCerrarSession.UseVisualStyleBackColor = false;
+            btnCerrarSession.Click += btnCerrarSession_Click;
             // 
             // menuContainer
             // 
@@ -162,18 +275,18 @@
             // 
             // btnMenu
             // 
-            btnMenu.BackColor = Color.FromArgb(28, 76, 56);
+            btnMenu.BackColor = Color.FromArgb(28, 75, 68);
             btnMenu.FlatAppearance.BorderColor = Color.Black;
             btnMenu.FlatAppearance.BorderSize = 0;
             btnMenu.FlatStyle = FlatStyle.Flat;
-            btnMenu.Font = new Font("Century Gothic", 9.75F);
+            btnMenu.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
             btnMenu.ForeColor = Color.White;
             btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
             btnMenu.ImageAlign = ContentAlignment.MiddleLeft;
             btnMenu.Location = new Point(0, 0);
             btnMenu.Margin = new Padding(0);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(204, 40);
+            btnMenu.Size = new Size(216, 40);
             btnMenu.TabIndex = 7;
             btnMenu.Text = "Menu";
             btnMenu.UseVisualStyleBackColor = false;
@@ -198,119 +311,6 @@
             btnEmpleado.UseVisualStyleBackColor = false;
             btnEmpleado.Click += btnEmpleado_Click;
             // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(28, 76, 56);
-            button2.FlatAppearance.BorderColor = Color.Black;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 9.75F);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(3, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(201, 37);
-            button2.TabIndex = 4;
-            button2.Text = "Factura";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(28, 76, 56);
-            button4.FlatAppearance.BorderColor = Color.Black;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 9.75F);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(3, 89);
-            button4.Name = "button4";
-            button4.Size = new Size(201, 37);
-            button4.TabIndex = 5;
-            button4.Text = "Arreglos";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.FromArgb(28, 76, 56);
-            button8.FlatAppearance.BorderColor = Color.Black;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Century Gothic", 9.75F);
-            button8.ForeColor = Color.White;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(0, 129);
-            button8.Margin = new Padding(0);
-            button8.Name = "button8";
-            button8.Size = new Size(201, 37);
-            button8.TabIndex = 9;
-            button8.Text = "Clientes";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(28, 76, 56);
-            button5.FlatAppearance.BorderColor = Color.Black;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Century Gothic", 9.75F);
-            button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 169);
-            button5.Name = "button5";
-            button5.Size = new Size(198, 37);
-            button5.TabIndex = 6;
-            button5.Text = "Pedido";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(28, 76, 56);
-            button3.FlatAppearance.BorderColor = Color.Black;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 9.75F);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(3, 212);
-            button3.Name = "button3";
-            button3.Size = new Size(199, 37);
-            button3.TabIndex = 3;
-            button3.Text = "Configuracion";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnCerrarSession);
-            panel2.Location = new Point(3, 255);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 120);
-            panel2.TabIndex = 5;
-            // 
-            // btnCerrarSession
-            // 
-            btnCerrarSession.BackColor = Color.FromArgb(28, 76, 56);
-            btnCerrarSession.FlatAppearance.BorderColor = Color.Black;
-            btnCerrarSession.FlatAppearance.BorderSize = 0;
-            btnCerrarSession.FlatStyle = FlatStyle.Flat;
-            btnCerrarSession.Font = new Font("Century Gothic", 9.75F);
-            btnCerrarSession.ForeColor = Color.White;
-            btnCerrarSession.Image = (Image)resources.GetObject("btnCerrarSession.Image");
-            btnCerrarSession.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSession.Location = new Point(0, 67);
-            btnCerrarSession.Margin = new Padding(0);
-            btnCerrarSession.Name = "btnCerrarSession";
-            btnCerrarSession.Size = new Size(199, 53);
-            btnCerrarSession.TabIndex = 4;
-            btnCerrarSession.Text = "Cerrar Session";
-            btnCerrarSession.UseVisualStyleBackColor = false;
-            btnCerrarSession.Click += btnCerrarSession_Click;
-            // 
             // menuTransition
             // 
             menuTransition.Interval = 10;
@@ -328,6 +328,7 @@
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(852, 498);
             panelContenedor.TabIndex = 2;
+            panelContenedor.Paint += panelContenedor_Paint;
             // 
             // FrmPrincipal
             // 
@@ -348,8 +349,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btHamn).EndInit();
             sidebar.ResumeLayout(false);
-            menuContainer.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            menuContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 
