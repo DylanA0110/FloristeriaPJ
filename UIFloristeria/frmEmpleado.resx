@@ -117,10 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAASdJREFUWEftlsENwjAMRTsCo3BKgAtsAiOwAWwAJwJc6ChsAAu06QawAeS3BqUl
+        KmnlCCHlSV8q2M63iJOSRCJ90Gq0yPfikivxKGWe9WE0p3BYjGH6Nm4oU/JEaWHIlFi7jG0hh9L5MQb3
+        puGHduJG6byYfZ85DR1CLpXx8fsGjpOhy8wl5FIZL7mShcuwLllQOj8+2xDk57cxBgtj5DoNd8QoLSz6
+        NBvog1waU1xKKZ7xHYUjYcGQaSVWEO5+6PVZH8dTSuMF5xpG1sC1qmyK4y4oh20vNy4TH6G293CisPbO
+        7yv8V+jaRE/zazUfpOqYVrGuTZg93FoL++pM5SVowo5jTQp9B4vZxZ5qbaAZbwXJjWIO+TeAI1TbTw6F
+        ekVHIn9OkjwBLx2XVmddvRwAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnEditarEmpleado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAVhJREFUWEftllFRRDEMRZ8EJCABCUhAAk5AAhJwAA7AATgAB+AAcpi9M52Q0DQL
+        fCycmTvbJu+m7fZ1t9s/e3BqetqJ9q/zbHrbiUn8CFcmimugVeG9MLVg8KhoR5emZV5NmE8+ep9RHrEd
+        EXjJt7ZIxTN48RgYffUSzuqktI2Ow5zAsenGxN4i2sQivn0CDPRiUl4idmTyKL9MZrw1EeeTAdH9EPNk
+        daZkRh2/cbW0iUXHLaszJTNGE2BbiEW/B1mdKZnx2kT8zqQtoE2MnCerMyUzarWRopOg3DKRcVxtJH0r
+        I8otExkfTcTY6zMTK0a0iZF7MI1EdUp447mJPgP5VQIxTYJnha9Txht11lltBjme4Vnh65TxRvWj1Yvx
+        BRW+X6ZtdBzOBNSvSvh+maxQVcL3y7SNjnad2aW0gi6l0Z/UFK7Smv2+al3LAaN+3TrC2x78L7Bt75qt
+        /2wv1RuvAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnAuditoria.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAASxJREFUWEftl8GJg0AYhRU8qwV486aIdqCdWIKlmE4swRJsYdkG3GtgYdZPJ0HJ
+        RJlkIizMBw8n/wzvPT2Icf4zxaRWivWpECiSJLki1nJ2Gpc0Ta993wuUZdkvs2XLEK7r/kwX7kypOI7n
+        cMRadeYm6aWNaNv2HrJWURTC931RVdUs1sxUZ/HAa7HUYzZQwbwsy432zuK1WOrx1FQHW8AWOL3AOI5i
+        GAb56+QChPM+CIJATk4ssA7/yBNommZjvOZZOBgrwNsuDMOHgL1wMFaAoDzPNyWOwsFYAViXYO8oHIwW
+        gFsJ9o/CwXgBoERd14fh8JECOtgCtsBbBbqukzavgwdei6UGnueJKIruX76vCg+8pK0Wu/8LNPU9SZtq
+        0tcklaGO8MDLosBx/gA1REAOWqxySQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

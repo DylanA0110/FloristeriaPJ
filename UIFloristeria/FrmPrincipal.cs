@@ -129,7 +129,8 @@ namespace UIFloristeria
 
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
-
+            frmEmpleado frmEmpleado = new frmEmpleado();
+            AbrirFormularioEnPanel(frmEmpleado);
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
