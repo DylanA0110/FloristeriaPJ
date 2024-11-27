@@ -1,0 +1,411 @@
+use BD_Floristeria
+
+/*
+--Instert y Consultas 
+-- 1. Listar todos los pedidos junto con la información del cliente
+SELECT 
+    p.Id_pedido, c.Nombre_Cliente, p.Descripcion,
+    p.Cantidad, p.Fecha_solicitud, p.Fecha_entrega
+FROM 
+    Pedido p
+JOIN 
+    Cliente c ON p.Id_cliente = c.Id_cliente;
+
+	--2. Obtener las facturas con el monto total y la descripción del pedido
+	SELECT 
+    f.Id_factura, f.NumFactura, f.Monto_total,
+    p.Descripcion
+FROM 
+    Factura f
+JOIN 
+    Pedido p ON f.Id_pedido = p.Id_pedido;
+
+	--3. Listar todos los empleados con su rol
+	SELECT 
+    e.PrimerNombre, e.SegundoNombre, e.PrimerApellido, e.SegundoApellido,
+    r.Nombre AS Rol
+FROM 
+    Empleado e
+JOIN 
+    Rol r ON e.RolId = r.Id_Rol;
+	--4. Obtener el total de pedidos realizados por cada cliente
+	SELECT 
+    c.Nombre_Cliente,
+    COUNT(p.Id_pedido) AS Total_Pedidos
+FROM 
+    Cliente c
+LEFT JOIN 
+    Pedido p ON c.Id_cliente = p.Id_cliente
+GROUP BY 
+    c.Nombre_Cliente;
+
+	--5. Listar todos los arreglos y sus accesorios
+	SELECT 
+    a.Nombre_Arreglo, ac.Nombre_Accesorio
+FROM 
+    Arreglo a
+LEFT JOIN 
+    Accesorio ac ON a.Id_Arreglo = ac.Id_Arreglo;
+*/
+
+
+
+-- Procedimiento 1:
+CREATE PROCEDURE sp_InsertarEmpleado
+    @PrimerNombre NVARCHAR(50),
+    @SegundoNombre NVARCHAR(50),
+    @PrimerApellido NVARCHAR(50),
+    @SegundoApellido NVARCHAR(50),
+    @Correo NVARCHAR(100),
+    @UserName NVARCHAR(50),
+    @Telefono NVARCHAR(20),
+    @ContrasenaHash NVARCHAR(255) -- Contraseña ya hasheada
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Empleado (
+        PrimerNombre, 
+        SegundoNombre, 
+        PrimerApellido, 
+        SegundoApellido, 
+        Correo,
+        Username,
+        Telefono, 
+        Contrasena,
+        EsAprobado -- Agregar EsAprobado al insertar el usuario
+    )
+    VALUES (
+        @PrimerNombre,
+        @SegundoNombre,
+        @PrimerApellido,
+        @SegundoApellido,
+        @Correo,
+        @UserName,
+        @Telefono,
+        @ContrasenaHash, -- Insertar el hash de la contraseña
+        0 -- EsAprobado = 0 por defecto, indicando que el usuario no ha sido aprobado
+    );
+END;
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Juan',
+    @SegundoNombre = 'Carlos',
+    @PrimerApellido = 'Pérez',
+    @SegundoApellido = 'García',
+    @Correo = 'juan.perez@gmail.com',
+    @Telefono = '555-0123',
+    @ContrasenaHash = '1234',
+	@UserName = 'JCPG';
+
+	EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'María',
+    @SegundoNombre = 'José',
+    @PrimerApellido = 'López',
+    @SegundoApellido = 'Hernández',
+    @Correo = 'maria.lopez@gmail.com',
+    @Telefono = '555-0456',
+    @ContrasenaHash = '5678',
+	@UserName = 'MJLH';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Pedro',
+    @SegundoNombre = 'Sanchez',
+    @PrimerApellido = 'Martínez',
+    @SegundoApellido = 'Díaz',
+    @Correo = 'pedro.martinez@gmail.com',
+    @Telefono = '555-0789',
+    @ContrasenaHash = '91011',
+	@UserName = 'PSMD';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Ana',
+    @SegundoNombre = 'Lucía',
+    @PrimerApellido = 'Ramírez',
+    @SegundoApellido = 'Fernández',
+    @Correo = 'ana.ramirez@gmail.com',
+    @Telefono = '555-0345',
+    @ContrasenaHash = '1213',
+	@UserName = 'ALRF';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Luis',
+    @SegundoNombre = 'Alberto',
+    @PrimerApellido = 'Torres',
+    @SegundoApellido = 'Jiménez',
+    @Correo = 'luis.torres@gmail.com',
+    @Telefono = '555-0567',
+    @ContrasenaHash = '1415',
+	@UserName = 'LATJ';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Isabel',
+    @SegundoNombre = 'Cristina',
+    @PrimerApellido = 'González',
+    @SegundoApellido = 'Martínez',
+    @Correo = 'isabel.gonzalez@gmail.com',
+    @Telefono = '555-0987',
+    @ContrasenaHash = '1617',
+	@UserName = 'ICGM';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Jorge',
+    @SegundoNombre = 'Luna',
+    @PrimerApellido = 'Vega',
+    @SegundoApellido = 'Moreno',
+    @Correo = 'jorge.vega@gmail.com',
+    @Telefono = '555-1234',
+    @ContrasenaHash = '1819',
+	@UserName = 'JLVM'
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Lucía',
+    @SegundoNombre = 'Estefanía',
+    @PrimerApellido = 'Castillo',
+    @SegundoApellido = 'Sánchez',
+    @Correo = 'lucia.castillo@gmail.com',
+    @Telefono = '555-4567',
+    @ContrasenaHash = '2021',
+	@UserName = 'LECS';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'David',
+    @SegundoNombre = 'Josue',
+    @PrimerApellido = 'Ríos',
+    @SegundoApellido = 'Silva',
+    @Correo = 'david.rios@gmail.com',
+    @Telefono = '555-8901',
+    @ContrasenaHash = '2223',
+	@UserName = 'DJRS';
+
+EXEC sp_InsertarEmpleado
+    @PrimerNombre = 'Verónica',
+    @SegundoNombre = 'Marisol',
+    @PrimerApellido = 'Mendoza',
+    @SegundoApellido = 'González',
+    @Correo = 'veronica.mendoza@gmail.com',
+    @Telefono = '555-6789',
+    @ContrasenaHash = '2425',
+	@UserName = 'VMMG';
+
+
+
+
+
+--Procedimiento 2:
+CREATE PROCEDURE sp_ValidarUsernameUnico
+    @UserName NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Verificar si ya existe el Username en la tabla Empleado
+    IF EXISTS (SELECT 1 FROM Empleado WHERE Username = @UserName)
+    BEGIN
+        -- Si el Username ya existe, devolver mensaje
+        SELECT 'El Username ya está en uso. Por favor, elija otro.' AS Mensaje;
+    END
+    ELSE
+    BEGIN
+        -- Si el Username es único, devolver mensaje de éxito
+        SELECT 'Username disponible' AS Mensaje;
+    END
+END;
+
+Exec sp_ValidarUsernameUnico @UserName ='Admin';
+Exec sp_ValidarUsernameUnico @UserName ='VMMG';
+
+
+--Vista 1
+CREATE VIEW vw_ResumenFacturasNoPagadasPorUsuario AS
+SELECT 
+    c.Nombre_Cliente,
+    COUNT(f.Id_factura) AS TotalFacturasPendientes,
+    SUM(f.Monto_total) AS TotalAdeudado
+FROM Factura f
+INNER JOIN Pedido p ON f.Id_pedido = p.Id_pedido
+INNER JOIN Cliente c ON p.Id_cliente = c.Id_cliente
+WHERE f.Estado = 0
+GROUP BY c.Nombre_Cliente;
+
+SELECT * FROM vw_ResumenFacturasNoPagadasPorUsuario;
+
+
+-- VIsta 2 
+CREATE VIEW vw_FacturasNoPagadasTotales AS
+SELECT 
+    f.Id_factura,
+    f.Monto_total,
+    f.Estado,
+    p.Fecha_solicitud,
+    c.Nombre_Cliente,
+    e.PrimerNombre + ' ' + e.PrimerApellido AS EmpleadoResponsable
+FROM Factura f
+INNER JOIN Pedido p ON f.Id_pedido = p.Id_pedido
+INNER JOIN Cliente c ON p.Id_cliente = c.Id_cliente
+INNER JOIN Empleado e ON f.Id_Empleado = e.Id_Empleado
+WHERE f.Estado = 0;
+
+Select * From vw_FacturasNoPagadasTotales;
+
+
+
+--Funcion 1
+CREATE FUNCTION fn_SumarGananciasFacturas ()
+RETURNS DECIMAL(10, 2)
+AS
+BEGIN
+    DECLARE @TotalGanancias DECIMAL(10, 2);
+
+    SELECT @TotalGanancias = COALESCE(SUM(Monto_total), 0)
+    FROM Factura;
+
+    RETURN @TotalGanancias;
+END;
+
+SELECT dbo.fn_SumarGananciasFacturas() AS GananciasTotales;
+
+
+--Funcion 2
+CREATE FUNCTION fn_CostoTotalProveedores ()
+RETURNS DECIMAL(10, 2)
+AS
+BEGIN
+    DECLARE @CostoTotal DECIMAL(10, 2);
+
+    SELECT @CostoTotal = COALESCE(SUM(c.Precio_Unitario * c.Cantidad), 0)
+    FROM Compra c;
+
+    RETURN @CostoTotal;
+END;
+
+SELECT dbo.fn_CostoTotalProveedores() AS CostoProveedoresTotales;
+
+
+
+
+-- Trigger 1 para insertar registro de Inicio de Sesión
+CREATE TRIGGER tr_InicioSesion
+ON Empleado
+AFTER UPDATE
+AS
+BEGIN
+    -- Verificar si la columna FechaInicioSesion fue actualizada
+    IF UPDATE(FechaInicioSesion)
+    BEGIN
+        -- Insertar un registro en la tabla AuditoriaSesion
+        INSERT INTO AuditoriaSesion (Id_Empleado, Accion, FechaAccion)
+        SELECT Id_Empleado, 'InicioSesion', GETDATE()
+        FROM inserted
+        WHERE FechaInicioSesion IS NOT NULL; 
+    END
+END;
+
+Update empleado
+set FechaInicioSesion = GETDATE()
+where Id_Empleado = 1;
+
+
+Select * from AuditoriaSesion;
+
+
+-- Trigger 2 para insertar registro de Cierre de Sesión
+CREATE TRIGGER tr_CierreSesion
+ON Empleado
+AFTER UPDATE
+AS
+BEGIN
+    -- Verificar si la columna FechaCierreSesion fue actualizada
+    IF UPDATE(FechaCierreSesion)
+    BEGIN
+        -- Insertar un registro en la tabla AuditoriaSesion
+        INSERT INTO AuditoriaSesion (Id_Empleado, Accion, FechaAccion)
+        SELECT Id_Empleado, 'CierreSesion', GETDATE()
+        FROM inserted
+        WHERE FechaCierreSesion IS NOT NULL;  --
+    END
+END;
+
+
+Update empleado
+set FechaCierreSesion = GETDATE()
+where Id_Empleado = 1;
+
+Select * from AuditoriaSesion;
+
+
+
+
+
+
+--CURSOR
+DECLARE @IdTipoDePago INT, @MontoTotal DECIMAL(10, 2);
+
+DECLARE CursorPagos CURSOR FOR
+SELECT Id_Tipo_pago FROM TipoDePago;
+
+OPEN CursorPagos;
+FETCH NEXT FROM CursorPagos INTO @IdTipoDePago;
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    SELECT @MontoTotal = COALESCE(SUM(Monto), 0)
+    FROM Pago
+    WHERE Id_Tipo_Pago = @IdTipoDePago;
+
+    PRINT 'Monto Total para Tipo de Pago ' + CAST(@IdTipoDePago AS NVARCHAR) + ': $' + CAST(@MontoTotal AS NVARCHAR);
+
+    FETCH NEXT FROM CursorPagos INTO @IdTipoDePago;
+END;
+
+CLOSE CursorPagos;
+DEALLOCATE CursorPagos;
+
+
+
+
+--tabla temporal 1:
+CREATE TABLE #DetallesPedidoTem (
+    Id_Pedido INT,
+    Id_Arreglo INT,
+    Nombre_Arreglo NVARCHAR(100),
+    Direccion_Envio NVARCHAR(100)
+);
+
+INSERT INTO #DetallesPedidoTem (Id_Pedido, Id_Arreglo, Nombre_Arreglo, Direccion_Envio)
+SELECT 
+    dp.Id_Pedido,
+    dp.Id_Arreglo,
+    a.Nombre_Arreglo,
+    e.Direccion
+FROM Detalle_Pedido dp
+INNER JOIN Arreglo a ON dp.Id_Arreglo = a.Id_Arreglo
+INNER JOIN Envio e ON dp.Id_Envio = e.Id_envio
+WHERE dp.Id_Pedido = 1; -- Cambiar por el ID del pedido que quieras consultar
+
+SELECT * FROM #DetallesPedidoTem;
+
+
+
+--Tabla temporal 2:
+CREATE TABLE #ProveedoresAccesoriosTem (
+    Id_Proveedor INT,
+    Nombre_Proveedor NVARCHAR(50),
+    Nombre_Accesorio NVARCHAR(100)
+);
+
+INSERT INTO #ProveedoresAccesoriosTem
+SELECT p.Id_Proveedor, p.Nombre_Proveedor, a.Nombre_Accesorio
+FROM Proveedor p
+INNER JOIN Detalle_Proveedor dp ON p.Id_Proveedor = dp.Id_Proveedor
+INNER JOIN Accesorio a ON dp.Id_Accesorio = a.Id_Accesorio;
+
+SELECT * FROM #ProveedoresAccesoriosTem;
+
+
+
+
+
+
+	
+

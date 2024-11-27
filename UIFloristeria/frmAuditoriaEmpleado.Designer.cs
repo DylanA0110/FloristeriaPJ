@@ -37,8 +37,6 @@
             btnMin = new Button();
             btnClose = new Button();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -118,7 +116,6 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 45;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(152, 100, 20);
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
@@ -134,20 +131,6 @@
             dataGridView1.RowTemplate.Height = 40;
             dataGridView1.Size = new Size(485, 193);
             dataGridView1.TabIndex = 100;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Nombre del Proveedor";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 250;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Número de télefono";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 150;
             // 
             // frmAuditoriaEmpleado
             // 
@@ -177,7 +160,5 @@
         private Button btnMin;
         private Button btnClose;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
     }
 }
