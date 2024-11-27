@@ -53,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)btHamn).BeginInit();
             sidebar.SuspendLayout();
             menuContainer.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -332,7 +331,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btHamn).EndInit();
             sidebar.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             menuContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
