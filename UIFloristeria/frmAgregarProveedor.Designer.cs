@@ -60,7 +60,7 @@
             label4.BackColor = Color.FromArgb(222, 151, 54);
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(359, 112);
+            label4.Location = new Point(366, 113);
             label4.Name = "label4";
             label4.Size = new Size(78, 19);
             label4.TabIndex = 86;
@@ -72,7 +72,7 @@
             mtxtTelefono.BorderStyle = BorderStyle.None;
             mtxtTelefono.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mtxtTelefono.ForeColor = Color.White;
-            mtxtTelefono.Location = new Point(359, 148);
+            mtxtTelefono.Location = new Point(366, 149);
             mtxtTelefono.Mask = "0000-0000";
             mtxtTelefono.Name = "mtxtTelefono";
             mtxtTelefono.Size = new Size(78, 20);
@@ -82,7 +82,7 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox2.Image = Properties.Resources.Loading;
-            pictureBox2.Location = new Point(104, 148);
+            pictureBox2.Location = new Point(111, 149);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(186, 22);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -95,7 +95,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(168, 12);
+            label1.Location = new Point(175, 9);
             label1.Name = "label1";
             label1.Size = new Size(286, 36);
             label1.TabIndex = 83;
@@ -139,7 +139,7 @@
             txtNombreProveedor.BorderStyle = BorderStyle.None;
             txtNombreProveedor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNombreProveedor.ForeColor = Color.White;
-            txtNombreProveedor.Location = new Point(104, 122);
+            txtNombreProveedor.Location = new Point(111, 123);
             txtNombreProveedor.Name = "txtNombreProveedor";
             txtNombreProveedor.Size = new Size(186, 20);
             txtNombreProveedor.TabIndex = 89;
