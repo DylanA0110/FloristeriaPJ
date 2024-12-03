@@ -32,31 +32,21 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
             btnEditarEmpleado = new Button();
             label1 = new Label();
             btnAuditoria = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.Ellipse_1;
-            pictureBox3.Location = new Point(712, 377);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(192, 162);
-            pictureBox3.TabIndex = 71;
-            pictureBox3.TabStop = false;
-            // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(28, 75, 68);
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(339, 23);
+            pictureBox1.Location = new Point(382, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(53, 55);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -71,6 +61,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -101,6 +92,7 @@
             // 
             // btnEditarEmpleado
             // 
+            btnEditarEmpleado.Anchor = AnchorStyles.Bottom;
             btnEditarEmpleado.BackColor = Color.White;
             btnEditarEmpleado.FlatStyle = FlatStyle.Popup;
             btnEditarEmpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -116,11 +108,12 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(222, 151, 54);
-            label1.Location = new Point(398, 33);
+            label1.Location = new Point(441, 33);
             label1.Name = "label1";
             label1.Size = new Size(172, 36);
             label1.TabIndex = 67;
@@ -128,6 +121,7 @@
             // 
             // btnAuditoria
             // 
+            btnAuditoria.Anchor = AnchorStyles.Bottom;
             btnAuditoria.BackColor = Color.White;
             btnAuditoria.FlatStyle = FlatStyle.Popup;
             btnAuditoria.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -145,10 +139,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(28, 75, 68);
+            BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
             Controls.Add(btnAuditoria);
-            Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Controls.Add(btnEditarEmpleado);
@@ -157,7 +150,6 @@
             Name = "frmEmpleado";
             Text = "frmEmpleado";
             Load += frmEmpleado_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -165,8 +157,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox3;
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
         private Button btnEditarEmpleado;

@@ -19,6 +19,7 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -65,10 +66,12 @@ namespace UIFloristeria
                 this.panelContenedor.Controls[0].Dispose();
 
             formulario.TopLevel = false;
-            formulario.Dock = DockStyle.Fill;
+            formulario.Dock = DockStyle.Fill; // Esto asegura que el formulario hijo llene el panel
             this.panelContenedor.Controls.Add(formulario);
             this.panelContenedor.Tag = formulario;
+            formulario.BringToFront();
             formulario.Show();
+
         }
 
 
@@ -144,6 +147,7 @@ namespace UIFloristeria
 
         }
 
+
         private void button4_Click(object sender, EventArgs e)
         {
             frmArreglo frmProveedor = new frmArreglo();
@@ -160,6 +164,11 @@ namespace UIFloristeria
         {
             Factura factura = new Factura();
             AbrirFormularioEnPanel(factura);
+        }
+
+        private void menuContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

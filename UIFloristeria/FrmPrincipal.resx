@@ -145,7 +145,7 @@
         87hgv5equgK4MDhSjSwVDgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFactura.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAPFJREFUOE/t
         lOsRgjAQhCnBEijBDrQES7AESqAESqAEO5AOpAPsQDuIu8mdOR+EGP3pN7MT7pEFcgPVn9/hnOugUlqx
@@ -155,7 +155,7 @@
         LP0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArreglos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAipJREFUOE9j
         GJqgYL6CQM5czdqsuerTQTRUmDyQO1/NNmuO2u2sWSrRGdMVHIB0FhCfKV5qKA9VQjzImKUQkTNH8xrI
@@ -170,7 +170,7 @@
         cByEgIEBAEvGx5Itdv6AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnClientes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAL1JREFUOE+9
         lNENgjAURTsCIzAKG+kIjMAGjiAbOIIjyAaOgOfRmxjk1bw2xpPcn757moY2pL+zruuZ3MiVnLRcD3JH
@@ -179,7 +179,7 @@
         0gvaV52vWkdJhgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPedidos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAPBJREFUOE/V
         lO0NgkAQRCnBEiiBDqQUO9AOtARLsBPpQDvBDnAemUvkuMuBxB++ZAL7cZPNkaX6T4ZhaKVzQa3by6j5

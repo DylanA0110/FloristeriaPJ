@@ -39,10 +39,10 @@
             btnProveedor = new Button();
             btnMenu = new Button();
             btnEmpleado = new Button();
-            button2 = new Button();
-            button4 = new Button();
-            button8 = new Button();
-            button5 = new Button();
+            btnFactura = new Button();
+            btnArreglos = new Button();
+            btnClientes = new Button();
+            btnPedidos = new Button();
             panel2 = new Panel();
             btnCerrarSession = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
@@ -116,10 +116,10 @@
             // 
             sidebar.BackColor = Color.FromArgb(28, 75, 68);
             sidebar.Controls.Add(menuContainer);
-            sidebar.Controls.Add(button2);
-            sidebar.Controls.Add(button4);
-            sidebar.Controls.Add(button8);
-            sidebar.Controls.Add(button5);
+            sidebar.Controls.Add(btnFactura);
+            sidebar.Controls.Add(btnArreglos);
+            sidebar.Controls.Add(btnClientes);
+            sidebar.Controls.Add(btnPedidos);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(btnCerrarSession);
             sidebar.Dock = DockStyle.Left;
@@ -130,7 +130,7 @@
             // 
             // menuContainer
             // 
-            menuContainer.BackColor = Color.FromArgb(28, 76, 56);
+            menuContainer.BackColor = Color.FromArgb(22, 58, 55);
             menuContainer.Controls.Add(btnProveedor);
             menuContainer.Controls.Add(btnMenu);
             menuContainer.Controls.Add(btnEmpleado);
@@ -138,10 +138,11 @@
             menuContainer.Name = "menuContainer";
             menuContainer.Size = new Size(213, 37);
             menuContainer.TabIndex = 2;
+            menuContainer.Paint += menuContainer_Paint;
             // 
             // btnProveedor
             // 
-            btnProveedor.BackColor = Color.FromArgb(50, 84, 68);
+            btnProveedor.BackColor = Color.FromArgb(22, 58, 55);
             btnProveedor.FlatAppearance.BorderColor = Color.Black;
             btnProveedor.FlatAppearance.BorderSize = 0;
             btnProveedor.FlatStyle = FlatStyle.Flat;
@@ -168,10 +169,10 @@
             btnMenu.ForeColor = Color.White;
             btnMenu.Image = (Image)resources.GetObject("btnMenu.Image");
             btnMenu.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMenu.Location = new Point(0, 0);
+            btnMenu.Location = new Point(-3, -4);
             btnMenu.Margin = new Padding(0);
             btnMenu.Name = "btnMenu";
-            btnMenu.Size = new Size(216, 40);
+            btnMenu.Size = new Size(216, 41);
             btnMenu.TabIndex = 7;
             btnMenu.Text = "Menu";
             btnMenu.UseVisualStyleBackColor = false;
@@ -179,7 +180,7 @@
             // 
             // btnEmpleado
             // 
-            btnEmpleado.BackColor = Color.FromArgb(50, 84, 68);
+            btnEmpleado.BackColor = Color.FromArgb(22, 58, 55);
             btnEmpleado.FlatAppearance.BorderColor = Color.Black;
             btnEmpleado.FlatAppearance.BorderSize = 0;
             btnEmpleado.FlatStyle = FlatStyle.Flat;
@@ -196,76 +197,76 @@
             btnEmpleado.UseVisualStyleBackColor = false;
             btnEmpleado.Click += btnEmpleado_Click;
             // 
-            // button2
+            // btnFactura
             // 
-            button2.BackColor = Color.FromArgb(28, 75, 68);
-            button2.FlatAppearance.BorderColor = Color.Black;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(3, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(201, 37);
-            button2.TabIndex = 4;
-            button2.Text = "Factura";
-            button2.UseVisualStyleBackColor = false;
+            btnFactura.BackColor = Color.FromArgb(28, 75, 68);
+            btnFactura.FlatAppearance.BorderColor = Color.Black;
+            btnFactura.FlatAppearance.BorderSize = 0;
+            btnFactura.FlatStyle = FlatStyle.Flat;
+            btnFactura.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            btnFactura.ForeColor = Color.White;
+            btnFactura.Image = (Image)resources.GetObject("btnFactura.Image");
+            btnFactura.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFactura.Location = new Point(3, 46);
+            btnFactura.Name = "btnFactura";
+            btnFactura.Size = new Size(201, 37);
+            btnFactura.TabIndex = 4;
+            btnFactura.Text = "Factura";
+            btnFactura.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnArreglos
             // 
-            button4.BackColor = Color.FromArgb(28, 75, 68);
-            button4.FlatAppearance.BorderColor = Color.Black;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            button4.ForeColor = Color.White;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(3, 89);
-            button4.Name = "button4";
-            button4.Size = new Size(201, 37);
-            button4.TabIndex = 5;
-            button4.Text = "Arreglos";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnArreglos.BackColor = Color.FromArgb(28, 75, 68);
+            btnArreglos.FlatAppearance.BorderColor = Color.Black;
+            btnArreglos.FlatAppearance.BorderSize = 0;
+            btnArreglos.FlatStyle = FlatStyle.Flat;
+            btnArreglos.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            btnArreglos.ForeColor = Color.White;
+            btnArreglos.Image = (Image)resources.GetObject("btnArreglos.Image");
+            btnArreglos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnArreglos.Location = new Point(3, 89);
+            btnArreglos.Name = "btnArreglos";
+            btnArreglos.Size = new Size(201, 37);
+            btnArreglos.TabIndex = 5;
+            btnArreglos.Text = "Arreglos";
+            btnArreglos.UseVisualStyleBackColor = false;
+            btnArreglos.Click += button4_Click;
             // 
-            // button8
+            // btnClientes
             // 
-            button8.BackColor = Color.FromArgb(28, 75, 68);
-            button8.FlatAppearance.BorderColor = Color.Black;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            button8.ForeColor = Color.White;
-            button8.Image = (Image)resources.GetObject("button8.Image");
-            button8.ImageAlign = ContentAlignment.MiddleLeft;
-            button8.Location = new Point(0, 129);
-            button8.Margin = new Padding(0);
-            button8.Name = "button8";
-            button8.Size = new Size(201, 37);
-            button8.TabIndex = 9;
-            button8.Text = "Clientes";
-            button8.UseVisualStyleBackColor = false;
-            button8.Click += button8_Click;
+            btnClientes.BackColor = Color.FromArgb(28, 75, 68);
+            btnClientes.FlatAppearance.BorderColor = Color.Black;
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
+            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClientes.Location = new Point(0, 129);
+            btnClientes.Margin = new Padding(0);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(201, 37);
+            btnClientes.TabIndex = 9;
+            btnClientes.Text = "Clientes";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += button8_Click;
             // 
-            // button5
+            // btnPedidos
             // 
-            button5.BackColor = Color.FromArgb(28, 75, 68);
-            button5.FlatAppearance.BorderColor = Color.Black;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 169);
-            button5.Name = "button5";
-            button5.Size = new Size(198, 37);
-            button5.TabIndex = 6;
-            button5.Text = "Pedido";
-            button5.UseVisualStyleBackColor = false;
+            btnPedidos.BackColor = Color.FromArgb(28, 75, 68);
+            btnPedidos.FlatAppearance.BorderColor = Color.Black;
+            btnPedidos.FlatAppearance.BorderSize = 0;
+            btnPedidos.FlatStyle = FlatStyle.Flat;
+            btnPedidos.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            btnPedidos.ForeColor = Color.White;
+            btnPedidos.Image = (Image)resources.GetObject("btnPedidos.Image");
+            btnPedidos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPedidos.Location = new Point(3, 169);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(198, 37);
+            btnPedidos.TabIndex = 6;
+            btnPedidos.Text = "Pedido";
+            btnPedidos.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -344,10 +345,10 @@
         private Panel menuContainer;
         private Button btnEmpleado;
         private Button button3;
-        private Button button4;
-        private Button button2;
-        private Button button5;
-        private Button button8;
+        private Button btnArreglos;
+        private Button btnFactura;
+        private Button btnPedidos;
+        private Button btnClientes;
         private Button btnProveedor;
         private Button btnMenu;
         private Button btnCerrarSession;
