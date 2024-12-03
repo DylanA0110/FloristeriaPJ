@@ -62,5 +62,11 @@ namespace UIFloristeria
             // Abrir el formulario como cuadro de diálogo
             frmEditar.ShowDialog();
         }
+
+        private void btnAgregarEmp_Click(object sender, EventArgs e)
+        {
+            FrmRegister register = new FrmRegister();
+            register.ShowDialog();
+        }
     }
 }

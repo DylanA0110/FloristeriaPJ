@@ -17,8 +17,14 @@ namespace UIFloristeria
             InitializeComponent();
         }
 
-        
+        private void Factura_Load(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void TxtNumeroFactura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

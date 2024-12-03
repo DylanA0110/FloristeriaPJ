@@ -213,6 +213,7 @@
             btnFactura.TabIndex = 4;
             btnFactura.Text = "Factura";
             btnFactura.UseVisualStyleBackColor = false;
+            btnFactura.Click += btnFactura_Click;
             // 
             // btnArreglos
             // 
@@ -230,7 +231,7 @@
             btnArreglos.TabIndex = 5;
             btnArreglos.Text = "Arreglos";
             btnArreglos.UseVisualStyleBackColor = false;
-            btnArreglos.Click += button4_Click;
+            btnArreglos.Click += btnArreglos_Click;
             // 
             // btnClientes
             // 
@@ -249,7 +250,7 @@
             btnClientes.TabIndex = 9;
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
-            btnClientes.Click += button8_Click;
+            btnClientes.Click += btnClientes_Click;
             // 
             // btnPedidos
             // 
@@ -278,6 +279,7 @@
             // 
             // btnCerrarSession
             // 
+            btnCerrarSession.Anchor = AnchorStyles.Bottom;
             btnCerrarSession.BackColor = Color.FromArgb(28, 75, 68);
             btnCerrarSession.FlatAppearance.BorderColor = Color.Black;
             btnCerrarSession.FlatAppearance.BorderSize = 0;

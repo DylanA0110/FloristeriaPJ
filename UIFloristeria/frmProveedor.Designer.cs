@@ -58,6 +58,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -107,7 +108,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(28, 75, 68);
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox1.Image = Properties.Resources.Buying;
             pictureBox1.Location = new Point(300, 25);
             pictureBox1.Name = "pictureBox1";
@@ -119,7 +121,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(28, 75, 68);
+            BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);

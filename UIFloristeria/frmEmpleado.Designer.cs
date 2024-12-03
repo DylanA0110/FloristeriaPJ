@@ -37,6 +37,7 @@
             btnEditarEmpleado = new Button();
             label1 = new Label();
             btnAuditoria = new Button();
+            btnAgregarEmp = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -95,12 +96,12 @@
             btnEditarEmpleado.Anchor = AnchorStyles.Bottom;
             btnEditarEmpleado.BackColor = Color.White;
             btnEditarEmpleado.FlatStyle = FlatStyle.Popup;
-            btnEditarEmpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditarEmpleado.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
             btnEditarEmpleado.Image = (Image)resources.GetObject("btnEditarEmpleado.Image");
             btnEditarEmpleado.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarEmpleado.Location = new Point(215, 431);
+            btnEditarEmpleado.Location = new Point(90, 431);
             btnEditarEmpleado.Name = "btnEditarEmpleado";
-            btnEditarEmpleado.Size = new Size(220, 36);
+            btnEditarEmpleado.Size = new Size(188, 36);
             btnEditarEmpleado.TabIndex = 68;
             btnEditarEmpleado.Text = "Editar Empleado";
             btnEditarEmpleado.UseVisualStyleBackColor = false;
@@ -124,16 +125,32 @@
             btnAuditoria.Anchor = AnchorStyles.Bottom;
             btnAuditoria.BackColor = Color.White;
             btnAuditoria.FlatStyle = FlatStyle.Popup;
-            btnAuditoria.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAuditoria.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
             btnAuditoria.Image = (Image)resources.GetObject("btnAuditoria.Image");
             btnAuditoria.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAuditoria.Location = new Point(457, 431);
+            btnAuditoria.Location = new Point(657, 431);
             btnAuditoria.Name = "btnAuditoria";
-            btnAuditoria.Size = new Size(220, 36);
+            btnAuditoria.Size = new Size(141, 36);
             btnAuditoria.TabIndex = 72;
             btnAuditoria.Text = "Auditoria";
             btnAuditoria.UseVisualStyleBackColor = false;
             btnAuditoria.Click += btnAuditoria_Click;
+            // 
+            // btnAgregarEmp
+            // 
+            btnAgregarEmp.Anchor = AnchorStyles.Bottom;
+            btnAgregarEmp.BackColor = Color.White;
+            btnAgregarEmp.FlatStyle = FlatStyle.Popup;
+            btnAgregarEmp.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            btnAgregarEmp.Image = (Image)resources.GetObject("btnAgregarEmp.Image");
+            btnAgregarEmp.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAgregarEmp.Location = new Point(359, 431);
+            btnAgregarEmp.Name = "btnAgregarEmp";
+            btnAgregarEmp.Size = new Size(198, 36);
+            btnAgregarEmp.TabIndex = 73;
+            btnAgregarEmp.Text = "Agregar Empleado";
+            btnAgregarEmp.UseVisualStyleBackColor = false;
+            btnAgregarEmp.Click += btnAgregarEmp_Click;
             // 
             // frmEmpleado
             // 
@@ -141,6 +158,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
+            Controls.Add(btnAgregarEmp);
             Controls.Add(btnAuditoria);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
@@ -162,5 +180,6 @@
         private Button btnEditarEmpleado;
         private Label label1;
         private Button btnAuditoria;
+        private Button btnAgregarEmp;
     }
 }

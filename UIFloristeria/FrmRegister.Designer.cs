@@ -72,11 +72,11 @@
             label1.BackColor = Color.FromArgb(24, 64, 57);
             label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(320, 9);
+            label1.Location = new Point(273, 9);
             label1.Name = "label1";
-            label1.Size = new Size(147, 36);
+            label1.Size = new Size(282, 36);
             label1.TabIndex = 1;
-            label1.Text = "REGISTRO";
+            label1.Text = "Agregar Empleado";
             // 
             // pictureBox2
             // 
@@ -445,7 +445,6 @@
             Name = "FrmRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRegister";
-//            Load += FrmRegister_Load;
             MouseDown += FrmRegister_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

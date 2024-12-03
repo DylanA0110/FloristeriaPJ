@@ -35,7 +35,6 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             btnLogin = new Button();
-            linkRegister = new LinkLabel();
             pictureBox6 = new PictureBox();
             btnClose = new Button();
             btnMin = new Button();
@@ -121,21 +120,6 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
-            // linkRegister
-            // 
-            linkRegister.ActiveLinkColor = Color.White;
-            linkRegister.AutoSize = true;
-            linkRegister.BackColor = Color.FromArgb(27, 73, 69);
-            linkRegister.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkRegister.LinkColor = Color.FromArgb(242, 157, 53);
-            linkRegister.Location = new Point(502, 326);
-            linkRegister.Name = "linkRegister";
-            linkRegister.Size = new Size(98, 17);
-            linkRegister.TabIndex = 4;
-            linkRegister.TabStop = true;
-            linkRegister.Text = "Registrese aquí";
-            linkRegister.LinkClicked += linkRegister_LinkClicked;
-            // 
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.FromArgb(27, 73, 69);
@@ -186,7 +170,6 @@
             Controls.Add(btnMin);
             Controls.Add(btnClose);
             Controls.Add(pictureBox6);
-            Controls.Add(linkRegister);
             Controls.Add(btnLogin);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -217,7 +200,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Button btnLogin;
-        private LinkLabel linkRegister;
         private PictureBox pictureBox6;
         private Button btnClose;
         private Button btnMin;

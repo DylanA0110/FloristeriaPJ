@@ -42,9 +42,10 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(264, 23);
+            pictureBox1.Location = new Point(316, 25);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(60, 58);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,11 +107,12 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(222, 151, 54);
-            label1.Location = new Point(341, 33);
+            label1.Location = new Point(393, 35);
             label1.Name = "label1";
             label1.Size = new Size(129, 36);
             label1.TabIndex = 72;
