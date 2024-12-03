@@ -41,7 +41,7 @@
             // 
             // btnAbrirfrmAgg
             // 
-            btnAbrirfrmAgg.Anchor = AnchorStyles.None;
+            btnAbrirfrmAgg.Anchor = AnchorStyles.Bottom;
             btnAbrirfrmAgg.BackColor = Color.White;
             btnAbrirfrmAgg.FlatAppearance.BorderSize = 0;
             btnAbrirfrmAgg.FlatStyle = FlatStyle.Popup;
