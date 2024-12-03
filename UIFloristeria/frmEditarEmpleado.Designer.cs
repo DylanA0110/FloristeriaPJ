@@ -332,6 +332,7 @@
             Controls.Add(btnClose);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmEditarEmpleado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEditarEmpleado";
             MouseDown += frmEditarEmpleado_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

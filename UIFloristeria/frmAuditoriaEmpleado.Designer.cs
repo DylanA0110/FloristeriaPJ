@@ -145,8 +145,10 @@
             Controls.Add(btnClose);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAuditoriaEmpleado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAuditoriaEmpleado";
             Load += frmAuditoriaEmpleado_Load;
+            MouseDown += frmAuditoriaEmpleado_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

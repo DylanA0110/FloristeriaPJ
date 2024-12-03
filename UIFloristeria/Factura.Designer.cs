@@ -48,7 +48,7 @@
             // 
             // TxtPrimerNombre
             // 
-            TxtPrimerNombre.BackColor = Color.FromArgb(28, 75, 68);
+            TxtPrimerNombre.BackColor = Color.FromArgb(22, 58, 55);
             TxtPrimerNombre.BorderStyle = BorderStyle.None;
             TxtPrimerNombre.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             TxtPrimerNombre.Location = new Point(75, 169);
@@ -73,7 +73,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(355, 39);
+            label2.Location = new Point(391, 39);
             label2.Name = "label2";
             label2.Size = new Size(113, 32);
             label2.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             // TxtSegundoNombre
             // 
-            TxtSegundoNombre.BackColor = Color.FromArgb(28, 75, 68);
+            TxtSegundoNombre.BackColor = Color.FromArgb(22, 58, 55);
             TxtSegundoNombre.BorderStyle = BorderStyle.None;
             TxtSegundoNombre.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             TxtSegundoNombre.Location = new Point(266, 169);
@@ -114,7 +114,7 @@
             // 
             // TxtSegundoApellido
             // 
-            TxtSegundoApellido.BackColor = Color.FromArgb(28, 75, 68);
+            TxtSegundoApellido.BackColor = Color.FromArgb(22, 58, 55);
             TxtSegundoApellido.BorderStyle = BorderStyle.None;
             TxtSegundoApellido.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             TxtSegundoApellido.Location = new Point(646, 169);
@@ -136,7 +136,7 @@
             // 
             // TxtPrimerApellido
             // 
-            TxtPrimerApellido.BackColor = Color.FromArgb(28, 75, 68);
+            TxtPrimerApellido.BackColor = Color.FromArgb(22, 58, 55);
             TxtPrimerApellido.BorderStyle = BorderStyle.None;
             TxtPrimerApellido.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             TxtPrimerApellido.Location = new Point(455, 169);
@@ -158,7 +158,7 @@
             // 
             // TxtMontoTotal
             // 
-            TxtMontoTotal.BackColor = Color.FromArgb(28, 75, 68);
+            TxtMontoTotal.BackColor = Color.FromArgb(22, 58, 55);
             TxtMontoTotal.BorderStyle = BorderStyle.None;
             TxtMontoTotal.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             TxtMontoTotal.Location = new Point(455, 273);
@@ -180,7 +180,7 @@
             // 
             // TxtNumeroFactura
             // 
-            TxtNumeroFactura.BackColor = Color.FromArgb(28, 75, 68);
+            TxtNumeroFactura.BackColor = Color.FromArgb(22, 58, 55);
             TxtNumeroFactura.BorderStyle = BorderStyle.None;
             TxtNumeroFactura.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             TxtNumeroFactura.Location = new Point(264, 273);
@@ -217,7 +217,7 @@
             BtnAgregar.FlatStyle = FlatStyle.Flat;
             BtnAgregar.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnAgregar.ForeColor = Color.Black;
-            BtnAgregar.Location = new Point(336, 391);
+            BtnAgregar.Location = new Point(391, 407);
             BtnAgregar.Name = "BtnAgregar";
             BtnAgregar.Size = new Size(132, 31);
             BtnAgregar.TabIndex = 17;
@@ -229,7 +229,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(28, 75, 68);
+            BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(877, 516);
             Controls.Add(BtnAgregar);
             Controls.Add(label8);

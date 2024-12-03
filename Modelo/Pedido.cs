@@ -16,7 +16,7 @@ namespace Modelo
         public int Id_cliente { get; set; }
 
         [StringLength(300, ErrorMessage = "La descripción debe tener un máximo de 300 caracteres.")]
-        public string Descripcion { get; set; }
+        public string ?Descripcion { get; set; }
 
         [Required(ErrorMessage = "La cantidad es requerida.")]
         [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser mayor a 0.")]
@@ -28,7 +28,7 @@ namespace Modelo
         public DateTime? Fecha_entrega { get; set; }
 
         [StringLength(200, ErrorMessage = "La dirección de envío debe tener un máximo de 200 caracteres.")]
-        public string Enviarse_A { get; set; }
+        public string ?Enviarse_A { get; set; }
     }
 
 }
