@@ -32,28 +32,17 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
             btnAggCliente = new Button();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.Ellipse_1;
-            pictureBox3.Location = new Point(699, 372);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(192, 162);
-            pictureBox3.TabIndex = 76;
-            pictureBox3.TabStop = false;
-            // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(28, 75, 68);
+            pictureBox1.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(264, 23);
             pictureBox1.Name = "pictureBox1";
@@ -70,6 +59,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -100,6 +90,7 @@
             // 
             // btnAggCliente
             // 
+            btnAggCliente.Anchor = AnchorStyles.Bottom;
             btnAggCliente.BackColor = Color.White;
             btnAggCliente.FlatStyle = FlatStyle.Popup;
             btnAggCliente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -129,9 +120,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(28, 75, 68);
+            BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(884, 493);
-            Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
             Controls.Add(btnAggCliente);
@@ -140,7 +130,6 @@
             Name = "frmCliente";
             Text = "frmCliente";
             Load += frmCliente_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -148,8 +137,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox3;
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
         private Button btnAggCliente;

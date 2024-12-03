@@ -267,6 +267,7 @@
             btnPedidos.TabIndex = 6;
             btnPedidos.Text = "Pedido";
             btnPedidos.UseVisualStyleBackColor = false;
+            btnPedidos.Click += btnPedidos_Click;
             // 
             // panel2
             // 

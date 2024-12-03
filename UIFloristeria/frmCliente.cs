@@ -54,5 +54,10 @@ namespace UIFloristeria
             // Abrir el formulario como cuadro de diálogo
             frmAgregar.ShowDialog();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

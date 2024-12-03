@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             TxtPrimerNombre = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             label3 = new Label();
             TxtSegundoNombre = new TextBox();
             label4 = new Label();
@@ -45,10 +43,7 @@
             TxtNumeroFactura = new TextBox();
             CboTipoDePago = new ComboBox();
             label8 = new Label();
-            pictureBox2 = new PictureBox();
             BtnAgregar = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // TxtPrimerNombre
@@ -83,16 +78,6 @@
             label2.Size = new Size(113, 32);
             label2.TabIndex = 2;
             label2.Text = "Factura";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-219, 330);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(493, 278);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -224,16 +209,6 @@
             label8.TabIndex = 15;
             label8.Text = "Tipo de Pago";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.Ellipse_1;
-            pictureBox2.Location = new Point(601, 203);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(655, 405);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 16;
-            pictureBox2.TabStop = false;
-            // 
             // BtnAgregar
             // 
             BtnAgregar.BackColor = Color.White;
@@ -257,7 +232,6 @@
             BackColor = Color.FromArgb(28, 75, 68);
             ClientSize = new Size(877, 516);
             Controls.Add(BtnAgregar);
-            Controls.Add(pictureBox2);
             Controls.Add(label8);
             Controls.Add(CboTipoDePago);
             Controls.Add(label6);
@@ -270,7 +244,6 @@
             Controls.Add(TxtPrimerApellido);
             Controls.Add(label3);
             Controls.Add(TxtSegundoNombre);
-            Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(TxtPrimerNombre);
@@ -279,8 +252,6 @@
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Factura";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -290,7 +261,6 @@
         private TextBox TxtPrimerNombre;
         private Label label1;
         private Label label2;
-        private PictureBox pictureBox1;
         private Label label3;
         private TextBox TxtSegundoNombre;
         private Label label4;
@@ -303,7 +273,6 @@
         private TextBox TxtNumeroFactura;
         private ComboBox CboTipoDePago;
         private Label label8;
-        private PictureBox pictureBox2;
         private Button BtnAgregar;
     }
 }
