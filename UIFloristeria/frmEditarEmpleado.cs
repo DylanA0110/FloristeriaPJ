@@ -42,12 +42,6 @@ namespace UIFloristeria
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnEditarEpleado_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK; // Si se agregó con éxito
-            this.Close();
-        }
-
         private void frmEditarEmpleado_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
