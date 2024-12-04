@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace Modelo.Entidades
 {
     public class Empleado
     {
@@ -28,8 +28,8 @@ namespace Modelo
         public string SegundoApellido { get; set; }
 
         [Required(ErrorMessage = "El sexo es requerido.")]
-        [RegularExpression(@"^[MF]{1}$", ErrorMessage = "El sexo debe ser 'M' o 'F'.")]
-        public char Sexo { get; set; }
+        [RegularExpression(@"^[MF]$", ErrorMessage = "El sexo debe ser 'M' o 'F'.")]
+        public string Sexo { get; set; }
 
         public DateTime? FechaInicioSesion { get; set; }
         public DateTime? FechaCierreSesion { get; set; }
@@ -51,9 +51,9 @@ namespace Modelo
         public string Telefono { get; set; }
 
         [Required(ErrorMessage = "La fecha de nacimiento es requerida.")]
-        public DateTime FechaDeNac { get; set; }
+        public DateTime? FechaDeNac { get; set; }
 
-        public bool? EsAprobado { get; set; }
+        public bool EsAprobado { get; set; }
 
         [Required(ErrorMessage = "El rol del empleado es requerido.")]
         public int RolId { get; set; }

@@ -33,15 +33,16 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
+            dgvEmpleados = new DataGridView();
             btnEditarEmpleado = new Button();
             label1 = new Label();
             btnAuditoria = new Button();
             btnAgregarEmp = new Button();
-            txtBusqueda = new ReaLTaiizor.Controls.DungeonTextBox();
-            btnBuscar = new Button();
+            txtBusqueda = new TextBox();
+            label2 = new Label();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -56,18 +57,18 @@
             pictureBox1.TabIndex = 70;
             pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvEmpleados
             // 
             dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvEmpleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvEmpleados.BackgroundColor = Color.White;
+            dgvEmpleados.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -75,8 +76,8 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeight = 45;
+            dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvEmpleados.ColumnHeadersHeight = 45;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
@@ -84,14 +85,15 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(225, 209);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowTemplate.Height = 40;
-            dataGridView1.Size = new Size(485, 193);
-            dataGridView1.TabIndex = 69;
+            dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvEmpleados.EnableHeadersVisualStyles = false;
+            dgvEmpleados.Location = new Point(225, 209);
+            dgvEmpleados.Name = "dgvEmpleados";
+            dgvEmpleados.ReadOnly = true;
+            dgvEmpleados.RowHeadersVisible = false;
+            dgvEmpleados.RowTemplate.Height = 40;
+            dgvEmpleados.Size = new Size(485, 193);
+            dgvEmpleados.TabIndex = 69;
             // 
             // btnEditarEmpleado
             // 
@@ -158,36 +160,29 @@
             // txtBusqueda
             // 
             txtBusqueda.Anchor = AnchorStyles.Top;
-            txtBusqueda.BackColor = Color.Transparent;
-            txtBusqueda.BorderColor = Color.FromArgb(180, 180, 180);
-            txtBusqueda.EdgeColor = Color.White;
-            txtBusqueda.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBusqueda.ForeColor = Color.DimGray;
-            txtBusqueda.Location = new Point(467, 141);
-            txtBusqueda.MaxLength = 32767;
-            txtBusqueda.Multiline = false;
+            txtBusqueda.Location = new Point(549, 152);
             txtBusqueda.Name = "txtBusqueda";
-            txtBusqueda.ReadOnly = false;
-            txtBusqueda.Size = new Size(224, 29);
-            txtBusqueda.TabIndex = 74;
-            txtBusqueda.Text = "Busqueda";
-            txtBusqueda.TextAlignment = HorizontalAlignment.Left;
-            txtBusqueda.UseSystemPasswordChar = false;
-            txtBusqueda.Enter += txtBusqueda_Enter;
-            txtBusqueda.Leave += txtBusqueda_Leave;
+            txtBusqueda.Size = new Size(161, 23);
+            txtBusqueda.TabIndex = 77;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
-            // btnBuscar
+            // label2
             // 
-            btnBuscar.Anchor = AnchorStyles.Top;
-            btnBuscar.FlatAppearance.BorderSize = 0;
-            btnBuscar.FlatStyle = FlatStyle.Flat;
-            btnBuscar.Image = Properties.Resources.Search2;
-            btnBuscar.Location = new Point(697, 141);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
-            btnBuscar.TabIndex = 76;
-            btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
+            label2.Anchor = AnchorStyles.Top;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(222, 151, 54);
+            label2.Location = new Point(549, 130);
+            label2.Name = "label2";
+            label2.Size = new Size(91, 19);
+            label2.TabIndex = 78;
+            label2.Text = "Busqueda:";
+            // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // frmEmpleado
             // 
@@ -195,12 +190,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
-            Controls.Add(btnBuscar);
+            Controls.Add(label2);
             Controls.Add(txtBusqueda);
             Controls.Add(btnAgregarEmp);
             Controls.Add(btnAuditoria);
             Controls.Add(pictureBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvEmpleados);
             Controls.Add(btnEditarEmpleado);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -208,19 +203,20 @@
             Text = "frmEmpleado";
             Load += frmEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvEmpleados;
         private Button btnEditarEmpleado;
         private Label label1;
         private Button btnAuditoria;
         private Button btnAgregarEmp;
-        private ReaLTaiizor.Controls.DungeonTextBox txtBusqueda;
-        private Button btnBuscar;
+        private TextBox txtBusqueda;
+        private Label label2;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

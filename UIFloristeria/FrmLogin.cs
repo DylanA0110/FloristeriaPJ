@@ -92,19 +92,7 @@ namespace UIFloristeria
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection Conexion = CONECTA.GetConnection())
-                {
-                    Conexion.Open();
-                    MessageBox.Show("¡Conexión exitosa!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show($"Error al conectar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+           
             FrmPrincipal frmPrincipal = new FrmPrincipal();
             frmPrincipal.Show();
             this.Hide();
