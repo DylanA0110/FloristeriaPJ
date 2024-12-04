@@ -91,6 +91,7 @@ namespace Modelo.Repositories
         {
             using (var connection = _dbContext.GetConnection())
             {
+                connection.Open();
                 var command = new SqlCommand("INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, FechaInicioSesion, Correo, UserName, Contrasena, Telefono, FechaDeNac, EsAprobado, RolId) VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @FechaInicioSesion, @Correo, @UserName, @Contrasena, @Telefono, @FechaDeNac, @EsAprobado, @RolId)", connection);
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
@@ -113,6 +114,7 @@ namespace Modelo.Repositories
         {
             using (var connection = _dbContext.GetConnection())
             {
+                connection.Open();
                 var command = new SqlCommand("UPDATE Empleado SET PrimerNombre = @PrimerNombre, SegundoNombre = @SegundoNombre, PrimerApellido = @PrimerApellido, SegundoApellido = @SegundoApellido, Sexo = @Sexo, FechaInicioSesion = @FechaInicioSesion, Correo = @Correo, UserName = @UserName, Contrasena = @Contrasena, Telefono = @Telefono, FechaDeNac = @FechaDeNac, EsAprobado = @EsAprobado, RolId = @RolId WHERE Id_Empleado = @Id_Empleado", connection);
                 command.Parameters.AddWithValue("@Id_Empleado", empleado.Id_Empleado);
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
@@ -136,6 +138,7 @@ namespace Modelo.Repositories
         {
             using (var connection = _dbContext.GetConnection())
             {
+                connection.Open();
                 var command = new SqlCommand("DELETE FROM Empleado WHERE Id_Empleado = @Id_Empleado", connection);
                 command.Parameters.AddWithValue("@Id_Empleado", id);
                 command.ExecuteNonQuery();

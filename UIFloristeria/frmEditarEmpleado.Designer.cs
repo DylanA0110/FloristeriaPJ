@@ -73,7 +73,7 @@
             btnEditarEpleado.BackColor = Color.White;
             btnEditarEpleado.FlatStyle = FlatStyle.Popup;
             btnEditarEpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarEpleado.Location = new Point(324, 326);
+            btnEditarEpleado.Location = new Point(325, 342);
             btnEditarEpleado.Name = "btnEditarEpleado";
             btnEditarEpleado.Size = new Size(142, 27);
             btnEditarEpleado.TabIndex = 97;
@@ -309,7 +309,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
-            ClientSize = new Size(789, 374);
+            ClientSize = new Size(789, 430);
             Controls.Add(txtCorreo);
             Controls.Add(pictureBox6);
             Controls.Add(label2);
@@ -334,6 +334,7 @@
             Name = "frmEditarEmpleado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEditarEmpleado";
+            Load += frmEditarEmpleado_Load;
             MouseDown += frmEditarEmpleado_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
