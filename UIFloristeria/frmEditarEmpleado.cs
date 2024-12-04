@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +62,20 @@ namespace UIFloristeria
         {
             this.DialogResult = DialogResult.OK; // Indica que se realizó una edición exitosa
             this.Close();
+        }
+
+        private void NoVer_Click(object sender, EventArgs e)
+        {
+            NoVer.Visible = false;
+            Ver.Visible = true;
+            txtPass.UseSystemPasswordChar = false;
+        }
+
+        private void Ver_Click(object sender, EventArgs e)
+        {
+            NoVer.Visible = true;
+            Ver.Visible = false;
+            txtPass.UseSystemPasswordChar = true;
         }
     }
 }

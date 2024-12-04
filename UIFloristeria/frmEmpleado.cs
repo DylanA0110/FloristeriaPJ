@@ -15,7 +15,7 @@ namespace UIFloristeria
     public partial class frmEmpleado : Form
     {
         private readonly EmpleadoController _empleadoController;
-        private int _idEmpleadoEdit;
+
         public frmEmpleado()
         {
             InitializeComponent();

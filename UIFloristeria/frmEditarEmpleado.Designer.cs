@@ -53,6 +53,11 @@
             txtConfirmPass = new TextBox();
             pictureBox8 = new PictureBox();
             txtPass = new TextBox();
+            label3 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            Ver = new PictureBox();
+            NoVer = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -61,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Ver).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NoVer).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -148,7 +155,7 @@
             mtxtTelefono.BorderStyle = BorderStyle.None;
             mtxtTelefono.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mtxtTelefono.ForeColor = Color.White;
-            mtxtTelefono.Location = new Point(349, 213);
+            mtxtTelefono.Location = new Point(413, 213);
             mtxtTelefono.Mask = "0000-0000";
             mtxtTelefono.Name = "mtxtTelefono";
             mtxtTelefono.Size = new Size(78, 20);
@@ -160,7 +167,7 @@
             label4.BackColor = Color.FromArgb(222, 151, 54);
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(349, 177);
+            label4.Location = new Point(413, 177);
             label4.Name = "label4";
             label4.Size = new Size(78, 19);
             label4.TabIndex = 96;
@@ -176,7 +183,6 @@
             txtPrimerNombre.Name = "txtPrimerNombre";
             txtPrimerNombre.Size = new Size(186, 20);
             txtPrimerNombre.TabIndex = 98;
-            txtPrimerNombre.Text = "Primer Nombre";
             // 
             // txtSegundoNombre
             // 
@@ -188,7 +194,6 @@
             txtSegundoNombre.Name = "txtSegundoNombre";
             txtSegundoNombre.Size = new Size(186, 20);
             txtSegundoNombre.TabIndex = 101;
-            txtSegundoNombre.Text = "Segundo Nombre";
             // 
             // pictureBox3
             // 
@@ -211,7 +216,6 @@
             txtPrimerApellido.Name = "txtPrimerApellido";
             txtPrimerApellido.Size = new Size(186, 20);
             txtPrimerApellido.TabIndex = 103;
-            txtPrimerApellido.Text = "Primer Apellido";
             // 
             // pictureBox4
             // 
@@ -234,7 +238,6 @@
             txtSegundoApellido.Name = "txtSegundoApellido";
             txtSegundoApellido.Size = new Size(186, 20);
             txtSegundoApellido.TabIndex = 105;
-            txtSegundoApellido.Text = "Segundo Apellido";
             // 
             // pictureBox5
             // 
@@ -297,7 +300,6 @@
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(186, 20);
             txtCorreo.TabIndex = 110;
-            txtCorreo.Text = "Correo ";
             // 
             // pictureBox6
             // 
@@ -312,9 +314,9 @@
             // 
             // pictureBox9
             // 
-            pictureBox9.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox9.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox9.Image = Properties.Resources.Loading;
-            pictureBox9.Location = new Point(413, 309);
+            pictureBox9.Location = new Point(458, 309);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(186, 22);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -323,11 +325,11 @@
             // 
             // txtConfirmPass
             // 
-            txtConfirmPass.BackColor = Color.FromArgb(24, 64, 57);
+            txtConfirmPass.BackColor = Color.FromArgb(222, 151, 54);
             txtConfirmPass.BorderStyle = BorderStyle.None;
             txtConfirmPass.Font = new Font("Century Gothic", 12F);
             txtConfirmPass.ForeColor = Color.White;
-            txtConfirmPass.Location = new Point(413, 283);
+            txtConfirmPass.Location = new Point(458, 283);
             txtConfirmPass.Name = "txtConfirmPass";
             txtConfirmPass.Size = new Size(186, 20);
             txtConfirmPass.TabIndex = 113;
@@ -335,7 +337,7 @@
             // 
             // pictureBox8
             // 
-            pictureBox8.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox8.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox8.Image = Properties.Resources.Loading;
             pictureBox8.Location = new Point(209, 309);
             pictureBox8.Name = "pictureBox8";
@@ -346,7 +348,7 @@
             // 
             // txtPass
             // 
-            txtPass.BackColor = Color.FromArgb(24, 64, 57);
+            txtPass.BackColor = Color.FromArgb(222, 151, 54);
             txtPass.BorderStyle = BorderStyle.None;
             txtPass.Font = new Font("Century Gothic", 12F);
             txtPass.ForeColor = Color.White;
@@ -354,7 +356,67 @@
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(186, 20);
             txtPass.TabIndex = 111;
-            txtPass.Text = "Contraseña";
+            txtPass.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(222, 151, 54);
+            label3.Font = new Font("Century Gothic", 12F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(272, 175);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 21);
+            label3.TabIndex = 117;
+            label3.Text = "Sexo:";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.BackColor = Color.FromArgb(222, 151, 54);
+            radioButton1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton1.ForeColor = Color.White;
+            radioButton1.Location = new Point(253, 226);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(60, 21);
+            radioButton1.TabIndex = 116;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Mujer";
+            radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.BackColor = Color.FromArgb(222, 151, 54);
+            radioButton2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton2.ForeColor = Color.White;
+            radioButton2.Location = new Point(253, 207);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(78, 21);
+            radioButton2.TabIndex = 115;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Hombre";
+            radioButton2.UseVisualStyleBackColor = false;
+            // 
+            // Ver
+            // 
+            Ver.Image = (Image)resources.GetObject("Ver.Image");
+            Ver.Location = new Point(401, 309);
+            Ver.Name = "Ver";
+            Ver.Size = new Size(25, 22);
+            Ver.TabIndex = 118;
+            Ver.TabStop = false;
+            Ver.Click += Ver_Click;
+            // 
+            // NoVer
+            // 
+            NoVer.Image = (Image)resources.GetObject("NoVer.Image");
+            NoVer.Location = new Point(401, 309);
+            NoVer.Name = "NoVer";
+            NoVer.Size = new Size(25, 22);
+            NoVer.TabIndex = 119;
+            NoVer.TabStop = false;
+            NoVer.Click += NoVer_Click;
             // 
             // frmEditarEmpleado
             // 
@@ -362,6 +424,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(789, 430);
+            Controls.Add(NoVer);
+            Controls.Add(Ver);
+            Controls.Add(label3);
+            Controls.Add(radioButton1);
+            Controls.Add(radioButton2);
             Controls.Add(pictureBox9);
             Controls.Add(txtConfirmPass);
             Controls.Add(pictureBox8);
@@ -400,6 +467,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Ver).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NoVer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -430,5 +499,10 @@
         private TextBox txtConfirmPass;
         private PictureBox pictureBox8;
         private TextBox txtPass;
+        private Label label3;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private PictureBox Ver;
+        private PictureBox NoVer;
     }
 }

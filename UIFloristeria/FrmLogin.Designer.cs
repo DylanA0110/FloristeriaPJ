@@ -38,10 +38,14 @@
             pictureBox6 = new PictureBox();
             btnClose = new Button();
             btnMin = new Button();
+            Ver = new PictureBox();
+            NoVer = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Ver).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NoVer).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -161,12 +165,36 @@
             btnMin.UseVisualStyleBackColor = false;
             btnMin.Click += btnMin_Click;
             // 
+            // Ver
+            // 
+            Ver.BackColor = Color.FromArgb(32, 76, 68);
+            Ver.Image = (Image)resources.GetObject("Ver.Image");
+            Ver.Location = new Point(697, 265);
+            Ver.Name = "Ver";
+            Ver.Size = new Size(25, 22);
+            Ver.TabIndex = 120;
+            Ver.TabStop = false;
+            Ver.Click += Ver_Click;
+            // 
+            // NoVer
+            // 
+            NoVer.BackColor = Color.FromArgb(32, 76, 68);
+            NoVer.Image = (Image)resources.GetObject("NoVer.Image");
+            NoVer.Location = new Point(697, 265);
+            NoVer.Name = "NoVer";
+            NoVer.Size = new Size(25, 22);
+            NoVer.TabIndex = 121;
+            NoVer.TabStop = false;
+            NoVer.Click += NoVer_Click;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.LOGIN_2;
             ClientSize = new Size(800, 450);
+            Controls.Add(NoVer);
+            Controls.Add(Ver);
             Controls.Add(btnMin);
             Controls.Add(btnClose);
             Controls.Add(pictureBox6);
@@ -188,6 +216,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Ver).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NoVer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,5 +233,7 @@
         private PictureBox pictureBox6;
         private Button btnClose;
         private Button btnMin;
+        private PictureBox Ver;
+        private PictureBox NoVer;
     }
 }

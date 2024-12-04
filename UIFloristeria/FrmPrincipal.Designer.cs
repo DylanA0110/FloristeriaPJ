@@ -279,7 +279,7 @@
             // 
             // btnCerrarSession
             // 
-            btnCerrarSession.Anchor = AnchorStyles.Bottom;
+            btnCerrarSession.Anchor = AnchorStyles.None;
             btnCerrarSession.BackColor = Color.FromArgb(28, 75, 68);
             btnCerrarSession.FlatAppearance.BorderColor = Color.Black;
             btnCerrarSession.FlatAppearance.BorderSize = 0;

@@ -92,10 +92,24 @@ namespace UIFloristeria
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
             FrmPrincipal frmPrincipal = new FrmPrincipal();
             frmPrincipal.Show();
             this.Hide();
+        }
+
+        private void Ver_Click(object sender, EventArgs e)
+        {
+            NoVer.Visible = true;
+            Ver.Visible = false;
+            txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void NoVer_Click(object sender, EventArgs e)
+        {
+            NoVer.Visible = false;
+            Ver.Visible = true;
+            txtPassword.UseSystemPasswordChar = false;
         }
     }
 
