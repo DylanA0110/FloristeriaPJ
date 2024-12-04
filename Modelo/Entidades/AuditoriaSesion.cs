@@ -17,7 +17,7 @@ namespace Modelo.Dto
 
         [Required(ErrorMessage = "La acción es requerida.")]
         [StringLength(50, ErrorMessage = "La acción debe tener un máximo de 50 caracteres.")]
-        public string Accion { get; set; }
+        public string ?Accion { get; set; }
 
         [Required(ErrorMessage = "La fecha de la acción es requerida.")]
         public DateTime FechaAccion { get; set; }

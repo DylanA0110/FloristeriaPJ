@@ -14,6 +14,6 @@ namespace Modelo.Dto
 
         [Required(ErrorMessage = "El tipo de pago es requerido.")]
         [StringLength(100, ErrorMessage = "El tipo de pago debe tener un máximo de 100 caracteres.")]
-        public string Tipo { get; set; }
+        public string ?Tipo { get; set; }
     }
 }

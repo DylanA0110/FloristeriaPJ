@@ -40,7 +40,7 @@
             btnAgregarEmp = new Button();
             txtBusqueda = new TextBox();
             label2 = new Label();
-              ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
             // 
@@ -86,7 +86,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
             dgvEmpleados.EnableHeadersVisualStyles = false;
-            dgvEmpleados.Location = new Point(225, 209);
+            dgvEmpleados.Location = new Point(225, 214);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
             dgvEmpleados.RowHeadersVisible = false;
@@ -177,9 +177,6 @@
             label2.Size = new Size(91, 19);
             label2.TabIndex = 78;
             label2.Text = "Busqueda:";
-            // 
-            // sqlCommand1
-            // 
             // 
             // frmEmpleado
             // 

@@ -14,6 +14,6 @@ namespace Modelo.Dto
 
         [Required(ErrorMessage = "El nombre de la ocasión es requerido.")]
         [StringLength(15, MinimumLength = 2, ErrorMessage = "El nombre de la ocasión debe tener entre 2 y 15 caracteres.")]
-        public string Nombre_Ocasion { get; set; }
+        public string ?Nombre_Ocasion { get; set; }
     }
 }
