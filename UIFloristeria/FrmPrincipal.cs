@@ -160,7 +160,8 @@ namespace UIFloristeria
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-
+            FrmPedido frmPedido = new FrmPedido();
+            AbrirFormularioEnPanel(frmPedido);
         }
 
         private void btnArreglos_Click(object sender, EventArgs e)

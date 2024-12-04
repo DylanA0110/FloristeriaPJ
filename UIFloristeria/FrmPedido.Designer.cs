@@ -34,7 +34,7 @@
             pictureBox4 = new PictureBox();
             TxtSolicitadoPor = new TextBox();
             pictureBox3 = new PictureBox();
-            this.TxtEnviarseA = new TextBox();
+            TxtEnviarseA = new TextBox();
             pictureBox2 = new PictureBox();
             label3 = new Label();
             dtpFechaNac = new DateTimePicker();
@@ -42,12 +42,15 @@
             dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
             BtnAgregarRemision = new Button();
-            pictureBox6 = new PictureBox();
+            TxtPrecio = new TextBox();
+            pictureBox1 = new PictureBox();
+            BtnPreliminar = new Button();
+            BtnImprimir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // TxtCantidad
@@ -121,15 +124,15 @@
             // 
             // TxtEnviarseA
             // 
-            this.TxtEnviarseA.BackColor = Color.FromArgb(22, 58, 55);
-            this.TxtEnviarseA.BorderStyle = BorderStyle.None;
-            this.TxtEnviarseA.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.TxtEnviarseA.ForeColor = Color.White;
-            this.TxtEnviarseA.Location = new Point(45, 169);
-            this.TxtEnviarseA.Name = "TxtEnviarseA";
-            this.TxtEnviarseA.Size = new Size(186, 20);
-            this.TxtEnviarseA.TabIndex = 107;
-            this.TxtEnviarseA.Text = "Enviarse a ";
+            TxtEnviarseA.BackColor = Color.FromArgb(22, 58, 55);
+            TxtEnviarseA.BorderStyle = BorderStyle.None;
+            TxtEnviarseA.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TxtEnviarseA.ForeColor = Color.White;
+            TxtEnviarseA.Location = new Point(45, 169);
+            TxtEnviarseA.Name = "TxtEnviarseA";
+            TxtEnviarseA.Size = new Size(186, 20);
+            TxtEnviarseA.TabIndex = 107;
+            TxtEnviarseA.Text = "Enviarse a ";
             // 
             // pictureBox2
             // 
@@ -148,7 +151,7 @@
             label3.BackColor = Color.FromArgb(24, 64, 57);
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(44, 262);
+            label3.Location = new Point(255, 260);
             label3.Name = "label3";
             label3.Size = new Size(154, 19);
             label3.TabIndex = 115;
@@ -160,7 +163,7 @@
             dtpFechaNac.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dtpFechaNac.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
             dtpFechaNac.Format = DateTimePickerFormat.Short;
-            dtpFechaNac.Location = new Point(44, 298);
+            dtpFechaNac.Location = new Point(255, 296);
             dtpFechaNac.Name = "dtpFechaNac";
             dtpFechaNac.Size = new Size(121, 23);
             dtpFechaNac.TabIndex = 114;
@@ -171,7 +174,7 @@
             label1.BackColor = Color.FromArgb(24, 64, 57);
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(215, 262);
+            label1.Location = new Point(426, 260);
             label1.Name = "label1";
             label1.Size = new Size(150, 19);
             label1.TabIndex = 117;
@@ -183,7 +186,7 @@
             dateTimePicker1.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dateTimePicker1.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(215, 298);
+            dateTimePicker1.Location = new Point(426, 296);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(121, 23);
             dateTimePicker1.TabIndex = 116;
@@ -205,22 +208,59 @@
             BtnAgregarRemision.BackColor = Color.White;
             BtnAgregarRemision.FlatStyle = FlatStyle.Popup;
             BtnAgregarRemision.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnAgregarRemision.Location = new Point(341, 421);
+            BtnAgregarRemision.Location = new Point(124, 419);
             BtnAgregarRemision.Name = "BtnAgregarRemision";
             BtnAgregarRemision.Size = new Size(194, 27);
             BtnAgregarRemision.TabIndex = 120;
             BtnAgregarRemision.Text = "Agregar Pedido ";
             BtnAgregarRemision.UseVisualStyleBackColor = false;
             // 
-            // pictureBox6
+            // TxtPrecio
             // 
-            pictureBox6.Image = Properties.Resources.Subtract;
-            pictureBox6.Location = new Point(-53, 373);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(243, 243);
-            pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox6.TabIndex = 123;
-            pictureBox6.TabStop = false;
+            TxtPrecio.BackColor = Color.FromArgb(22, 58, 55);
+            TxtPrecio.BorderStyle = BorderStyle.None;
+            TxtPrecio.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TxtPrecio.ForeColor = Color.White;
+            TxtPrecio.Location = new Point(45, 271);
+            TxtPrecio.Name = "TxtPrecio";
+            TxtPrecio.Size = new Size(186, 20);
+            TxtPrecio.TabIndex = 125;
+            TxtPrecio.Text = "Precio";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(22, 58, 55);
+            pictureBox1.Image = Properties.Resources.Loading;
+            pictureBox1.Location = new Point(45, 297);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(186, 22);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 124;
+            pictureBox1.TabStop = false;
+            // 
+            // BtnPreliminar
+            // 
+            BtnPreliminar.BackColor = Color.White;
+            BtnPreliminar.FlatStyle = FlatStyle.Popup;
+            BtnPreliminar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnPreliminar.Location = new Point(335, 419);
+            BtnPreliminar.Name = "BtnPreliminar";
+            BtnPreliminar.Size = new Size(194, 27);
+            BtnPreliminar.TabIndex = 126;
+            BtnPreliminar.Text = "Preliminar";
+            BtnPreliminar.UseVisualStyleBackColor = false;
+            // 
+            // BtnImprimir
+            // 
+            BtnImprimir.BackColor = Color.White;
+            BtnImprimir.FlatStyle = FlatStyle.Popup;
+            BtnImprimir.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnImprimir.Location = new Point(548, 419);
+            BtnImprimir.Name = "BtnImprimir";
+            BtnImprimir.Size = new Size(194, 27);
+            BtnImprimir.TabIndex = 127;
+            BtnImprimir.Text = "Imprimir";
+            BtnImprimir.UseVisualStyleBackColor = false;
             // 
             // FrmPedido
             // 
@@ -228,7 +268,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(884, 493);
-            Controls.Add(pictureBox6);
+            Controls.Add(BtnImprimir);
+            Controls.Add(BtnPreliminar);
+            Controls.Add(TxtPrecio);
+            Controls.Add(pictureBox1);
             Controls.Add(BtnAgregarRemision);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -241,18 +284,18 @@
             Controls.Add(pictureBox4);
             Controls.Add(TxtSolicitadoPor);
             Controls.Add(pictureBox3);
-            Controls.Add(this.TxtEnviarseA);
+            Controls.Add(TxtEnviarseA);
             Controls.Add(pictureBox2);
             ForeColor = Color.FromArgb(22, 58, 55);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPedido";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "V";
+            Text = "x";
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,6 +308,7 @@
         private PictureBox pictureBox4;
         private TextBox TxtSolicitadoPor;
         private PictureBox pictureBox3;
+        private TextBox TxtEnviarseA;
         private TextBox txtPrimerNombre;
         private PictureBox pictureBox2;
         private Label label3;
@@ -272,8 +316,10 @@
         private Label label1;
         private DateTimePicker dateTimePicker1;
         private Label label2;
-        private Button button1;
+        private Button BtnPreliminar;
         private Button BtnAgregarRemision;
-        private PictureBox pictureBox6;
+        private TextBox TxtPrecio;
+        private PictureBox pictureBox1;
+        private Button BtnImprimir;
     }
 }
