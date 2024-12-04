@@ -40,8 +40,7 @@
             btnAgregarEmp = new Button();
             txtBusqueda = new TextBox();
             label2 = new Label();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+              ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
             // 
@@ -181,8 +180,6 @@
             // 
             // sqlCommand1
             // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
             // frmEmpleado
             // 
@@ -217,6 +214,5 @@
         private Button btnAgregarEmp;
         private TextBox txtBusqueda;
         private Label label2;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

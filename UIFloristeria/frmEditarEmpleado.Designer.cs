@@ -49,12 +49,18 @@
             rbHombre = new RadioButton();
             txtCorreo = new TextBox();
             pictureBox6 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            txtConfirmPass = new TextBox();
+            pictureBox8 = new PictureBox();
+            txtPass = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -304,12 +310,62 @@
             pictureBox6.TabIndex = 109;
             pictureBox6.TabStop = false;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox9.Image = Properties.Resources.Loading;
+            pictureBox9.Location = new Point(413, 297);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(186, 22);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 114;
+            pictureBox9.TabStop = false;
+            // 
+            // txtConfirmPass
+            // 
+            txtConfirmPass.BackColor = Color.FromArgb(24, 64, 57);
+            txtConfirmPass.BorderStyle = BorderStyle.None;
+            txtConfirmPass.Font = new Font("Century Gothic", 12F);
+            txtConfirmPass.ForeColor = Color.White;
+            txtConfirmPass.Location = new Point(413, 271);
+            txtConfirmPass.Name = "txtConfirmPass";
+            txtConfirmPass.Size = new Size(186, 20);
+            txtConfirmPass.TabIndex = 113;
+            txtConfirmPass.Text = "Confirmar Contraseña";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox8.Image = Properties.Resources.Loading;
+            pictureBox8.Location = new Point(209, 297);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(186, 22);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 112;
+            pictureBox8.TabStop = false;
+            // 
+            // txtPass
+            // 
+            txtPass.BackColor = Color.FromArgb(24, 64, 57);
+            txtPass.BorderStyle = BorderStyle.None;
+            txtPass.Font = new Font("Century Gothic", 12F);
+            txtPass.ForeColor = Color.White;
+            txtPass.Location = new Point(209, 271);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(186, 20);
+            txtPass.TabIndex = 111;
+            txtPass.Text = "Contraseña";
+            // 
             // frmEditarEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(789, 430);
+            Controls.Add(pictureBox9);
+            Controls.Add(txtConfirmPass);
+            Controls.Add(pictureBox8);
+            Controls.Add(txtPass);
             Controls.Add(txtCorreo);
             Controls.Add(pictureBox6);
             Controls.Add(label2);
@@ -342,6 +398,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -368,5 +426,9 @@
         private RadioButton rbHombre;
         private TextBox txtCorreo;
         private PictureBox pictureBox6;
+        private PictureBox pictureBox9;
+        private TextBox txtConfirmPass;
+        private PictureBox pictureBox8;
+        private TextBox txtPass;
     }
 }
