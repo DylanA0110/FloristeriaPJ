@@ -68,5 +68,31 @@ namespace UIFloristeria
             FrmRegister register = new FrmRegister();
             register.ShowDialog();
         }
+
+        private void txtBusqueda_Enter(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == "Busqueda")
+            {
+                txtBusqueda.Text = "";
+            }
+        }
+
+        private void txtBusqueda_Leave(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == "")
+            {
+                txtBusqueda.Text = "Busqueda";
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

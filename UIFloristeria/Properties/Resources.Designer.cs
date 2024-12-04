@@ -283,6 +283,16 @@ namespace UIFloristeria.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search2 {
+            get {
+                object obj = ResourceManager.GetObject("Search2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Services {
             get {
                 object obj = ResourceManager.GetObject("Services", resourceCulture);

@@ -118,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Component 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Component 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Services" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Services.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,9 +138,6 @@
   </data>
   <data name="Rectangle 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Component 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Component 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rectangle 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,6 +160,9 @@
   <data name="menos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Dashboard Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Loading.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,19 +181,19 @@
   <data name="Add Shopping Cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add Shopping Cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login (Community) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login (Community) (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dashboard Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LOGIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LOGIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

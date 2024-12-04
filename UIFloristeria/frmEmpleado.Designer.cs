@@ -38,11 +38,10 @@
             label1 = new Label();
             btnAuditoria = new Button();
             btnAgregarEmp = new Button();
-            dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
-            pictureBox2 = new PictureBox();
+            txtBusqueda = new ReaLTaiizor.Controls.DungeonTextBox();
+            btnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -53,7 +52,7 @@
             pictureBox1.Location = new Point(382, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(53, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 70;
             pictureBox1.TabStop = false;
             // 
@@ -122,6 +121,7 @@
             label1.Size = new Size(172, 36);
             label1.TabIndex = 67;
             label1.Text = "Empleados";
+            label1.Click += label1_Click;
             // 
             // btnAuditoria
             // 
@@ -155,35 +155,39 @@
             btnAgregarEmp.UseVisualStyleBackColor = false;
             btnAgregarEmp.Click += btnAgregarEmp_Click;
             // 
-            // dungeonTextBox1
+            // txtBusqueda
             // 
-            dungeonTextBox1.Anchor = AnchorStyles.Top;
-            dungeonTextBox1.BackColor = Color.Transparent;
-            dungeonTextBox1.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox1.EdgeColor = Color.White;
-            dungeonTextBox1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dungeonTextBox1.ForeColor = Color.DimGray;
-            dungeonTextBox1.Location = new Point(467, 141);
-            dungeonTextBox1.MaxLength = 32767;
-            dungeonTextBox1.Multiline = false;
-            dungeonTextBox1.Name = "dungeonTextBox1";
-            dungeonTextBox1.ReadOnly = false;
-            dungeonTextBox1.Size = new Size(224, 29);
-            dungeonTextBox1.TabIndex = 74;
-            dungeonTextBox1.Text = "Busqueda";
-            dungeonTextBox1.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox1.UseSystemPasswordChar = false;
+            txtBusqueda.Anchor = AnchorStyles.Top;
+            txtBusqueda.BackColor = Color.Transparent;
+            txtBusqueda.BorderColor = Color.FromArgb(180, 180, 180);
+            txtBusqueda.EdgeColor = Color.White;
+            txtBusqueda.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBusqueda.ForeColor = Color.DimGray;
+            txtBusqueda.Location = new Point(467, 141);
+            txtBusqueda.MaxLength = 32767;
+            txtBusqueda.Multiline = false;
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.ReadOnly = false;
+            txtBusqueda.Size = new Size(224, 29);
+            txtBusqueda.TabIndex = 74;
+            txtBusqueda.Text = "Busqueda";
+            txtBusqueda.TextAlignment = HorizontalAlignment.Left;
+            txtBusqueda.UseSystemPasswordChar = false;
+            txtBusqueda.Enter += txtBusqueda_Enter;
+            txtBusqueda.Leave += txtBusqueda_Leave;
             // 
-            // pictureBox2
+            // btnBuscar
             // 
-            pictureBox2.Anchor = AnchorStyles.Top;
-            pictureBox2.BackColor = Color.FromArgb(22, 58, 55);
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(697, 141);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(42, 28);
-            pictureBox2.TabIndex = 75;
-            pictureBox2.TabStop = false;
+            btnBuscar.Anchor = AnchorStyles.Top;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Image = Properties.Resources.Search2;
+            btnBuscar.Location = new Point(697, 141);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 76;
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // frmEmpleado
             // 
@@ -191,8 +195,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
-            Controls.Add(pictureBox2);
-            Controls.Add(dungeonTextBox1);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtBusqueda);
             Controls.Add(btnAgregarEmp);
             Controls.Add(btnAuditoria);
             Controls.Add(pictureBox1);
@@ -205,7 +209,6 @@
             Load += frmEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -217,7 +220,7 @@
         private Label label1;
         private Button btnAuditoria;
         private Button btnAgregarEmp;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
-        private PictureBox pictureBox2;
+        private ReaLTaiizor.Controls.DungeonTextBox txtBusqueda;
+        private Button btnBuscar;
     }
 }
