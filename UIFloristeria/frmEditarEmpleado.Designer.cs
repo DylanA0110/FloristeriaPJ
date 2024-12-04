@@ -49,12 +49,18 @@
             rbHombre = new RadioButton();
             txtCorreo = new TextBox();
             pictureBox6 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            txtConfirmPass = new TextBox();
+            pictureBox8 = new PictureBox();
+            txtPass = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -73,7 +79,7 @@
             btnEditarEpleado.BackColor = Color.White;
             btnEditarEpleado.FlatStyle = FlatStyle.Popup;
             btnEditarEpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarEpleado.Location = new Point(324, 326);
+            btnEditarEpleado.Location = new Point(326, 366);
             btnEditarEpleado.Name = "btnEditarEpleado";
             btnEditarEpleado.Size = new Size(142, 27);
             btnEditarEpleado.TabIndex = 97;
@@ -142,7 +148,7 @@
             mtxtTelefono.BorderStyle = BorderStyle.None;
             mtxtTelefono.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             mtxtTelefono.ForeColor = Color.White;
-            mtxtTelefono.Location = new Point(253, 213);
+            mtxtTelefono.Location = new Point(349, 213);
             mtxtTelefono.Mask = "0000-0000";
             mtxtTelefono.Name = "mtxtTelefono";
             mtxtTelefono.Size = new Size(78, 20);
@@ -154,7 +160,7 @@
             label4.BackColor = Color.FromArgb(222, 151, 54);
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(253, 177);
+            label4.Location = new Point(349, 177);
             label4.Name = "label4";
             label4.Size = new Size(78, 19);
             label4.TabIndex = 96;
@@ -247,7 +253,7 @@
             label2.BackColor = Color.FromArgb(222, 151, 54);
             label2.Font = new Font("Century Gothic", 12F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(35, 177);
+            label2.Location = new Point(63, 177);
             label2.Name = "label2";
             label2.Size = new Size(115, 21);
             label2.TabIndex = 108;
@@ -259,7 +265,7 @@
             rbMujer.BackColor = Color.FromArgb(222, 151, 54);
             rbMujer.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbMujer.ForeColor = Color.White;
-            rbMujer.Location = new Point(35, 226);
+            rbMujer.Location = new Point(63, 226);
             rbMujer.Name = "rbMujer";
             rbMujer.Size = new Size(45, 21);
             rbMujer.TabIndex = 107;
@@ -273,7 +279,7 @@
             rbHombre.BackColor = Color.FromArgb(222, 151, 54);
             rbHombre.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbHombre.ForeColor = Color.White;
-            rbHombre.Location = new Point(35, 201);
+            rbHombre.Location = new Point(63, 201);
             rbHombre.Name = "rbHombre";
             rbHombre.Size = new Size(35, 21);
             rbHombre.TabIndex = 106;
@@ -287,7 +293,7 @@
             txtCorreo.BorderStyle = BorderStyle.None;
             txtCorreo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtCorreo.ForeColor = Color.White;
-            txtCorreo.Location = new Point(401, 189);
+            txtCorreo.Location = new Point(552, 187);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(186, 20);
             txtCorreo.TabIndex = 110;
@@ -297,19 +303,69 @@
             // 
             pictureBox6.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox6.Image = Properties.Resources.Loading;
-            pictureBox6.Location = new Point(401, 215);
+            pictureBox6.Location = new Point(552, 213);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(186, 22);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 109;
             pictureBox6.TabStop = false;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox9.Image = Properties.Resources.Loading;
+            pictureBox9.Location = new Point(413, 309);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(186, 22);
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox9.TabIndex = 114;
+            pictureBox9.TabStop = false;
+            // 
+            // txtConfirmPass
+            // 
+            txtConfirmPass.BackColor = Color.FromArgb(24, 64, 57);
+            txtConfirmPass.BorderStyle = BorderStyle.None;
+            txtConfirmPass.Font = new Font("Century Gothic", 12F);
+            txtConfirmPass.ForeColor = Color.White;
+            txtConfirmPass.Location = new Point(413, 283);
+            txtConfirmPass.Name = "txtConfirmPass";
+            txtConfirmPass.Size = new Size(186, 20);
+            txtConfirmPass.TabIndex = 113;
+            txtConfirmPass.Text = "Confirmar Contraseña";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.FromArgb(24, 64, 57);
+            pictureBox8.Image = Properties.Resources.Loading;
+            pictureBox8.Location = new Point(209, 309);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(186, 22);
+            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox8.TabIndex = 112;
+            pictureBox8.TabStop = false;
+            // 
+            // txtPass
+            // 
+            txtPass.BackColor = Color.FromArgb(24, 64, 57);
+            txtPass.BorderStyle = BorderStyle.None;
+            txtPass.Font = new Font("Century Gothic", 12F);
+            txtPass.ForeColor = Color.White;
+            txtPass.Location = new Point(209, 283);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(186, 20);
+            txtPass.TabIndex = 111;
+            txtPass.Text = "Contraseña";
+            // 
             // frmEditarEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
-            ClientSize = new Size(789, 374);
+            ClientSize = new Size(789, 430);
+            Controls.Add(pictureBox9);
+            Controls.Add(txtConfirmPass);
+            Controls.Add(pictureBox8);
+            Controls.Add(txtPass);
             Controls.Add(txtCorreo);
             Controls.Add(pictureBox6);
             Controls.Add(label2);
@@ -334,6 +390,7 @@
             Name = "frmEditarEmpleado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEditarEmpleado";
+            Load += frmEditarEmpleado_Load;
             MouseDown += frmEditarEmpleado_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -341,6 +398,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -367,5 +426,9 @@
         private RadioButton rbHombre;
         private TextBox txtCorreo;
         private PictureBox pictureBox6;
+        private PictureBox pictureBox9;
+        private TextBox txtConfirmPass;
+        private PictureBox pictureBox8;
+        private TextBox txtPass;
     }
 }

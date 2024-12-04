@@ -33,16 +33,15 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
-            dataGridView1 = new DataGridView();
+            dgvEmpleados = new DataGridView();
             btnEditarEmpleado = new Button();
             label1 = new Label();
             btnAuditoria = new Button();
             btnAgregarEmp = new Button();
-            dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
-            pictureBox2 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            txtBusqueda = new TextBox();
+            label2 = new Label();
+              ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -53,22 +52,22 @@
             pictureBox1.Location = new Point(382, 23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(53, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 70;
             pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvEmpleados
             // 
             dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvEmpleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvEmpleados.BackgroundColor = Color.White;
+            dgvEmpleados.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -76,8 +75,8 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeight = 45;
+            dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvEmpleados.ColumnHeadersHeight = 45;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
@@ -85,14 +84,15 @@
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(225, 209);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowTemplate.Height = 40;
-            dataGridView1.Size = new Size(485, 193);
-            dataGridView1.TabIndex = 69;
+            dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvEmpleados.EnableHeadersVisualStyles = false;
+            dgvEmpleados.Location = new Point(225, 209);
+            dgvEmpleados.Name = "dgvEmpleados";
+            dgvEmpleados.ReadOnly = true;
+            dgvEmpleados.RowHeadersVisible = false;
+            dgvEmpleados.RowTemplate.Height = 40;
+            dgvEmpleados.Size = new Size(485, 193);
+            dgvEmpleados.TabIndex = 69;
             // 
             // btnEditarEmpleado
             // 
@@ -122,6 +122,7 @@
             label1.Size = new Size(172, 36);
             label1.TabIndex = 67;
             label1.Text = "Empleados";
+            label1.Click += label1_Click;
             // 
             // btnAuditoria
             // 
@@ -155,35 +156,30 @@
             btnAgregarEmp.UseVisualStyleBackColor = false;
             btnAgregarEmp.Click += btnAgregarEmp_Click;
             // 
-            // dungeonTextBox1
+            // txtBusqueda
             // 
-            dungeonTextBox1.Anchor = AnchorStyles.Top;
-            dungeonTextBox1.BackColor = Color.Transparent;
-            dungeonTextBox1.BorderColor = Color.FromArgb(180, 180, 180);
-            dungeonTextBox1.EdgeColor = Color.White;
-            dungeonTextBox1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dungeonTextBox1.ForeColor = Color.DimGray;
-            dungeonTextBox1.Location = new Point(467, 141);
-            dungeonTextBox1.MaxLength = 32767;
-            dungeonTextBox1.Multiline = false;
-            dungeonTextBox1.Name = "dungeonTextBox1";
-            dungeonTextBox1.ReadOnly = false;
-            dungeonTextBox1.Size = new Size(224, 29);
-            dungeonTextBox1.TabIndex = 74;
-            dungeonTextBox1.Text = "Busqueda";
-            dungeonTextBox1.TextAlignment = HorizontalAlignment.Left;
-            dungeonTextBox1.UseSystemPasswordChar = false;
+            txtBusqueda.Anchor = AnchorStyles.Top;
+            txtBusqueda.Location = new Point(549, 152);
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.Size = new Size(161, 23);
+            txtBusqueda.TabIndex = 77;
+            txtBusqueda.TextChanged += txtBusqueda_TextChanged;
             // 
-            // pictureBox2
+            // label2
             // 
-            pictureBox2.Anchor = AnchorStyles.Top;
-            pictureBox2.BackColor = Color.FromArgb(22, 58, 55);
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(697, 141);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(42, 28);
-            pictureBox2.TabIndex = 75;
-            pictureBox2.TabStop = false;
+            label2.Anchor = AnchorStyles.Top;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(222, 151, 54);
+            label2.Location = new Point(549, 130);
+            label2.Name = "label2";
+            label2.Size = new Size(91, 19);
+            label2.TabIndex = 78;
+            label2.Text = "Busqueda:";
+            // 
+            // sqlCommand1
+            // 
             // 
             // frmEmpleado
             // 
@@ -191,12 +187,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
-            Controls.Add(pictureBox2);
-            Controls.Add(dungeonTextBox1);
+            Controls.Add(label2);
+            Controls.Add(txtBusqueda);
             Controls.Add(btnAgregarEmp);
             Controls.Add(btnAuditoria);
             Controls.Add(pictureBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvEmpleados);
             Controls.Add(btnEditarEmpleado);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -204,20 +200,19 @@
             Text = "frmEmpleado";
             Load += frmEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private PictureBox pictureBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvEmpleados;
         private Button btnEditarEmpleado;
         private Label label1;
         private Button btnAuditoria;
         private Button btnAgregarEmp;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
-        private PictureBox pictureBox2;
+        private TextBox txtBusqueda;
+        private Label label2;
     }
 }

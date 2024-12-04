@@ -49,5 +49,10 @@ namespace UIFloristeria
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void frmEditarEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
