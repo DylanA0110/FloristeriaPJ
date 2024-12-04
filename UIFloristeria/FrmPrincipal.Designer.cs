@@ -272,6 +272,7 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top;
             panel2.Location = new Point(3, 212);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 222);
