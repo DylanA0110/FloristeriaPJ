@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarEmpleado));
             pictureBox1 = new PictureBox();
-            btnEditarEpleado = new Button();
+            btnEditarEmpleado = new Button();
             label1 = new Label();
             btnMin = new Button();
             btnClose = new Button();
@@ -74,18 +74,18 @@
             pictureBox1.TabIndex = 99;
             pictureBox1.TabStop = false;
             // 
-            // btnEditarEpleado
+            // btnEditarEmpleado
             // 
-            btnEditarEpleado.BackColor = Color.White;
-            btnEditarEpleado.FlatStyle = FlatStyle.Popup;
-            btnEditarEpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarEpleado.Location = new Point(326, 366);
-            btnEditarEpleado.Name = "btnEditarEpleado";
-            btnEditarEpleado.Size = new Size(142, 27);
-            btnEditarEpleado.TabIndex = 97;
-            btnEditarEpleado.Text = "Editar";
-            btnEditarEpleado.UseVisualStyleBackColor = false;
-            btnEditarEpleado.Click += btnEditarEpleado_Click;
+            btnEditarEmpleado.BackColor = Color.White;
+            btnEditarEmpleado.FlatStyle = FlatStyle.Popup;
+            btnEditarEmpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditarEmpleado.Location = new Point(326, 366);
+            btnEditarEmpleado.Name = "btnEditarEmpleado";
+            btnEditarEmpleado.Size = new Size(142, 27);
+            btnEditarEmpleado.TabIndex = 97;
+            btnEditarEmpleado.Text = "Editar";
+            btnEditarEmpleado.UseVisualStyleBackColor = false;
+            btnEditarEmpleado.Click += btnEditarEmpleado_Click;
             // 
             // label1
             // 
@@ -379,7 +379,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
             Controls.Add(txtPrimerNombre);
-            Controls.Add(btnEditarEpleado);
+            Controls.Add(btnEditarEmpleado);
             Controls.Add(label4);
             Controls.Add(mtxtTelefono);
             Controls.Add(pictureBox2);
@@ -407,7 +407,7 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button btnEditarEpleado;
+        private Button btnEditarEmpleado;
         private Label label1;
         private Button btnMin;
         private Button btnClose;

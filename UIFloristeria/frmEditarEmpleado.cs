@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,7 @@ using System.Windows.Forms;
 
 namespace UIFloristeria
 {
+
     public partial class frmEditarEmpleado : Form
     {
         [DllImport("user32.dll")]
@@ -20,9 +22,14 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
 
-        public frmEditarEmpleado()
+        private readonly EmpleadoController _empleadoController;
+        private readonly int _idEmpleadoEditar;
+
+        public frmEditarEmpleado(int idEmpleadoEditar, EmpleadoController empleadoController)
         {
             InitializeComponent();
+            _idEmpleadoEditar = idEmpleadoEditar;
+            _empleadoController = empleadoController;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -53,6 +60,12 @@ namespace UIFloristeria
         private void frmEditarEmpleado_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditarEmpleado_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK; // Indica que se realizó una edición exitosa
+            this.Close();
         }
     }
 }
