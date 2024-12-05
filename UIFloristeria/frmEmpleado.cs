@@ -85,6 +85,12 @@ namespace UIFloristeria
         {
             FrmRegister register = new FrmRegister();
             register.ShowDialog();
+            //Si Mando exito
+            if (register.ShowDialog() == DialogResult.OK)
+            {
+                // Recarga los empleados
+                LoadEmpleados();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

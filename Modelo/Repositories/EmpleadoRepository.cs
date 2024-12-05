@@ -92,7 +92,7 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac, EsAprobado, RolId) VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @UserName, @Contrasena, @Telefono, @FechaDeNac, @EsAprobado, @RolId)", connection);
+                var command = new SqlCommand("INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac) VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @UserName, @Contrasena, @Telefono, @FechaDeNac)", connection);
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
                 command.Parameters.AddWithValue("@PrimerApellido", empleado.PrimerApellido);
@@ -103,8 +103,6 @@ namespace Modelo.Repositories
                 command.Parameters.AddWithValue("@Contrasena", empleado.Contrasena);
                 command.Parameters.AddWithValue("@Telefono", empleado.Telefono);
                 command.Parameters.AddWithValue("@FechaDeNac", empleado.FechaDeNac);
-                command.Parameters.AddWithValue("@EsAprobado", empleado.EsAprobado);
-                command.Parameters.AddWithValue("@RolId", empleado.RolId);
                 command.ExecuteNonQuery();
             }
         }

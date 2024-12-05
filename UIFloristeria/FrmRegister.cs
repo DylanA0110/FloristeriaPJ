@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Controladores;
+using Modelo.Entidades;
+using Modelo.Validaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +22,7 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-
+        private readonly EmpleadoController _empleadoController;
         public FrmRegister()
         {
             InitializeComponent();
@@ -180,6 +183,49 @@ namespace UIFloristeria
         private void btnMin_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnAgregaremp_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var nuevoEmpleado = new Empleado
+                {
+                    PrimerNombre = txtPrimerNombre.Text,
+                    SegundoNombre = txtSegundoNombre.Text,
+                    PrimerApellido = txtPrimerApellido.Text,
+                    SegundoApellido = txtSegundoApellido.Text,
+                    Sexo = rbHombre.Checked ? "M" : rbMujer.Checked ? "F" : null,
+                    Correo = txtCorreo.Text,
+                    UserName = txtUser.Text,
+                    Contrasena = txtPass.Text,
+                    Telefono = mtxtTelefono.Text,
+                    FechaDeNac = dtpFechaNac.Value,
+                };
+
+                // Validar empleado
+                var errores = ValidadorEntidad.Validar(nuevoEmpleado);
+
+                if (errores.Count > 0)
+                {
+                    // Mostrar errores en un MessageBox
+                    MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Agregar empleado a través del controlador
+                _empleadoController.AddEmpleado(nuevoEmpleado);
+
+                MessageBox.Show("Empleado registrado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; // Indica éxito
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

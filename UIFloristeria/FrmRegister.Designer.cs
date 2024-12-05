@@ -53,7 +53,7 @@
             pictureBox9 = new PictureBox();
             txtConfirmPass = new TextBox();
             label4 = new Label();
-            button1 = new Button();
+            btnAgregaremp = new Button();
             btnMin = new Button();
             btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -365,17 +365,18 @@
             label4.TabIndex = 32;
             label4.Text = "Telefono:";
             // 
-            // button1
+            // btnAgregaremp
             // 
-            button1.BackColor = Color.White;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(347, 411);
-            button1.Name = "button1";
-            button1.Size = new Size(142, 27);
-            button1.TabIndex = 2;
-            button1.Text = "Registrar";
-            button1.UseVisualStyleBackColor = false;
+            btnAgregaremp.BackColor = Color.White;
+            btnAgregaremp.FlatStyle = FlatStyle.Popup;
+            btnAgregaremp.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregaremp.Location = new Point(347, 411);
+            btnAgregaremp.Name = "btnAgregaremp";
+            btnAgregaremp.Size = new Size(142, 27);
+            btnAgregaremp.TabIndex = 2;
+            btnAgregaremp.Text = "Registrar";
+            btnAgregaremp.UseVisualStyleBackColor = false;
+            btnAgregaremp.Click += btnAgregaremp_Click;
             // 
             // btnMin
             // 
@@ -415,7 +416,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnMin);
             Controls.Add(btnClose);
-            Controls.Add(button1);
+            Controls.Add(btnAgregaremp);
             Controls.Add(label4);
             Controls.Add(pictureBox9);
             Controls.Add(txtConfirmPass);
@@ -484,7 +485,7 @@
         private PictureBox pictureBox9;
         private TextBox txtConfirmPass;
         private Label label4;
-        private Button button1;
+        private Button btnAgregaremp;
         private Button btnMin;
         private Button btnClose;
     }
