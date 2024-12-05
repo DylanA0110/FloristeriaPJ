@@ -37,12 +37,7 @@ namespace UIFloristeria
             dgvFactura.ClearSelection();
         }
 
-<<<<<<< HEAD
 
-=======
-        private void Factura_Load_1(object sender, EventArgs e)
-        {
->>>>>>> 3df1c47a04c1b50cd77a75d71978e7f5029dfd61
 
     }
 }
