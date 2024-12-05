@@ -49,7 +49,7 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Pago SET Monto = @Monto, Fecha_pago = @Fecha_pago", connection);
+                var command = new SqlCommand("UPDATE Pago SET Monto = @Monto, Fecha_pago = @Fecha_pago WHERE Id_pago = @Id_pago", connection);
                 command.Parameters.AddWithValue("@Monto", pago.Monto);
                 command.Parameters.AddWithValue("@Fecha_pago", pago.Fecha_pago);
                 command.ExecuteNonQuery();

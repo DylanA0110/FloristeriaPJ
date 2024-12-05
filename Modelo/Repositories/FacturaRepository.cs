@@ -138,7 +138,7 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Factura SET Monto_Total = @Monto_Total, Estado = @Estado, NumFactura = @NumFactura", connection);
+                var command = new SqlCommand("UPDATE Factura SET Monto_Total = @Monto_Total, Estado = @Estado, NumFactura = @NumFactura WHERE Id_factura = @Id_factura", connection);
                 command.Parameters.AddWithValue("@Monto_total", factura.Monto_total);
                 command.Parameters.AddWithValue("@Estado", factura.Estado);
                 command.Parameters.AddWithValue("@NumFactura", factura.NumFactura);
