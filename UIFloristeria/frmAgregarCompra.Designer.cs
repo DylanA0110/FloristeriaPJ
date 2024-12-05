@@ -45,9 +45,12 @@
             txtProveedor = new TextBox();
             dtpFechaCompra = new DateTimePicker();
             label4 = new Label();
+            textBox1 = new TextBox();
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -168,14 +171,15 @@
             // btnBuscarProveedor
             // 
             btnBuscarProveedor.Anchor = AnchorStyles.None;
-            btnBuscarProveedor.BackColor = Color.White;
-            btnBuscarProveedor.FlatStyle = FlatStyle.Popup;
+            btnBuscarProveedor.BackColor = Color.FromArgb(222, 151, 54);
+            btnBuscarProveedor.FlatAppearance.BorderSize = 0;
+            btnBuscarProveedor.FlatStyle = FlatStyle.Flat;
             btnBuscarProveedor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarProveedor.Image = (Image)resources.GetObject("btnBuscarProveedor.Image");
             btnBuscarProveedor.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBuscarProveedor.Location = new Point(604, 148);
+            btnBuscarProveedor.Location = new Point(604, 139);
             btnBuscarProveedor.Name = "btnBuscarProveedor";
-            btnBuscarProveedor.Size = new Size(38, 25);
+            btnBuscarProveedor.Size = new Size(42, 33);
             btnBuscarProveedor.TabIndex = 126;
             btnBuscarProveedor.UseVisualStyleBackColor = false;
             btnBuscarProveedor.Click += btnBuscarProveedor_Click;
@@ -242,12 +246,37 @@
             label4.TabIndex = 131;
             label4.Text = "Fecha de Compra";
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(222, 151, 54);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(31, 191);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(149, 20);
+            textBox1.TabIndex = 133;
+            textBox1.Text = "Nombre producto";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.FromArgb(222, 151, 54);
+            pictureBox4.Image = Properties.Resources.Loading;
+            pictureBox4.Location = new Point(31, 217);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(137, 22);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 132;
+            pictureBox4.TabStop = false;
+            // 
             // frmAgregarCompra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
-            ClientSize = new Size(675, 333);
+            ClientSize = new Size(675, 331);
+            Controls.Add(textBox1);
+            Controls.Add(pictureBox4);
             Controls.Add(label4);
             Controls.Add(dtpFechaCompra);
             Controls.Add(txtProveedor);
@@ -270,6 +299,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -292,5 +322,7 @@
         private TextBox txtProveedor;
         private DateTimePicker dtpFechaCompra;
         private Label label4;
+        private TextBox textBox1;
+        private PictureBox pictureBox4;
     }
 }
