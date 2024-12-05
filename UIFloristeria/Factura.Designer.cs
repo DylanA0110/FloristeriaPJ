@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label2 = new Label();
             label6 = new Label();
             TxtMontoTotal = new TextBox();
@@ -39,9 +39,9 @@
             CboTipoDePago = new ComboBox();
             label8 = new Label();
             BtnPreliminar = new Button();
-            DtgFacturas = new DataGridView();
             BtnImprimir = new Button();
-            ((System.ComponentModel.ISupportInitialize)DtgFacturas).BeginInit();
+            dgvFactura = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvFactura).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -60,7 +60,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(456, 188);
+            label6.Location = new Point(420, 98);
             label6.Name = "label6";
             label6.Size = new Size(97, 19);
             label6.TabIndex = 13;
@@ -71,7 +71,7 @@
             TxtMontoTotal.BackColor = Color.FromArgb(22, 58, 55);
             TxtMontoTotal.BorderStyle = BorderStyle.None;
             TxtMontoTotal.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            TxtMontoTotal.Location = new Point(456, 225);
+            TxtMontoTotal.Location = new Point(420, 135);
             TxtMontoTotal.Name = "TxtMontoTotal";
             TxtMontoTotal.Size = new Size(140, 20);
             TxtMontoTotal.TabIndex = 12;
@@ -82,7 +82,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(265, 188);
+            label7.Location = new Point(229, 98);
             label7.Name = "label7";
             label7.Size = new Size(160, 19);
             label7.TabIndex = 11;
@@ -93,7 +93,7 @@
             TxtNumeroFactura.BackColor = Color.FromArgb(22, 58, 55);
             TxtNumeroFactura.BorderStyle = BorderStyle.None;
             TxtNumeroFactura.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            TxtNumeroFactura.Location = new Point(265, 225);
+            TxtNumeroFactura.Location = new Point(229, 135);
             TxtNumeroFactura.Name = "TxtNumeroFactura";
             TxtNumeroFactura.Size = new Size(140, 20);
             TxtNumeroFactura.TabIndex = 10;
@@ -103,7 +103,7 @@
             // 
             CboTipoDePago.FormattingEnabled = true;
             CboTipoDePago.Items.AddRange(new object[] { "Credito", "Transferencia", "Tarjeta de Credito", "Efectivo" });
-            CboTipoDePago.Location = new Point(76, 222);
+            CboTipoDePago.Location = new Point(40, 132);
             CboTipoDePago.Name = "CboTipoDePago";
             CboTipoDePago.Size = new Size(121, 23);
             CboTipoDePago.TabIndex = 14;
@@ -113,7 +113,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(73, 179);
+            label8.Location = new Point(37, 89);
             label8.Name = "label8";
             label8.Size = new Size(111, 19);
             label8.TabIndex = 15;
@@ -127,49 +127,13 @@
             BtnPreliminar.FlatStyle = FlatStyle.Flat;
             BtnPreliminar.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnPreliminar.ForeColor = Color.Black;
-            BtnPreliminar.Location = new Point(647, 188);
+            BtnPreliminar.Location = new Point(585, 124);
             BtnPreliminar.Name = "BtnPreliminar";
-            BtnPreliminar.Size = new Size(132, 31);
+            BtnPreliminar.Size = new Size(108, 31);
             BtnPreliminar.TabIndex = 17;
             BtnPreliminar.Text = "Preliminar";
             BtnPreliminar.TextAlign = ContentAlignment.BottomCenter;
             BtnPreliminar.UseVisualStyleBackColor = false;
-            // 
-            // DtgFacturas
-            // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(222, 151, 54);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(222, 151, 54);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            DtgFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            DtgFacturas.BackgroundColor = Color.White;
-            DtgFacturas.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            DtgFacturas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DtgFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            DtgFacturas.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(152, 100, 20);
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(152, 100, 20);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DtgFacturas.DefaultCellStyle = dataGridViewCellStyle6;
-            DtgFacturas.EnableHeadersVisualStyles = false;
-            DtgFacturas.Location = new Point(76, 289);
-            DtgFacturas.Name = "DtgFacturas";
-            DtgFacturas.RowHeadersVisible = false;
-            DtgFacturas.RowTemplate.Height = 40;
-            DtgFacturas.Size = new Size(720, 193);
-            DtgFacturas.TabIndex = 101;
             // 
             // BtnImprimir
             // 
@@ -179,13 +143,51 @@
             BtnImprimir.FlatStyle = FlatStyle.Flat;
             BtnImprimir.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnImprimir.ForeColor = Color.Black;
-            BtnImprimir.Location = new Point(647, 241);
+            BtnImprimir.Location = new Point(699, 124);
             BtnImprimir.Name = "BtnImprimir";
-            BtnImprimir.Size = new Size(132, 31);
+            BtnImprimir.Size = new Size(117, 31);
             BtnImprimir.TabIndex = 102;
             BtnImprimir.Text = "Imprimir";
             BtnImprimir.TextAlign = ContentAlignment.BottomCenter;
             BtnImprimir.UseVisualStyleBackColor = false;
+            // 
+            // dgvFactura
+            // 
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dgvFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvFactura.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvFactura.BackgroundColor = Color.White;
+            dgvFactura.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvFactura.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvFactura.ColumnHeadersHeight = 45;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvFactura.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvFactura.EnableHeadersVisualStyles = false;
+            dgvFactura.Location = new Point(66, 257);
+            dgvFactura.Name = "dgvFactura";
+            dgvFactura.ReadOnly = true;
+            dgvFactura.RowHeadersVisible = false;
+            dgvFactura.RowTemplate.Height = 40;
+            dgvFactura.Size = new Size(750, 193);
+            dgvFactura.TabIndex = 103;
             // 
             // Factura
             // 
@@ -193,8 +195,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(877, 507);
+            Controls.Add(dgvFactura);
             Controls.Add(BtnImprimir);
-            Controls.Add(DtgFacturas);
             Controls.Add(BtnPreliminar);
             Controls.Add(label8);
             Controls.Add(CboTipoDePago);
@@ -208,8 +210,7 @@
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Factura";
-            Load += Factura_Load_1;
-            ((System.ComponentModel.ISupportInitialize)DtgFacturas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFactura).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -223,7 +224,7 @@
         private ComboBox CboTipoDePago;
         private Label label8;
         private Button BtnPreliminar;
-        private DataGridView DtgFacturas;
         private Button BtnImprimir;
+        private DataGridView dgvFactura;
     }
 }

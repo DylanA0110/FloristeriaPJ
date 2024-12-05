@@ -16,7 +16,7 @@ namespace Modelo.Entidades
 
         [Required(ErrorMessage = "El nombre del arreglo es requerido.")]
         [StringLength(100, MinimumLength = 2, ErrorMessage = "El nombre del arreglo debe tener entre 2 y 100 caracteres.")]
-        public string Nombre_Arreglo { get; set; }
+        public string ?Nombre_Arreglo { get; set; }
 
         public int? Cantidad { get; set; }
     }

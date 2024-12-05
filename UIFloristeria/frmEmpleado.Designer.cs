@@ -86,8 +86,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
             dgvEmpleados.EnableHeadersVisualStyles = false;
-            dgvEmpleados.Location = new Point(225, 209);
-            dgvEmpleados.MultiSelect = false;
+            dgvEmpleados.Location = new Point(225, 214);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;

@@ -17,7 +17,7 @@ namespace Modelo.Entidades
 
         [Required(ErrorMessage = "El nombre del accesorio es requerido.")]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "El nombre del accesorio debe tener entre 2 y 30 caracteres.")]
-        public string Nombre_Accesorio { get; set; }
+        public string ?Nombre_Accesorio { get; set; }
     }
 
 }

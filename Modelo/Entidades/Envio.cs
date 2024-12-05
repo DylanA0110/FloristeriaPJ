@@ -17,6 +17,6 @@ namespace Modelo.Entidades
 
         [Required(ErrorMessage = "La dirección de envío es requerida.")]
         [StringLength(100, ErrorMessage = "La dirección debe tener un máximo de 100 caracteres.")]
-        public string Direccion { get; set; }
+        public string ?Direccion { get; set; }
     }
 }

@@ -16,9 +16,9 @@ namespace Modelo.Entidades
 
         [Required(ErrorMessage = "El nombre de la categoría es requerido.")]
         [StringLength(15, MinimumLength = 2, ErrorMessage = "El nombre de la categoría debe tener entre 2 y 15 caracteres.")]
-        public string Nombre_Categoria { get; set; }
+        public string ?Nombre_Categoria { get; set; }
 
         [StringLength(50, ErrorMessage = "La descripción no puede exceder los 50 caracteres.")]
-        public string Descripcion { get; set; }
+        public string ?Descripcion { get; set; }
     }
 }

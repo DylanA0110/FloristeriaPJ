@@ -14,7 +14,7 @@ namespace Modelo.Entidades
 
         [Required(ErrorMessage = "El nombre del rol es requerido.")]
         [StringLength(50, MinimumLength = 2, ErrorMessage = "El nombre del rol debe tener entre 2 y 50 caracteres.")]
-        public string Nombre { get; set; }
+        public string ?Nombre { get; set; }
     }
 
 
