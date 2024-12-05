@@ -1,19 +1,21 @@
 ﻿using Controladores;
+using Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controladores;
+using Modelo.Repositories;
+using System.Runtime.InteropServices;
 
 namespace UIFloristeria
 {
-
-    public partial class frmEditarEmpleado : Form
+    public partial class frmEditarCliente : Form
     {
         [DllImport("user32.dll")]
         private static extern int ReleaseCapture();
@@ -22,18 +24,30 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
 
-        private readonly EmpleadoController _empleadoController;
-        private readonly int _idEmpleadoEditar;
+        public string NombreCliente { get; set; }
+        public string TelefonoCliente { get; set; }
 
-        public frmEditarEmpleado(int idEmpleadoEditar, EmpleadoController empleadoController)
+        public frmEditarCliente()
         {
             InitializeComponent();
-            _idEmpleadoEditar = idEmpleadoEditar;
-            _empleadoController = empleadoController;
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void frmEditarCliente_Load(object sender, EventArgs e)
         {
+            txtNombreCliente.Text = NombreCliente;
+            mtxtTelefono.Text = TelefonoCliente;
+        }
+
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK; // Si se agregó con éxito
             this.Close();
         }
 
@@ -42,7 +56,7 @@ namespace UIFloristeria
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void frmEditarEmpleado_MouseDown(object sender, MouseEventArgs e)
+        private void frmEditarCliente_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -50,16 +64,7 @@ namespace UIFloristeria
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        private void frmEditarEmpleado_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEditarEmpleado_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK; // Indica que se realizó una edición exitosa
-            this.Close();
-        }
     }
 }
+
+

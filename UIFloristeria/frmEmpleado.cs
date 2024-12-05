@@ -15,6 +15,7 @@ namespace UIFloristeria
     public partial class frmEmpleado : Form
     {
         private readonly EmpleadoController _empleadoController;
+        private int _idEmpleadoEdit;
         public frmEmpleado()
         {
             InitializeComponent();
@@ -24,27 +25,59 @@ namespace UIFloristeria
         private void frmEmpleado_Load(object sender, EventArgs e)
         {
             LoadEmpleados();
+           
         }
 
         private void LoadEmpleados()
         {
             var empleados = _empleadoController.GetAllEmpleados();
             dgvEmpleados.DataSource = empleados.ToList();
+            dgvEmpleados.CurrentCell = null;
+            dgvEmpleados.ClearSelection();
         }
 
         private void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
-            frmEditarEmpleado frmEditar = new frmEditarEmpleado();
+            if (dgvEmpleados.SelectedRows.Count > 0)
+            {
+                var row = dgvEmpleados.SelectedRows[0];
 
-            // Abrir el formulario como cuadro de diálogo
-            frmEditar.ShowDialog();
+                // Verifica si el valor del ID del empleado es válido
+                if (row.Cells["Id_Empleado"].Value != null)
+                {
+                    int idEmpleado;
+                    bool success = int.TryParse(row.Cells["Id_Empleado"].Value.ToString(), out idEmpleado);
+
+                    if (success)
+                    {
+                        // Crea una instancia del formulario de edición y pasa el ID y el controlador
+                        frmEditarEmpleado formulario = new frmEditarEmpleado(idEmpleado, _empleadoController);
+                        if (formulario.ShowDialog() == DialogResult.OK)
+                        {
+                            // Recarga los empleados después de editar
+                            LoadEmpleados();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El ID del empleado no es un número válido.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El ID del empleado está vacío.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para editar.");
+            }
+
         }
 
         private void btnAuditoria_Click(object sender, EventArgs e)
         {
             frmAuditoriaEmpleado frmEditar = new frmAuditoriaEmpleado();
-
-            // Abrir el formulario como cuadro de diálogo
             frmEditar.ShowDialog();
         }
 
@@ -75,7 +108,7 @@ namespace UIFloristeria
                     else
                     {
                         MessageBox.Show("No se encontraron resultados.", "Sin Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgvEmpleados.DataSource = null; 
+                        dgvEmpleados.DataSource = null;
                     }
                 }
                 else
@@ -89,5 +122,7 @@ namespace UIFloristeria
             }
 
         }
-      }
-}
+
+       
+        }
+    }

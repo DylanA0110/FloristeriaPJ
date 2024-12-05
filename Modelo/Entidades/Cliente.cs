@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Modelo.Dto
+namespace Modelo.Entidades
 {
     public class Cliente
     {

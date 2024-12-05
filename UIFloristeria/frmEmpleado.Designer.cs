@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             dgvEmpleados = new DataGridView();
             btnEditarEmpleado = new Button();
@@ -61,12 +62,11 @@
             dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.SelectionBackColor = Color.Red;
             dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dgvEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvEmpleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvEmpleados.BackgroundColor = Color.White;
-            dgvEmpleados.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
@@ -77,11 +77,11 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvEmpleados.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
             dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.SelectionBackColor = Color.Red;
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
@@ -89,8 +89,17 @@
             dgvEmpleados.Location = new Point(225, 214);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvEmpleados.RowHeadersVisible = false;
             dgvEmpleados.RowTemplate.Height = 40;
+            dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmpleados.Size = new Size(485, 193);
             dgvEmpleados.TabIndex = 69;
             // 

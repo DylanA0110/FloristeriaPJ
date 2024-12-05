@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo.Dto
+namespace Modelo.Entidades
 {
     public class Accesorio
     {
