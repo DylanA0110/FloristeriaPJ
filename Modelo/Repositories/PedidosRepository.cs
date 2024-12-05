@@ -1,6 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
 using Modelo.Contexto;
-using Modelo.Dto;
 using Modelo.Entidades;
 using Modelo.Interfaces;
 using System;
