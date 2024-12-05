@@ -85,5 +85,14 @@ namespace UIFloristeria
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void frmAgregarCompra_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
     }
 }

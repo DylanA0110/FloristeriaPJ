@@ -262,6 +262,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmEditarCompra";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEditarCompra";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
