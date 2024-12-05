@@ -19,6 +19,8 @@ namespace Modelo.Entidades
         public string ?Nombre_Arreglo { get; set; }
 
         public int? Cantidad { get; set; }
+        [StringLength(200, ErrorMessage = "La URL de la imagen no puede exceder los 200 caracteres.")]
+        public string ?Url_Imagen { get; set; }
     }
 
 }

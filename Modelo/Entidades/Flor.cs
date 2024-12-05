@@ -18,7 +18,7 @@ namespace Modelo.Entidades
         [StringLength(15, MinimumLength = 2, ErrorMessage = "El nombre de la flor debe tener entre 2 y 15 caracteres.")]
         public string ?Nombre_Flor { get; set; }
 
-        [StringLength(200, ErrorMessage = "La URL de la imagen no puede exceder los 200 caracteres.")]
-        public string ?Url_Imagen { get; set; }
+       
+       
     }
 }
