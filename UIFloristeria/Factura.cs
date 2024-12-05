@@ -21,6 +21,7 @@ namespace UIFloristeria
         {
             InitializeComponent();
             _facturaController = new FacturaController(new FacturaRepository());
+            _pedidoController = new PedidoController(new PedidosRepository());
         }
 
 
@@ -35,6 +36,10 @@ namespace UIFloristeria
             dgvFactura.DataSource = pedido.ToList();
             dgvFactura.CurrentCell = null;
             dgvFactura.ClearSelection();
+            if (dgvFactura.Columns.Count > 0)
+            {
+                dgvFactura.Columns[0].Visible = false;
+            }
         }
 
 

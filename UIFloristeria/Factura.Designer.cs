@@ -41,6 +41,9 @@
             BtnPreliminar = new Button();
             BtnImprimir = new Button();
             dgvFactura = new DataGridView();
+            TxtPedido = new TextBox();
+            label1 = new Label();
+            rbHombre = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)dgvFactura).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +63,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(420, 98);
+            label6.Location = new Point(491, 98);
             label6.Name = "label6";
             label6.Size = new Size(97, 19);
             label6.TabIndex = 13;
@@ -71,7 +74,7 @@
             TxtMontoTotal.BackColor = Color.FromArgb(22, 58, 55);
             TxtMontoTotal.BorderStyle = BorderStyle.None;
             TxtMontoTotal.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            TxtMontoTotal.Location = new Point(420, 135);
+            TxtMontoTotal.Location = new Point(491, 135);
             TxtMontoTotal.Name = "TxtMontoTotal";
             TxtMontoTotal.Size = new Size(140, 20);
             TxtMontoTotal.TabIndex = 12;
@@ -82,7 +85,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(229, 98);
+            label7.Location = new Point(290, 98);
             label7.Name = "label7";
             label7.Size = new Size(160, 19);
             label7.TabIndex = 11;
@@ -93,7 +96,7 @@
             TxtNumeroFactura.BackColor = Color.FromArgb(22, 58, 55);
             TxtNumeroFactura.BorderStyle = BorderStyle.None;
             TxtNumeroFactura.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            TxtNumeroFactura.Location = new Point(229, 135);
+            TxtNumeroFactura.Location = new Point(290, 135);
             TxtNumeroFactura.Name = "TxtNumeroFactura";
             TxtNumeroFactura.Size = new Size(140, 20);
             TxtNumeroFactura.TabIndex = 10;
@@ -103,7 +106,7 @@
             // 
             CboTipoDePago.FormattingEnabled = true;
             CboTipoDePago.Items.AddRange(new object[] { "Credito", "Transferencia", "Tarjeta de Credito", "Efectivo" });
-            CboTipoDePago.Location = new Point(40, 132);
+            CboTipoDePago.Location = new Point(293, 226);
             CboTipoDePago.Name = "CboTipoDePago";
             CboTipoDePago.Size = new Size(121, 23);
             CboTipoDePago.TabIndex = 14;
@@ -113,7 +116,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(37, 89);
+            label8.Location = new Point(290, 183);
             label8.Name = "label8";
             label8.Size = new Size(111, 19);
             label8.TabIndex = 15;
@@ -127,9 +130,9 @@
             BtnPreliminar.FlatStyle = FlatStyle.Flat;
             BtnPreliminar.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnPreliminar.ForeColor = Color.Black;
-            BtnPreliminar.Location = new Point(585, 124);
+            BtnPreliminar.Location = new Point(699, 171);
             BtnPreliminar.Name = "BtnPreliminar";
-            BtnPreliminar.Size = new Size(108, 31);
+            BtnPreliminar.Size = new Size(117, 31);
             BtnPreliminar.TabIndex = 17;
             BtnPreliminar.Text = "Preliminar";
             BtnPreliminar.TextAlign = ContentAlignment.BottomCenter;
@@ -181,7 +184,7 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgvFactura.DefaultCellStyle = dataGridViewCellStyle6;
             dgvFactura.EnableHeadersVisualStyles = false;
-            dgvFactura.Location = new Point(66, 257);
+            dgvFactura.Location = new Point(66, 275);
             dgvFactura.Name = "dgvFactura";
             dgvFactura.ReadOnly = true;
             dgvFactura.RowHeadersVisible = false;
@@ -189,12 +192,51 @@
             dgvFactura.Size = new Size(750, 193);
             dgvFactura.TabIndex = 103;
             // 
+            // TxtPedido
+            // 
+            TxtPedido.BackColor = Color.FromArgb(22, 58, 55);
+            TxtPedido.BorderStyle = BorderStyle.None;
+            TxtPedido.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            TxtPedido.Location = new Point(74, 220);
+            TxtPedido.Name = "TxtPedido";
+            TxtPedido.Size = new Size(140, 20);
+            TxtPedido.TabIndex = 105;
+            TxtPedido.Text = "_________________________________________________________________________";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(74, 183);
+            label1.Name = "label1";
+            label1.Size = new Size(158, 19);
+            label1.TabIndex = 106;
+            label1.Text = "Numero de pedido";
+            // 
+            // rbHombre
+            // 
+            rbHombre.AutoSize = true;
+            rbHombre.BackColor = Color.FromArgb(24, 64, 57);
+            rbHombre.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbHombre.ForeColor = Color.White;
+            rbHombre.Location = new Point(40, 99);
+            rbHombre.Name = "rbHombre";
+            rbHombre.Size = new Size(192, 21);
+            rbHombre.TabIndex = 107;
+            rbHombre.TabStop = true;
+            rbHombre.Text = "Tiene numero de factura?";
+            rbHombre.UseVisualStyleBackColor = false;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(877, 507);
+            Controls.Add(rbHombre);
+            Controls.Add(label1);
+            Controls.Add(TxtPedido);
             Controls.Add(dgvFactura);
             Controls.Add(BtnImprimir);
             Controls.Add(BtnPreliminar);
@@ -227,5 +269,8 @@
         private Button BtnPreliminar;
         private Button BtnImprimir;
         private DataGridView dgvFactura;
+        private TextBox TxtPedido;
+        private Label label1;
+        private RadioButton rbHombre;
     }
 }
