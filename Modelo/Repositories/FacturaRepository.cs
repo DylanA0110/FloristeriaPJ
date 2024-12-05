@@ -20,10 +20,6 @@ namespace Modelo.Repositories
 
         public void Add(Facturas factura)
         {
-            using (var connection = _dbContext.GetConnection())
-            {
-                connection.Open();
-
                 var command = new SqlCommand(
                     @"INSERT INTO Factura (Id_pedido, Monto_Total, Estado, NumFactura) 
           VALUES (@Id_pedido, @Monto_Total, @Estado, @NumFactura)",
@@ -31,13 +27,9 @@ namespace Modelo.Repositories
 
                 command.Parameters.AddWithValue("@Id_pedido", factura.Id_pedido);
                 command.Parameters.AddWithValue("@Monto_Total", factura.Monto_total);
-                command.Parameters.AddWithValue("@Estado", factura.Estado);
                 command.Parameters.AddWithValue("@NumFactura", factura.NumFactura);
 
-                command.ExecuteNonQuery();
-            }
 
-        }
 
         public void Delete(int id)
         {
