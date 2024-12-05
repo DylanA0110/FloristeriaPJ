@@ -43,7 +43,7 @@ namespace Modelo.Repositories
                                 ? (DateTime)reader["FechaDeNac"]
                                 : default(DateTime), // Valor predeterminado
                             EsAprobado = reader["EsAprobado"] != DBNull.Value && (bool)reader["EsAprobado"],
-                            RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0 // Valor predeterminado
+                            RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 2 // Valor predeterminado
                         });
                     }
                 }
@@ -79,7 +79,7 @@ namespace Modelo.Repositories
                             Telefono = reader["Telefono"]?.ToString(),
                             FechaDeNac = (DateTime)reader["FechaDeNac"],
                             EsAprobado = reader["EsAprobado"] != DBNull.Value && (bool)reader["EsAprobado"],
-                            RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0
+                            RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 2
                         };
                     }
                 }
@@ -93,11 +93,10 @@ namespace Modelo.Repositories
             {
                 connection.Open();
                 var command = new SqlCommand(
-    "INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac, UserName) " +
-    "VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @Contrasena, @Telefono, @FechaDeNac, @UserName)",
-    connection
-);
-
+                    "INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac, UserName, RolId, EsAprobado) " +
+                    "VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @Contrasena, @Telefono, @FechaDeNac, @UserName, @RolId, @EsAprobado)",
+                    connection
+                );
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
                 command.Parameters.AddWithValue("@PrimerApellido", empleado.PrimerApellido);
@@ -108,16 +107,20 @@ namespace Modelo.Repositories
                 command.Parameters.AddWithValue("@Contrasena", empleado.Contrasena);
                 command.Parameters.AddWithValue("@Telefono", empleado.Telefono);
                 command.Parameters.AddWithValue("@FechaDeNac", empleado.FechaDeNac);
+                command.Parameters.AddWithValue("@RolId", 2);  
+                command.Parameters.AddWithValue("@EsAprobado", 1); 
+
                 command.ExecuteNonQuery();
             }
         }
+
 
         public void Update(Empleado empleado)
         {
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Empleado SET PrimerNombre = @PrimerNombre, SegundoNombre = @SegundoNombre, PrimerApellido = @PrimerApellido, SegundoApellido = @SegundoApellido, Sexo = @Sexo, Correo = @Correo, UserName = @UserName, Contrasena = @Contrasena, Telefono = @Telefono, FechaDeNac = @FechaDeNac, EsAprobado = @EsAprobado WHERE Id_Empleado = @Id_Empleado", connection);
+                var command = new SqlCommand("UPDATE Empleado SET PrimerNombre = @PrimerNombre, SegundoNombre = @SegundoNombre, PrimerApellido = @PrimerApellido, SegundoApellido = @SegundoApellido, Sexo = @Sexo, Correo = @Correo, UserName = @UserName, Contrasena = @Contrasena, Telefono = @Telefono, FechaDeNac = @FechaDeNac, EsAprobado = @EsAprobado, RolId = @RolId WHERE Id_Empleado = @Id_Empleado", connection);
                 command.Parameters.AddWithValue("@Id_Empleado", empleado.Id_Empleado);
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
@@ -130,6 +133,7 @@ namespace Modelo.Repositories
                 command.Parameters.AddWithValue("@Telefono", empleado.Telefono);
                 command.Parameters.AddWithValue("@FechaDeNac", empleado.FechaDeNac);
                 command.Parameters.AddWithValue("@EsAprobado", empleado.EsAprobado);
+                command.Parameters.AddWithValue("@RolId", empleado.RolId);
                 command.ExecuteNonQuery();
             }
         }
@@ -178,7 +182,7 @@ namespace Modelo.Repositories
                                 Telefono = reader["Telefono"]?.ToString(),
                                 FechaDeNac = (DateTime)reader["FechaDeNac"],
                                 EsAprobado = reader["EsAprobado"] != DBNull.Value && (bool)reader["EsAprobado"],
-                                RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0
+                                RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 2  
                             });
                         }
                     }
@@ -213,7 +217,7 @@ namespace Modelo.Repositories
                                     PrimerNombre = reader["PrimerNombre"]?.ToString(),
                                     PrimerApellido = reader["PrimerApellido"]?.ToString(),
                                     UserName = dbUsername,
-                                    RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0
+                                    RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 2
                                 };
                                 break;
                             }

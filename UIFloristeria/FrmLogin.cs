@@ -103,6 +103,7 @@ namespace UIFloristeria
                 EmpleadoAutenticado.PrimerNombre = empleado.PrimerNombre;
                 EmpleadoAutenticado.PrimerApellido = empleado.PrimerApellido;
                 EmpleadoAutenticado.RolId = empleado.RolId;
+                EmpleadoAutenticado.password = password;
 
                 MessageBox.Show($"¡Bienvenido {empleado.PrimerNombre} {empleado.PrimerApellido}!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmPrincipal frmPrincipal = new FrmPrincipal();

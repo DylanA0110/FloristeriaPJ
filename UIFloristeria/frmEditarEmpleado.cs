@@ -73,6 +73,14 @@ namespace UIFloristeria
                 rbNo.Checked = !empleado.EsAprobado;
                 dtpFechaNac.Value = (DateTime)empleado.FechaDeNac;
                 txtUserName.Text = empleado.UserName;
+                cmbRol.Items.Clear();
+                cmbRol.Items.Add("Admin");
+                cmbRol.Items.Add("Empleado");
+
+                if (empleado.RolId == 1)
+                    cmbRol.SelectedItem = "Admin";
+                else
+                    cmbRol.SelectedItem = "Empleado";
             }
             else
             {

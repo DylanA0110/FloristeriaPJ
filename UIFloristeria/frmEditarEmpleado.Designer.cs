@@ -61,11 +61,12 @@
             panel1 = new Panel();
             panel2 = new Panel();
             chkCambiarPass = new CheckBox();
-            comboBox1 = new ComboBox();
+            cmbRol = new ComboBox();
             label5 = new Label();
             dtpFechaNac = new DateTimePicker();
             txtUserName = new TextBox();
             pictureBox7 = new PictureBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -460,13 +461,13 @@
             chkCambiarPass.UseVisualStyleBackColor = true;
             chkCambiarPass.CheckedChanged += chkCambiarPass_CheckedChanged;
             // 
-            // comboBox1
+            // cmbRol
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(77, 380);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 123;
+            cmbRol.FormattingEnabled = true;
+            cmbRol.Location = new Point(77, 380);
+            cmbRol.Name = "cmbRol";
+            cmbRol.Size = new Size(121, 23);
+            cmbRol.TabIndex = 123;
             // 
             // label5
             // 
@@ -513,17 +514,30 @@
             pictureBox7.TabIndex = 126;
             pictureBox7.TabStop = false;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.FromArgb(222, 151, 54);
+            label6.Font = new Font("Century Gothic", 12F);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(77, 356);
+            label6.Name = "label6";
+            label6.Size = new Size(37, 21);
+            label6.TabIndex = 128;
+            label6.Text = "Rol:";
+            // 
             // frmEditarEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(789, 499);
+            Controls.Add(label6);
             Controls.Add(txtUserName);
             Controls.Add(pictureBox7);
             Controls.Add(label5);
             Controls.Add(dtpFechaNac);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbRol);
             Controls.Add(chkCambiarPass);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -611,10 +625,11 @@
         private Panel panel1;
         private Panel panel2;
         private CheckBox chkCambiarPass;
-        private ComboBox comboBox1;
+        private ComboBox cmbRol;
         private Label label5;
         private DateTimePicker dtpFechaNac;
         private TextBox txtUserName;
         private PictureBox pictureBox7;
+        private Label label6;
     }
 }
