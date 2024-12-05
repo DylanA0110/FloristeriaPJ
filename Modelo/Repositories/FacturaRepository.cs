@@ -23,7 +23,8 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Factura (Monto_Total, Estado, NumFactura)", connection);
+                var command = new SqlCommand("INSERT INTO Factura (Id_pedido,Monto_Total, Estado, NumFactura)", connection);
+                command.Parameters.AddWithValue("@Id_pedido", factura.Id_pedido);               
                 command.Parameters.AddWithValue("@Monto_Total", factura.Monto_total);
                 command.Parameters.AddWithValue("@Estado", factura.Estado);
                 command.Parameters.AddWithValue("@NumFactura", factura.NumFactura);
