@@ -45,7 +45,7 @@
             txtProveedor = new TextBox();
             dtpFechaCompra = new DateTimePicker();
             label4 = new Label();
-            textBox1 = new TextBox();
+            txtNombreProducto = new TextBox();
             pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -75,6 +75,8 @@
             txtCantidad.Size = new Size(102, 20);
             txtCantidad.TabIndex = 119;
             txtCantidad.Text = "Cantidad";
+            txtCantidad.Enter += txtCantidad_Enter;
+            txtCantidad.Leave += txtCantidad_Leave;
             // 
             // btnAgregarCompra
             // 
@@ -123,6 +125,8 @@
             txtPrecio.Size = new Size(118, 20);
             txtPrecio.TabIndex = 122;
             txtPrecio.Text = "Precio unitario";
+            txtPrecio.Enter += txtPrecio_Enter;
+            txtPrecio.Leave += txtPrecio_Leave;
             // 
             // pictureBox3
             // 
@@ -137,6 +141,7 @@
             // 
             // cboProducto
             // 
+            cboProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProducto.FormattingEnabled = true;
             cboProducto.Items.AddRange(new object[] { "Flor", "Accesorio" });
             cboProducto.Location = new Point(12, 147);
@@ -218,6 +223,7 @@
             // 
             // txtProveedor
             // 
+            txtProveedor.Enabled = false;
             txtProveedor.Location = new Point(442, 148);
             txtProveedor.Name = "txtProveedor";
             txtProveedor.Size = new Size(156, 23);
@@ -246,17 +252,19 @@
             label4.TabIndex = 131;
             label4.Text = "Fecha de Compra";
             // 
-            // textBox1
+            // txtNombreProducto
             // 
-            textBox1.BackColor = Color.FromArgb(222, 151, 54);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(31, 191);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(149, 20);
-            textBox1.TabIndex = 133;
-            textBox1.Text = "Nombre producto";
+            txtNombreProducto.BackColor = Color.FromArgb(222, 151, 54);
+            txtNombreProducto.BorderStyle = BorderStyle.None;
+            txtNombreProducto.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNombreProducto.ForeColor = Color.White;
+            txtNombreProducto.Location = new Point(31, 191);
+            txtNombreProducto.Name = "txtNombreProducto";
+            txtNombreProducto.Size = new Size(149, 20);
+            txtNombreProducto.TabIndex = 133;
+            txtNombreProducto.Text = "Nombre producto";
+            txtNombreProducto.Enter += txtNombreProducto_Enter;
+            txtNombreProducto.Leave += txtNombreProducto_Leave;
             // 
             // pictureBox4
             // 
@@ -275,7 +283,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(675, 331);
-            Controls.Add(textBox1);
+            Controls.Add(txtNombreProducto);
             Controls.Add(pictureBox4);
             Controls.Add(label4);
             Controls.Add(dtpFechaCompra);
@@ -324,7 +332,7 @@
         private TextBox txtProveedor;
         private DateTimePicker dtpFechaCompra;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox txtNombreProducto;
         private PictureBox pictureBox4;
     }
 }

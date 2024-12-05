@@ -121,7 +121,7 @@ namespace Modelo.Repositories
                 connection.Open();
                 var command = new SqlCommand("UPDATE Proveedor SET Nombre_Proveedor = @Nombre_Proveedor, Telefono = @Telefono", connection);
                 command.Parameters.AddWithValue("@Nombre_Proveedor", proveedor.Nombre_Proveedor);
-                command.Parameters.AddWithValue("@Telefonno", proveedor.Telefono);
+                command.Parameters.AddWithValue("@Telefono", proveedor.Telefono);
                 command.ExecuteNonQuery();
             }
         }

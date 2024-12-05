@@ -34,6 +34,8 @@
             pictureBox1 = new PictureBox();
             btnEditarCompra = new Button();
             label1 = new Label();
+            txtNombreProducto = new TextBox();
+            pictureBox4 = new PictureBox();
             label4 = new Label();
             dtpFechaCompra = new DateTimePicker();
             txtProveedor = new TextBox();
@@ -46,6 +48,7 @@
             txtCantidad = new TextBox();
             pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -64,6 +67,7 @@
             btnMin.Size = new Size(21, 22);
             btnMin.TabIndex = 141;
             btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click_1;
             // 
             // btnClose
             // 
@@ -79,6 +83,7 @@
             btnClose.Size = new Size(21, 22);
             btnClose.TabIndex = 140;
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // pictureBox1
             // 
@@ -115,13 +120,38 @@
             label1.TabIndex = 129;
             label1.Text = "Editar Compra";
             // 
+            // txtNombreProducto
+            // 
+            txtNombreProducto.BackColor = Color.FromArgb(222, 151, 54);
+            txtNombreProducto.BorderStyle = BorderStyle.None;
+            txtNombreProducto.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNombreProducto.ForeColor = Color.White;
+            txtNombreProducto.Location = new Point(45, 186);
+            txtNombreProducto.Name = "txtNombreProducto";
+            txtNombreProducto.Size = new Size(149, 20);
+            txtNombreProducto.TabIndex = 154;
+            txtNombreProducto.Text = "Nombre producto";
+            txtNombreProducto.Enter += txtNombreProducto_Enter;
+            txtNombreProducto.Leave += txtNombreProducto_Leave;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.FromArgb(222, 151, 54);
+            pictureBox4.Image = Properties.Resources.Loading;
+            pictureBox4.Location = new Point(45, 212);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(137, 22);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 153;
+            pictureBox4.TabStop = false;
+            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(257, 190);
+            label4.Location = new Point(271, 187);
             label4.Name = "label4";
             label4.Size = new Size(152, 19);
             label4.TabIndex = 152;
@@ -133,14 +163,14 @@
             dtpFechaCompra.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dtpFechaCompra.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
             dtpFechaCompra.Format = DateTimePickerFormat.Short;
-            dtpFechaCompra.Location = new Point(267, 212);
+            dtpFechaCompra.Location = new Point(281, 209);
             dtpFechaCompra.Name = "dtpFechaCompra";
             dtpFechaCompra.Size = new Size(121, 23);
             dtpFechaCompra.TabIndex = 151;
             // 
             // txtProveedor
             // 
-            txtProveedor.Location = new Point(442, 146);
+            txtProveedor.Location = new Point(456, 143);
             txtProveedor.Name = "txtProveedor";
             txtProveedor.Size = new Size(156, 23);
             txtProveedor.TabIndex = 150;
@@ -148,14 +178,15 @@
             // btnBuscarProveedor
             // 
             btnBuscarProveedor.Anchor = AnchorStyles.None;
-            btnBuscarProveedor.BackColor = Color.White;
-            btnBuscarProveedor.FlatStyle = FlatStyle.Popup;
+            btnBuscarProveedor.BackColor = Color.FromArgb(222, 151, 54);
+            btnBuscarProveedor.FlatAppearance.BorderSize = 0;
+            btnBuscarProveedor.FlatStyle = FlatStyle.Flat;
             btnBuscarProveedor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarProveedor.Image = (Image)resources.GetObject("btnBuscarProveedor.Image");
             btnBuscarProveedor.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBuscarProveedor.Location = new Point(604, 146);
+            btnBuscarProveedor.Location = new Point(618, 134);
             btnBuscarProveedor.Name = "btnBuscarProveedor";
-            btnBuscarProveedor.Size = new Size(38, 25);
+            btnBuscarProveedor.Size = new Size(42, 33);
             btnBuscarProveedor.TabIndex = 149;
             btnBuscarProveedor.UseVisualStyleBackColor = false;
             // 
@@ -165,7 +196,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(442, 120);
+            label3.Location = new Point(456, 117);
             label3.Name = "label3";
             label3.Size = new Size(92, 19);
             label3.TabIndex = 148;
@@ -177,7 +208,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(12, 121);
+            label2.Location = new Point(26, 118);
             label2.Name = "label2";
             label2.Size = new Size(82, 19);
             label2.TabIndex = 147;
@@ -185,9 +216,10 @@
             // 
             // cboProducto
             // 
+            cboProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             cboProducto.FormattingEnabled = true;
             cboProducto.Items.AddRange(new object[] { "Flor", "Accesorio" });
-            cboProducto.Location = new Point(12, 145);
+            cboProducto.Location = new Point(26, 142);
             cboProducto.Name = "cboProducto";
             cboProducto.Size = new Size(121, 23);
             cboProducto.TabIndex = 146;
@@ -198,17 +230,19 @@
             txtPrecio.BorderStyle = BorderStyle.None;
             txtPrecio.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtPrecio.ForeColor = Color.White;
-            txtPrecio.Location = new Point(305, 120);
+            txtPrecio.Location = new Point(319, 117);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(118, 20);
             txtPrecio.TabIndex = 145;
-            txtPrecio.Text = "Precio unitario";
+            txtPrecio.Text = "Precio Unitario";
+            txtPrecio.Enter += txtPrecio_Enter;
+            txtPrecio.Leave += txtPrecio_Leave;
             // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox3.Image = Properties.Resources.Loading;
-            pictureBox3.Location = new Point(305, 146);
+            pictureBox3.Location = new Point(319, 143);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(118, 22);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -221,17 +255,19 @@
             txtCantidad.BorderStyle = BorderStyle.None;
             txtCantidad.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtCantidad.ForeColor = Color.White;
-            txtCantidad.Location = new Point(162, 121);
+            txtCantidad.Location = new Point(176, 118);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(102, 20);
             txtCantidad.TabIndex = 143;
             txtCantidad.Text = "Cantidad";
+            txtCantidad.Enter += txtCantidad_Enter;
+            txtCantidad.Leave += txtCantidad_Leave;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox2.Image = Properties.Resources.Loading;
-            pictureBox2.Location = new Point(162, 147);
+            pictureBox2.Location = new Point(176, 144);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(102, 22);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -244,6 +280,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(670, 347);
+            Controls.Add(txtNombreProducto);
+            Controls.Add(pictureBox4);
             Controls.Add(label4);
             Controls.Add(dtpFechaCompra);
             Controls.Add(txtProveedor);
@@ -264,7 +302,10 @@
             Name = "frmEditarCompra";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEditarCompra";
+            Load += frmEditarCompra_Load;
+            MouseDown += frmEditarCompra_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -278,6 +319,8 @@
         private PictureBox pictureBox1;
         private Button btnEditarCompra;
         private Label label1;
+        private TextBox txtNombreProducto;
+        private PictureBox pictureBox4;
         private Label label4;
         private DateTimePicker dtpFechaCompra;
         private TextBox txtProveedor;

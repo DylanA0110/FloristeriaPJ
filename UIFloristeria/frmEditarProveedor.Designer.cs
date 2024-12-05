@@ -92,6 +92,7 @@
             btnMin.Size = new Size(21, 22);
             btnMin.TabIndex = 115;
             btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click_1;
             // 
             // btnClose
             // 
@@ -107,6 +108,7 @@
             btnClose.Size = new Size(21, 22);
             btnClose.TabIndex = 114;
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // txtNombreProveedor
             // 
@@ -173,6 +175,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmEditarProveedor";
             Text = "frmEditarProveedor";
+            Load += frmEditarProveedor_Load;
+            MouseDown += frmEditarProveedor_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

@@ -97,6 +97,64 @@ namespace UIFloristeria
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void txtCantidad_Leave(object sender, EventArgs e)
+        {
+            if (txtCantidad.Text == "")
+            {
+                txtCantidad.Text = "Cantidad";
+            }
+        }
+
+        private void txtCantidad_Enter(object sender, EventArgs e)
+        {
+            if (txtCantidad.Text == "Cantidad")
+            {
+                txtCantidad.Text = "";
+            }
+        }
+
+        private void txtPrecio_Leave(object sender, EventArgs e)
+        {
+            if (txtPrecio.Text == "")
+            {
+                txtPrecio.Text = "Precio Unitario";
+            }
+        }
+
+        private void txtPrecio_Enter(object sender, EventArgs e)
+        {
+            if (txtPrecio.Text == "Precio Unitario")
+            {
+                txtPrecio.Text = "";
+            }
+        }
+
+        private void txtNombreProducto_Leave(object sender, EventArgs e)
+        {
+            if (txtNombreProducto.Text == "")
+            {
+                txtNombreProducto.Text = "Nombre producto";
+            }
+        }
+
+        private void txtNombreProducto_Enter(object sender, EventArgs e)
+        {
+            if (txtNombreProducto.Text == "Nombre producto")
+            {
+                txtNombreProducto.Text = "";
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMin_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
 
