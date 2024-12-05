@@ -194,7 +194,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(24, 64, 57);
+            label2.BackColor = Color.FromArgb(22, 58, 55);
             label2.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(294, 54);
