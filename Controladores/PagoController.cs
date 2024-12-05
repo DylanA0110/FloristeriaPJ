@@ -11,6 +11,7 @@ namespace Controladores
 {
     public class PagoController
     {
+        //pago de meirda
         private readonly IPagoRepository? _pagoRepository;
 
         public PagoController(IPagoRepository? pagoRepository)
