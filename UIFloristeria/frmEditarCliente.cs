@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Controladores;
 using Modelo.Repositories;
 using System.Runtime.InteropServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using Modelo.Validaciones;
 
 namespace UIFloristeria
 {
@@ -44,7 +46,7 @@ namespace UIFloristeria
             }
         }
 
-      
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,8 +54,32 @@ namespace UIFloristeria
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK; // Indica que se realizó una edición exitosa
-            this.Close();
+            var cliente = new Cliente
+            {
+             Id_cliente = _idClienteEditar,
+             Nombre_Cliente = txtNombreCliente.Text,
+             Telefono = mtxtTelefono.Text
+            };
+            var errores = ValidadorEntidad.Validar(cliente);
+
+            if (errores.Count > 0)
+            {
+                // Mostrar errores en un MessageBox
+                MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                _clienteController.UpdateCliente(cliente);
+                MessageBox.Show("Cliente actualizado exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; // Indica éxito
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al actualizar el cliente: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnMin_Click(object sender, EventArgs e)

@@ -41,12 +41,12 @@ namespace UIFloristeria
 
         private void btnAggCliente_Click(object sender, EventArgs e)
         {
-            frmAgregarCliente agregarCliente = new frmAgregarCliente();
+            frmAgregarCliente agregarCliente = new frmAgregarCliente(_clienteController);
             agregarCliente.ShowDialog();
             //Si Mando exito
             if (agregarCliente.ShowDialog() == DialogResult.OK)
             {
-                // Recarga los empleados
+                // Recarga los clientes
                 LoadClientes();
             }
 

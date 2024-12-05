@@ -10,7 +10,7 @@ namespace Controladores
 {
     public class ClienteController
     {
-        public readonly IClienteRepository _clienteRepository;
+        private readonly IClienteRepository _clienteRepository;
 
         public ClienteController(IClienteRepository clienteRepository)
         {

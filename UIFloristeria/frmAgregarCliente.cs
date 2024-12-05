@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Controladores;
+using Modelo.Entidades;
+using Modelo.Validaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,17 +23,46 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
 
-        public frmAgregarCliente()
+        private readonly ClienteController _clienteController;
+
+        public frmAgregarCliente(ClienteController clienteController)
         {
             InitializeComponent();
+            _clienteController = clienteController;
         }
 
         private void btnAggCliente_Click(object sender, EventArgs e)
         {
 
-            this.DialogResult = DialogResult.OK; // Si se agregó con éxito
-            this.Close();
+            var nuevoCliente = new Cliente
+            {
+                Nombre_Cliente = txtNombreCliente.Text,
+                Telefono = mtxtTelefono.Text
+            };
+            // Validar empleado
+            var errores = ValidadorEntidad.Validar(nuevoCliente);
+
+            if (errores.Count > 0)
+            {
+                // Mostrar errores en un MessageBox
+                MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                // Agregar empleado a través del controlador
+                _clienteController.AddCliente(nuevoCliente);
+
+                MessageBox.Show("Cliente registrado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -57,7 +89,7 @@ namespace UIFloristeria
             {
                 txtNombreCliente.Text = "Nombre Cliente";
             }
-           
+
         }
 
         private void txtNombreCliente_Enter(object sender, EventArgs e)
