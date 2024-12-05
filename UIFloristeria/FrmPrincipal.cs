@@ -170,5 +170,11 @@ namespace UIFloristeria
             frmCliente frmCliente = new frmCliente();
             AbrirFormularioEnPanel(frmCliente);
         }
+
+        private void btnCompra_Click(object sender, EventArgs e)
+        {
+            frmCompra frmCompra = new frmCompra();
+            AbrirFormularioEnPanel(frmCompra);
+        }
     }
 }
