@@ -1,4 +1,5 @@
-﻿using Modelo.Entidades;
+﻿using Microsoft.Data.SqlClient;
+using Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Modelo.Interfaces
         void Update(Facturas factura);
         void Delete(int id);
         IEnumerable<Facturas> Search(string searchTerm);
+        
+
     }
 }
 

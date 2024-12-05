@@ -53,7 +53,7 @@ namespace Modelo.Repositories
 
         public Empleado GetById(int id)
         {
-            Empleado empleado = null;
+            Empleado empleado = new Empleado();
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();

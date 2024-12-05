@@ -1,5 +1,6 @@
 ﻿using Controladores;
 using Modelo.Entidades;
+using Modelo.Interfaces;
 using Modelo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace UIFloristeria
     {
         private readonly FacturaController _facturaController;
         private readonly PedidoController _pedidoController;
+        private readonly PagoController _pagoController;
+        private readonly TipoDePagoController _tipoDePagoController;
        
         //Constructor mierda
         public Factura()
@@ -48,7 +51,7 @@ namespace UIFloristeria
 
         private void rbFactura_CheckedChanged(object sender, EventArgs e)
         {
-            TxtNumeroFactura.Enabled = rbFactura.Checked;
+            TxtNumeroPedido.Enabled = rbFactura.Checked;
         }
         
 
@@ -56,12 +59,28 @@ namespace UIFloristeria
         {
             var facturas = new Facturas
             {
-                Id_pedido = Convert.ToInt16(TxtPedido.Text),
-                NumFactura = Convert.ToInt16(TxtNumeroFactura.Text),
+                Id_pedido = int.Parse(TxtNumeroPedido.Text),
+                NumFactura = int.Parse(TxtNumFactura.Text),
                 Estado = Convert.ToBoolean(rbFactura.Checked),
-                Monto_total = Convert.ToInt16(TxtMontoTotal.Text),
+                Monto_total = int.Parse(TxtMontoTotal.Text),
             };
-             
+            _facturaController.AddFactura(facturas);
+       
+
+
+            var Pago = new Pago
+            {
+                Monto = Convert.ToInt64(TxtMontoNeto)
+            };
+            _pagoController.AddPago(Pago);
+
+            var TipoPago = new TipoDePago
+            {
+                Tipo = CboTipoDePago.Text,
+            };
+            _tipoDePagoController.AddPago(TipoPago);
+
+           
         }
     }
 }
