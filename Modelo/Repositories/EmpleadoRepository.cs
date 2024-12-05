@@ -35,12 +35,6 @@ namespace Modelo.Repositories
                             PrimerApellido = reader["PrimerApellido"]?.ToString(),
                             SegundoApellido = reader["SegundoApellido"]?.ToString(),
                             Sexo = reader["Sexo"] != DBNull.Value ? reader["Sexo"].ToString() : string.Empty, // Valor por defecto
-                            FechaInicioSesion = reader["FechaInicioSesion"] != DBNull.Value
-                                ? (DateTime?)reader["FechaInicioSesion"]
-                                : null, // Manejo de nulos
-                            FechaCierreSesion = reader["FechaCierreSesion"] != DBNull.Value
-                                ? (DateTime?)reader["FechaCierreSesion"]
-                                : null, // Manejo de nulos
                             Correo = reader["Correo"]?.ToString(),
                             UserName = reader["UserName"]?.ToString(),
                             Contrasena = reader["Contrasena"]?.ToString(),
