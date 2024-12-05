@@ -20,6 +20,7 @@ namespace Modelo.Repositories
         }
 
 
+        public void Add(Pedido pedido )
         {
             using (var connection = _dbContext.GetConnection())
             {

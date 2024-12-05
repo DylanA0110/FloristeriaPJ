@@ -29,5 +29,6 @@ namespace Controladores
 
         public IEnumerable<Facturas> SearchFactura(string searchTerm) => _facturaRepository.Search(searchTerm);
 
+
     }
 }

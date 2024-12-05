@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Azure;
+using Microsoft.Data.SqlClient;
 using Modelo.Contexto;
 using Modelo.Entidades;
 using Modelo.Interfaces;
@@ -12,22 +13,26 @@ namespace Modelo.Repositories
 {
     public class FacturaRepository : IFacturaRepository
     {
-        private readonly DbContext _dbContext;
-        public FacturaRepository() 
+       private readonly DbContext _dbContext;
+
+       public FacturaRepository() 
         {
             _dbContext = new DbContext();
         }
+      
 
         public void Add(Facturas factura)
         {
-                var command = new SqlCommand(
-                    @"INSERT INTO Factura (Id_pedido, Monto_Total, Estado, NumFactura) 
-          VALUES (@Id_pedido, @Monto_Total, @Estado, @NumFactura)",
-                    connection);
-
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO Factura (Id_pedido ,Monto_Total, NumFactura) VALUES (@Id_pedido, @Monto_Total, @NumFactura)", connection);
                 command.Parameters.AddWithValue("@Id_pedido", factura.Id_pedido);
                 command.Parameters.AddWithValue("@Monto_Total", factura.Monto_total);
                 command.Parameters.AddWithValue("@NumFactura", factura.NumFactura);
+                command.ExecuteNonQuery();
+            }
+        }
 
 
 
@@ -55,12 +60,12 @@ namespace Modelo.Repositories
                     {
                         factura.Add(new Facturas
                         {
-                           Id_factura = (int)reader["Id_factura"],
-                           Id_Empleado= (int)reader["Id_Empleado"],
-                           Id_pedido = (int)reader["Id_pedido"],
-                           Monto_total = (int)reader["Monto_Total"],
-                           Estado = reader["Estado"] != DBNull.Value && (bool)reader["Estado"],
-                           NumFactura = (int)reader["NumFactura"]
+                            Id_factura = (int)reader["Id_factura"],
+                            Id_Empleado = (int)reader["Id_Empleado"],
+                            Id_pedido = (int)reader["Id_pedido"],
+                            Monto_total = (int)reader["Monto_Total"],
+                            Estado = reader["Estado"] != DBNull.Value && (bool)reader["Estado"],
+                            NumFactura = (int)reader["NumFactura"]
                         });
                     }
                 }
@@ -95,6 +100,8 @@ namespace Modelo.Repositories
             return factura;
         }
 
+
+
         public IEnumerable<Facturas> Search(string searchTerm)
         {
             var factura = new List<Facturas>();
@@ -119,7 +126,7 @@ namespace Modelo.Repositories
                                 Estado = reader["Estado"] != DBNull.Value && (bool)reader["Estado"],
                                 NumFactura = (int)reader["NumFactura"]
                             });
-                        }    
+                        }
                     }
                 }
                 return factura;
@@ -135,7 +142,7 @@ namespace Modelo.Repositories
                 command.Parameters.AddWithValue("@Monto_total", factura.Monto_total);
                 command.Parameters.AddWithValue("@Estado", factura.Estado);
                 command.Parameters.AddWithValue("@NumFactura", factura.NumFactura);
-                command.ExecuteNonQuery();    
+                command.ExecuteNonQuery();
             }
         }
     }
