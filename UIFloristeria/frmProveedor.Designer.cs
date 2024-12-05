@@ -38,7 +38,7 @@
             pictureBox1 = new PictureBox();
             btnEditarProveedor = new Button();
             label2 = new Label();
-            txtBusquedaCliente = new TextBox();
+            txtBusqueda = new TextBox();
             btnSeleccionar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -137,6 +137,7 @@
             btnEditarProveedor.TabIndex = 65;
             btnEditarProveedor.Text = "Editar Proveedor";
             btnEditarProveedor.UseVisualStyleBackColor = false;
+            btnEditarProveedor.Click += btnEditarProveedor_Click;
             // 
             // label2
             // 
@@ -151,13 +152,14 @@
             label2.TabIndex = 82;
             label2.Text = "Busqueda:";
             // 
-            // txtBusquedaCliente
+            // txtBusqueda
             // 
-            txtBusquedaCliente.Anchor = AnchorStyles.Top;
-            txtBusquedaCliente.Location = new Point(559, 138);
-            txtBusquedaCliente.Name = "txtBusquedaCliente";
-            txtBusquedaCliente.Size = new Size(161, 23);
-            txtBusquedaCliente.TabIndex = 81;
+            txtBusqueda.Anchor = AnchorStyles.Top;
+            txtBusqueda.Location = new Point(559, 138);
+            txtBusqueda.Name = "txtBusqueda";
+            txtBusqueda.Size = new Size(161, 23);
+            txtBusqueda.TabIndex = 81;
+            txtBusqueda.TextChanged += txtBusquedaProveedor_TextChanged;
             // 
             // btnSeleccionar
             // 
@@ -184,7 +186,7 @@
             ClientSize = new Size(900, 532);
             Controls.Add(btnSeleccionar);
             Controls.Add(label2);
-            Controls.Add(txtBusquedaCliente);
+            Controls.Add(txtBusqueda);
             Controls.Add(btnEditarProveedor);
             Controls.Add(pictureBox1);
             Controls.Add(dgvProveedores);
@@ -208,7 +210,7 @@
         private PictureBox pictureBox1;
         private Button btnEditarProveedor;
         private Label label2;
-        private TextBox txtBusquedaCliente;
+        private TextBox txtBusqueda;
         private Button btnSeleccionar;
     }
 }

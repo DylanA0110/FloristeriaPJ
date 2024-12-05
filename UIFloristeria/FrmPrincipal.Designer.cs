@@ -138,7 +138,7 @@
             menuContainer.Name = "menuContainer";
             menuContainer.Size = new Size(213, 37);
             menuContainer.TabIndex = 2;
-            menuContainer.Paint += menuContainer_Paint;
+//            menuContainer.Paint += this.menuContainer_Paint;
             // 
             // btnProveedor
             // 
