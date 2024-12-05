@@ -101,22 +101,33 @@ namespace UIFloristeria
                 }
                 nuevaContrasena = txtPass.Text; // Asigna la nueva contraseña
             }
+            var idRol = 0;
+            if (cmbRol.SelectedItem == "Empleado")
+            {
+                idRol = 2;
+            }
+            else if (cmbRol.SelectedItem == "Admin")
+            {
+                idRol = 1; // Asegúrate de que estás usando el ID correcto
+            }
+
 
             var empleado = new Empleado
             {
                 Id_Empleado = _idEmpleadoEditar,
                 PrimerNombre = txtPrimerNombre.Text,
                 SegundoNombre = txtSegundoNombre.Text,
-                PrimerApellido = txtPrimerApellido.Text,
-                SegundoApellido = txtSegundoApellido.Text,
-                Sexo = rbHombre.Checked ? "M" : "F",
-                Correo = txtCorreo.Text,
-                Telefono = mtxtTelefono.Text,
-                Contrasena = nuevaContrasena ?? txtPass.Text, // Usa la nueva contraseña o conserva la actual
-                EsAprobado = rbSi.Checked,
-                UserName = txtUserName.Text,
-                FechaDeNac = (DateTime)dtpFechaNac.Value,
-                RolId = 0
+               PrimerApellido = txtPrimerApellido.Text,
+               SegundoApellido = txtSegundoApellido.Text,
+               Sexo = rbHombre.Checked ? "M" : "F",
+               Correo = txtCorreo.Text,
+               Telefono = mtxtTelefono.Text,
+               Contrasena = nuevaContrasena ?? txtPass.Text, // Usa la nueva contraseña o conserva la actual
+               EsAprobado = rbSi.Checked,
+               UserName = txtUserName.Text,
+               FechaDeNac = (DateTime)dtpFechaNac.Value,
+                RolId = idRol,
+                             
 
 
             };

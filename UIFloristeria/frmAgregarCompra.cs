@@ -55,11 +55,6 @@ namespace UIFloristeria
                 Precio_Unitario = precioUnitario // Usar el precio unitario convertido
             };
 
-            // Aquí puedes agregar el código para guardar la compra, etc.
-
-
-
-            // Validar empleado
             var errores = ValidadorEntidad.Validar(nuevaCompra);
 
             if (errores.Count > 0)

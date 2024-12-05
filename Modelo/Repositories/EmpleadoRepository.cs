@@ -57,12 +57,20 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("SELECT * FROM Empleado WHERE Id_Empleado = @Id_Empleado", connection);
+
+                // Crear el comando para ejecutar el procedimiento almacenado
+                var command = new SqlCommand("sp_ObtenerEmpleadoDesencriptado", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Agregar el parámetro para el ID del empleado
                 command.Parameters.AddWithValue("@Id_Empleado", id);
+
                 using (var reader = command.ExecuteReader())
                 {
+                    // Verificar si se ha encontrado un registro
                     if (reader.Read())
                     {
+                        // Asignar los valores al objeto empleado
                         empleado = new Empleado
                         {
                             Id_Empleado = (int)reader["Id_Empleado"],
@@ -71,11 +79,9 @@ namespace Modelo.Repositories
                             PrimerApellido = reader["PrimerApellido"]?.ToString(),
                             SegundoApellido = reader["SegundoApellido"]?.ToString(),
                             Sexo = reader["Sexo"] != DBNull.Value ? reader["Sexo"].ToString() : string.Empty,
-                            FechaInicioSesion = reader["FechaInicioSesion"] as DateTime?,
-                            FechaCierreSesion = reader["FechaCierreSesion"] as DateTime?,
                             Correo = reader["Correo"]?.ToString(),
                             UserName = reader["UserName"]?.ToString(),
-                            Contrasena = reader["Contrasena"]?.ToString(),
+                            Contrasena = reader["ContrasenaDesencriptada"]?.ToString(), // Se usa el campo desencriptado
                             Telefono = reader["Telefono"]?.ToString(),
                             FechaDeNac = (DateTime)reader["FechaDeNac"],
                             EsAprobado = reader["EsAprobado"] != DBNull.Value && (bool)reader["EsAprobado"],
@@ -174,8 +180,6 @@ namespace Modelo.Repositories
                                 PrimerApellido = reader["PrimerApellido"]?.ToString(),
                                 SegundoApellido = reader["SegundoApellido"]?.ToString(),
                                 Sexo = reader["Sexo"] != DBNull.Value ? reader["Sexo"].ToString() : string.Empty,// Asignar un valor por defecto
-                                FechaInicioSesion = reader["FechaInicioSesion"] as DateTime?,
-                                FechaCierreSesion = reader["FechaCierreSesion"] as DateTime?,
                                 Correo = reader["Correo"]?.ToString(),
                                 UserName = reader["UserName"]?.ToString(),
                                 Contrasena = reader["Contrasena"]?.ToString(),

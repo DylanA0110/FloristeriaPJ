@@ -1,4 +1,6 @@
 ﻿using Controladores;
+using Modelo.Entidades;
+using Modelo.Validaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -188,7 +190,70 @@ namespace UIFloristeria
 
         private void btnAgregaremp_Click(object sender, EventArgs e)
         {
+            // Crear un objeto Empleado a partir de los datos del formulario
+            var empleado = new Empleado
+            {
+                PrimerNombre = txtPrimerNombre.Text,
+                SegundoNombre = txtSegundoNombre.Text,
+                PrimerApellido = txtPrimerApellido.Text,
+                SegundoApellido = txtSegundoApellido.Text,
 
+                // Establecer 'Sexo' dependiendo de la selección de los RadioButtons
+                Sexo = rbHombre.Checked ? "M" : (rbMujer.Checked ? "F" : ""),  // Si no se selecciona ninguno, se asigna vacío
+
+                Correo = txtCorreo.Text,
+                Telefono = mtxtTelefono.Text,
+                FechaDeNac = dtpFechaNac.Value,
+                UserName = txtUser.Text,
+                Contrasena = txtPass.Text,
+            };
+
+            // Validar empleado utilizando ValidadorEntidad
+            var errores = ValidadorEntidad.Validar(empleado);
+
+            if (errores.Count > 0)
+            {
+                // Mostrar errores en un MessageBox
+                MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validación de contraseñas
+            if (txtPass.Text != txtConfirmPass.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Llamar al controlador para agregar el empleado
+            try
+            {
+                _empleadoController.AddEmpleado(empleado); // Asumiendo que el controlador tiene el método Add implementado
+                MessageBox.Show("Empleado registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar los campos del formulario después de la inserción
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al registrar el empleado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtPrimerNombre.Clear();
+            txtSegundoNombre.Clear();
+            txtPrimerApellido.Clear();
+            txtSegundoApellido.Clear();
+            txtCorreo.Clear();
+            mtxtTelefono.Clear();
+            txtUser.Clear();
+            txtPass.Clear();
+            txtConfirmPass.Clear();
+            dtpFechaNac.Value = DateTime.Now;
+            rbHombre.Checked = false;
+            rbMujer.Checked = false;
         }
     }
 }
