@@ -10,6 +10,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelo.Entidades;
+using Modelo.Repositories;
 
 namespace UIFloristeria
 {
@@ -21,9 +23,13 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
+
+        private readonly EmpleadoController _empleadoController;
+
         public FrmLogin()
         {
             InitializeComponent();
+            _empleadoController = new EmpleadoController(new EmpleadoRepository());
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
@@ -88,10 +94,23 @@ namespace UIFloristeria
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            var username = txtUser.Text;
+            var password = txtPassword.Text;
 
-            FrmPrincipal frmPrincipal = new FrmPrincipal();
-            frmPrincipal.Show();
-            this.Hide();
+            // Llamar al controlador para autenticar al usuario
+            var empleado = _empleadoController.Authenticate(username, password);
+
+            if (empleado != null)
+            {
+                MessageBox.Show($"Bienvenido ¡{empleado.PrimerNombre}!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                frmPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Ver_Click(object sender, EventArgs e)

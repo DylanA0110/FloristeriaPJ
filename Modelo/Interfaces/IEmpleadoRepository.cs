@@ -16,5 +16,7 @@ namespace Modelo.Interfaces
         void Update(Empleado empleado);
         Empleado GetById(int id);
         void Delete(int id);
+
+        Empleado Authenticate(string username, string password);
     }
 }

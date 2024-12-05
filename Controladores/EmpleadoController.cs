@@ -30,6 +30,8 @@ namespace Controladores
 
         public IEnumerable<Empleado> SearchEmpleados(string searchTerm) => _empleadoRepository.Search(searchTerm);
 
+        public Empleado Authenticate(string username, string password) => _empleadoRepository.Authenticate(username, password);
+
 
     }
 }

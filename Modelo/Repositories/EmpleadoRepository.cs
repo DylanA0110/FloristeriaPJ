@@ -193,5 +193,43 @@ namespace Modelo.Repositories
 
             return empleados;
         }
+
+        public Empleado Authenticate(string username, string password)
+        {
+            Empleado empleado = null;
+
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand("EXEC sp_ObtenerEmpleadosDesencriptados", connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var dbUsername = reader["UserName"]?.ToString();
+                            var decryptedPassword = reader["ContrasenaDesencriptada"]?.ToString();
+
+                            if (dbUsername == username && decryptedPassword == password)
+                            {
+                                empleado = new Empleado
+                                {
+                                    Id_Empleado = (int)reader["Id_Empleado"],
+                                    PrimerNombre = reader["PrimerNombre"]?.ToString(),
+                                    PrimerApellido = reader["PrimerApellido"]?.ToString(),
+                                    UserName = dbUsername,
+                                    RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0
+                                };
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return empleado;
+        }
+
     }
 }

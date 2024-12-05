@@ -81,8 +81,7 @@ namespace UIFloristeria
 
         private void btnAuditoria_Click(object sender, EventArgs e)
         {
-            frmAuditoriaEmpleado frmEditar = new frmAuditoriaEmpleado();
-            frmEditar.ShowDialog();
+            
         }
 
         private void btnAgregarEmp_Click(object sender, EventArgs e)
