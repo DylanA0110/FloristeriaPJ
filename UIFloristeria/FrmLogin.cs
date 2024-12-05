@@ -97,7 +97,6 @@ namespace UIFloristeria
             var username = txtUser.Text;
             var password = txtPassword.Text;
 
-            // Llamar al controlador para autenticar al usuario
             var empleado = _empleadoController.Authenticate(username, password);
 
             if (empleado != null)
