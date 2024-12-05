@@ -14,10 +14,11 @@ namespace Modelo.Repositories
     {
        private readonly DbContext _dbContext;
 
-        public TipoDePagoRepository(DbContext dbContext)
+       public TipoDePagoRepository() 
         {
-            _dbContext = dbContext;
+        _dbContext = new DbContext();
         }
+
 
         public void Add(TipoDePago TipoPago)
         {

@@ -28,6 +28,8 @@ namespace UIFloristeria
             InitializeComponent();
             _facturaController = new FacturaController(new FacturaRepository());
             _pedidoController = new PedidoController(new PedidosRepository());
+            _pagoController = new PagoController(new PagoRepository());
+            _tipoDePagoController = new TipoDePagoController(new TipoDePagoRepository());
          
         }
 
@@ -70,8 +72,11 @@ namespace UIFloristeria
 
             var Pago = new Pago
             {
-                Monto = Convert.ToInt64(TxtMontoNeto)
+                Monto = Convert.ToDecimal(TxtMontoNeto.Text),
+                Fecha_pago = dtpFechaPago.Value.Date,
+                                                                    
             };
+        
             _pagoController.AddPago(Pago);
 
             var TipoPago = new TipoDePago

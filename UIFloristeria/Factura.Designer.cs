@@ -47,6 +47,8 @@
             TxtNumFactura = new TextBox();
             pictureBox4 = new PictureBox();
             TxtMontoTotal = new TextBox();
+            label3 = new Label();
+            dtpFechaPago = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dgvFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -93,7 +95,7 @@
             BtnPreliminar.FlatStyle = FlatStyle.Flat;
             BtnPreliminar.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnPreliminar.ForeColor = Color.Black;
-            BtnPreliminar.Location = new Point(662, 171);
+            BtnPreliminar.Location = new Point(605, 171);
             BtnPreliminar.Name = "BtnPreliminar";
             BtnPreliminar.Size = new Size(154, 31);
             BtnPreliminar.TabIndex = 17;
@@ -109,7 +111,7 @@
             BtnImprimir.FlatStyle = FlatStyle.Flat;
             BtnImprimir.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnImprimir.ForeColor = Color.Black;
-            BtnImprimir.Location = new Point(662, 124);
+            BtnImprimir.Location = new Point(605, 124);
             BtnImprimir.Name = "BtnImprimir";
             BtnImprimir.Size = new Size(154, 31);
             BtnImprimir.TabIndex = 102;
@@ -147,12 +149,12 @@
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
             dgvFactura.DefaultCellStyle = dataGridViewCellStyle6;
             dgvFactura.EnableHeadersVisualStyles = false;
-            dgvFactura.Location = new Point(66, 275);
+            dgvFactura.Location = new Point(29, 311);
             dgvFactura.Name = "dgvFactura";
             dgvFactura.ReadOnly = true;
             dgvFactura.RowHeadersVisible = false;
             dgvFactura.RowTemplate.Height = 40;
-            dgvFactura.Size = new Size(750, 193);
+            dgvFactura.Size = new Size(736, 231);
             dgvFactura.TabIndex = 103;
             // 
             // rbFactura
@@ -161,7 +163,7 @@
             rbFactura.BackColor = Color.FromArgb(24, 64, 57);
             rbFactura.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rbFactura.ForeColor = Color.White;
-            rbFactura.Location = new Point(248, 196);
+            rbFactura.Location = new Point(29, 68);
             rbFactura.Name = "rbFactura";
             rbFactura.Size = new Size(175, 21);
             rbFactura.TabIndex = 107;
@@ -178,7 +180,7 @@
             BtnInsertarFactura.FlatStyle = FlatStyle.Flat;
             BtnInsertarFactura.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             BtnInsertarFactura.ForeColor = Color.Black;
-            BtnInsertarFactura.Location = new Point(662, 220);
+            BtnInsertarFactura.Location = new Point(605, 220);
             BtnInsertarFactura.Name = "BtnInsertarFactura";
             BtnInsertarFactura.Size = new Size(154, 31);
             BtnInsertarFactura.TabIndex = 108;
@@ -237,7 +239,7 @@
             // 
             pictureBox3.BackColor = Color.FromArgb(24, 64, 57);
             pictureBox3.Image = Properties.Resources.Loading;
-            pictureBox3.Location = new Point(445, 226);
+            pictureBox3.Location = new Point(237, 220);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(186, 22);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -250,7 +252,7 @@
             TxtNumFactura.BorderStyle = BorderStyle.None;
             TxtNumFactura.Font = new Font("Century Gothic", 12F);
             TxtNumFactura.ForeColor = Color.White;
-            TxtNumFactura.Location = new Point(451, 188);
+            TxtNumFactura.Location = new Point(237, 194);
             TxtNumFactura.Name = "TxtNumFactura";
             TxtNumFactura.Size = new Size(186, 20);
             TxtNumFactura.TabIndex = 116;
@@ -279,12 +281,37 @@
             TxtMontoTotal.TabIndex = 118;
             TxtMontoTotal.Text = "Monto total";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(24, 64, 57);
+            label3.Font = new Font("Century Gothic", 12F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(445, 193);
+            label3.Name = "label3";
+            label3.Size = new Size(131, 21);
+            label3.TabIndex = 121;
+            label3.Text = "Fecha de pago";
+            // 
+            // dtpFechaPago
+            // 
+            dtpFechaPago.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpFechaPago.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
+            dtpFechaPago.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
+            dtpFechaPago.Format = DateTimePickerFormat.Short;
+            dtpFechaPago.Location = new Point(445, 220);
+            dtpFechaPago.Name = "dtpFechaPago";
+            dtpFechaPago.Size = new Size(121, 23);
+            dtpFechaPago.TabIndex = 120;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
-            ClientSize = new Size(877, 507);
+            ClientSize = new Size(929, 580);
+            Controls.Add(label3);
+            Controls.Add(dtpFechaPago);
             Controls.Add(pictureBox4);
             Controls.Add(TxtMontoTotal);
             Controls.Add(pictureBox3);
@@ -333,5 +360,7 @@
         private TextBox TxtNumFactura;
         private PictureBox pictureBox4;
         private TextBox TxtMontoTotal;
+        private Label label3;
+        private DateTimePicker dtpFechaPago;
     }
 }

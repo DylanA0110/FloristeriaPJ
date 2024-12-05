@@ -14,9 +14,9 @@ namespace Modelo.Repositories
     {
         private readonly DbContext _dbContext;
 
-        public PagoRepository(DbContext dbContext)
+        public PagoRepository()
         {
-            _dbContext = dbContext;
+            _dbContext = new DbContext();
         }
 
         public void Add(Pago pago)
@@ -24,7 +24,7 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Pago (Id_factura, Id_Tipo_Pago, Monto, Fecha_Pago) VALUES (@Id_factura, @Id_Tipo_Pago, @Monto, @Fecha_Pago,)", connection);
+                var command = new SqlCommand("INSERT INTO Pago (Id_factura, Id_Tipo_Pago, Monto, Fecha_Pago) VALUES (@Id_factura, @Id_Tipo_Pago, @Monto, @Fecha_Pago)", connection);
                 command.Parameters.AddWithValue("@Id_factura", pago.Id_factura);
                 command.Parameters.AddWithValue("@Id_Tipo_Pago", pago.Id_Tipo_Pago);
                 command.Parameters.AddWithValue("@Monto", pago.Monto);
