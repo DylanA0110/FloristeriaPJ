@@ -92,7 +92,12 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac) VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @UserName, @Contrasena, @Telefono, @FechaDeNac)", connection);
+                var command = new SqlCommand(
+    "INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac, UserName) " +
+    "VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @Contrasena, @Telefono, @FechaDeNac, @UserName)",
+    connection
+);
+
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
                 command.Parameters.AddWithValue("@PrimerApellido", empleado.PrimerApellido);

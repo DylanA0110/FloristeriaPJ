@@ -191,6 +191,12 @@ namespace UIFloristeria
 
             try
             {
+                if (txtPass.Text != txtConfirmPass.Text)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 var nuevoEmpleado = new Empleado
                 {
                     PrimerNombre = txtPrimerNombre.Text,
@@ -202,7 +208,7 @@ namespace UIFloristeria
                     UserName = txtUser.Text,
                     Contrasena = txtPass.Text,
                     Telefono = mtxtTelefono.Text,
-                    FechaDeNac = dtpFechaNac.Value,
+                    FechaDeNac = dtpFechaNac.Value
                 };
 
                 // Validar empleado
@@ -221,7 +227,6 @@ namespace UIFloristeria
                 MessageBox.Show("Empleado registrado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK; // Indica éxito
                 this.Close();
-
             }
             catch (Exception ex)
             {
