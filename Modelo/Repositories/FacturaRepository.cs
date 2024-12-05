@@ -106,7 +106,6 @@ namespace Modelo.Repositories
         public IEnumerable<Facturas> Search(string searchTerm)
         {
             var factura = new List<Facturas>();
-            var cliente = new List<Cliente>();
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
