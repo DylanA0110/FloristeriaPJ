@@ -99,7 +99,12 @@ namespace UIFloristeria
 
             if (empleado != null)
             {
-                MessageBox.Show($"¡Bienvenido {empleado.PrimerNombre}!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                EmpleadoAutenticado.EmpleadoId = empleado.Id_Empleado;
+                EmpleadoAutenticado.PrimerNombre = empleado.PrimerNombre;
+                EmpleadoAutenticado.PrimerApellido = empleado.PrimerApellido;
+                EmpleadoAutenticado.RolId = empleado.RolId;
+
+                MessageBox.Show($"¡Bienvenido {empleado.PrimerNombre} {empleado.PrimerApellido}!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmPrincipal frmPrincipal = new FrmPrincipal();
                 frmPrincipal.Show();
                 this.Hide();

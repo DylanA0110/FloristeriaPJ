@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,14 +133,15 @@ namespace UIFloristeria
 
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
-            frmEmpleado frmEmpleado = new frmEmpleado();
-            AbrirFormularioEnPanel(frmEmpleado);
-        }
-
-        private void btnProveedor_Click(object sender, EventArgs e)
-        {
-            frmCompra frmCompra = new frmCompra();
-            AbrirFormularioEnPanel(frmCompra);
+            if (EmpleadoAutenticado.RolId == 1) // RolId = 1 para Administrador
+            {
+                frmEmpleado frmEmpleado = new frmEmpleado();
+                AbrirFormularioEnPanel(frmEmpleado);
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a esta sección.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
@@ -173,8 +175,15 @@ namespace UIFloristeria
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
-            frmCompra frmCompra = new frmCompra();
-            AbrirFormularioEnPanel(frmCompra);
+            if (EmpleadoAutenticado.RolId == 1) // RolId = 1 para Administrador
+            {
+                frmCompra frmCompra = new frmCompra();
+                AbrirFormularioEnPanel(frmCompra);
+            }
+            else
+            {
+                MessageBox.Show("No tienes permiso para acceder a esta sección.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
