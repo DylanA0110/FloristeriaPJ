@@ -9,12 +9,12 @@ namespace Modelo.Interfaces
 {
     public interface IFacturaRepository
     {
-        IEnumerable<Factura> GetAll();
-        Factura GetById(int id);
-        void Add(Factura factura);
-        void Update(Factura factura);
+        IEnumerable<Facturas> GetAll();
+        Facturas GetById(int id);
+        void Add(Facturas factura);
+        void Update(Facturas factura);
         void Delete(int id);
-        IEnumerable<Factura> Search(string searchTerm);
+        IEnumerable<Facturas> Search(string searchTerm);
     }
 }
 

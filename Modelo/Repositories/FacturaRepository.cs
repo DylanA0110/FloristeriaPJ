@@ -18,18 +18,25 @@ namespace Modelo.Repositories
             _dbContext = new DbContext();
         }
 
-        public void Add(Factura factura)
+        public void Add(Facturas factura)
         {
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Factura (Id_pedido,Monto_Total, Estado, NumFactura)", connection);
-                command.Parameters.AddWithValue("@Id_pedido", factura.Id_pedido);               
+
+                var command = new SqlCommand(
+                    @"INSERT INTO Factura (Id_pedido, Monto_Total, Estado, NumFactura) 
+          VALUES (@Id_pedido, @Monto_Total, @Estado, @NumFactura)",
+                    connection);
+
+                command.Parameters.AddWithValue("@Id_pedido", factura.Id_pedido);
                 command.Parameters.AddWithValue("@Monto_Total", factura.Monto_total);
                 command.Parameters.AddWithValue("@Estado", factura.Estado);
                 command.Parameters.AddWithValue("@NumFactura", factura.NumFactura);
+
                 command.ExecuteNonQuery();
             }
+
         }
 
         public void Delete(int id)
@@ -43,9 +50,9 @@ namespace Modelo.Repositories
             }
         }
 
-        public IEnumerable<Factura> GetAll()
+        public IEnumerable<Facturas> GetAll()
         {
-            var factura = new List<Factura>();
+            var factura = new List<Facturas>();
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
@@ -54,7 +61,7 @@ namespace Modelo.Repositories
                 {
                     while (reader.Read())
                     {
-                        factura.Add(new Factura
+                        factura.Add(new Facturas
                         {
                            Id_factura = (int)reader["Id_factura"],
                            Id_Empleado= (int)reader["Id_Empleado"],
@@ -69,9 +76,9 @@ namespace Modelo.Repositories
             return factura;
         }
 
-        public Factura GetById(int id)
+        public Facturas GetById(int id)
         {
-            Factura factura = new Factura();
+            Facturas factura = new Facturas();
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
@@ -81,7 +88,7 @@ namespace Modelo.Repositories
                 {
                     if (reader.Read())
                     {
-                        factura = new Factura
+                        factura = new Facturas
                         {
                             Id_factura = (int)reader["Id_factura"],
                             Id_Empleado = (int)reader["Id_Empleado"],
@@ -96,9 +103,9 @@ namespace Modelo.Repositories
             return factura;
         }
 
-        public IEnumerable<Factura> Search(string searchTerm)
+        public IEnumerable<Facturas> Search(string searchTerm)
         {
-            var factura = new List<Factura>();
+            var factura = new List<Facturas>();
             var cliente = new List<Cliente>();
             using (var connection = _dbContext.GetConnection())
             {
@@ -112,7 +119,7 @@ namespace Modelo.Repositories
                     {
                         while (reader.Read())
                         {
-                            factura.Add(new Factura
+                            factura.Add(new Facturas
                             {
                                 Id_factura = (int)reader["Id_factura"],
                                 Id_Empleado = (int)reader["Id_Empleado"],
@@ -128,7 +135,7 @@ namespace Modelo.Repositories
             }
         }
 
-        public void Update(Factura factura)
+        public void Update(Facturas factura)
         {
             using (var connection = _dbContext.GetConnection())
             {

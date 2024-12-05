@@ -17,17 +17,17 @@ namespace Controladores
         {
             _facturaRepository = facturaRepository;
         }
-        public IEnumerable<Factura> GetAllFactura() => _facturaRepository.GetAll();
+        public IEnumerable<Facturas> GetAllFactura() => _facturaRepository.GetAll();
 
-        public Factura GetFacturaById(int id) => _facturaRepository.GetById(id);
+        public Facturas GetFacturaById(int id) => _facturaRepository.GetById(id);
 
-        public void AddFactura(Factura factura) => _facturaRepository.Add(factura);
+        public void AddFactura(Facturas factura) => _facturaRepository.Add(factura);
 
-        public void UpdateFactura(Factura factura) => _facturaRepository.Update(factura);
+        public void UpdateFactura(Facturas factura) => _facturaRepository.Update(factura);
 
         public void DeleteFactura(int id) => _facturaRepository.Delete(id);
 
-        public IEnumerable<Factura> SearchFactura(string searchTerm) => _facturaRepository.Search(searchTerm);
+        public IEnumerable<Facturas> SearchFactura(string searchTerm) => _facturaRepository.Search(searchTerm);
 
     }
 }

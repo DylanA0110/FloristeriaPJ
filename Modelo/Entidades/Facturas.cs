@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.Entidades
 {
-    public class Factura
+    public class Facturas
     {
         [Key]
         public int Id_factura { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Controladores;
+using Modelo.Entidades;
 using Modelo.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,14 @@ namespace UIFloristeria
     {
         private readonly FacturaController _facturaController;
         private readonly PedidoController _pedidoController;
+       
+        //Constructor mierda
         public Factura()
         {
             InitializeComponent();
             _facturaController = new FacturaController(new FacturaRepository());
             _pedidoController = new PedidoController(new PedidosRepository());
+         
         }
 
 
@@ -42,7 +46,22 @@ namespace UIFloristeria
             }
         }
 
+        private void rbFactura_CheckedChanged(object sender, EventArgs e)
+        {
+            TxtNumeroFactura.Enabled = rbFactura.Checked;
+        }
+        
 
-
+        private void BtnInsertarFactura_Click(object sender, EventArgs e)
+        {
+            var facturas = new Facturas
+            {
+                Id_pedido = Convert.ToInt16(TxtPedido.Text),
+                NumFactura = Convert.ToInt16(TxtNumeroFactura.Text),
+                Estado = Convert.ToBoolean(rbFactura.Checked),
+                Monto_total = Convert.ToInt16(TxtMontoTotal.Text),
+            };
+             
+        }
     }
 }

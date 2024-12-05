@@ -24,19 +24,30 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Pedido (Descripcion, Cantidad, Fecha_Solicitud, Fecha_Entrega, Enviarse_A)", connection);
+                var command = new SqlCommand(
+                    @"INSERT INTO Pedido (Descripcion, Cantidad, Fecha_Solicitud, Fecha_Entrega, Enviarse_A) 
+              VALUES (@Descripcion, @Cantidad, @Fecha_Solicitud, @Fecha_Entrega, @Enviarse_A)",
+                    connection);
+
                 command.Parameters.AddWithValue("@Descripcion", pedido.Descripcion);
                 command.Parameters.AddWithValue("@Cantidad", pedido.Cantidad);
                 command.Parameters.AddWithValue("@Fecha_Solicitud", pedido.Fecha_solicitud);
                 command.Parameters.AddWithValue("@Fecha_Entrega", pedido.Fecha_entrega);
                 command.Parameters.AddWithValue("@Enviarse_A", pedido.Enviarse_A);
+
                 command.ExecuteNonQuery();
             }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("DELETE FROM Pedido WHERE Id_pedido = @Id_pedido", connection);
+                command.Parameters.AddWithValue("@Id_pedido", id);
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<Pedido> GetaAll()
