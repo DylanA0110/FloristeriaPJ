@@ -23,9 +23,10 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
         private readonly EmpleadoController _empleadoController;
-        public FrmRegister()
+        public FrmRegister(EmpleadoController empleadoController)
         {
             InitializeComponent();
+            _empleadoController = empleadoController;
         }
 
         private void FrmRegister_MouseDown(object sender, MouseEventArgs e)

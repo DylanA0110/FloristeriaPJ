@@ -84,11 +84,7 @@ namespace UIFloristeria
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void linkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmRegister frmregist = new FrmRegister();
-            frmregist.ShowDialog();
-        }
+     
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

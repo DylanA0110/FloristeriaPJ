@@ -1,5 +1,6 @@
 ﻿using Controladores;
 using Modelo.Entidades;
+using Modelo.Validaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,6 +112,15 @@ namespace UIFloristeria
 
 
             };
+            // Validar empleado
+            var errores = ValidadorEntidad.Validar(empleado);
+
+            if (errores.Count > 0)
+            {
+                // Mostrar errores en un MessageBox
+                MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             try
             {
