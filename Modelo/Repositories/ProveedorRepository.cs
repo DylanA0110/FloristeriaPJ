@@ -119,9 +119,10 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Proveedor SET Nombre_Proveedor = @Nombre_Proveedor, Telefono = @Telefono", connection);
+                var command = new SqlCommand("UPDATE Proveedor SET Nombre_Proveedor = @Nombre_Proveedor, Telefono = @Telefono WHERE Id_Proveedor = @Id_Proveedor", connection);
                 command.Parameters.AddWithValue("@Nombre_Proveedor", proveedor.Nombre_Proveedor);
                 command.Parameters.AddWithValue("@Telefono", proveedor.Telefono);
+                command.Parameters.AddWithValue("@Id_Proveedor", proveedor.Id_Proveedor);
                 command.ExecuteNonQuery();
             }
         }

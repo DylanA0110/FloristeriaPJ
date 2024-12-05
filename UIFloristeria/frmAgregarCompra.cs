@@ -33,13 +33,30 @@ namespace UIFloristeria
         private void btnAgregarCompra_Click(object sender, EventArgs e)
         {
 
-            // Convertir y asignar valores
+            // Validar y convertir la cantidad
+            if (!int.TryParse(txtCantidad.Text, out int cantidad))
+            {
+                MessageBox.Show("La cantidad ingresada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si la conversión falla
+            }
+
+            // Validar y convertir el precio unitario
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precioUnitario))
+            {
+                MessageBox.Show("El precio unitario ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si la conversión falla
+            }
+
+            // Crear el objeto Compra con los valores convertidos
             var nuevaCompra = new Compra
             {
-                Cantidad = int.Parse(txtCantidad.Text), // Convertir a int
+                Cantidad = cantidad, // Usar la cantidad convertida
                 FechaCompra = dtpFechaCompra.Value, // Acceder al valor del DateTimePicker
-                Precio_Unitario = decimal.Parse(txtPrecio.Text) // Convertir a decimal
+                Precio_Unitario = precioUnitario // Usar el precio unitario convertido
             };
+
+            // Aquí puedes agregar el código para guardar la compra, etc.
+
 
 
             // Validar empleado
