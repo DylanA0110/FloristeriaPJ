@@ -102,7 +102,7 @@ namespace UIFloristeria
 
             if (empleado != null)
             {
-                MessageBox.Show($"Bienvenido ¡{empleado.PrimerNombre}!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"¡Bienvenido {empleado.PrimerNombre}!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmPrincipal frmPrincipal = new FrmPrincipal();
                 frmPrincipal.Show();
                 this.Hide();
