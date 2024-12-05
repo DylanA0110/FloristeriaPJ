@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Controladores;
+using Modelo.Entidades;
+using Modelo.Validaciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +22,12 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-        public frmAgregarProveedor()
+
+        private readonly ProveedorController _proveedorController;
+        public frmAgregarProveedor(ProveedorController proveedorController)
         {
             InitializeComponent();
+            _proveedorController = proveedorController;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -36,8 +42,33 @@ namespace UIFloristeria
 
         private void btnAggProveedor_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK; // Si se agregó con éxito
-            this.Close();
+            var nuevoProveedor = new Proveedor
+            {
+                Nombre_Proveedor = txtNombreProveedor.Text,
+                Telefono = mtxtTelefono.Text
+            };
+            // Validar empleado
+            var errores = ValidadorEntidad.Validar(nuevoProveedor);
+
+            if (errores.Count > 0)
+            {
+                // Mostrar errores en un MessageBox
+                MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                // Agregar empleado a través del controlador
+                _proveedorController.AddProveedor(nuevoProveedor);
+
+                MessageBox.Show("Proveedor registrado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmAgregarProveedor_MouseDown(object sender, MouseEventArgs e)

@@ -14,9 +14,9 @@ namespace Modelo.Repositories
     {
         private readonly DbContext _dbContext;
 
-        public ProveedorRepository(DbContext dbContext)
+        public ProveedorRepository()
         {
-            _dbContext = dbContext;
+            _dbContext = new DbContext();
         }
 
         public void Add(Proveedor proveedor)
