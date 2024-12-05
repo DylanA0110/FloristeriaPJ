@@ -34,16 +34,22 @@ namespace Modelo.Repositories
                             SegundoNombre = reader["SegundoNombre"]?.ToString(),
                             PrimerApellido = reader["PrimerApellido"]?.ToString(),
                             SegundoApellido = reader["SegundoApellido"]?.ToString(),
-                            Sexo = reader["Sexo"] != DBNull.Value ? reader["Sexo"].ToString() : string.Empty,// Asignar un valor por defecto
-                            FechaInicioSesion = reader["FechaInicioSesion"] as DateTime?,
-                            FechaCierreSesion = reader["FechaCierreSesion"] as DateTime?,
+                            Sexo = reader["Sexo"] != DBNull.Value ? reader["Sexo"].ToString() : string.Empty, // Valor por defecto
+                            FechaInicioSesion = reader["FechaInicioSesion"] != DBNull.Value
+                                ? (DateTime?)reader["FechaInicioSesion"]
+                                : null, // Manejo de nulos
+                            FechaCierreSesion = reader["FechaCierreSesion"] != DBNull.Value
+                                ? (DateTime?)reader["FechaCierreSesion"]
+                                : null, // Manejo de nulos
                             Correo = reader["Correo"]?.ToString(),
                             UserName = reader["UserName"]?.ToString(),
                             Contrasena = reader["Contrasena"]?.ToString(),
                             Telefono = reader["Telefono"]?.ToString(),
-                            FechaDeNac = (DateTime)reader["FechaDeNac"],
+                            FechaDeNac = reader["FechaDeNac"] != DBNull.Value
+                                ? (DateTime)reader["FechaDeNac"]
+                                : default(DateTime), // Valor predeterminado
                             EsAprobado = reader["EsAprobado"] != DBNull.Value && (bool)reader["EsAprobado"],
-                            RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0 // Asignar un valor por defecto
+                            RolId = reader["RolId"] != DBNull.Value ? (int)reader["RolId"] : 0 // Valor predeterminado
                         });
                     }
                 }
