@@ -85,10 +85,9 @@ namespace UIFloristeria
         {
             FrmRegister register = new FrmRegister(_empleadoController);
             register.ShowDialog();
-            //Si Mando exito
             if (register.ShowDialog() == DialogResult.OK)
             {
-                // Recarga los empleados
+                // Reload employees
                 LoadEmpleados();
             }
         }

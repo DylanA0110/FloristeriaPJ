@@ -225,7 +225,7 @@ namespace UIFloristeria
                 _empleadoController.AddEmpleado(nuevoEmpleado);
 
                 MessageBox.Show("Empleado registrado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK; // Indica éxito
+                this.DialogResult = DialogResult.OK; 
                 this.Close();
             }
             catch (Exception ex)
