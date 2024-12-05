@@ -1,4 +1,5 @@
 ﻿using Controladores;
+using Modelo.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,13 +56,73 @@ namespace UIFloristeria
 
         private void frmEditarEmpleado_Load(object sender, EventArgs e)
         {
-
+            var empleado = _empleadoController.GetEmpleadoById(_idEmpleadoEditar);
+            if (empleado != null)
+            {
+                txtPrimerNombre.Text = empleado.PrimerNombre;
+                txtSegundoNombre.Text = empleado.SegundoNombre;
+                txtPrimerApellido.Text = empleado.PrimerApellido;
+                txtSegundoApellido.Text = empleado.SegundoApellido;
+                txtCorreo.Text = empleado.Correo;
+                mtxtTelefono.Text = empleado.Telefono;
+                txtPass.Text = empleado.Contrasena;
+                rbHombre.Checked = empleado.Sexo.Trim() == "M";
+                rbMujer.Checked = empleado.Sexo.Trim() == "F";
+                rbSi.Checked = empleado.EsAprobado;
+                rbNo.Checked = !empleado.EsAprobado;
+                dtpFechaNac.Value = (DateTime)empleado.FechaDeNac;
+                txtUserName.Text = empleado.UserName;
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
 
         private void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK; // Indica que se realizó una edición exitosa
-            this.Close();
+            string nuevaContrasena = null; // Variable para la nueva contraseña
+            if (chkCambiarPass.Checked)
+            {
+                if (txtPass.Text != txtConfirmPass.Text)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                nuevaContrasena = txtPass.Text; // Asigna la nueva contraseña
+            }
+
+            var empleado = new Empleado
+            {
+                Id_Empleado = _idEmpleadoEditar,
+                PrimerNombre = txtPrimerNombre.Text,
+                SegundoNombre = txtSegundoNombre.Text,
+                PrimerApellido = txtPrimerApellido.Text,
+                SegundoApellido = txtSegundoApellido.Text,
+                Sexo = rbHombre.Checked ? "M" : "F",
+                Correo = txtCorreo.Text,
+                Telefono = mtxtTelefono.Text,
+                Contrasena = nuevaContrasena ?? txtPass.Text, // Usa la nueva contraseña o conserva la actual
+                EsAprobado = rbSi.Checked,
+                UserName = txtUserName.Text,
+                FechaDeNac = (DateTime)dtpFechaNac.Value,
+                RolId = 0
+
+
+            };
+
+            try
+            {
+                _empleadoController.UpdateEmpleado(empleado);
+                MessageBox.Show("Empleado actualizado exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; // Indica éxito
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al actualizar el empleado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void NoVer_Click(object sender, EventArgs e)
@@ -76,6 +137,38 @@ namespace UIFloristeria
             NoVer.Visible = true;
             Ver.Visible = false;
             txtPass.UseSystemPasswordChar = true;
+        }
+
+        private void txtConfirmPass_Enter(object sender, EventArgs e)
+        {
+            if (txtConfirmPass.Text == "Confirmar Contraseña")
+            {
+                txtConfirmPass.Text = "";
+                txtConfirmPass.UseSystemPasswordChar = true; // Oculta el texto como contraseña
+            }
+        }
+
+        private void txtConfirmPass_Leave(object sender, EventArgs e)
+        {
+            if (txtConfirmPass.Text == "")
+            {
+                txtConfirmPass.Text = "Confirmar Contraseña";
+                txtConfirmPass.UseSystemPasswordChar = false; // Muestra el texto predeterminado como visible
+            }
+        }
+
+        private void chkCambiarPass_CheckedChanged(object sender, EventArgs e)
+        {
+            bool habilitar = chkCambiarPass.Checked;
+            txtPass.Enabled = habilitar;
+            txtConfirmPass.Enabled = habilitar;
+
+            // Limpia los campos si se desactiva el CheckBox
+            if (!habilitar)
+            {
+                txtPass.Text = string.Empty;
+                txtConfirmPass.Text = string.Empty;
+            }
         }
     }
 }

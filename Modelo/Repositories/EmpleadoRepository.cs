@@ -92,13 +92,12 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, FechaInicioSesion, Correo, UserName, Contrasena, Telefono, FechaDeNac, EsAprobado, RolId) VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @FechaInicioSesion, @Correo, @UserName, @Contrasena, @Telefono, @FechaDeNac, @EsAprobado, @RolId)", connection);
+                var command = new SqlCommand("INSERT INTO Empleado (PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, Sexo, Correo, Contrasena, Telefono, FechaDeNac, EsAprobado, RolId) VALUES (@PrimerNombre, @SegundoNombre, @PrimerApellido, @SegundoApellido, @Sexo, @Correo, @UserName, @Contrasena, @Telefono, @FechaDeNac, @EsAprobado, @RolId)", connection);
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
                 command.Parameters.AddWithValue("@PrimerApellido", empleado.PrimerApellido);
                 command.Parameters.AddWithValue("@SegundoApellido", empleado.SegundoApellido);
                 command.Parameters.AddWithValue("@Sexo", empleado.Sexo);
-                command.Parameters.AddWithValue("@FechaInicioSesion", empleado.FechaInicioSesion);
                 command.Parameters.AddWithValue("@Correo", empleado.Correo);
                 command.Parameters.AddWithValue("@UserName", empleado.UserName);
                 command.Parameters.AddWithValue("@Contrasena", empleado.Contrasena);
@@ -115,21 +114,19 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Empleado SET PrimerNombre = @PrimerNombre, SegundoNombre = @SegundoNombre, PrimerApellido = @PrimerApellido, SegundoApellido = @SegundoApellido, Sexo = @Sexo, FechaInicioSesion = @FechaInicioSesion, Correo = @Correo, UserName = @UserName, Contrasena = @Contrasena, Telefono = @Telefono, FechaDeNac = @FechaDeNac, EsAprobado = @EsAprobado, RolId = @RolId WHERE Id_Empleado = @Id_Empleado", connection);
+                var command = new SqlCommand("UPDATE Empleado SET PrimerNombre = @PrimerNombre, SegundoNombre = @SegundoNombre, PrimerApellido = @PrimerApellido, SegundoApellido = @SegundoApellido, Sexo = @Sexo, Correo = @Correo, UserName = @UserName, Contrasena = @Contrasena, Telefono = @Telefono, FechaDeNac = @FechaDeNac, EsAprobado = @EsAprobado WHERE Id_Empleado = @Id_Empleado", connection);
                 command.Parameters.AddWithValue("@Id_Empleado", empleado.Id_Empleado);
                 command.Parameters.AddWithValue("@PrimerNombre", empleado.PrimerNombre);
                 command.Parameters.AddWithValue("@SegundoNombre", empleado.SegundoNombre);
                 command.Parameters.AddWithValue("@PrimerApellido", empleado.PrimerApellido);
                 command.Parameters.AddWithValue("@SegundoApellido", empleado.SegundoApellido);
                 command.Parameters.AddWithValue("@Sexo", empleado.Sexo);
-                command.Parameters.AddWithValue("@FechaInicioSesion", empleado.FechaInicioSesion);
                 command.Parameters.AddWithValue("@Correo", empleado.Correo);
                 command.Parameters.AddWithValue("@UserName", empleado.UserName);
                 command.Parameters.AddWithValue("@Contrasena", empleado.Contrasena);
                 command.Parameters.AddWithValue("@Telefono", empleado.Telefono);
                 command.Parameters.AddWithValue("@FechaDeNac", empleado.FechaDeNac);
                 command.Parameters.AddWithValue("@EsAprobado", empleado.EsAprobado);
-                command.Parameters.AddWithValue("@RolId", empleado.RolId);
                 command.ExecuteNonQuery();
             }
         }

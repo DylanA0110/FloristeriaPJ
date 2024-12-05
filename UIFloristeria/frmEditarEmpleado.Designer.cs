@@ -45,8 +45,8 @@
             txtSegundoApellido = new TextBox();
             pictureBox5 = new PictureBox();
             label2 = new Label();
-            rbMujer = new RadioButton();
-            rbHombre = new RadioButton();
+            rbNo = new RadioButton();
+            rbSi = new RadioButton();
             txtCorreo = new TextBox();
             pictureBox6 = new PictureBox();
             pictureBox9 = new PictureBox();
@@ -54,10 +54,18 @@
             pictureBox8 = new PictureBox();
             txtPass = new TextBox();
             label3 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            rbMujer = new RadioButton();
+            rbHombre = new RadioButton();
             Ver = new PictureBox();
             NoVer = new PictureBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            chkCambiarPass = new CheckBox();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
+            dtpFechaNac = new DateTimePicker();
+            txtUserName = new TextBox();
+            pictureBox7 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -68,6 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Ver).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NoVer).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -86,7 +97,7 @@
             btnEditarEmpleado.BackColor = Color.White;
             btnEditarEmpleado.FlatStyle = FlatStyle.Popup;
             btnEditarEmpleado.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarEmpleado.Location = new Point(326, 366);
+            btnEditarEmpleado.Location = new Point(320, 460);
             btnEditarEmpleado.Name = "btnEditarEmpleado";
             btnEditarEmpleado.Size = new Size(142, 27);
             btnEditarEmpleado.TabIndex = 97;
@@ -262,33 +273,33 @@
             label2.TabIndex = 108;
             label2.Text = "Es Aprobado:";
             // 
-            // rbMujer
+            // rbNo
             // 
-            rbMujer.AutoSize = true;
-            rbMujer.BackColor = Color.FromArgb(222, 151, 54);
-            rbMujer.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbMujer.ForeColor = Color.White;
-            rbMujer.Location = new Point(63, 226);
-            rbMujer.Name = "rbMujer";
-            rbMujer.Size = new Size(45, 21);
-            rbMujer.TabIndex = 107;
-            rbMujer.TabStop = true;
-            rbMujer.Text = "No";
-            rbMujer.UseVisualStyleBackColor = false;
+            rbNo.AutoSize = true;
+            rbNo.BackColor = Color.FromArgb(222, 151, 54);
+            rbNo.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbNo.ForeColor = Color.White;
+            rbNo.Location = new Point(14, 29);
+            rbNo.Name = "rbNo";
+            rbNo.Size = new Size(45, 21);
+            rbNo.TabIndex = 107;
+            rbNo.TabStop = true;
+            rbNo.Text = "No";
+            rbNo.UseVisualStyleBackColor = false;
             // 
-            // rbHombre
+            // rbSi
             // 
-            rbHombre.AutoSize = true;
-            rbHombre.BackColor = Color.FromArgb(222, 151, 54);
-            rbHombre.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbHombre.ForeColor = Color.White;
-            rbHombre.Location = new Point(63, 201);
-            rbHombre.Name = "rbHombre";
-            rbHombre.Size = new Size(35, 21);
-            rbHombre.TabIndex = 106;
-            rbHombre.TabStop = true;
-            rbHombre.Text = "Si";
-            rbHombre.UseVisualStyleBackColor = false;
+            rbSi.AutoSize = true;
+            rbSi.BackColor = Color.FromArgb(222, 151, 54);
+            rbSi.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbSi.ForeColor = Color.White;
+            rbSi.Location = new Point(14, 4);
+            rbSi.Name = "rbSi";
+            rbSi.Size = new Size(35, 21);
+            rbSi.TabIndex = 106;
+            rbSi.TabStop = true;
+            rbSi.Text = "Si";
+            rbSi.UseVisualStyleBackColor = false;
             // 
             // txtCorreo
             // 
@@ -334,6 +345,8 @@
             txtConfirmPass.Size = new Size(186, 20);
             txtConfirmPass.TabIndex = 113;
             txtConfirmPass.Text = "Confirmar Contraseña";
+            txtConfirmPass.Enter += txtConfirmPass_Enter;
+            txtConfirmPass.Leave += txtConfirmPass_Leave;
             // 
             // pictureBox8
             // 
@@ -370,33 +383,33 @@
             label3.TabIndex = 117;
             label3.Text = "Sexo:";
             // 
-            // radioButton1
+            // rbMujer
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = Color.FromArgb(222, 151, 54);
-            radioButton1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.ForeColor = Color.White;
-            radioButton1.Location = new Point(253, 226);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(60, 21);
-            radioButton1.TabIndex = 116;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Mujer";
-            radioButton1.UseVisualStyleBackColor = false;
+            rbMujer.AutoSize = true;
+            rbMujer.BackColor = Color.FromArgb(222, 151, 54);
+            rbMujer.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbMujer.ForeColor = Color.White;
+            rbMujer.Location = new Point(17, 36);
+            rbMujer.Name = "rbMujer";
+            rbMujer.Size = new Size(60, 21);
+            rbMujer.TabIndex = 116;
+            rbMujer.TabStop = true;
+            rbMujer.Text = "Mujer";
+            rbMujer.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rbHombre
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = Color.FromArgb(222, 151, 54);
-            radioButton2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.ForeColor = Color.White;
-            radioButton2.Location = new Point(253, 207);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(78, 21);
-            radioButton2.TabIndex = 115;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Hombre";
-            radioButton2.UseVisualStyleBackColor = false;
+            rbHombre.AutoSize = true;
+            rbHombre.BackColor = Color.FromArgb(222, 151, 54);
+            rbHombre.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rbHombre.ForeColor = Color.White;
+            rbHombre.Location = new Point(17, 9);
+            rbHombre.Name = "rbHombre";
+            rbHombre.Size = new Size(78, 21);
+            rbHombre.TabIndex = 115;
+            rbHombre.TabStop = true;
+            rbHombre.Text = "Hombre";
+            rbHombre.UseVisualStyleBackColor = false;
             // 
             // Ver
             // 
@@ -418,17 +431,105 @@
             NoVer.TabStop = false;
             NoVer.Click += NoVer_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(rbNo);
+            panel1.Controls.Add(rbSi);
+            panel1.Location = new Point(49, 197);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(65, 62);
+            panel1.TabIndex = 120;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(rbMujer);
+            panel2.Controls.Add(rbHombre);
+            panel2.Location = new Point(236, 198);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(104, 72);
+            panel2.TabIndex = 121;
+            // 
+            // chkCambiarPass
+            // 
+            chkCambiarPass.AutoSize = true;
+            chkCambiarPass.Location = new Point(41, 312);
+            chkCambiarPass.Name = "chkCambiarPass";
+            chkCambiarPass.Size = new Size(142, 19);
+            chkCambiarPass.TabIndex = 122;
+            chkCambiarPass.Text = "¿Cambiar contraseña?";
+            chkCambiarPass.UseVisualStyleBackColor = true;
+            chkCambiarPass.CheckedChanged += chkCambiarPass_CheckedChanged;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(77, 380);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 123;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(222, 151, 54);
+            label5.Font = new Font("Century Gothic", 12F);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(320, 355);
+            label5.Name = "label5";
+            label5.Size = new Size(181, 21);
+            label5.TabIndex = 125;
+            label5.Text = "Fecha de nacimiento:";
+            // 
+            // dtpFechaNac
+            // 
+            dtpFechaNac.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dtpFechaNac.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
+            dtpFechaNac.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
+            dtpFechaNac.Format = DateTimePickerFormat.Short;
+            dtpFechaNac.Location = new Point(343, 382);
+            dtpFechaNac.Name = "dtpFechaNac";
+            dtpFechaNac.Size = new Size(121, 23);
+            dtpFechaNac.TabIndex = 124;
+            // 
+            // txtUserName
+            // 
+            txtUserName.BackColor = Color.FromArgb(222, 151, 54);
+            txtUserName.BorderStyle = BorderStyle.None;
+            txtUserName.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUserName.ForeColor = Color.White;
+            txtUserName.Location = new Point(573, 355);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(186, 20);
+            txtUserName.TabIndex = 127;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.FromArgb(222, 151, 54);
+            pictureBox7.Image = Properties.Resources.Loading;
+            pictureBox7.Location = new Point(573, 381);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(186, 22);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 126;
+            pictureBox7.TabStop = false;
+            // 
             // frmEditarEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
-            ClientSize = new Size(789, 430);
+            ClientSize = new Size(789, 499);
+            Controls.Add(txtUserName);
+            Controls.Add(pictureBox7);
+            Controls.Add(label5);
+            Controls.Add(dtpFechaNac);
+            Controls.Add(comboBox1);
+            Controls.Add(chkCambiarPass);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(NoVer);
             Controls.Add(Ver);
             Controls.Add(label3);
-            Controls.Add(radioButton1);
-            Controls.Add(radioButton2);
             Controls.Add(pictureBox9);
             Controls.Add(txtConfirmPass);
             Controls.Add(pictureBox8);
@@ -436,8 +537,6 @@
             Controls.Add(txtCorreo);
             Controls.Add(pictureBox6);
             Controls.Add(label2);
-            Controls.Add(rbMujer);
-            Controls.Add(rbHombre);
             Controls.Add(txtSegundoApellido);
             Controls.Add(pictureBox5);
             Controls.Add(txtPrimerApellido);
@@ -469,6 +568,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)Ver).EndInit();
             ((System.ComponentModel.ISupportInitialize)NoVer).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -491,8 +595,8 @@
         private TextBox txtSegundoApellido;
         private PictureBox pictureBox5;
         private Label label2;
-        private RadioButton rbMujer;
-        private RadioButton rbHombre;
+        private RadioButton rbNo;
+        private RadioButton rbSi;
         private TextBox txtCorreo;
         private PictureBox pictureBox6;
         private PictureBox pictureBox9;
@@ -500,9 +604,17 @@
         private PictureBox pictureBox8;
         private TextBox txtPass;
         private Label label3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rbMujer;
+        private RadioButton rbHombre;
         private PictureBox Ver;
         private PictureBox NoVer;
+        private Panel panel1;
+        private Panel panel2;
+        private CheckBox chkCambiarPass;
+        private ComboBox comboBox1;
+        private Label label5;
+        private DateTimePicker dtpFechaNac;
+        private TextBox txtUserName;
+        private PictureBox pictureBox7;
     }
 }
