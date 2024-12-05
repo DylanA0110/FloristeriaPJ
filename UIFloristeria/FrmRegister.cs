@@ -185,5 +185,10 @@ namespace UIFloristeria
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnAgregaremp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
