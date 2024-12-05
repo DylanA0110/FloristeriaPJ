@@ -87,7 +87,6 @@ namespace UIFloristeria
             register.ShowDialog();
             if (register.ShowDialog() == DialogResult.OK)
             {
-                // Reload employees
                 LoadEmpleados();
             }
         }

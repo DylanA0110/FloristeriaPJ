@@ -126,7 +126,7 @@ namespace UIFloristeria
             {
                 _empleadoController.UpdateEmpleado(empleado);
                 MessageBox.Show("Empleado actualizado exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK; // Indica éxito
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
