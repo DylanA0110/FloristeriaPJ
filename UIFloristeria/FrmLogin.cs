@@ -90,8 +90,6 @@ namespace UIFloristeria
             this.WindowState = FormWindowState.Minimized;
         }
 
-     
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var username = txtUser.Text;
