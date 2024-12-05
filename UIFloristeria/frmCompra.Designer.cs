@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompra));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label2 = new Label();
             txtBusquedaCliente = new TextBox();
             btnEditarCompra = new Button();
@@ -63,6 +63,7 @@
             txtBusquedaCliente.Name = "txtBusquedaCliente";
             txtBusquedaCliente.Size = new Size(161, 23);
             txtBusquedaCliente.TabIndex = 86;
+            txtBusquedaCliente.TextChanged += txtBusquedaCliente_TextChanged;
             // 
             // btnEditarCompra
             // 
@@ -78,6 +79,7 @@
             btnEditarCompra.TabIndex = 85;
             btnEditarCompra.Text = "Editar Compra";
             btnEditarCompra.UseVisualStyleBackColor = false;
+            btnEditarCompra.Click += btnEditarCompra_Click;
             // 
             // pictureBox1
             // 
@@ -94,33 +96,33 @@
             // dgvCompra
             // 
             dgvCompra.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 192, 192);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvCompra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dgvCompra.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvCompra.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvCompra.BackgroundColor = Color.White;
             dgvCompra.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvCompra.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(222, 151, 54);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvCompra.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(69, 88, 68);
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 192, 192);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvCompra.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvCompra.DefaultCellStyle = dataGridViewCellStyle3;
             dgvCompra.EnableHeadersVisualStyles = false;
             dgvCompra.Location = new Point(232, 196);
             dgvCompra.MultiSelect = false;
@@ -177,6 +179,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmCompra";
             Text = "frmCompras";
+            Load += frmCompra_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCompra).EndInit();
             ResumeLayout(false);

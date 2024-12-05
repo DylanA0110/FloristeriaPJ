@@ -16,17 +16,17 @@ namespace Controladores
         {
             _arregloRepository = arregloRepository;
         }
-        public IEnumerable<Arreglo> GetAllProveedor() => _arregloRepository.GetAll();
+        public IEnumerable<Arreglo> GetAllArreglo() => _arregloRepository.GetAll();
 
-        public Arreglo GetProveedorById(int id) => _arregloRepository.GetById(id);
+        public Arreglo GetArregloById(int id) => _arregloRepository.GetById(id);
 
-        public void AddProveedor(Arreglo arreglo) => _arregloRepository.Add(arreglo);
+        public void AddArreglo(Arreglo arreglo) => _arregloRepository.Add(arreglo);
 
-        public void UpdateProveedor(Arreglo arreglo) => _arregloRepository.Update(arreglo);
+        public void UpdateArreglo(Arreglo arreglo) => _arregloRepository.Update(arreglo);
 
-        public void DeleteProveedor(int id) => _arregloRepository.Delete(id);
+        public void DeleteArreglo(int id) => _arregloRepository.Delete(id);
 
-        public IEnumerable<Arreglo> SearchProveedor(string searchTerm) => _arregloRepository.Search(searchTerm);
+        public IEnumerable<Arreglo> SearchArreglo(string searchTerm) => _arregloRepository.Search(searchTerm);
     }
 
 

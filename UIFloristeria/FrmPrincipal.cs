@@ -138,8 +138,8 @@ namespace UIFloristeria
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-            frmProveedor frmProveedor = new frmProveedor();
-            AbrirFormularioEnPanel(frmProveedor);
+            frmCompra frmCompra = new frmCompra();
+            AbrirFormularioEnPanel(frmCompra);
         }
 
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
@@ -151,11 +151,6 @@ namespace UIFloristeria
         {
             Factura factura = new Factura();
             AbrirFormularioEnPanel(factura);
-        }
-
-        private void menuContainer_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
