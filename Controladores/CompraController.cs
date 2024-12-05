@@ -1,4 +1,6 @@
-﻿using Modelo.Entidades;
+﻿using Microsoft.Data.SqlClient;
+using Modelo.Contexto;
+using Modelo.Entidades;
 using Modelo.Interfaces;
 using Modelo.Repositories;
 using System;
@@ -30,5 +32,12 @@ namespace Controladores
 
         public IEnumerable<Compra> SearchCompra(string searchTerm) => _compraRepository.Search(searchTerm);
 
+
+
+       
     }
+
 }
+
+
+

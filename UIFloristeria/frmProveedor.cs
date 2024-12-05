@@ -69,7 +69,7 @@ namespace UIFloristeria
             frmAgregarProveedor frmAgregar = new frmAgregarProveedor(_proveedorController);
 
             // Abrir el formulario como cuadro de diálogo
-            frmAgregar.ShowDialog();
+
 
             if (frmAgregar.ShowDialog() == DialogResult.OK)
             {

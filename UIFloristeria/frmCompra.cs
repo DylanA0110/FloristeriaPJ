@@ -26,7 +26,6 @@ namespace UIFloristeria
         private void btnAggCompra_Click(object sender, EventArgs e)
         {
             frmAgregarCompra frmAgg = new frmAgregarCompra(_compraController);
-            frmAgg.ShowDialog();
 
             if (frmAgg.ShowDialog() == DialogResult.OK)
             {
@@ -41,8 +40,10 @@ namespace UIFloristeria
 
         private void LoadCompras()
         {
-            var compras = _compraController.GetAllCompras();
-            dgvCompra.DataSource = compras.ToList();
+
+            var Compras = _compraController.GetAllCompras();
+            dgvCompra.DataSource = Compras.ToList();
+
             dgvCompra.CurrentCell = null;
             dgvCompra.ClearSelection();
             if (dgvCompra.Columns.Count > 0)

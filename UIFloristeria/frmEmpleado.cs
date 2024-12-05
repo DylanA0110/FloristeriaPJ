@@ -87,7 +87,6 @@ namespace UIFloristeria
         private void btnAgregarEmp_Click(object sender, EventArgs e)
         {
             FrmRegister register = new FrmRegister(_empleadoController);
-            register.ShowDialog();
             if (register.ShowDialog() == DialogResult.OK)
             {
                 LoadEmpleados();

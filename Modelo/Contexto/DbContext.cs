@@ -22,5 +22,6 @@ namespace Modelo.Contexto
         {
             return new SqlConnection(_connectionString); // No abrir aquí
         }
+
     }
 }
