@@ -30,13 +30,8 @@ namespace UIFloristeria
 
         private void Factura_Load_1(object sender, EventArgs e)
         {
-            
-
-        }
-        
-        
-
 
 
         }
     }
+}
