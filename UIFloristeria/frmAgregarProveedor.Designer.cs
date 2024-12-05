@@ -53,6 +53,7 @@
             btnAggProveedor.TabIndex = 88;
             btnAggProveedor.Text = "Agregar";
             btnAggProveedor.UseVisualStyleBackColor = false;
+            btnAggProveedor.Click += btnAggProveedor_Click;
             // 
             // label4
             // 
