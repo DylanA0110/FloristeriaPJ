@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modelo.Repositories;
+using Modelo.Entidades;
+using UIFloristeria;
 
 
 namespace UIFloristeria
@@ -33,14 +35,20 @@ namespace UIFloristeria
         {
             var clientes = _clienteController.GetAllClientes();
             dgvClientes.DataSource = clientes.ToList();
+            dgvClientes.CurrentCell = null;
+            dgvClientes.ClearSelection();
         }
 
         private void btnAggCliente_Click(object sender, EventArgs e)
         {
-            frmAgregarCliente frmAgregar = new frmAgregarCliente();
-
-            // Abrir el formulario como cuadro de diálogo
-            frmAgregar.ShowDialog();
+            frmAgregarCliente agregarCliente = new frmAgregarCliente();
+            agregarCliente.ShowDialog();
+            //Si Mando exito
+            if (agregarCliente.ShowDialog() == DialogResult.OK)
+            {
+                // Recarga los empleados
+                LoadClientes();
+            }
 
         }
 
@@ -49,24 +57,41 @@ namespace UIFloristeria
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                // Obtén los valores de las columnas seleccionadas
-                string nombreCliente = dgvClientes.SelectedRows[0].Cells["Nombre_Cliente"].Value.ToString();
-                string telefonoCliente = dgvClientes.SelectedRows[0].Cells["Telefono"].Value?.ToString();
+                var row = dgvClientes.SelectedRows[0];
 
-                // Crea una instancia del formulario de edición y pasa los datos
-                frmEditarCliente frmEditar = new frmEditarCliente
+                // Verifica si el valor del ID del empleado es válido
+                if (row.Cells["Id_cliente"].Value != null)
                 {
-                    NombreCliente = nombreCliente,
-                    TelefonoCliente = telefonoCliente
-                };
+                    int idCliente;
+                    bool success = int.TryParse(row.Cells["Id_cliente"].Value.ToString(), out idCliente);
 
-                // Abre el formulario de edición como diálogo
-                if (frmEditar.ShowDialog() == DialogResult.OK)
+                    if (success)
+                    {
+                        // Crea una instancia del formulario de edición y pasa el ID y el controlador
+                        frmEditarCliente formulario = new frmEditarCliente(idCliente, _clienteController);
+                        if (formulario.ShowDialog() == DialogResult.OK)
+                        {
+                            // Recarga los empleados después de editar
+                            LoadClientes();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El ID del cliente no es un número válido.");
+                    }
+                }
+                else
                 {
-                    LoadClientes(); // Recarga los datos si se realizaron cambios
+                    MessageBox.Show("El ID del cliente está vacío.");
                 }
             }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para editar.");
+            }
         }
+
+
 
 
         private void txtBusquedaCliente_TextChanged(object sender, EventArgs e)
@@ -100,4 +125,6 @@ namespace UIFloristeria
         }
     }
 }
+
+
 

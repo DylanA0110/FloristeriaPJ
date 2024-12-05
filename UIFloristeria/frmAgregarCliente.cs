@@ -19,6 +19,7 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
+
         public frmAgregarCliente()
         {
             InitializeComponent();

@@ -24,22 +24,27 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
 
-        public string NombreCliente { get; set; }
-        public string TelefonoCliente { get; set; }
+        private readonly ClienteController _clienteController;
+        private readonly int _idClienteEditar;
 
-        public frmEditarCliente()
+        public frmEditarCliente(int idClienteEditar, ClienteController clienteController)
         {
             InitializeComponent();
+            _idClienteEditar = idClienteEditar;
+            _clienteController = clienteController;
         }
 
         private void frmEditarCliente_Load(object sender, EventArgs e)
         {
-            txtNombreCliente.Text = NombreCliente;
-            mtxtTelefono.Text = TelefonoCliente;
+            var cliente = _clienteController.GetClienteById(_idClienteEditar);
+            if (cliente != null)
+            {
+                txtNombreCliente.Text = cliente.Nombre_Cliente;
+                mtxtTelefono.Text = cliente.Telefono;
+            }
         }
 
-
-
+      
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -47,7 +52,7 @@ namespace UIFloristeria
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK; // Si se agregó con éxito
+            this.DialogResult = DialogResult.OK; // Indica que se realizó una edición exitosa
             this.Close();
         }
 
@@ -64,6 +69,8 @@ namespace UIFloristeria
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+
     }
 }
 
