@@ -34,6 +34,10 @@ namespace UIFloristeria
             dgvEmpleados.DataSource = empleados.ToList();
             dgvEmpleados.CurrentCell = null;
             dgvEmpleados.ClearSelection();
+            if (dgvEmpleados.Columns.Count > 0)
+            {
+                dgvEmpleados.Columns[0].Visible = false;
+            }
         }
 
         private void btnEditarEmpleado_Click(object sender, EventArgs e)

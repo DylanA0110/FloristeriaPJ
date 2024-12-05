@@ -376,7 +376,7 @@
             btnAgregaremp.TabIndex = 2;
             btnAgregaremp.Text = "Registrar";
             btnAgregaremp.UseVisualStyleBackColor = false;
-            btnAgregaremp.Click += btnAgregaremp_Click;
+           
             // 
             // btnMin
             // 

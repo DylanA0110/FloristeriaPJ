@@ -41,29 +41,54 @@ namespace Modelo.Repositories
 
         public IEnumerable<Pedido> GetaAll()
         {
-            var pedido = new List<Pedido>();
+            var pedidos = new List<Pedido>();
+
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("SELECT * FROM Pedido", connection);
+
+                var command = new SqlCommand(
+                    @"SELECT 
+                p.Id_Pedido,
+                p.Id_Cliente,
+                c.Nombre_Cliente,
+                c.Telefono,
+                p.Descripcion,
+                p.Cantidad,
+                p.Fecha_Solicitud,
+                p.Fecha_Entrega,
+                p.Enviarse_A
+              FROM Pedido p
+              INNER JOIN Cliente c ON p.Id_Cliente = c.Id_Cliente",
+                    connection
+                );
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        pedido.Add(new Pedido
+                        pedidos.Add(new Pedido
                         {
                             Id_pedido = (int)reader["Id_Pedido"],
                             Id_cliente = (int)reader["Id_Cliente"],
                             Descripcion = reader["Descripcion"]?.ToString(),
                             Cantidad = (int)reader["Cantidad"],
-                            Fecha_solicitud = (DateTime)reader["Fecha_Solitud"],
+                            Fecha_solicitud = (DateTime)reader["Fecha_Solicitud"],
                             Fecha_entrega = (DateTime)reader["Fecha_Entrega"],
-                            Enviarse_A = reader["Enviarse_A"]?.ToString()
+                            Enviarse_A = reader["Enviarse_A"]?.ToString(),
+                            Cliente = new Cliente()
+                            {
+                                Id_cliente = (int)reader["Id_Cliente"],
+                                Nombre_Cliente = reader["Nombre_Cliente"]?.ToString(),
+                                Telefono = reader["Telefono"]?.ToString()
+                            }
                         });
                     }
                 }
             }
-            return pedido;
+
+            return pedidos;
+
         }
 
         public Pedido GetById(int id)

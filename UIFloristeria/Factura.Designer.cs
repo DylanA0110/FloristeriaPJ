@@ -210,6 +210,7 @@
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Factura";
+            Load += Factura_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFactura).EndInit();
             ResumeLayout(false);
             PerformLayout();
