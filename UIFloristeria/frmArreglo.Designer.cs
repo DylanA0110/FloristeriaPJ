@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArreglo));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
             btnAggArreglo = new Button();
@@ -64,39 +64,39 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(222, 151, 54);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(69, 88, 68);
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(69, 88, 68);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.Location = new Point(54, 216);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowTemplate.Height = 40;
-            dataGridView1.Size = new Size(590, 180);
+            dataGridView1.Size = new Size(779, 180);
             dataGridView1.TabIndex = 69;
             // 
             // btnAggArreglo
@@ -135,7 +135,7 @@
             BtnAccesorio.FlatStyle = FlatStyle.Popup;
             BtnAccesorio.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnAccesorio.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnAccesorio.Location = new Point(54, 454);
+            BtnAccesorio.Location = new Point(54, 461);
             BtnAccesorio.Name = "BtnAccesorio";
             BtnAccesorio.Size = new Size(196, 36);
             BtnAccesorio.TabIndex = 71;
@@ -220,7 +220,7 @@
             BtnAgregarFlor.FlatStyle = FlatStyle.Popup;
             BtnAgregarFlor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnAgregarFlor.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnAgregarFlor.Location = new Point(278, 454);
+            BtnAgregarFlor.Location = new Point(305, 461);
             BtnAgregarFlor.Name = "BtnAgregarFlor";
             BtnAgregarFlor.Size = new Size(196, 36);
             BtnAgregarFlor.TabIndex = 131;
