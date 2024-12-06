@@ -39,9 +39,7 @@ namespace Modelo.Repositories
                     {
                         accesorio.Add(new Accesorio
                         {
-                            
                             Id_Accesorio = (int)reader["Id_Accesorio"], 
-                            Id_Arreglo = (int)reader["Id_Arreglo"],
                             Nombre_Accesorio = reader["Nombre_Accesorio"]?.ToString()
                         });
                     }
@@ -65,7 +63,6 @@ namespace Modelo.Repositories
                         accesorio = new Accesorio
                         {
                             Id_Accesorio = (int)reader["Id_Accesorio"],
-                            Id_Arreglo = (int)reader["Id_Arreglo"],
                             Nombre_Accesorio = reader["Nombre_Accesorio"]?.ToString()
                         };
                     }

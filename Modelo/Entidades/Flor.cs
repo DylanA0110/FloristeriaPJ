@@ -12,8 +12,6 @@ namespace Modelo.Entidades
         [Key]
         public int Id_flor { get; set; }
 
-        public int? Id_Arreglo { get; set; }
-
         [Required(ErrorMessage = "El nombre de la flor es requerido.")]
         [StringLength(15, MinimumLength = 2, ErrorMessage = "El nombre de la flor debe tener entre 2 y 15 caracteres.")]
         public string ?Nombre_Flor { get; set; }
