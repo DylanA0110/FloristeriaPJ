@@ -212,7 +212,8 @@ namespace UIFloristeria
             };
 
 
-            string reportPath = @"C:\Users\PC\source\repos\FloristeriaPJ\UIFloristeria\Reportes\OrdenDeTrabajo.rdlc";
+            string reportPath = Path.Combine(Application.StartupPath, "Reportes", "OrdenDeTrabajo.rdlc");
+
             if (!File.Exists(reportPath))
             {
                 MessageBox.Show("El archivo del informe no se encontró.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

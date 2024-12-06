@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reportes\OrdenDeTrabajo.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Reportes\OrdenDeTrabajo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.0.8" />
     <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.25" />
