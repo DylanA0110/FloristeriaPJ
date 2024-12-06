@@ -43,9 +43,9 @@
             pictureBox4 = new PictureBox();
             label6 = new Label();
             cmbAccesorio = new ComboBox();
-            BtnAgregarFlor = new Button();
             label2 = new Label();
             CbCategoria = new ComboBox();
+            BtnInsertarArreglo = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -109,7 +109,7 @@
             btnAggArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAggArreglo.Image = (Image)resources.GetObject("btnAggArreglo.Image");
             btnAggArreglo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAggArreglo.Location = new Point(545, 461);
+            btnAggArreglo.Location = new Point(574, 462);
             btnAggArreglo.Name = "btnAggArreglo";
             btnAggArreglo.Size = new Size(220, 36);
             btnAggArreglo.TabIndex = 68;
@@ -137,7 +137,7 @@
             BtnAccesorio.FlatStyle = FlatStyle.Popup;
             BtnAccesorio.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnAccesorio.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnAccesorio.Location = new Point(54, 461);
+            BtnAccesorio.Location = new Point(347, 462);
             BtnAccesorio.Name = "BtnAccesorio";
             BtnAccesorio.Size = new Size(196, 36);
             BtnAccesorio.TabIndex = 71;
@@ -215,20 +215,6 @@
             cmbAccesorio.Size = new Size(121, 23);
             cmbAccesorio.TabIndex = 129;
             // 
-            // BtnAgregarFlor
-            // 
-            BtnAgregarFlor.Anchor = AnchorStyles.Bottom;
-            BtnAgregarFlor.BackColor = Color.White;
-            BtnAgregarFlor.FlatStyle = FlatStyle.Popup;
-            BtnAgregarFlor.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnAgregarFlor.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnAgregarFlor.Location = new Point(305, 461);
-            BtnAgregarFlor.Name = "BtnAgregarFlor";
-            BtnAgregarFlor.Size = new Size(196, 36);
-            BtnAgregarFlor.TabIndex = 131;
-            BtnAgregarFlor.Text = "Agregar Flores";
-            BtnAgregarFlor.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -249,15 +235,31 @@
             CbCategoria.Size = new Size(121, 23);
             CbCategoria.TabIndex = 132;
             // 
+            // BtnInsertarArreglo
+            // 
+            BtnInsertarArreglo.Anchor = AnchorStyles.Bottom;
+            BtnInsertarArreglo.BackColor = Color.White;
+            BtnInsertarArreglo.FlatStyle = FlatStyle.Popup;
+            BtnInsertarArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnInsertarArreglo.Image = (Image)resources.GetObject("BtnInsertarArreglo.Image");
+            BtnInsertarArreglo.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnInsertarArreglo.Location = new Point(63, 462);
+            BtnInsertarArreglo.Name = "BtnInsertarArreglo";
+            BtnInsertarArreglo.Size = new Size(220, 36);
+            BtnInsertarArreglo.TabIndex = 134;
+            BtnInsertarArreglo.Text = "Insertar Arreglo";
+            BtnInsertarArreglo.UseVisualStyleBackColor = false;
+            BtnInsertarArreglo.Click += BtnInsertarArreglo_Click;
+            // 
             // frmArreglo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
+            Controls.Add(BtnInsertarArreglo);
             Controls.Add(label2);
             Controls.Add(CbCategoria);
-            Controls.Add(BtnAgregarFlor);
             Controls.Add(label6);
             Controls.Add(cmbAccesorio);
             Controls.Add(TxtCantidad);
@@ -293,8 +295,8 @@
         private PictureBox pictureBox4;
         private Label label6;
         private ComboBox cmbAccesorio;
-        private Button BtnAgregarFlor;
         private Label label2;
         private ComboBox CbCategoria;
+        private Button BtnInsertarArreglo;
     }
 }

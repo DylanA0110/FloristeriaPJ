@@ -14,9 +14,9 @@ namespace Modelo.Repositories
     {
         private readonly DbContext _dbContext;
 
-        public ArregloRepository(DbContext dbContext)
+       public ArregloRepository()
         {
-            _dbContext = dbContext;
+            _dbContext = new DbContext();
         }
 
         public void Add(Arreglo arreglo)
