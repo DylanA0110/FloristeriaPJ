@@ -18,5 +18,6 @@ namespace Modelo.Interfaces
 
         IEnumerable<Detalle_Compra> GetComprasConDetalles();
         void AddDetalleCompra(Detalle_Compra detalleCompra);
+        void AddDetalleProveedor(Detalle_Proveedor detalleProveedor);
     }
 }
