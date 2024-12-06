@@ -31,7 +31,12 @@ namespace UIFloristeria
 
         private void frmArreglos_Load(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void BtnAccesorio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
