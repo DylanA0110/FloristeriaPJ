@@ -2,6 +2,7 @@
 using Modelo.Entidades;
 using Modelo.Interfaces;
 using Modelo.Repositories;
+using Modelo.Validaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,38 +101,70 @@ namespace UIFloristeria
 
         private void BtnInsertarFactura_Click(object sender, EventArgs e)
         {
-            if (rbFactura.Checked && string.IsNullOrEmpty(TxtNumFactura.Text))
+            // Validar que los campos obligatorios estén completos y sean válidos
+            if (!int.TryParse(txtPedido.Text, out int idPedido))
             {
-                MessageBox.Show("Por favor, ingrese un número de factura.");
+                MessageBox.Show("Por favor ingrese un ID de pedido válido.");
+                return;
+            }
+
+            int numFactura = 0;
+            if (rbFactura.Checked && !int.TryParse(TxtNumFactura.Text, out numFactura))
+            {
+                MessageBox.Show("Por favor ingrese un número de factura válido.");
+                return;
+            }
+
+            if (!decimal.TryParse(TxtMontoTotal.Text, out decimal montoTotal))
+            {
+                MessageBox.Show("Por favor ingrese un monto total válido.");
+                return;
+            }
+
+            // Crear la factura
+            var factura = new Facturas
+            {
+                Id_pedido = idPedido,
+                NumFactura = numFactura,
+                Monto_total = montoTotal,
+            };
+            // Validar la factura
+            var erroresFactura = ValidadorEntidad.Validar(factura);
+            if (erroresFactura.Count > 0)
+            {
+                // Mostrar los errores de validación
+                MessageBox.Show(string.Join("\n", erroresFactura), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             // Insertar factura
-            var factura = new Facturas
-            {
-                Id_pedido = int.Parse(txtPedido.Text),
-                // Si el RadioButton está marcado, se utiliza el número de factura ingresado, si no, se deja vacío
-                NumFactura = rbFactura.Checked ? int.Parse(TxtNumFactura.Text) : 0,
-                //Mont = rbFactura.Checked,
-                Monto_total = decimal.Parse(TxtMontoTotal.Text),
-             
-            };
             _facturaController.AddFactura(factura);
 
             // Obtener ID de la factura recién creada
             var nuevaFactura = _facturaController.GetAllFactura().Last();
 
-            // Insertar tipo de pago
+            // Crear el tipo de pago
             var tipoPago = new TipoDePago
             {
                 Tipo = CboTipoDePago.Text
             };
+
+            // Validar el tipo de pago
+            var erroresTipoPago = ValidadorEntidad.Validar(tipoPago);
+            if (erroresTipoPago.Count > 0)
+            {
+                // Mostrar los errores de validación
+                MessageBox.Show(string.Join("\n", erroresTipoPago), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Insertar tipo de pago
             _tipoDePagoController.AddPago(tipoPago);
 
             // Obtener ID del tipo de pago recién creado
             var nuevoTipoPago = _tipoDePagoController.GetAll().Last();
 
-            // Insertar pago relacionado con la factura
+            // Crear el pago
             var pago = new Pago
             {
                 Id_factura = nuevaFactura.Id_factura,
@@ -139,6 +172,17 @@ namespace UIFloristeria
                 Fecha_pago = dtpFechaPago.Value.Date,
                 Id_Tipo_Pago = nuevoTipoPago.Id_Tipo_pago
             };
+
+            // Validar el pago
+            var erroresPago = ValidadorEntidad.Validar(pago);
+            if (erroresPago.Count > 0)
+            {
+                // Mostrar los errores de validación
+                MessageBox.Show(string.Join("\n", erroresPago), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Insertar pago relacionado con la factura
             _pagoController.AddPago(pago);
 
             // Recargar el DataGridView
@@ -150,7 +194,19 @@ namespace UIFloristeria
             ResetTextBox(TxtMontoTotal, "Monto total");
             ResetTextBox(TxtMontoNeto, "Monto Neto");
 
-            CboTipoDePago.SelectedIndex = -1; // Si es un ComboBox, también puedes resetear su selección
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            // Limpiar los campos de texto
+            ResetTextBox(txtPedido, "Pedido");
+            ResetTextBox(TxtNumFactura, "Numero Factura");
+            ResetTextBox(TxtMontoTotal, "Monto total");
+            ResetTextBox(TxtMontoNeto, "Monto Neto");
+
+            // Resetear el ComboBox de Tipo de Pago
+            CboTipoDePago.SelectedIndex = -1;
 
             // Limpiar la fecha de pago
             dtpFechaPago.Value = DateTime.Now;
@@ -158,41 +214,7 @@ namespace UIFloristeria
             // Desmarcar el RadioButton y deshabilitar el TextBox
             rbFactura.Checked = false;
             TxtNumFactura.Enabled = false;
-
-
-
-            /*var facturas = new Facturas
-            {
-              Id_pedido = int.Parse(txtPedido.Text),
-                NumFactura = int.Parse(TxtNumFactura.Text),
-                Estado = Convert.ToBoolean(rbFactura.Checked),
-                Monto_total = int.Parse(TxtMontoTotal.Text),
-            };
-            _facturaController.AddFactura(facturas);
-
-
-
-            var Pago = new Pago
-            {
-                Monto = Convert.ToDecimal(TxtMontoNeto.Text),
-                Fecha_pago = dtpFechaPago.Value.Date,
-
-            };
-
-            _pagoController.AddPago(Pago);
-
-            var TipoPago = new TipoDePago
-            {
-                Tipo = CboTipoDePago.Text,
-            };
-            _tipoDePagoController.AddPago(TipoPago);*/
-
-
         }
-
-    
-
-
 
         private void TxtMontoNeto_Leave(object sender, EventArgs e)
         {
