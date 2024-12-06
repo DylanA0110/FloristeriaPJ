@@ -33,6 +33,33 @@ namespace Modelo.Repositories
             }
         }
 
+        public void AddArregloAccesorio(Arreglo_Accesorio arregloAccesorio)
+        {
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO Arreglo_Accesorio (Id_Arreglo_Accesorio, Id_Accesorio, Id_Arreglo) VALUES ( @Id_ArregloAccesorio, @Id_Accesorio, @Id_Arreglo)", connection);
+                command.Parameters.AddWithValue("@Id_Arreglo_Accesorio", (object)arregloAccesorio.Id_Arreglo_Accesorio ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Id_Accesorio", (object)arregloAccesorio.Id_Accesorio ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Id_Arreglo", (object)arregloAccesorio.Id_Arreglo ?? DBNull.Value);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void AddArregloFlor(Arreglo_Flor ArregloFlor)
+        {
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO Arreglo_Flor (Id_Arreglo_Flor, Id_Arreglo, Id_Flor) VALUES (@Id_Arreglo_Flor, @IdArreglo, @IdFlor)", connection);
+                command.Parameters.AddWithValue("@Id_Arreglo_Flor", ArregloFlor.Id_Arreglo_Flor);
+                command.Parameters.AddWithValue("@IdArreglo", ArregloFlor.Id_Arreglo);
+                command.Parameters.AddWithValue("@IdFlor", (object)ArregloFlor.Id_Flor ?? DBNull.Value);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
         public void Delete(int id)
         {
             using (var connection = _dbContext.GetConnection())
@@ -67,6 +94,35 @@ namespace Modelo.Repositories
                 }
             }
             return arreglo;
+        }
+
+        public IEnumerable<Arreglo_Accesorio> GetArreglosConAccesorios()
+        {
+            var ArreglosConAccesorios = new List<Arreglo_Accesorio>();
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand(@"
+                    SELECT 
+                        A.Id_Arreglo AS IdArreglo, 
+                        A.Nombre_Arreglo AS NombreArreglo,
+                        a.Nombre_Accesorio AS Accesorio
+                    FROM Arreglo A
+                    LEFT JOIN Accesorio a ON dc.Id_Accesorio = a.Id_Accesorio", connection);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ArreglosConAccesorios.Add(new Arreglo_Accesorio
+                        {
+                            Id_Arreglo_Accesorio = (int)reader["IdArregloAccesorio"],
+                            Accesorio = reader["Accesorio"] as string
+                        });
+                    }
+                }
+            }
+            return ArreglosConAccesorios;
         }
 
         public Arreglo GetById(int id)

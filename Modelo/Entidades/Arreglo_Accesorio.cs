@@ -16,5 +16,6 @@ namespace Modelo.Entidades
         public int Id_Accesorio { get; set; }
         [Required(ErrorMessage = "El ID de la Arrelo es requerido.")]
         public int Id_Arreglo { get; set; }
+        public string Accesorio { get; set;}
     }
 }
