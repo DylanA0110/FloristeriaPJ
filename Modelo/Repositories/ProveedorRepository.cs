@@ -95,7 +95,7 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("BuscarProveedor", connection);
+                var command = new SqlCommand("SELECT * FROM Proveedor WHERE Nombre_Proveedor LIKE @searchTerm OR Telefono LIKE @searchTerm", connection);
                 command.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
                 using (var reader = command.ExecuteReader())
                 {
