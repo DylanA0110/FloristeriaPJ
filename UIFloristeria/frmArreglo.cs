@@ -23,7 +23,7 @@ namespace UIFloristeria
         {
             InitializeComponent();
             _categoriaController = new CategoryController(new CategoryRepository());
-            _arregloController = new ArregloController(new ArregloRepository(), new FlorRepository(), new AccesorioRepository());
+            _arregloController = new ArregloController(new ArregloRepository(), new AccesorioRepository());
             _accesorioController = new AccesorioController(new AccesorioRepository());
         }
 
@@ -62,7 +62,10 @@ namespace UIFloristeria
 
         private void BtnAccesorio_Click(object sender, EventArgs e)
         {
+            AgregarAccesorio frm = new AgregarAccesorio(_accesorioController);
 
+            // Abrir el formulario como cuadro de diálogo
+            frm.ShowDialog();
         }
 
         private void BtnInsertarArreglo_Click(object sender, EventArgs e)
