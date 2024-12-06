@@ -15,5 +15,10 @@ namespace Modelo.Entidades
         public int Id_Flor { get; set; }
         [Required(ErrorMessage = "El ID del Arreglo es requerido.")]
         public int Id_Arreglo { get; set; }
+
+        // Joins 
+        public string ?Flor { get; set; }
+       
+
     }
 }

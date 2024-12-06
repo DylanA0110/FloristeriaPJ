@@ -11,7 +11,7 @@ namespace Modelo.Interfaces
     public interface IAccesorioRepository
     {
         
-        int Add(Accesorio accesorio);
+        void Add(Accesorio accesorio);
         int GetLastAccesorioId();
         IEnumerable<Accesorio> GetAll();
         Accesorio GetById(int id);
