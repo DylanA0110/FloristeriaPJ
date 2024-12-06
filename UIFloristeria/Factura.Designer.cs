@@ -70,6 +70,7 @@
             // 
             // CboTipoDePago
             // 
+            CboTipoDePago.DropDownStyle = ComboBoxStyle.DropDownList;
             CboTipoDePago.FormattingEnabled = true;
             CboTipoDePago.Items.AddRange(new object[] { "Credito", "Transferencia", "Tarjeta de Credito", "Efectivo" });
             CboTipoDePago.Location = new Point(463, 134);
