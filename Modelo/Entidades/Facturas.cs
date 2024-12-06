@@ -26,5 +26,8 @@ namespace Modelo.Entidades
 
         [Required(ErrorMessage = "El número de factura es requerido.")]
         public int NumFactura { get; set; }
+        public string TipoDePago { get; set; }
+        public decimal? MontoPago { get; set; }
+        public DateTime FechaPago { get; set; }
     }
 }

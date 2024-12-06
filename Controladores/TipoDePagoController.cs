@@ -17,6 +17,8 @@ namespace Controladores
         {
             _TipoPagoRepository = tipoPagoRepository;
         }
+
+        public IEnumerable<TipoDePago> GetAll() => _TipoPagoRepository.GetAll();
         public void AddPago(TipoDePago TipoPago) => _TipoPagoRepository.Add(TipoPago);
 
         public void UpdatePago(TipoDePago TipoPago) => _TipoPagoRepository.Update(TipoPago);
