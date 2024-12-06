@@ -17,5 +17,9 @@ namespace UIFloristeria
             InitializeComponent();
         }
 
+        private void TxtEnviarseA_Leave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,13 +60,15 @@ namespace Modelo.Repositories
                     {
                         factura.Add(new Facturas
                         {
-                            Id_factura = (int)reader["Id_factura"],
-                            Id_Empleado = (int)reader["Id_Empleado"],
-                            Id_pedido = (int)reader["Id_pedido"],
-                            Monto_total = (int)reader["Monto_Total"],
-                            Estado = reader["Estado"] != DBNull.Value && (bool)reader["Estado"],
-                            NumFactura = (int)reader["NumFactura"]
+                            // Verifica si el valor es DBNull antes de realizar el cast
+                            Id_factura = reader["Id_factura"] != DBNull.Value ? (int)reader["Id_factura"] : 0, // O un valor por defecto
+                            Id_Empleado = reader["Id_Empleado"] != DBNull.Value ? (int)reader["Id_Empleado"] : 0, // O un valor por defecto
+                            Id_pedido = reader["Id_pedido"] != DBNull.Value ? (int)reader["Id_pedido"] : 0, // O un valor por defecto
+                            Monto_total = reader["Monto_Total"] != DBNull.Value ? (decimal)reader["Monto_Total"] : 0m, // Cambiado a decimal
+                            Estado = reader["Estado"] != DBNull.Value && (bool)reader["Estado"], // Para booleanos, se verifica DBNull
+                            NumFactura = reader["NumFactura"] != DBNull.Value ? (int)reader["NumFactura"] : 0 // O un valor por defecto
                         });
+
                     }
                 }
             }
@@ -109,10 +111,10 @@ namespace Modelo.Repositories
             {
                 connection.Open();
 
-                using (var command = new SqlCommand("BuscarPedido", connection))
+                using (var command = new SqlCommand("SELECT * FROM Factura WHERE NumFactura LIKE @searchTerm", connection))
                 {
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@CondicionPedidos", searchTerm);
+
+                    command.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())

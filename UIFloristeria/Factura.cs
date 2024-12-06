@@ -21,7 +21,7 @@ namespace UIFloristeria
         private readonly PedidoController _pedidoController;
         private readonly PagoController _pagoController;
         private readonly TipoDePagoController _tipoDePagoController;
-       
+
         //Constructor mierda
         public Factura()
         {
@@ -30,7 +30,7 @@ namespace UIFloristeria
             _pedidoController = new PedidoController(new PedidosRepository());
             _pagoController = new PagoController(new PagoRepository());
             _tipoDePagoController = new TipoDePagoController(new TipoDePagoRepository());
-         
+
         }
 
 
@@ -41,8 +41,8 @@ namespace UIFloristeria
 
         private void LoadFacturas()
         {
-            var pedido = _pedidoController.GetAllPedido();
-            dgvFactura.DataSource = pedido.ToList();
+            var factura = _facturaController.GetAllFactura();
+            dgvFactura.DataSource = factura.ToList();
             dgvFactura.CurrentCell = null;
             dgvFactura.ClearSelection();
             if (dgvFactura.Columns.Count > 0)
@@ -53,30 +53,30 @@ namespace UIFloristeria
 
         private void rbFactura_CheckedChanged(object sender, EventArgs e)
         {
-            TxtNumeroPedido.Enabled = rbFactura.Checked;
+            TxtNumFactura.Enabled = rbFactura.Checked;
         }
-        
+
 
         private void BtnInsertarFactura_Click(object sender, EventArgs e)
         {
             var facturas = new Facturas
             {
-                Id_pedido = int.Parse(TxtNumeroPedido.Text),
+              Id_pedido = int.Parse(txtPedido.Text),
                 NumFactura = int.Parse(TxtNumFactura.Text),
                 Estado = Convert.ToBoolean(rbFactura.Checked),
                 Monto_total = int.Parse(TxtMontoTotal.Text),
             };
             _facturaController.AddFactura(facturas);
-       
+
 
 
             var Pago = new Pago
             {
                 Monto = Convert.ToDecimal(TxtMontoNeto.Text),
                 Fecha_pago = dtpFechaPago.Value.Date,
-                                                                    
+
             };
-        
+
             _pagoController.AddPago(Pago);
 
             var TipoPago = new TipoDePago
@@ -85,7 +85,66 @@ namespace UIFloristeria
             };
             _tipoDePagoController.AddPago(TipoPago);
 
-           
+
+        }
+
+       
+
+        private void TxtMontoNeto_Leave(object sender, EventArgs e)
+        {
+            if (TxtMontoNeto.Text == "")
+            {
+                TxtMontoNeto.Text = "Monto Neto";
+            }
+        }
+
+        private void TxtMontoNeto_Enter(object sender, EventArgs e)
+        {
+            if (TxtMontoNeto.Text == "Monto Neto")
+            {
+                TxtMontoNeto.Text = "";
+            }
+        }
+
+        private void TxtMontoTotal_Leave(object sender, EventArgs e)
+        {
+            if (TxtMontoTotal.Text == "")
+            {
+                TxtMontoTotal.Text = "Monto total";
+            }
+        }
+
+        private void TxtMontoTotal_Enter(object sender, EventArgs e)
+        {
+            if (TxtMontoTotal.Text == "Monto total")
+            {
+                TxtMontoTotal.Text = "";
+            }
+        }
+
+        private void TxtNumFactura_Leave(object sender, EventArgs e)
+        {
+            if (TxtNumFactura.Text == "")
+            {
+                TxtNumFactura.Text = "Numero Factura";
+            }
+        }
+
+        private void TxtNumFactura_Enter(object sender, EventArgs e)
+        {
+            if (TxtNumFactura.Text == "Numero Factura")
+            {
+                TxtNumFactura.Text = "";
+            }
+        }
+
+        private void btnBuscarPedido_Click(object sender, EventArgs e)
+        {
+            frmVerPedidos frmver = new frmVerPedidos();
+            if (frmver.ShowDialog() == DialogResult.OK)
+            {
+                txtPedido.Text = frmver.PedidoSeleccionado; // Recibir el proveedor seleccionado.
+            }
         }
     }
 }

@@ -24,9 +24,9 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Pago (Id_factura, Id_Tipo_Pago, Monto, Fecha_Pago) VALUES (@Id_factura, @Id_Tipo_Pago, @Monto, @Fecha_Pago)", connection);
-                command.Parameters.AddWithValue("@Id_factura", pago.Id_factura);
-                command.Parameters.AddWithValue("@Id_Tipo_Pago", pago.Id_Tipo_Pago);
+                var command = new SqlCommand("INSERT INTO Pago (  Monto, Fecha_Pago) VALUES (  @Monto, @Fecha_Pago)", connection);
+              //  command.Parameters.AddWithValue("@Id_factura", pago.Id_factura);
+                //command.Parameters.AddWithValue("@Id_Tipo_Pago", pago.Id_Tipo_Pago);
                 command.Parameters.AddWithValue("@Monto", pago.Monto);
                 command.Parameters.AddWithValue("@Fecha_Pago", pago.Fecha_pago);
                 command.ExecuteNonQuery();

@@ -71,7 +71,7 @@ namespace Modelo.Repositories
                 p.Fecha_Entrega,
                 p.Enviarse_A
               FROM Pedido p
-              INNER JOIN Cliente c ON p.Id_Cliente = c.Id_Cliente",
+              INNER JOIN Cliente c ON p.Id_cliente = c.Id_Cliente",
                     connection
                 );
 
@@ -139,21 +139,21 @@ namespace Modelo.Repositories
             {
                 connection.Open();
 
-                using (var command = new SqlCommand("BuscarPedido", connection))
+                using (var command = new SqlCommand("SELECT * FROM Pedido WHERE Descripcion LIKE @searchTerm", connection))
                 {
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@CondicionPedidos", searchTerm);
+ 
+                    command.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%") ;
                     using (var reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             pedido.Add(new Pedido
                             {
-                                Id_pedido = (int)reader["Id_Pedido"],
+                                Id_pedido = (int)reader["Id_pedido"],
                                 Id_cliente = (int)reader["Id_Cliente"],
                                 Descripcion = reader["Descripcion"]?.ToString(),
                                 Cantidad = (int)reader["Cantidad"],
-                                Fecha_solicitud = (DateTime)reader["Fecha_Solitud"],
+                                Fecha_solicitud = (DateTime)reader["Fecha_Solicitud"],
                                 Fecha_entrega = (DateTime)reader["Fecha_Entrega"],
                                 Enviarse_A = reader["Enviarse_A"]?.ToString()
                             });
