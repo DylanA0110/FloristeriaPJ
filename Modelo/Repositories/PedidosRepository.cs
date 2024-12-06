@@ -90,6 +90,7 @@ namespace Modelo.Repositories
                             Fecha_entrega = (DateTime)reader["Fecha_Entrega"],
                             Enviarse_A = reader["Enviarse_A"]?.ToString(),
                             NombreCliente= reader["Nombre_Cliente"].ToString(),
+                            TelefonoCliente = reader["Telefono"].ToString()
                         });
                     }
                 }

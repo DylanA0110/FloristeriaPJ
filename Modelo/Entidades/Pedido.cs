@@ -30,6 +30,7 @@ namespace Modelo.Entidades
         [StringLength(200, ErrorMessage = "La dirección de envío debe tener un máximo de 200 caracteres.")]
         public string ?Enviarse_A { get; set; }
         public string? NombreCliente {  get; set; }
+        public string? TelefonoCliente {  get; set; }
     }
 
 }

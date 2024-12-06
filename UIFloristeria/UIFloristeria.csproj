@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
     <PackageReference Include="ReaLTaiizor" Version="3.8.0.8" />
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.25" />
   </ItemGroup>
 
   <ItemGroup>
