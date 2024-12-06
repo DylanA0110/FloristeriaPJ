@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace UIFloristeria
 {
-    public partial class frmEditarCompra : Form
+    public partial class frmEditarPedido : Form
     {
         [DllImport("user32.dll")]
         private static extern int ReleaseCapture();
@@ -22,45 +22,50 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-
-        private readonly CompraController _compraController;
-        private readonly int _idCompraEditar;
-
-        public frmEditarCompra(int idCompraEditar, CompraController compraController)
+        private readonly PedidoController _pedidoController;
+        private readonly int _idPedidoEditar;
+        public frmEditarPedido(int idPedidoEditar, PedidoController pedidoController)
         {
             InitializeComponent();
-            _idCompraEditar = idCompraEditar;
-            _compraController = compraController;
+            _pedidoController = pedidoController;
+            _idPedidoEditar = idPedidoEditar;
         }
 
-        private void frmEditarCompra_Load(object sender, EventArgs e)
+        private void frmEditarPedido_Load(object sender, EventArgs e)
         {
-            var compra = _compraController.GetCompraById(_idCompraEditar);
-            if (compra != null)
+            var pedido = _pedidoController.GetPedidoById(_idPedidoEditar);
+            if (pedido != null)
             {
-                txtCantidad.Text = compra.Cantidad.ToString();
-                dtpFechaCompra.Value = compra.FechaCompra;
-                txtPrecio.Text = compra.Precio_Unitario.ToString("F2"); // Formatear a 2 decimales
+                TxtEnviarseA.Text = pedido.Enviarse_A;
+                dtpFechaEntrega.Value = (DateTime)pedido.Fecha_entrega;
+                DtpSolicitud.Value = pedido.Fecha_solicitud;
+                TxtDescripcion.Text = pedido.Descripcion.ToString();
+                txtCantidad.Text = pedido.Cantidad.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
         }
-
-       
 
         private void btnEditarCompra_Click(object sender, EventArgs e)
         {
             try
             {
                 // Crear el objeto compra con los valores ingresados
-                var compra = new Compra
+                var pedido = new Pedido
                 {
-                    Id_Compra = _idCompraEditar,
+                    Id_pedido = _idPedidoEditar,
                     Cantidad = int.Parse(txtCantidad.Text), // Convertir a int
-                    FechaCompra = dtpFechaCompra.Value, // Obtener valor del DateTimePicker
-                    Precio_Unitario = decimal.Parse(txtPrecio.Text) // Convertir a decimal
+                    Fecha_entrega = dtpFechaEntrega.Value, // Obtener valor del DateTimePicker
+                    Fecha_solicitud = DtpSolicitud.Value,
+                    Descripcion = TxtDescripcion.Text,
+                    Enviarse_A = TxtEnviarseA.Text // Capturar el valor del texto
                 };
 
                 // Validar los datos ingresados
-                var errores = ValidadorEntidad.Validar(compra);
+                var errores = ValidadorEntidad.Validar(pedido);
                 if (errores.Count > 0)
                 {
                     // Mostrar errores de validación
@@ -69,7 +74,7 @@ namespace UIFloristeria
                 }
 
                 // Actualizar la compra a través del controlador
-                _compraController.UpdateCompra(compra);
+                _pedidoController.UpdatePedido(pedido);
 
                 MessageBox.Show("Compra actualizada exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK; // Indicar que la edición fue exitosa
@@ -86,7 +91,7 @@ namespace UIFloristeria
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void frmEditarCompra_MouseDown(object sender, MouseEventArgs e)
+        private void frmEditarPedido_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -95,11 +100,35 @@ namespace UIFloristeria
             }
         }
 
-        private void txtCantidad_Leave(object sender, EventArgs e)
+        private void TxtEnviarseA_Leave(object sender, EventArgs e)
         {
-            if (txtCantidad.Text == "")
+            if (TxtEnviarseA.Text == "Enviarse a")
             {
-                txtCantidad.Text = "Cantidad";
+                TxtEnviarseA.Text = "";
+            }
+        }
+
+        private void TxtEnviarseA_Enter(object sender, EventArgs e)
+        {
+            if (TxtEnviarseA.Text == "")
+            {
+                TxtEnviarseA.Text = "Enviarse a";
+            }
+        }
+
+        private void TxtDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (TxtDescripcion.Text == "")
+            {
+                TxtDescripcion.Text = "Descripcion";
+            }
+        }
+
+        private void TxtDescripcion_Enter(object sender, EventArgs e)
+        {
+            if (TxtDescripcion.Text == "Descripcion")
+            {
+                TxtDescripcion.Text = "";
             }
         }
 
@@ -111,35 +140,11 @@ namespace UIFloristeria
             }
         }
 
-        private void txtPrecio_Leave(object sender, EventArgs e)
+        private void txtCantidad_Leave(object sender, EventArgs e)
         {
-            if (txtPrecio.Text == "")
+            if (txtCantidad.Text == "")
             {
-                txtPrecio.Text = "Precio Unitario";
-            }
-        }
-
-        private void txtPrecio_Enter(object sender, EventArgs e)
-        {
-            if (txtPrecio.Text == "Precio Unitario")
-            {
-                txtPrecio.Text = "";
-            }
-        }
-
-        private void txtNombreProducto_Leave(object sender, EventArgs e)
-        {
-            if (txtNombreProducto.Text == "")
-            {
-                txtNombreProducto.Text = "Nombre producto";
-            }
-        }
-
-        private void txtNombreProducto_Enter(object sender, EventArgs e)
-        {
-            if (txtNombreProducto.Text == "Nombre producto")
-            {
-                txtNombreProducto.Text = "";
+                txtCantidad.Text = "Cantidad";
             }
         }
 
@@ -147,13 +152,5 @@ namespace UIFloristeria
         {
             this.Close();
         }
-
-        private void btnMin_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
     }
 }
-
-
-

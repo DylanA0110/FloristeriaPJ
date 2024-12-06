@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Microsoft ResX Schema
+    Microsoft ResX Schema 
 
     Version 2.0
 
@@ -48,7 +48,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
@@ -118,6 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCompra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAARhJREFUOE+t
+        lA0RgzAMhSsBCUiYgyFhEuZgONgk4GCTgAQk4GBzMByw73Fpj5/C4ODdvSNJ01zz2uDatk3h2dPtBUUa
+        WMEHLGANT7a8HdoMU3PlZ/Bl7jGgYG3mMaBg2T/1blAsh1dz94Ni0tVf1loqf74rFqM6Es/MDCCWzOUH
+        kBDVkVhlZgAxSZSbG4clBR3Nv8O3fS+2pDW93cTcOEiQjuE9YqugHv/Hvl1BvoO8RZA40YXYoGV8TVc4
+        7SJInOiIP7gU/PVDQLLafEJpFqPWCkv/D5Klj9dsjsuXMQYbDp/rF7zB8M8ccdvMs0FToLZ1QRov36ps
+        xbZ1wAbpWJrddEHgba0ppwuuBRvU9hf2J8efsveonfsBw6mlgkdjDwAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAP9JREFUOE/t
+        lO0NAUEURbcEJShBB5SgBB3QAR3QAR3QAR3QCR2se+RddjbPBuGfm5xkdz7Ozsy+TPWT1HXdE1MxT6C9
+        H2T9wJhe6G7CmejKItg0npscxCx0NyGNXfHEUUwp4v54/QvzvC189S9THsOEtSiE1JgnZQyCrM/0Q3cX
+        ZgVrLMz6TCHkC13xKijsixiLk+CoaCPpT5kInycDWRWxEBlt9DEWEK9EKtwG5Cg4bGIhK2vLOC7GflQ2
+        TMxkPKdCTyQ74e27nfe2jPenW/YfI2yduiMWst22DDjbQvhqYZOlQAY8n8VeFNcXFyxST2xCOyuCrB8Y
+        87hgv5equgK4MDhSjSwVDgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnFactura.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAPFJREFUOE/t
@@ -143,15 +163,6 @@
         cByEgIEBAEvGx5Itdv6AAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnClientes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAL1JREFUOE+9
-        lNENgjAURTsCIzAKG+kIjMAGjiAbOIIjyAaOgOfRmxjk1bw2xpPcn757moY2pL+zruuZ3MiVnLRcD3JH
-        7uQTW+tUi4M0bbrPpFocpCW7Lg/V4kgsoloceUVUiyOviGpxcL59w0W1OEhjdl1G1epAnLO/Y9a4HmTv
-        lG2nM5C9x12/IdJALpvuY7NB9TKUemI/gijW7aXvsQF5WqsSc46bsujdaJTjzWvQjLZ5w5o9keZom1+T
-        0gvaV52vWkdJhgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnPedidos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAPBJREFUOE/V
@@ -169,26 +180,6 @@
         IZeGWgy5NNTc28oNj29eqQ6oufeQk1yOOtQDtXrCz1E9RBzlvuFFnvEqzcTc18GD3DX0YPUmzczcz1e+
         y1mmrtyEmnt+f8sx41AP1OoJ//fZhJBLQy2GXBpqMcr0/L5GaqtjGJ6AXV60I4kyygAAAABJRU5ErkJg
         gg==
-</value>
-  </data>
-  <data name="btnCompra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAARhJREFUOE+t
-        lA0RgzAMhSsBCUiYgyFhEuZgONgk4GCTgAQk4GBzMByw73Fpj5/C4ODdvSNJ01zz2uDatk3h2dPtBUUa
-        WMEHLGANT7a8HdoMU3PlZ/Bl7jGgYG3mMaBg2T/1blAsh1dz94Ni0tVf1loqf74rFqM6Es/MDCCWzOUH
-        kBDVkVhlZgAxSZSbG4clBR3Nv8O3fS+2pDW93cTcOEiQjuE9YqugHv/Hvl1BvoO8RZA40YXYoGV8TVc4
-        7SJInOiIP7gU/PVDQLLafEJpFqPWCkv/D5Klj9dsjsuXMQYbDp/rF7zB8M8ccdvMs0FToLZ1QRov36ps
-        xbZ1wAbpWJrddEHgba0ppwuuBRvU9hf2J8efsveonfsBw6mlgkdjDwAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAP9JREFUOE/t
-        lO0NAUEURbcEJShBB5SgBB3QAR3QAR3QAR3QCR2se+RddjbPBuGfm5xkdz7Ozsy+TPWT1HXdE1MxT6C9
-        H2T9wJhe6G7CmejKItg0npscxCx0NyGNXfHEUUwp4v54/QvzvC189S9THsOEtSiE1JgnZQyCrM/0Q3cX
-        ZgVrLMz6TCHkC13xKijsixiLk+CoaCPpT5kInycDWRWxEBlt9DEWEK9EKtwG5Cg4bGIhK2vLOC7GflQ2
-        TMxkPKdCTyQ74e27nfe2jPenW/YfI2yduiMWst22DDjbQvhqYZOlQAY8n8VeFNcXFyxST2xCOyuCrB8Y
-        87hgv5equgK4MDhSjSwVDgAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="menuTransition.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

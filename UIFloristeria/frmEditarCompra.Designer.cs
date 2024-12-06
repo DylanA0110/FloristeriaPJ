@@ -170,7 +170,7 @@
             // 
             // txtProveedor
             // 
-            txtProveedor.Location = new Point(456, 143);
+            txtProveedor.Location = new Point(443, 144);
             txtProveedor.Name = "txtProveedor";
             txtProveedor.Size = new Size(156, 23);
             txtProveedor.TabIndex = 150;
