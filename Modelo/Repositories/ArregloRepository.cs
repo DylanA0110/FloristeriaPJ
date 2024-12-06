@@ -14,7 +14,7 @@ namespace Modelo.Repositories
     {
         private readonly DbContext _dbContext;
 
-       public ArregloRepository()
+        public ArregloRepository()
         {
             _dbContext = new DbContext();
         }

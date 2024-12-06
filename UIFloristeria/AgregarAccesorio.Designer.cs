@@ -67,7 +67,9 @@
             TxtNombreAccesorio.Name = "TxtNombreAccesorio";
             TxtNombreAccesorio.Size = new Size(186, 20);
             TxtNombreAccesorio.TabIndex = 107;
-            TxtNombreAccesorio.Text = "Nombre Acceosrio";
+            TxtNombreAccesorio.Text = "Nombre Accesorio";
+            TxtNombreAccesorio.Enter += TxtNombreAccesorio_Enter;
+            TxtNombreAccesorio.Leave += TxtNombreAccesorio_Leave;
             // 
             // BtnAgregarAcc
             // 
@@ -81,6 +83,7 @@
             BtnAgregarAcc.TabIndex = 106;
             BtnAgregarAcc.Text = "Agregar";
             BtnAgregarAcc.UseVisualStyleBackColor = false;
+            BtnAgregarAcc.Click += BtnAgregarAcc_Click;
             // 
             // pictureBox2
             // 
@@ -119,6 +122,7 @@
             btnMin.Size = new Size(21, 22);
             btnMin.TabIndex = 103;
             btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
             // 
             // btnClose
             // 
@@ -134,6 +138,7 @@
             btnClose.Size = new Size(21, 22);
             btnClose.TabIndex = 102;
             btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // DgvAccesorio
             // 
@@ -184,6 +189,7 @@
             BtnEditar.TabIndex = 110;
             BtnEditar.Text = "Editar";
             BtnEditar.UseVisualStyleBackColor = false;
+            BtnEditar.Click += BtnEditar_Click;
             // 
             // AgregarAccesorio
             // 
@@ -205,6 +211,7 @@
             Name = "AgregarAccesorio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarAccesorio";
+            MouseDown += AgregarAccesorio_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)DgvAccesorio).EndInit();

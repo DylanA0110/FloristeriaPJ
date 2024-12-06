@@ -18,11 +18,13 @@ namespace UIFloristeria
     {
         private readonly CategoryController _categoriaController;
         private readonly ArregloController _arregloController;
+        private readonly AccesorioController _accesorioController;
         public frmArreglo()
         {
             InitializeComponent();
             _categoriaController = new CategoryController(new CategoryRepository());
             _arregloController = new ArregloController(new ArregloRepository(), new FlorRepository(), new AccesorioRepository());
+            _accesorioController = new AccesorioController(new AccesorioRepository());
         }
 
 
