@@ -186,7 +186,8 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Arreglo SET Id_Categoria = @Id_Categoria, Nombre_Arreglo = @Nombre_Arreglo, Cantidad = @Cantidad, Url_Imagen = @Url_Imagen ", connection);
+                var command = new SqlCommand("UPDATE Arreglo SET Id_Categoria = @Id_Categoria, Nombre_Arreglo = @Nombre_Arreglo, Cantidad = @Cantidad, Url_Imagen = @Url_Imagen WHERE Id_Arreglo = @Id_Arreglo ", connection);
+                
                 command.Parameters.AddWithValue("@Id_Categoria", arreglo.Id_Categoria);
                 command.Parameters.AddWithValue("@Nombre_Arreglo", arreglo.Nombre_Arreglo);
                 command.Parameters.AddWithValue("@Cantidad", arreglo.Cantidad);

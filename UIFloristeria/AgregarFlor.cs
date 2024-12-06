@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,8 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-        private readonly 
+        private readonly FlorController _florController;
+        public int? id_flor {  get; set; }
 
         public AgregarFlor()
         {

@@ -44,6 +44,8 @@
             label6 = new Label();
             cmbAccesorio = new ComboBox();
             BtnAgregarFlor = new Button();
+            label2 = new Label();
+            CbCategoria = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -107,7 +109,7 @@
             btnAggArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAggArreglo.Image = (Image)resources.GetObject("btnAggArreglo.Image");
             btnAggArreglo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAggArreglo.Location = new Point(613, 149);
+            btnAggArreglo.Location = new Point(545, 461);
             btnAggArreglo.Name = "btnAggArreglo";
             btnAggArreglo.Size = new Size(220, 36);
             btnAggArreglo.TabIndex = 68;
@@ -199,7 +201,7 @@
             label6.BackColor = Color.FromArgb(22, 58, 55);
             label6.Font = new Font("Century Gothic", 12F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(457, 135);
+            label6.Location = new Point(597, 135);
             label6.Name = "label6";
             label6.Size = new Size(97, 21);
             label6.TabIndex = 130;
@@ -208,7 +210,7 @@
             // cmbAccesorio
             // 
             cmbAccesorio.FormattingEnabled = true;
-            cmbAccesorio.Location = new Point(457, 159);
+            cmbAccesorio.Location = new Point(597, 159);
             cmbAccesorio.Name = "cmbAccesorio";
             cmbAccesorio.Size = new Size(121, 23);
             cmbAccesorio.TabIndex = 129;
@@ -227,12 +229,34 @@
             BtnAgregarFlor.Text = "Agregar Flores";
             BtnAgregarFlor.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(22, 58, 55);
+            label2.Font = new Font("Century Gothic", 12F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(448, 134);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 21);
+            label2.TabIndex = 133;
+            label2.Text = "Categoria ";
+            // 
+            // CbCategoria
+            // 
+            CbCategoria.FormattingEnabled = true;
+            CbCategoria.Location = new Point(448, 158);
+            CbCategoria.Name = "CbCategoria";
+            CbCategoria.Size = new Size(121, 23);
+            CbCategoria.TabIndex = 132;
+            // 
             // frmArreglo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
+            Controls.Add(label2);
+            Controls.Add(CbCategoria);
             Controls.Add(BtnAgregarFlor);
             Controls.Add(label6);
             Controls.Add(cmbAccesorio);
@@ -270,5 +294,7 @@
         private Label label6;
         private ComboBox cmbAccesorio;
         private Button BtnAgregarFlor;
+        private Label label2;
+        private ComboBox CbCategoria;
     }
 }
