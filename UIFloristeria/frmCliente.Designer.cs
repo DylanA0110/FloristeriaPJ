@@ -40,6 +40,8 @@
             label2 = new Label();
             txtBusquedaCliente = new TextBox();
             btnSeleccionar = new Button();
+            btnMin = new Button();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
@@ -47,7 +49,7 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top;
-            pictureBox1.BackColor = Color.FromArgb(22, 58, 55);
+            pictureBox1.BackColor = Color.FromArgb(28, 75, 68);
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(354, 26);
             pictureBox1.Name = "pictureBox1";
@@ -181,12 +183,46 @@
             btnSeleccionar.UseVisualStyleBackColor = false;
             btnSeleccionar.Click += btnSeleccionar_Click;
             // 
+            // btnMin
+            // 
+            btnMin.BackColor = Color.Transparent;
+            btnMin.FlatAppearance.BorderColor = Color.FromArgb(27, 73, 69);
+            btnMin.FlatAppearance.BorderSize = 0;
+            btnMin.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
+            btnMin.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = Properties.Resources.menos1;
+            btnMin.Location = new Point(830, 12);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(21, 22);
+            btnMin.TabIndex = 161;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.BackColor = Color.Transparent;
+            btnClose.FlatAppearance.BorderColor = Color.FromArgb(27, 73, 69);
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
+            btnClose.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Image = Properties.Resources.x;
+            btnClose.Location = new Point(857, 12);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(21, 22);
+            btnClose.TabIndex = 160;
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // frmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(22, 58, 55);
+            BackColor = Color.FromArgb(28, 75, 68);
             ClientSize = new Size(900, 532);
+            Controls.Add(btnMin);
+            Controls.Add(btnClose);
             Controls.Add(btnSeleccionar);
             Controls.Add(label2);
             Controls.Add(txtBusquedaCliente);
@@ -199,6 +235,7 @@
             Name = "frmCliente";
             Text = "frmCliente";
             Load += frmCliente_Load;
+            MouseDown += frmCliente_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
@@ -214,5 +251,7 @@
         private Label label2;
         private TextBox txtBusquedaCliente;
         private Button btnSeleccionar;
+        private Button btnMin;
+        private Button btnClose;
     }
 }

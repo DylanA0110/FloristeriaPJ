@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedido));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             TxtCantidad = new TextBox();
             pictureBox5 = new PictureBox();
             TxtDescripcion = new TextBox();
@@ -59,6 +59,7 @@
             // 
             // TxtCantidad
             // 
+            TxtCantidad.Anchor = AnchorStyles.Top;
             TxtCantidad.BackColor = Color.FromArgb(22, 58, 55);
             TxtCantidad.BorderStyle = BorderStyle.None;
             TxtCantidad.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -73,6 +74,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Anchor = AnchorStyles.Top;
             pictureBox5.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox5.Image = Properties.Resources.Loading;
             pictureBox5.Location = new Point(632, 136);
@@ -84,6 +86,7 @@
             // 
             // TxtDescripcion
             // 
+            TxtDescripcion.Anchor = AnchorStyles.Top;
             TxtDescripcion.BackColor = Color.FromArgb(22, 58, 55);
             TxtDescripcion.BorderStyle = BorderStyle.None;
             TxtDescripcion.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -98,6 +101,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Anchor = AnchorStyles.Top;
             pictureBox4.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox4.Image = Properties.Resources.Loading;
             pictureBox4.Location = new Point(440, 136);
@@ -109,8 +113,9 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(24, 64, 57);
+            label3.BackColor = Color.FromArgb(22, 58, 55);
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label3.ForeColor = Color.White;
             label3.Location = new Point(289, 198);
@@ -118,9 +123,11 @@
             label3.Size = new Size(154, 19);
             label3.TabIndex = 115;
             label3.Text = "Fecha de solicitud:";
+            label3.Click += label3_Click;
             // 
             // dtpFechaSoli
             // 
+            dtpFechaSoli.Anchor = AnchorStyles.Top;
             dtpFechaSoli.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFechaSoli.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dtpFechaSoli.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
@@ -132,8 +139,9 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(24, 64, 57);
+            label1.BackColor = Color.FromArgb(22, 58, 55);
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.Location = new Point(460, 198);
@@ -144,6 +152,7 @@
             // 
             // dtpFechaEntrega
             // 
+            dtpFechaEntrega.Anchor = AnchorStyles.Top;
             dtpFechaEntrega.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFechaEntrega.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dtpFechaEntrega.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
@@ -155,10 +164,11 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(22, 58, 55);
             label2.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.FromArgb(222, 151, 54);
             label2.Location = new Point(317, 31);
             label2.Name = "label2";
             label2.Size = new Size(264, 36);
@@ -167,6 +177,7 @@
             // 
             // BtnAgregarRemision
             // 
+            BtnAgregarRemision.Anchor = AnchorStyles.Bottom;
             BtnAgregarRemision.BackColor = Color.White;
             BtnAgregarRemision.FlatStyle = FlatStyle.Popup;
             BtnAgregarRemision.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -180,6 +191,7 @@
             // 
             // BtnPreliminar
             // 
+            BtnPreliminar.Anchor = AnchorStyles.Bottom;
             BtnPreliminar.BackColor = Color.White;
             BtnPreliminar.FlatStyle = FlatStyle.Popup;
             BtnPreliminar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -192,6 +204,7 @@
             // 
             // BtnImprimir
             // 
+            BtnImprimir.Anchor = AnchorStyles.Bottom;
             BtnImprimir.BackColor = Color.White;
             BtnImprimir.FlatStyle = FlatStyle.Popup;
             BtnImprimir.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -204,6 +217,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Top;
             pictureBox2.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox2.Image = Properties.Resources.Loading;
             pictureBox2.Location = new Point(18, 136);
@@ -215,6 +229,7 @@
             // 
             // TxtEnviarseA
             // 
+            TxtEnviarseA.Anchor = AnchorStyles.Top;
             TxtEnviarseA.BackColor = Color.FromArgb(22, 58, 55);
             TxtEnviarseA.BorderStyle = BorderStyle.None;
             TxtEnviarseA.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -223,12 +238,13 @@
             TxtEnviarseA.Name = "TxtEnviarseA";
             TxtEnviarseA.Size = new Size(186, 20);
             TxtEnviarseA.TabIndex = 107;
-            TxtEnviarseA.Text = "Enviarse a ";
+            TxtEnviarseA.Text = "Enviarse a";
             TxtEnviarseA.Enter += TxtEnviarseA_Enter;
             TxtEnviarseA.Leave += TxtEnviarseA_Leave;
             // 
             // txtCliente
             // 
+            txtCliente.Anchor = AnchorStyles.Top;
             txtCliente.Enabled = false;
             txtCliente.Location = new Point(224, 135);
             txtCliente.Name = "txtCliente";
@@ -237,7 +253,7 @@
             // 
             // btnBuscarCliente
             // 
-            btnBuscarCliente.Anchor = AnchorStyles.None;
+            btnBuscarCliente.Anchor = AnchorStyles.Top;
             btnBuscarCliente.BackColor = Color.FromArgb(22, 58, 55);
             btnBuscarCliente.FlatAppearance.BorderSize = 0;
             btnBuscarCliente.FlatStyle = FlatStyle.Flat;
@@ -253,6 +269,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -266,33 +283,34 @@
             // dgvPedidos
             // 
             dgvPedidos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 192, 192);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(255, 192, 192);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvPedidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvPedidos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvPedidos.BackgroundColor = Color.White;
             dgvPedidos.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvPedidos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(222, 151, 54);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvPedidos.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(69, 88, 68);
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(22, 58, 55);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(255, 192, 192);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvPedidos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 128, 128);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvPedidos.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvPedidos.EditMode = DataGridViewEditMode.EditOnF2;
             dgvPedidos.EnableHeadersVisualStyles = false;
             dgvPedidos.Location = new Point(88, 271);
             dgvPedidos.MultiSelect = false;
@@ -306,6 +324,7 @@
             // 
             // BtnEditar
             // 
+            BtnEditar.Anchor = AnchorStyles.Bottom;
             BtnEditar.BackColor = Color.White;
             BtnEditar.FlatStyle = FlatStyle.Popup;
             BtnEditar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);

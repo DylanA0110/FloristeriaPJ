@@ -26,8 +26,8 @@ namespace Modelo.Repositories
             {
                 connection.Open();
                 var command = new SqlCommand(
-                    @"INSERT INTO Pedido (Descripcion, Cantidad, Fecha_Solicitud, Fecha_Entrega, Enviarse_A) 
-              VALUES (@Descripcion, @Cantidad, @Fecha_Solicitud, @Fecha_Entrega, @Enviarse_A)",
+                    @"INSERT INTO Pedido (Descripcion, Cantidad, Fecha_Solicitud, Fecha_Entrega, Enviarse_A, Id_cliente) 
+              VALUES (@Descripcion, @Cantidad, @Fecha_Solicitud, @Fecha_Entrega, @Enviarse_A, @Id_cliente)",
                     connection);
 
                 command.Parameters.AddWithValue("@Descripcion", pedido.Descripcion);
@@ -35,6 +35,7 @@ namespace Modelo.Repositories
                 command.Parameters.AddWithValue("@Fecha_Solicitud", pedido.Fecha_solicitud);
                 command.Parameters.AddWithValue("@Fecha_Entrega", pedido.Fecha_entrega);
                 command.Parameters.AddWithValue("@Enviarse_A", pedido.Enviarse_A);
+                command.Parameters.AddWithValue("@Id_cliente", pedido.Id_cliente);
 
                 command.ExecuteNonQuery();
             }
@@ -88,12 +89,7 @@ namespace Modelo.Repositories
                             Fecha_solicitud = (DateTime)reader["Fecha_Solicitud"],
                             Fecha_entrega = (DateTime)reader["Fecha_Entrega"],
                             Enviarse_A = reader["Enviarse_A"]?.ToString(),
-                            Cliente = new Cliente()
-                            {
-                                Id_cliente = (int)reader["Id_Cliente"],
-                                Nombre_Cliente = reader["Nombre_Cliente"]?.ToString(),
-                                Telefono = reader["Telefono"]?.ToString()
-                            }
+                            NombreCliente= reader["Nombre_Cliente"].ToString(),
                         });
                     }
                 }

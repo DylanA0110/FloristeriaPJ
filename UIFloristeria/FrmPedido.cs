@@ -1,6 +1,7 @@
 ﻿using Controladores;
 using Modelo.Entidades;
 using Modelo.Repositories;
+using Modelo.Validaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace UIFloristeria
     {
         private readonly PedidoController _pedidoController;
         private readonly ClienteController _clienteController;
+        private int ClienteSeleccionado;
 
         public FrmPedido()
         {
@@ -33,14 +35,43 @@ namespace UIFloristeria
                 Descripcion = TxtDescripcion.Text,
                 Cantidad = int.Parse(TxtCantidad.Text),
                 Fecha_solicitud = DateTime.Parse(dtpFechaSoli.Text),
-                Fecha_entrega = DateTime.Parse(dtpFechaEntrega.Text)
+                Fecha_entrega = DateTime.Parse(dtpFechaEntrega.Text),
+                Id_cliente = ClienteSeleccionado
             };
-            _pedidoController.AddPedido(pedidos);
+
+            var errores = ValidadorEntidad.Validar(pedidos);
+
+            if (errores.Count > 0)
+            {
+                MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                _pedidoController.AddPedido(pedidos);
+                MessageBox.Show("Pedido registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al registrar el pedido: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
 
         }
 
-
+        private void LimpiarCampos()
+        {
+            TxtCantidad.Clear();
+            TxtDescripcion.Clear();
+            txtPrimerNombre.Clear();
+            TxtEnviarseA.Text = string.Empty;
+            txtCliente.Clear();
+            dtpFechaSoli.Value = DateTime.Now;
+            dtpFechaEntrega.Value = DateTime.Now;
+        }
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
@@ -61,6 +92,7 @@ namespace UIFloristeria
             if (frmCliente.ShowDialog() == DialogResult.OK)
             {
                 txtCliente.Text = frmCliente.ClienteSeleccionado;
+                ClienteSeleccionado = frmCliente.idClienteSeleccionado;
             }
 
         }
@@ -108,13 +140,13 @@ namespace UIFloristeria
         {
             if (TxtEnviarseA.Text == "")
             {
-                TxtEnviarseA.Text = "Enviarse_a";
+                TxtEnviarseA.Text = "Enviarse a";
             }
         }
 
         private void TxtEnviarseA_Enter(object sender, EventArgs e)
         {
-            if (TxtEnviarseA.Text == "Enviarse_a")
+            if (TxtEnviarseA.Text == "Enviarse a")
             {
                 TxtEnviarseA.Text = "";
             }
@@ -138,7 +170,7 @@ namespace UIFloristeria
 
         private void TxtCantidad_Enter(object sender, EventArgs e)
         {
-            if(TxtCantidad.Text == "Cantidad")
+            if (TxtCantidad.Text == "Cantidad")
             {
                 TxtCantidad.Text = "";
             }
@@ -150,6 +182,11 @@ namespace UIFloristeria
             {
                 TxtCantidad.Text = "Cantidad";
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
