@@ -39,6 +39,7 @@
             btnEditarCliente = new Button();
             label2 = new Label();
             txtBusquedaCliente = new TextBox();
+            btnSeleccionar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
@@ -163,12 +164,30 @@
             txtBusquedaCliente.TabIndex = 79;
             txtBusquedaCliente.TextChanged += txtBusquedaCliente_TextChanged;
             // 
+            // btnSeleccionar
+            // 
+            btnSeleccionar.Anchor = AnchorStyles.Bottom;
+            btnSeleccionar.BackColor = Color.White;
+            btnSeleccionar.FlatAppearance.BorderSize = 0;
+            btnSeleccionar.FlatStyle = FlatStyle.Popup;
+            btnSeleccionar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSeleccionar.Image = (Image)resources.GetObject("btnSeleccionar.Image");
+            btnSeleccionar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSeleccionar.Location = new Point(617, 475);
+            btnSeleccionar.Name = "btnSeleccionar";
+            btnSeleccionar.Size = new Size(173, 36);
+            btnSeleccionar.TabIndex = 84;
+            btnSeleccionar.Text = "Seleccionar";
+            btnSeleccionar.UseVisualStyleBackColor = false;
+            btnSeleccionar.Click += btnSeleccionar_Click;
+            // 
             // frmCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
+            Controls.Add(btnSeleccionar);
             Controls.Add(label2);
             Controls.Add(txtBusquedaCliente);
             Controls.Add(btnEditarCliente);
@@ -194,5 +213,6 @@
         private Button btnEditarCliente;
         private Label label2;
         private TextBox txtBusquedaCliente;
+        private Button btnSeleccionar;
     }
 }

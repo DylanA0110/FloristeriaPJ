@@ -43,5 +43,7 @@ namespace Controladores
         public int GetLastAccesorioId() => _accesorioRepository.GetLastAccesorioId();
 
         public IEnumerable<Compra> Search (string searchterm)=> _compraRepository.Search(searchterm);
+
+        public void AddDetalleProveedor(Detalle_Proveedor detalleProveedor) => _compraRepository.AddDetalleProveedor (detalleProveedor);
     }
 }

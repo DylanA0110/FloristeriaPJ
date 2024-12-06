@@ -19,7 +19,7 @@ namespace UIFloristeria
     public partial class frmCliente : Form
     {
         private readonly ClienteController _clienteController;
-
+        public string? ClienteSeleccionado { get; set; }
         public frmCliente()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace UIFloristeria
         private void btnAggCliente_Click(object sender, EventArgs e)
         {
             frmAgregarCliente agregarCliente = new frmAgregarCliente(_clienteController);
-  
+
             //Si Mando exito
             if (agregarCliente.ShowDialog() == DialogResult.OK)
             {
@@ -121,6 +121,22 @@ namespace UIFloristeria
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al buscar clientes: {ex.Message}", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count > 0)
+            {
+                ClienteSeleccionado = dgvClientes.SelectedRows[0].Cells["Nombre_Cliente"].Value.ToString();
+                this.DialogResult = DialogResult.OK;
+
+                //Cerrar el formulario 
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Por Favor, Selecciona un Cliente");
             }
         }
     }

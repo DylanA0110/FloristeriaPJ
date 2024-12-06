@@ -192,6 +192,19 @@ namespace Modelo.Repositories
             return comprasConDetalles;
         }
 
+        public void AddDetalleProveedor(Detalle_Proveedor detalleProveedor)
+        {
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO Detalle_Proveedor (Id_Proveedor, Id_Flor, Id_Accesorio) VALUES (@Id_Proveedor, @Id_Flor, @Id_Accesorio)", connection);
+                command.Parameters.AddWithValue("@Id_Proveedor", detalleProveedor.Id_Proveedor);
+                command.Parameters.AddWithValue("@Id_Flor", (object)detalleProveedor.Id_Flor ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Id_Accesorio", (object)detalleProveedor.Id_Accesorio ?? DBNull.Value);
+                command.ExecuteNonQuery();
+            }
+        }
+
     }
 }
 

@@ -115,6 +115,15 @@ namespace UIFloristeria
 
                 // Agregar el detalle de la compra
                 _compraController.AddDetalleCompra(detalleCompra);
+                // Crear y agregar el detalle del proveedor
+                Detalle_Proveedor detalleProveedor = new Detalle_Proveedor
+                {
+                    Id_Proveedor = selectedProveedorId,
+                    Id_Flor = detalleCompra.Id_Flor,
+                    Id_Accesorio = detalleCompra.Id_Accesorio
+                };
+
+                _compraController.AddDetalleProveedor(detalleProveedor); // Asegúrate de que este método esté implementado en tu controlador
                 MessageBox.Show("Compra registrada con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();

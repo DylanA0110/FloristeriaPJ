@@ -109,8 +109,8 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("SELECT * FROM Pedido WHERE Id_Cliente = @Id_Cliente", connection);
-                command.Parameters.AddWithValue("@Id_Cliente", id);
+                var command = new SqlCommand("SELECT * FROM Pedido WHERE Id_pedido = @Id_pedido", connection);
+                command.Parameters.AddWithValue("@Id_pedido", id);
                 using (var reader = command.ExecuteReader())
                 {
                     if (reader.Read())
@@ -121,8 +121,8 @@ namespace Modelo.Repositories
                             Id_cliente = (int)reader["Id_Cliente"],
                             Descripcion = reader["Descripcion"]?.ToString(),
                             Cantidad = (int)reader["Cantidad"],
-                            Fecha_solicitud = (DateTime)reader["Fecha_Solitud"],
-                            Fecha_entrega = (DateTime)reader["Fecha_Entrega"],
+                            Fecha_solicitud = (DateTime)reader["Fecha_solicitud"],
+                            Fecha_entrega = (DateTime)reader["Fecha_entrega"],
                             Enviarse_A = reader["Enviarse_A"]?.ToString()
                         };
                     }
@@ -176,7 +176,15 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Pedido SET Descripcion = @Descripcion, Cantidad = @Cantidad, Fecha_Solicitud = @Fecha_Solicitud, Fecha_Entrega = @Fecha_Entrega, Enviarse_A = @Enviarse_A WHERE Id_pedido = @Id_pedido", connection);
+                var command = new SqlCommand("UPDATE Pedido SET " +
+                    "Descripcion = @Descripcion," +
+                    " Cantidad = @Cantidad," +
+                    " Fecha_Solicitud = @Fecha_Solicitud," +
+                    " Fecha_Entrega = @Fecha_Entrega, " +
+                    "Enviarse_A = @Enviarse_A " +
+                    "WHERE Id_pedido = @Id_pedido", connection);
+
+                command.Parameters.AddWithValue("@Id_pedido", pedido.Id_pedido);
                 command.Parameters.AddWithValue("@Descripcion", pedido.Descripcion);
                 command.Parameters.AddWithValue("@Cantidad", pedido.Cantidad);
                 command.Parameters.AddWithValue("@Fecha_Solicitud", pedido.Fecha_solicitud);

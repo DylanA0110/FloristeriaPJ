@@ -37,7 +37,6 @@
             btnEmpleado = new Button();
             btnFactura = new Button();
             btnArreglos = new Button();
-            btnClientes = new Button();
             btnPedidos = new Button();
             panel2 = new Panel();
             btnCerrarSession = new Button();
@@ -61,7 +60,6 @@
             sidebar.Controls.Add(menuContainer);
             sidebar.Controls.Add(btnFactura);
             sidebar.Controls.Add(btnArreglos);
-            sidebar.Controls.Add(btnClientes);
             sidebar.Controls.Add(btnPedidos);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(btnCerrarSession);
@@ -175,25 +173,6 @@
             btnArreglos.UseVisualStyleBackColor = false;
             btnArreglos.Click += btnArreglos_Click;
             // 
-            // btnClientes
-            // 
-            btnClientes.BackColor = Color.FromArgb(28, 75, 68);
-            btnClientes.FlatAppearance.BorderColor = Color.Black;
-            btnClientes.FlatAppearance.BorderSize = 0;
-            btnClientes.FlatStyle = FlatStyle.Flat;
-            btnClientes.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            btnClientes.ForeColor = Color.White;
-            btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
-            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClientes.Location = new Point(0, 129);
-            btnClientes.Margin = new Padding(0);
-            btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(201, 37);
-            btnClientes.TabIndex = 9;
-            btnClientes.Text = "Clientes";
-            btnClientes.UseVisualStyleBackColor = false;
-            btnClientes.Click += btnClientes_Click;
-            // 
             // btnPedidos
             // 
             btnPedidos.BackColor = Color.FromArgb(28, 75, 68);
@@ -204,7 +183,7 @@
             btnPedidos.ForeColor = Color.White;
             btnPedidos.Image = (Image)resources.GetObject("btnPedidos.Image");
             btnPedidos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPedidos.Location = new Point(3, 169);
+            btnPedidos.Location = new Point(3, 132);
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(198, 37);
             btnPedidos.TabIndex = 6;
@@ -215,7 +194,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
-            panel2.Location = new Point(3, 212);
+            panel2.Location = new Point(3, 175);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 222);
             panel2.TabIndex = 5;
@@ -231,7 +210,7 @@
             btnCerrarSession.ForeColor = Color.White;
             btnCerrarSession.Image = (Image)resources.GetObject("btnCerrarSession.Image");
             btnCerrarSession.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrarSession.Location = new Point(0, 437);
+            btnCerrarSession.Location = new Point(0, 400);
             btnCerrarSession.Margin = new Padding(0);
             btnCerrarSession.Name = "btnCerrarSession";
             btnCerrarSession.Size = new Size(199, 53);
@@ -348,7 +327,6 @@
         private Button btnArreglos;
         private Button btnFactura;
         private Button btnPedidos;
-        private Button btnClientes;
         private Button btnCompra;
         private Button btnMenu;
         private Button btnCerrarSession;
