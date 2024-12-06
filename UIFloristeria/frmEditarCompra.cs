@@ -44,7 +44,7 @@ namespace UIFloristeria
             }
         }
 
-       
+
 
         private void btnEditarCompra_Click(object sender, EventArgs e)
         {
@@ -151,6 +151,11 @@ namespace UIFloristeria
         private void btnMin_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

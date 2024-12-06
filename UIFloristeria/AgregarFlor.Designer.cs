@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarFlor));
             DgvFlor = new DataGridView();
             pictureBox1 = new PictureBox();
@@ -48,33 +48,33 @@
             // 
             // DgvFlor
             // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            DgvFlor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            DgvFlor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvFlor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DgvFlor.BackgroundColor = Color.White;
             DgvFlor.CellBorderStyle = DataGridViewCellBorderStyle.None;
             DgvFlor.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(222, 151, 54);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(28, 75, 68);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DgvFlor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(222, 151, 54);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(28, 75, 68);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DgvFlor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DgvFlor.ColumnHeadersHeight = 45;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(69, 88, 68);
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(69, 88, 68);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DgvFlor.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(69, 88, 68);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DgvFlor.DefaultCellStyle = dataGridViewCellStyle3;
             DgvFlor.EnableHeadersVisualStyles = false;
             DgvFlor.Location = new Point(94, 226);
             DgvFlor.Name = "DgvFlor";
@@ -105,6 +105,7 @@
             TxtNombreFlor.Size = new Size(186, 20);
             TxtNombreFlor.TabIndex = 115;
             TxtNombreFlor.Text = "Nombre Flor";
+            TxtNombreFlor.Leave += TxtNombreFlor_Leave;
             // 
             // BtnAgregarFlor
             // 

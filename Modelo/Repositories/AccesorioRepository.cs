@@ -119,6 +119,7 @@ namespace Modelo.Repositories
             {
                 connection.Open();
                 var command = new SqlCommand("UPDATE Accesorio SET Nombre_Accesorio = @Nombre_Accesorio WHERE Id_Accesorio = @Id_Accesorio", connection);
+                command.Parameters.AddWithValue("@Id_Accesorio", accesorio.Id_Accesorio);
                 command.Parameters.AddWithValue("@Nombre_Accesorio", accesorio.Nombre_Accesorio);
                 command.ExecuteNonQuery();
             }

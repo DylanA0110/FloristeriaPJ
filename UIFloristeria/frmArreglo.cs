@@ -1,4 +1,6 @@
 ﻿using Controladores;
+using Modelo.Entidades;
+using Modelo.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +16,13 @@ namespace UIFloristeria
 {
     public partial class frmArreglo : Form
     {
+        private readonly ArregloController _arregloController;
+        private readonly AccesorioController _accesorioController;
+
         public frmArreglo()
         {
             InitializeComponent();
+            _accesorioController = new AccesorioController(new AccesorioRepository());
         }
 
 
@@ -36,7 +42,8 @@ namespace UIFloristeria
 
         private void BtnAccesorio_Click(object sender, EventArgs e)
         {
-
+            AgregarAccesorio frm = new AgregarAccesorio(_accesorioController);
+            frm.ShowDialog();
         }
     }
 }

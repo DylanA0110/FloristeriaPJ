@@ -17,7 +17,7 @@ namespace Controladores
         {
             _accesorioRepository = accesorioRepository;
         }
-        public IEnumerable<Accesorio> GetAllArreglo() => _accesorioRepository.GetAll();
+        public IEnumerable<Accesorio> GetAllAccesorio() => _accesorioRepository.GetAll();
 
         public Accesorio GetAccesorioById(int id) => _accesorioRepository.GetById(id);
 

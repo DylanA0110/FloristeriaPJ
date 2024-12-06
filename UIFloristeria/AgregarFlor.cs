@@ -22,7 +22,7 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
         private readonly FlorController _florController;
-        public int? id_flor {  get; set; }
+        public int? id_flor { get; set; }
 
         public AgregarFlor()
         {
@@ -30,6 +30,11 @@ namespace UIFloristeria
         }
 
         private void AgregarFlor_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtNombreFlor_Leave(object sender, EventArgs e)
         {
 
         }

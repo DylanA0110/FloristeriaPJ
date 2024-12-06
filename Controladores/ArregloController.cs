@@ -16,10 +16,10 @@ namespace Controladores
         private readonly IAccesorioRepository _accesorioRepository;
 
 
-        public ArregloController(IArregloRepository arregloRepository, IFlorRepository florRepository, IAccesorioRepository accesorioRepository)
+        public ArregloController(IArregloRepository arregloRepository, IAccesorioRepository accesorioRepository)
         {
             _arregloRepository = arregloRepository;
-            _florRepository = florRepository;
+            //_florRepository = florRepository;
             _accesorioRepository = accesorioRepository;
         }
         public IEnumerable<Arreglo> GetAllArreglo() => _arregloRepository.GetAll();

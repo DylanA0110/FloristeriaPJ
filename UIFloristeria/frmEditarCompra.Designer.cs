@@ -189,6 +189,7 @@
             btnBuscarProveedor.Size = new Size(42, 33);
             btnBuscarProveedor.TabIndex = 149;
             btnBuscarProveedor.UseVisualStyleBackColor = false;
+            btnBuscarProveedor.Click += btnBuscarProveedor_Click;
             // 
             // label3
             // 
