@@ -1,4 +1,5 @@
 ﻿using Controladores;
+using Microsoft.Data.SqlClient;
 using Modelo.Entidades;
 using Modelo.Validaciones;
 using System;
@@ -22,8 +23,10 @@ namespace UIFloristeria
         private static extern int SendMessage(IntPtr hwnd, int msg, int wParam, int lParam);
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
-
+        private int selectedProveedorId;
         private readonly CompraController _compraController;
+        private int lastFlorId = -1; // Inicializa en -1 para indicar que no hay ID
+        private int lastAccesorioId = -1; // Inicializa en -1 para indicar que no hay ID
         public frmAgregarCompra(CompraController compraController)
         {
             InitializeComponent();
@@ -33,58 +36,117 @@ namespace UIFloristeria
         private void btnAgregarCompra_Click(object sender, EventArgs e)
         {
 
-            // Validar y convertir la cantidad
+            // Validar la cantidad ingresada
             if (!int.TryParse(txtCantidad.Text, out int cantidad))
             {
                 MessageBox.Show("La cantidad ingresada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Detener la ejecución si la conversión falla
+                return;
             }
 
-            // Validar y convertir el precio unitario
+            // Validar el precio unitario ingresado
             if (!decimal.TryParse(txtPrecio.Text, out decimal precioUnitario))
             {
                 MessageBox.Show("El precio unitario ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Detener la ejecución si la conversión falla
+                return;
             }
 
-            // Crear el objeto Compra con los valores convertidos
+            // Validar que se haya seleccionado un proveedor
+            if (selectedProveedorId <= 0)
+            {
+                MessageBox.Show("Debes seleccionar un proveedor válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar que se haya seleccionado un producto
+            if (cboProducto.SelectedItem == null)
+            {
+                MessageBox.Show("Debes seleccionar un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar que el nombre del producto no esté vacío
+            if (string.IsNullOrWhiteSpace(txtNombreProducto.Text))
+            {
+                MessageBox.Show("El nombre del producto no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Crear una nueva compra
             var nuevaCompra = new Compra
             {
-                Cantidad = cantidad, // Usar la cantidad convertida
-                FechaCompra = dtpFechaCompra.Value, // Acceder al valor del DateTimePicker
-                Precio_Unitario = precioUnitario // Usar el precio unitario convertido
+                Cantidad = cantidad,
+                FechaCompra = dtpFechaCompra.Value,
+                Precio_Unitario = precioUnitario
             };
 
+            // Validar la nueva compra
             var errores = ValidadorEntidad.Validar(nuevaCompra);
-
             if (errores.Count > 0)
             {
-                // Mostrar errores en un MessageBox
                 MessageBox.Show(string.Join("\n", errores), "Errores de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
             {
-                // Agregar empleado a través del controlador
-                _compraController.AddCompra(nuevaCompra);
+                // Agregar la compra y obtener el ID
+                int idCompra = _compraController.AddCompra(nuevaCompra);
 
-                MessageBox.Show("Compra registrado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Crear el detalle de la compra
+                Detalle_Compra detalleCompra = new Detalle_Compra
+                {
+                    Id_Compra = idCompra,
+                    Id_Proveedor = selectedProveedorId,
+                    Cantidad = cantidad,
+                    PrecioUnitario = precioUnitario
+                };
+
+                // Asignar el ID del producto correspondiente
+                string productoSeleccionado = cboProducto.SelectedItem.ToString();
+                if (productoSeleccionado == "Flor")
+                {
+                    detalleCompra.Id_Flor = lastFlorId; // Usar el último ID de flor
+                    detalleCompra.Id_Accesorio = null; // No se utiliza
+                }
+                else if (productoSeleccionado == "Accesorio")
+                {
+                    detalleCompra.Id_Accesorio = lastAccesorioId; // Usar el último ID de accesorio
+                    detalleCompra.Id_Flor = null; // No se utiliza
+                }
+
+                // Agregar el detalle de la compra
+                _compraController.AddDetalleCompra(detalleCompra);
+                MessageBox.Show("Compra registrada con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Error de base de datos: {sqlEx.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
+
             frmProveedor frmProveedor = new frmProveedor();
             if (frmProveedor.ShowDialog() == DialogResult.OK)
             {
-                txtProveedor.Text = frmProveedor.ProveedorSeleccionado; // Recibir el proveedor seleccionado.
+                txtProveedor.Text = frmProveedor.ProveedorSeleccionado;
+
+                // Asegúrate de que el ID del proveedor no sea DBNull
+                if (frmProveedor.IdProveedorSeleccionado != null)
+                {
+                    selectedProveedorId = (int)frmProveedor.IdProveedorSeleccionado;
+                }
+                else
+                {
+                    MessageBox.Show("No se seleccionó un proveedor válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -155,5 +217,39 @@ namespace UIFloristeria
             }
         }
 
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            string productoSeleccionado = cboProducto.SelectedItem.ToString();
+
+            if (string.IsNullOrWhiteSpace(txtNombreProducto.Text))
+            {
+                MessageBox.Show("El nombre del producto no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                if (productoSeleccionado == "Flor")
+                {
+                    var flor = new Flor { Nombre_Flor = txtNombreProducto.Text };
+                    _compraController.AddFlor(flor);
+                    lastFlorId = _compraController.GetLastFlorId();
+                    MessageBox.Show("Flor agregada con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (productoSeleccionado == "Accesorio")
+                {
+                    var accesorio = new Accesorio { Nombre_Accesorio = txtNombreProducto.Text };
+                    _compraController.AddAccesorio(accesorio);
+                    lastAccesorioId = _compraController.GetLastAccesorioId();
+                    MessageBox.Show("Accesorio agregado con éxito.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                btnAgregarCompra.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace UIFloristeria
         public frmCompra()
         {
             InitializeComponent();
-            _compraController = new CompraController(new CompraRepository());
+            _compraController = new CompraController(new CompraRepository(), new FlorRepository(), new AccesorioRepository());
         }
 
 
@@ -40,17 +40,21 @@ namespace UIFloristeria
 
         private void LoadCompras()
         {
-
-            var Compras = _compraController.GetAllCompras();
+            var Compras = _compraController.GetComprasConDetalles();
             dgvCompra.DataSource = Compras.ToList();
 
             dgvCompra.CurrentCell = null;
             dgvCompra.ClearSelection();
-            if (dgvCompra.Columns.Count > 0)
+
+            for (int i = 0; i < 5; i++)
             {
-                dgvCompra.Columns[0].Visible = false;
+                if (dgvCompra.Columns.Count > i)
+                {
+                    dgvCompra.Columns[i].Visible = false;
+                }
             }
         }
+
 
         private void btnEditarCompra_Click(object sender, EventArgs e)
         {
@@ -99,7 +103,7 @@ namespace UIFloristeria
 
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
-                    var empleados = _compraController.SearchCompra(searchTerm);
+                    var empleados = _compraController.Search(searchTerm);
                     if (empleados.Any())
                     {
                         dgvCompra.DataSource = empleados.ToList();

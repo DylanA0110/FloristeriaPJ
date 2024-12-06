@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modelo.Entidades
 {
@@ -18,7 +14,21 @@ namespace Modelo.Entidades
         [Required(ErrorMessage = "El ID del proveedor es requerido.")]
         public int Id_Proveedor { get; set; }
 
+       
         public int? Id_Flor { get; set; }
         public int? Id_Accesorio { get; set; }
+
+        //pa los join
+        public string Proveedor { get; set; }
+        public string Flor { get; set; }
+        public string Accesorio { get; set; }
+
+        // el calcular
+        public decimal Total { get; set; }
+
+        
+        public DateTime Fecha { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
     }
 }

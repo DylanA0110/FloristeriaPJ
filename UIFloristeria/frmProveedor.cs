@@ -26,6 +26,7 @@ namespace UIFloristeria
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
         public string? ProveedorSeleccionado { get; set; }
+        public int? IdProveedorSeleccionado { get; private set; }
         private readonly ProveedorController _proveedorController;
 
         public frmProveedor()
@@ -81,13 +82,21 @@ namespace UIFloristeria
         {
             if (dgvProveedores.SelectedRows.Count > 0)
             {
-                // Asignar el nombre del proveedor seleccionado al campo ProveedorSeleccionado
-                ProveedorSeleccionado = dgvProveedores.SelectedRows[0].Cells["Nombre_Proveedor"].Value.ToString();
+                var row = dgvProveedores.SelectedRows[0];
+                ProveedorSeleccionado = row.Cells["Nombre_Proveedor"].Value.ToString();
 
-                // Indicar que el formulario se cerrará con un resultado satisfactorio
+                // Verificar si el valor es DBNull antes de asignar
+                if (row.Cells["Id_Proveedor"].Value != DBNull.Value)
+                {
+                    IdProveedorSeleccionado = Convert.ToInt32(row.Cells["Id_Proveedor"].Value);
+                }
+                else
+                {
+                    MessageBox.Show("El ID del proveedor es nulo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Salir si el ID es nulo
+                }
+
                 this.DialogResult = DialogResult.OK;
-
-                // Cerrar el formulario
                 this.Close();
             }
             else

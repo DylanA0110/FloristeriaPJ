@@ -47,6 +47,7 @@
             label4 = new Label();
             txtNombreProducto = new TextBox();
             pictureBox4 = new PictureBox();
+            btnAgregarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -81,13 +82,14 @@
             // btnAgregarCompra
             // 
             btnAgregarCompra.BackColor = Color.White;
+            btnAgregarCompra.Enabled = false;
             btnAgregarCompra.FlatStyle = FlatStyle.Popup;
             btnAgregarCompra.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregarCompra.Location = new Point(257, 280);
+            btnAgregarCompra.Location = new Point(293, 280);
             btnAgregarCompra.Name = "btnAgregarCompra";
             btnAgregarCompra.Size = new Size(142, 27);
             btnAgregarCompra.TabIndex = 118;
-            btnAgregarCompra.Text = "Agregar";
+            btnAgregarCompra.Text = "Agregar Compra";
             btnAgregarCompra.UseVisualStyleBackColor = false;
             btnAgregarCompra.Click += btnAgregarCompra_Click;
             // 
@@ -277,12 +279,26 @@
             pictureBox4.TabIndex = 132;
             pictureBox4.TabStop = false;
             // 
+            // btnAgregarProducto
+            // 
+            btnAgregarProducto.BackColor = Color.White;
+            btnAgregarProducto.FlatStyle = FlatStyle.Popup;
+            btnAgregarProducto.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregarProducto.Location = new Point(109, 280);
+            btnAgregarProducto.Name = "btnAgregarProducto";
+            btnAgregarProducto.Size = new Size(178, 27);
+            btnAgregarProducto.TabIndex = 134;
+            btnAgregarProducto.Text = "Agregar Producto";
+            btnAgregarProducto.UseVisualStyleBackColor = false;
+            btnAgregarProducto.Click += btnAgregarProducto_Click;
+            // 
             // frmAgregarCompra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(675, 331);
+            Controls.Add(btnAgregarProducto);
             Controls.Add(txtNombreProducto);
             Controls.Add(pictureBox4);
             Controls.Add(label4);
@@ -334,5 +350,6 @@
         private Label label4;
         private TextBox txtNombreProducto;
         private PictureBox pictureBox4;
+        private Button btnAgregarProducto;
     }
 }

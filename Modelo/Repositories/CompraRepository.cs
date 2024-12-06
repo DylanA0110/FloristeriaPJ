@@ -24,15 +24,29 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Compra (FechaCompra, Precio_Unitario, Cantidad) VALUES (@FechaCompra, @Precio_Unitario, @Cantidad)", connection);
+                var command = new SqlCommand("INSERT INTO Compra (Cantidad, FechaCompra, Precio_Unitario) OUTPUT INSERTED.Id_Compra VALUES (@Cantidad, @FechaCompra, @Precio_Unitario)", connection);
+                command.Parameters.AddWithValue("@Cantidad", compra.Cantidad);
                 command.Parameters.AddWithValue("@FechaCompra", compra.FechaCompra);
                 command.Parameters.AddWithValue("@Precio_Unitario", compra.Precio_Unitario);
-                command.Parameters.AddWithValue("@Cantidad", compra.Cantidad);
+
+                // Asignar el ID de la compra a la entidad pasada
+                compra.Id_Compra = (int)command.ExecuteScalar();
+            }
+        }
+        public void AddDetalleCompra(Detalle_Compra detalleCompra)
+        {
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("INSERT INTO Detalle_Compra (Id_Compra, Id_Proveedor, Id_Flor, Id_Accesorio) VALUES (@IdCompra, @IdProveedor, @IdFlor, @IdAccesorio)", connection);
+                command.Parameters.AddWithValue("@IdCompra", detalleCompra.Id_Compra);
+                command.Parameters.AddWithValue("@IdProveedor", detalleCompra.Id_Proveedor);
+                command.Parameters.AddWithValue("@IdFlor", (object)detalleCompra.Id_Flor ?? DBNull.Value);
+                command.Parameters.AddWithValue("@IdAccesorio", (object)detalleCompra.Id_Accesorio ?? DBNull.Value);
+
                 command.ExecuteNonQuery();
             }
-
         }
-
         public void Delete(int id)
         {
             using (var connection = _dbContext.GetConnection())
@@ -120,8 +134,6 @@ namespace Modelo.Repositories
         }
 
 
-
-
         public void Update(Compra compra)
         {
             using (var connection = _dbContext.GetConnection())
@@ -136,6 +148,50 @@ namespace Modelo.Repositories
 
             }
         }
+
+        public IEnumerable<Detalle_Compra> GetComprasConDetalles()
+        {
+            var comprasConDetalles = new List<Detalle_Compra>();
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand(@"
+                    SELECT 
+                        c.Id_Compra AS IdCompra, 
+                        c.FechaCompra AS Fecha,
+                        c.Cantidad,
+                        c.Precio_Unitario AS PrecioUnitario,
+                        (c.Cantidad * c.Precio_Unitario) AS Total,
+                        p.Nombre_Proveedor AS Proveedor,
+                        f.Nombre_Flor AS Flor,
+                        a.Nombre_Accesorio AS Accesorio
+                    FROM Compra c
+                    INNER JOIN Detalle_Compra dc ON c.Id_Compra = dc.Id_Compra
+                    INNER JOIN Proveedor p ON dc.Id_Proveedor = p.Id_Proveedor
+                    LEFT JOIN Flor f ON dc.Id_Flor = f.Id_Flor
+                    LEFT JOIN Accesorio a ON dc.Id_Accesorio = a.Id_Accesorio", connection);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        comprasConDetalles.Add(new Detalle_Compra
+                        {
+                            Id_Compra = (int)reader["IdCompra"],
+                            Fecha = (DateTime)reader["Fecha"],
+                            Cantidad = (int)reader["Cantidad"],
+                            PrecioUnitario = (decimal)reader["PrecioUnitario"],
+                            Total = (decimal)reader["Total"],
+                            Proveedor = reader["Proveedor"] as string,
+                            Flor = reader["Flor"] as string,
+                            Accesorio = reader["Accesorio"] as string
+                        });
+                    }
+                }
+            }
+            return comprasConDetalles;
+        }
+
     }
 }
 

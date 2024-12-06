@@ -15,5 +15,8 @@ namespace Modelo.Interfaces
         void Update(Compra compra);
         void Delete(int id);
         IEnumerable<Compra> Search(string searchTerm);
+
+        IEnumerable<Detalle_Compra> GetComprasConDetalles();
+        void AddDetalleCompra(Detalle_Compra detalleCompra);
     }
 }
