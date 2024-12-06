@@ -9,6 +9,7 @@ namespace Modelo.Interfaces
 {
     public interface ITipoPagoRepository
     {
+        IEnumerable<TipoDePago> GetAll();
         void Add(TipoDePago TipoPago);
         void Update(TipoDePago TipoPago);
         void Delete(int id);

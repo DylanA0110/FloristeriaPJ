@@ -2,7 +2,11 @@
 using Modelo.Contexto;
 using Modelo.Entidades;
 using Modelo.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Modelo.Repositories
 {
@@ -15,14 +19,18 @@ namespace Modelo.Repositories
             _dbContext = new DbContext();
         }
 
-        public int Add(Accesorio accesorio)
+        public void Add(Accesorio accesorio)
         {
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Accesorio (Nombre_Accesorio) OUTPUT INSERTED.Id_Accesorio VALUES (@Nombre_Accesorio)", connection);
+                var command = new SqlCommand("INSERT INTO Accesorio (Nombre_Accesorio)" +
+                    " OUTPUT INSERTED.Id_Accesorio VALUES (@Nombre_Accesorio)", connection);
                 command.Parameters.AddWithValue("@Nombre_Accesorio", accesorio.Nombre_Accesorio);
-                return (int)command.ExecuteScalar(); // Retorna el ID recién insertado
+
+
+                // Asignar el ID de la compra a la entidad pasada
+                accesorio.Id_Accesorio = (int)command.ExecuteScalar();
             }
         }
 
@@ -39,9 +47,7 @@ namespace Modelo.Repositories
                     {
                         accesorio.Add(new Accesorio
                         {
-                            
-                            Id_Accesorio = (int)reader["Id_Accesorio"], 
-                            Id_Arreglo = (int)reader["Id_Arreglo"],
+                            Id_Accesorio = (int)reader["Id_Accesorio"],
                             Nombre_Accesorio = reader["Nombre_Accesorio"]?.ToString()
                         });
                     }
@@ -65,7 +71,6 @@ namespace Modelo.Repositories
                         accesorio = new Accesorio
                         {
                             Id_Accesorio = (int)reader["Id_Accesorio"],
-                            Id_Arreglo = (int)reader["Id_Arreglo"],
                             Nombre_Accesorio = reader["Nombre_Accesorio"]?.ToString()
                         };
                     }
@@ -84,10 +89,28 @@ namespace Modelo.Repositories
                 return result != DBNull.Value ? Convert.ToInt32(result) : 0; // Devuelve 0 si no hay registros
             }
         }
-
         public IEnumerable<Accesorio> Search(string searchTerm)
         {
-            throw new NotImplementedException();
+            var accesorio = new List<Accesorio>();
+            using (var connection = _dbContext.GetConnection())
+            {
+                connection.Open();
+                var command = new SqlCommand("SELECT * FROM Accesorio WHERE Nombre_Accesorio LIKE @searchTerm", connection);
+                command.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        accesorio.Add(new Accesorio
+                        {
+                            Id_Accesorio = (int)reader["Id_Accesorio"],
+                            Nombre_Accesorio = reader["Nombre_Accesorio"]?.ToString()
+                        });
+                    }
+                }
+            }
+            return accesorio;
         }
 
         public void Update(Accesorio accesorio)
@@ -95,10 +118,16 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("UPDATE Accesorio SET Nombre_Accesorio = @Nombre_Accesorio, WHERE Id_Accesorio = @Id_Accesorio", connection);
+                var command = new SqlCommand("UPDATE Accesorio SET Nombre_Accesorio = @Nombre_Accesorio WHERE Id_Accesorio = @Id_Accesorio", connection);
                 command.Parameters.AddWithValue("@Nombre_Accesorio", accesorio.Nombre_Accesorio);
                 command.ExecuteNonQuery();
             }
         }
     }
+
+    
 }
+    
+
+    
+

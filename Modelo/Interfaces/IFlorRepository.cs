@@ -9,7 +9,11 @@ namespace Modelo.Interfaces
 {
     public interface IFlorRepository
     {
-        int Add(Flor flor);
+        void Add(Flor flor);
         int GetLastFlorId();
+        IEnumerable<Flor> GetAll();
+        Flor GetById(int id);
+        IEnumerable<Flor> Search(string searchTerm);
+        void Update(Flor flor);
     }
 }

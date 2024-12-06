@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UIFloristeria
 {
@@ -26,10 +27,14 @@ namespace UIFloristeria
         public Factura()
         {
             InitializeComponent();
-            _facturaController = new FacturaController(new FacturaRepository());
-            _pedidoController = new PedidoController(new PedidosRepository());
+            _facturaController = new FacturaController(
+        new FacturaRepository(),  // Implementación de IFacturaRepository
+        new PagoRepository(),     // Implementación de IPagoRepository
+        new TipoDePagoRepository()); // Implementación de ITipoPagoRepository
+
+            _tipoDePagoController = new TipoDePagoController(new TipoDePagoRepository());  // Inicializa correctamente
             _pagoController = new PagoController(new PagoRepository());
-            _tipoDePagoController = new TipoDePagoController(new TipoDePagoRepository());
+            _pedidoController = new PedidoController(new PedidosRepository());
 
         }
 
@@ -37,17 +42,44 @@ namespace UIFloristeria
         private void Factura_Load(object sender, EventArgs e)
         {
             LoadFacturas();
+            TxtNumFactura.Enabled = false;
         }
 
         private void LoadFacturas()
         {
-            var factura = _facturaController.GetAllFactura();
+            /*var factura = _facturaController.GetAllFactura();
             dgvFactura.DataSource = factura.ToList();
             dgvFactura.CurrentCell = null;
             dgvFactura.ClearSelection();
             if (dgvFactura.Columns.Count > 0)
             {
                 dgvFactura.Columns[0].Visible = false;
+            }*/
+
+            var facturas = _facturaController.GetAllFacturasWithPago();
+            dgvFactura.DataSource = facturas.ToList();
+
+            if (dgvFactura.Columns.Count > 0)
+            {
+                dgvFactura.Columns["Id_factura"].Visible = false; // Oculta columnas innecesarias
+               dgvFactura.Columns["Id_pedido"].Visible = true;
+                dgvFactura.Columns["Id_Empleado"].Visible = false;
+                dgvFactura.Columns["Estado"].Visible = false; // Oculta la columna Estado
+
+                dgvFactura.Columns["MontoPago"].HeaderText = "Monto Pago";
+                dgvFactura.Columns["Id_pedido"].HeaderText = "Número de Pedido";
+                dgvFactura.Columns["MontoPago"].DefaultCellStyle.Format = "C2";
+
+                dgvFactura.Columns["FechaPago"].HeaderText = "Fecha de Pago";
+
+                // Reordenar las columnas (de arriba hacia abajo según tu preferencia)
+                dgvFactura.Columns["Id_pedido"].DisplayIndex = 0;  // Número de Pedido
+                dgvFactura.Columns["NumFactura"].DisplayIndex = 1; // Número de Factura
+                dgvFactura.Columns["MontoPago"].DisplayIndex = 2;  // Monto Pago
+                dgvFactura.Columns["Monto_total"].DisplayIndex = 3; // Monto Total
+                dgvFactura.Columns["TipoDePago"].DisplayIndex = 4; // Tipo de Pago
+                dgvFactura.Columns["FechaPago"].DisplayIndex = 5;  // Fecha de Pago
+
             }
         }
 
@@ -57,9 +89,79 @@ namespace UIFloristeria
         }
 
 
+        private void ResetTextBox(System.Windows.Forms.TextBox textBox, string defaultText)
+        {
+            if (string.IsNullOrEmpty(textBox.Text) || textBox.Text == defaultText)
+            {
+                textBox.Text = defaultText;
+            }
+        }
+
+
         private void BtnInsertarFactura_Click(object sender, EventArgs e)
         {
-            var facturas = new Facturas
+            if (rbFactura.Checked && string.IsNullOrEmpty(TxtNumFactura.Text))
+            {
+                MessageBox.Show("Por favor, ingrese un número de factura.");
+                return;
+            }
+
+            // Insertar factura
+            var factura = new Facturas
+            {
+                Id_pedido = int.Parse(txtPedido.Text),
+                // Si el RadioButton está marcado, se utiliza el número de factura ingresado, si no, se deja vacío
+                NumFactura = rbFactura.Checked ? int.Parse(TxtNumFactura.Text) : 0,
+                //Mont = rbFactura.Checked,
+                Monto_total = decimal.Parse(TxtMontoTotal.Text),
+             
+            };
+            _facturaController.AddFactura(factura);
+
+            // Obtener ID de la factura recién creada
+            var nuevaFactura = _facturaController.GetAllFactura().Last();
+
+            // Insertar tipo de pago
+            var tipoPago = new TipoDePago
+            {
+                Tipo = CboTipoDePago.Text
+            };
+            _tipoDePagoController.AddPago(tipoPago);
+
+            // Obtener ID del tipo de pago recién creado
+            var nuevoTipoPago = _tipoDePagoController.GetAll().Last();
+
+            // Insertar pago relacionado con la factura
+            var pago = new Pago
+            {
+                Id_factura = nuevaFactura.Id_factura,
+                Monto = decimal.Parse(TxtMontoNeto.Text),
+                Fecha_pago = dtpFechaPago.Value.Date,
+                Id_Tipo_Pago = nuevoTipoPago.Id_Tipo_pago
+            };
+            _pagoController.AddPago(pago);
+
+            // Recargar el DataGridView
+            LoadFacturas();
+
+            // Limpiar los campos de texto
+            ResetTextBox(txtPedido, "Pedido");
+            ResetTextBox(TxtNumFactura, "Numero Factura");
+            ResetTextBox(TxtMontoTotal, "Monto total");
+            ResetTextBox(TxtMontoNeto, "Monto Neto");
+
+            CboTipoDePago.SelectedIndex = -1; // Si es un ComboBox, también puedes resetear su selección
+
+            // Limpiar la fecha de pago
+            dtpFechaPago.Value = DateTime.Now;
+
+            // Desmarcar el RadioButton y deshabilitar el TextBox
+            rbFactura.Checked = false;
+            TxtNumFactura.Enabled = false;
+
+
+
+            /*var facturas = new Facturas
             {
               Id_pedido = int.Parse(txtPedido.Text),
                 NumFactura = int.Parse(TxtNumFactura.Text),
@@ -83,12 +185,14 @@ namespace UIFloristeria
             {
                 Tipo = CboTipoDePago.Text,
             };
-            _tipoDePagoController.AddPago(TipoPago);
+            _tipoDePagoController.AddPago(TipoPago);*/
 
 
         }
 
-       
+    
+
+
 
         private void TxtMontoNeto_Leave(object sender, EventArgs e)
         {

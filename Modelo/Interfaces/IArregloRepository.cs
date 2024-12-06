@@ -15,5 +15,12 @@ namespace Modelo.Interfaces
         void Update(Arreglo arreglo);
         void Delete(int id);
         IEnumerable<Arreglo> Search(string searchTerm);
+
+
+        //arregloaccesorio parametro clase de la tabla
+        //arregloflor
+        IEnumerable<Arreglo_Accesorio> GetArreglosConAccesorios();
+        void AddArregloAccesorio(Arreglo_Accesorio arregloAccesorio);
+        void AddArregloFlor(Arreglo_Flor ArregloFlor);
     }
 }

@@ -12,10 +12,14 @@ namespace Controladores
     public class FacturaController
     {
         public readonly IFacturaRepository _facturaRepository;
+        private readonly IPagoRepository _pagoRepository;
+        private readonly ITipoPagoRepository _tipoPagoRepository;
 
-        public FacturaController(IFacturaRepository facturaRepository)
+        public FacturaController(IFacturaRepository facturaRepository, IPagoRepository pagoRepository, ITipoPagoRepository tipoPagoRepository)
         {
             _facturaRepository = facturaRepository;
+            _pagoRepository = pagoRepository;
+            _tipoPagoRepository = tipoPagoRepository;
         }
         public IEnumerable<Facturas> GetAllFactura() => _facturaRepository.GetAll();
 
@@ -29,6 +33,7 @@ namespace Controladores
 
         public IEnumerable<Facturas> SearchFactura(string searchTerm) => _facturaRepository.Search(searchTerm);
 
+        public IEnumerable<Facturas> GetAllFacturasWithPago() => _facturaRepository.GetAllWithPago();
 
     }
 }
