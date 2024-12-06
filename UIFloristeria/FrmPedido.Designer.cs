@@ -43,7 +43,6 @@
             label2 = new Label();
             BtnAgregarRemision = new Button();
             BtnPreliminar = new Button();
-            BtnImprimir = new Button();
             pictureBox2 = new PictureBox();
             TxtEnviarseA = new TextBox();
             txtCliente = new TextBox();
@@ -201,19 +200,7 @@
             BtnPreliminar.TabIndex = 126;
             BtnPreliminar.Text = "Preliminar";
             BtnPreliminar.UseVisualStyleBackColor = false;
-            // 
-            // BtnImprimir
-            // 
-            BtnImprimir.Anchor = AnchorStyles.Bottom;
-            BtnImprimir.BackColor = Color.White;
-            BtnImprimir.FlatStyle = FlatStyle.Popup;
-            BtnImprimir.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnImprimir.Location = new Point(611, 439);
-            BtnImprimir.Name = "BtnImprimir";
-            BtnImprimir.Size = new Size(148, 31);
-            BtnImprimir.TabIndex = 127;
-            BtnImprimir.Text = "Imprimir";
-            BtnImprimir.UseVisualStyleBackColor = false;
+            BtnPreliminar.Click += BtnPreliminar_Click;
             // 
             // pictureBox2
             // 
@@ -305,7 +292,7 @@
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(69, 88, 68);
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(22, 58, 55);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 128, 128);
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
@@ -347,7 +334,6 @@
             Controls.Add(txtCliente);
             Controls.Add(btnBuscarCliente);
             Controls.Add(label4);
-            Controls.Add(BtnImprimir);
             Controls.Add(BtnPreliminar);
             Controls.Add(BtnAgregarRemision);
             Controls.Add(label2);
@@ -389,7 +375,6 @@
         private Label label2;
         private Button BtnPreliminar;
         private Button BtnAgregarRemision;
-        private Button BtnImprimir;
         private PictureBox pictureBox2;
         private TextBox TxtEnviarseA;
         private TextBox txtCliente;

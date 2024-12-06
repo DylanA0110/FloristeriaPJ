@@ -1,4 +1,5 @@
 ﻿using Controladores;
+using Microsoft.Reporting.WinForms;
 using Modelo.Entidades;
 using Modelo.Repositories;
 using Modelo.Validaciones;
@@ -187,6 +188,69 @@ namespace UIFloristeria
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnPreliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvPedidos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, selecciona un pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var pedidoSeleccionado = dgvPedidos.SelectedRows[0].DataBoundItem as Pedido;
+
+            if (pedidoSeleccionado == null)
+            {
+                MessageBox.Show("El pedido seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ReportViewer reportViewer = new ReportViewer
+            {
+                ProcessingMode = ProcessingMode.Local,
+            };
+
+
+            string reportPath = Path.Combine(Application.StartupPath, "Reportes", "OrdenDeTrabajo.rdlc");
+
+            if (!File.Exists(reportPath))
+            {
+                MessageBox.Show("El archivo del informe no se encontró.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            reportViewer.LocalReport.ReportPath = reportPath;
+
+            ReportParameter[] parametros = new ReportParameter[]
+            {
+        new ReportParameter("PEnviarseA", pedidoSeleccionado.Enviarse_A),
+        new ReportParameter("PNombrecliente", pedidoSeleccionado.NombreCliente),
+        new ReportParameter("PDescripcion", pedidoSeleccionado.Descripcion),
+        new ReportParameter("PTelefonoCliente", pedidoSeleccionado.TelefonoCliente),
+        new ReportParameter("PFechaEntrega",
+    pedidoSeleccionado.Fecha_entrega.HasValue ? pedidoSeleccionado.Fecha_entrega.Value.ToString("dd/MM/yyyy") : "")
+
+            };
+            
+
+            try
+            {
+                reportViewer.LocalReport.SetParameters(parametros);
+                reportViewer.RefreshReport();
+
+                Form reportForm = new Form
+                {
+                    Text = "Vista Preliminar",
+                    WindowState = FormWindowState.Maximized
+                };
+                reportViewer.Dock = DockStyle.Fill;
+                reportForm.Controls.Add(reportViewer);
+                reportForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar el informe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
