@@ -48,10 +48,7 @@ namespace UIFloristeria
             dgvProveedores.DataSource = proveedores.ToList();
             dgvProveedores.CurrentCell = null;
             dgvProveedores.ClearSelection();
-            if (dgvProveedores.Columns.Count > 0)
-            {
-                dgvProveedores.Columns[0].Visible = false;
-            }
+      
         }
 
         private void AdjustDatagridViewHeihgt()
