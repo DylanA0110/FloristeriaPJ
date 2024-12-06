@@ -44,7 +44,7 @@ namespace Modelo.Repositories
 
         public Cliente GetById(int id)
         {
-            Cliente cliente = null;
+            Cliente cliente = new Cliente();
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();

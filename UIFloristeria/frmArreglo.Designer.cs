@@ -97,7 +97,7 @@
             btnAggArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAggArreglo.Image = (Image)resources.GetObject("btnAggArreglo.Image");
             btnAggArreglo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAggArreglo.Location = new Point(343, 425);
+            btnAggArreglo.Location = new Point(177, 445);
             btnAggArreglo.Name = "btnAggArreglo";
             btnAggArreglo.Size = new Size(220, 36);
             btnAggArreglo.TabIndex = 68;
