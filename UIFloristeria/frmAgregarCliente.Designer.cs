@@ -176,6 +176,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAgregarCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAgregarCliente";
             MouseDown += frmAgregarCliente_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

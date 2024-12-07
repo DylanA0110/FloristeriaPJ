@@ -31,18 +31,34 @@ namespace UIFloristeria
 
         private void btnAggArreglo_Click(object sender, EventArgs e)
         {
-            frmAgregarArreglo frmAgregar = new frmAgregarArreglo();
+            frmAgregarArreglo frmAgregar = new frmAgregarArreglo(_arregloController, _categoriaController);
 
             // Abrir el formulario como cuadro de diálogo
             frmAgregar.ShowDialog();
+            if (frmAgregar.ShowDialog() == DialogResult.OK)
+            {
+                // Recarga los empleados después de editar
+                loadArreglos();
+            }
         }
 
         private void frmArreglos_Load(object sender, EventArgs e)
         {
-            LoadCategorias();
+            loadArreglos();
+
         }
 
-
+        private void loadArreglos()
+        {
+            var arreglos = _arregloController.GetAllArreglo();
+            dataGridView1.DataSource = arreglos;
+            if (dataGridView1.Columns.Count > 0)
+            {
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].Visible = false;
+                dataGridView1.Columns[4].Visible = false;
+            }
+        }
 
         private void BtnAccesorio_Click(object sender, EventArgs e)
         {
@@ -52,6 +68,6 @@ namespace UIFloristeria
             frm.ShowDialog();
         }
 
-
+        
     }
 }

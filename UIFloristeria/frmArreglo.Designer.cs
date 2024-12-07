@@ -37,19 +37,8 @@
             btnAggArreglo = new Button();
             label1 = new Label();
             BtnAccesorio = new Button();
-            TxtCantidad = new TextBox();
-            pictureBox5 = new PictureBox();
-            TxtNombreArreglo = new TextBox();
-            pictureBox4 = new PictureBox();
-            label6 = new Label();
-            cmbAccesorio = new ComboBox();
-            label2 = new Label();
-            CbCategoria = new ComboBox();
-            BtnInsertarArreglo = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -145,127 +134,12 @@
             BtnAccesorio.UseVisualStyleBackColor = false;
             BtnAccesorio.Click += BtnAccesorio_Click;
             // 
-            // TxtCantidad
-            // 
-            TxtCantidad.Anchor = AnchorStyles.Top;
-            TxtCantidad.BackColor = Color.FromArgb(22, 58, 55);
-            TxtCantidad.BorderStyle = BorderStyle.None;
-            TxtCantidad.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TxtCantidad.ForeColor = Color.White;
-            TxtCantidad.Location = new Point(256, 133);
-            TxtCantidad.Name = "TxtCantidad";
-            TxtCantidad.Size = new Size(186, 20);
-            TxtCantidad.TabIndex = 117;
-            TxtCantidad.Text = "Cantidad";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Anchor = AnchorStyles.Top;
-            pictureBox5.BackColor = Color.FromArgb(22, 58, 55);
-            pictureBox5.Image = Properties.Resources.Loading;
-            pictureBox5.Location = new Point(256, 159);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(186, 22);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 116;
-            pictureBox5.TabStop = false;
-            // 
-            // TxtNombreArreglo
-            // 
-            TxtNombreArreglo.Anchor = AnchorStyles.Top;
-            TxtNombreArreglo.BackColor = Color.FromArgb(22, 58, 55);
-            TxtNombreArreglo.BorderStyle = BorderStyle.None;
-            TxtNombreArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TxtNombreArreglo.ForeColor = Color.White;
-            TxtNombreArreglo.Location = new Point(54, 133);
-            TxtNombreArreglo.Name = "TxtNombreArreglo";
-            TxtNombreArreglo.Size = new Size(186, 20);
-            TxtNombreArreglo.TabIndex = 115;
-            TxtNombreArreglo.Text = "Descripcion del Arreglo";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.Top;
-            pictureBox4.BackColor = Color.FromArgb(22, 58, 55);
-            pictureBox4.Image = Properties.Resources.Loading;
-            pictureBox4.Location = new Point(54, 159);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(186, 22);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 114;
-            pictureBox4.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(22, 58, 55);
-            label6.Font = new Font("Century Gothic", 12F);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(597, 135);
-            label6.Name = "label6";
-            label6.Size = new Size(97, 21);
-            label6.TabIndex = 130;
-            label6.Text = "Accesorios:";
-            // 
-            // cmbAccesorio
-            // 
-            cmbAccesorio.FormattingEnabled = true;
-            cmbAccesorio.Location = new Point(597, 159);
-            cmbAccesorio.Name = "cmbAccesorio";
-            cmbAccesorio.Size = new Size(121, 23);
-            cmbAccesorio.TabIndex = 129;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(22, 58, 55);
-            label2.Font = new Font("Century Gothic", 12F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(448, 134);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 21);
-            label2.TabIndex = 133;
-            label2.Text = "Categoria ";
-            // 
-            // CbCategoria
-            // 
-            CbCategoria.FormattingEnabled = true;
-            CbCategoria.Location = new Point(448, 158);
-            CbCategoria.Name = "CbCategoria";
-            CbCategoria.Size = new Size(121, 23);
-            CbCategoria.TabIndex = 132;
-            // 
-            // BtnInsertarArreglo
-            // 
-            BtnInsertarArreglo.Anchor = AnchorStyles.Bottom;
-            BtnInsertarArreglo.BackColor = Color.White;
-            BtnInsertarArreglo.FlatStyle = FlatStyle.Popup;
-            BtnInsertarArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnInsertarArreglo.Image = (Image)resources.GetObject("BtnInsertarArreglo.Image");
-            BtnInsertarArreglo.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnInsertarArreglo.Location = new Point(63, 462);
-            BtnInsertarArreglo.Name = "BtnInsertarArreglo";
-            BtnInsertarArreglo.Size = new Size(220, 36);
-            BtnInsertarArreglo.TabIndex = 134;
-            BtnInsertarArreglo.Text = "Insertar Arreglo";
-            BtnInsertarArreglo.UseVisualStyleBackColor = false;
-            BtnInsertarArreglo.Click += BtnInsertarArreglo_Click;
-            // 
             // frmArreglo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
             ClientSize = new Size(900, 532);
-            Controls.Add(BtnInsertarArreglo);
-            Controls.Add(label2);
-            Controls.Add(CbCategoria);
-            Controls.Add(label6);
-            Controls.Add(cmbAccesorio);
-            Controls.Add(TxtCantidad);
-            Controls.Add(pictureBox5);
-            Controls.Add(TxtNombreArreglo);
-            Controls.Add(pictureBox4);
             Controls.Add(BtnAccesorio);
             Controls.Add(pictureBox1);
             Controls.Add(dataGridView1);
@@ -273,12 +147,11 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmArreglo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmArreglos";
             Load += frmArreglos_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -289,14 +162,5 @@
         private Button btnAggArreglo;
         private Label label1;
         private Button BtnAccesorio;
-        private TextBox TxtCantidad;
-        private PictureBox pictureBox5;
-        private TextBox TxtNombreArreglo;
-        private PictureBox pictureBox4;
-        private Label label6;
-        private ComboBox cmbAccesorio;
-        private Label label2;
-        private ComboBox CbCategoria;
-        private Button BtnInsertarArreglo;
     }
 }

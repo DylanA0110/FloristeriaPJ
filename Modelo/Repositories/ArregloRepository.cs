@@ -24,11 +24,10 @@ namespace Modelo.Repositories
             using (var connection = _dbContext.GetConnection())
             {
                 connection.Open();
-                var command = new SqlCommand("INSERT INTO Arreglo (Id_Categoria, Nombre_Arreglo, Cantidad, Url_Imagen) VALUES (@Id_Categoria, @Nombre_Arreglo, @Cantidad, @Url_Imagen WHERE Id_Arreglo = @Id_Arreglo)", connection);
+                var command = new SqlCommand("INSERT INTO Arreglo (Id_Categoria, Nombre_Arreglo, Cantidad) VALUES (@Id_Categoria, @Nombre_Arreglo, @Cantidad)", connection);
                 command.Parameters.AddWithValue("@Id_Categoria", arreglo.Id_Categoria);
                 command.Parameters.AddWithValue("@Nombre_Arreglo", arreglo.Nombre_Arreglo);
                 command.Parameters.AddWithValue("@Cantidad", arreglo.Cantidad);
-                command.Parameters.AddWithValue("@Url_Imagen", arreglo.Url_Imagen);
                 command.ExecuteNonQuery();
             }
         }
@@ -87,8 +86,7 @@ namespace Modelo.Repositories
                             Id_Arreglo = (int)reader["Id_Arreglo"],
                             Id_Categoria = (int)reader["Id_Categoria"],
                             Nombre_Arreglo = reader["Nombre_Arreglo"]?.ToString(),
-                            Cantidad = (int)reader["Cantidad"],
-                            Url_Imagen = reader["NumFactura"]?.ToString()
+                            Cantidad = (int)reader["Cantidad"]
                         });
                     }
                 }

@@ -178,6 +178,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmCompra";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCompras";
             Load += frmCompra_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

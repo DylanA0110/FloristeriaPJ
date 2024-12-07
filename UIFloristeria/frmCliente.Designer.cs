@@ -233,6 +233,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCliente";
             Load += frmCliente_Load;
             MouseDown += frmCliente_MouseDown;

@@ -174,6 +174,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmEditarProveedor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEditarProveedor";
             Load += frmEditarProveedor_Load;
             MouseDown += frmEditarProveedor_MouseDown;

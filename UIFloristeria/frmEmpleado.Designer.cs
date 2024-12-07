@@ -185,6 +185,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmEmpleado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmEmpleado";
             Load += frmEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

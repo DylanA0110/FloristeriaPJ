@@ -38,6 +38,8 @@
             btnClose = new Button();
             txtCantidad = new TextBox();
             pictureBox3 = new PictureBox();
+            label2 = new Label();
+            CbCategoria = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -60,7 +62,7 @@
             txtNombreArreglo.BorderStyle = BorderStyle.None;
             txtNombreArreglo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNombreArreglo.ForeColor = Color.White;
-            txtNombreArreglo.Location = new Point(99, 128);
+            txtNombreArreglo.Location = new Point(22, 128);
             txtNombreArreglo.Name = "txtNombreArreglo";
             txtNombreArreglo.Size = new Size(186, 20);
             txtNombreArreglo.TabIndex = 98;
@@ -85,7 +87,7 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox2.Image = Properties.Resources.Loading;
-            pictureBox2.Location = new Point(99, 154);
+            pictureBox2.Location = new Point(22, 154);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(186, 22);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -142,7 +144,7 @@
             txtCantidad.BorderStyle = BorderStyle.None;
             txtCantidad.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtCantidad.ForeColor = Color.White;
-            txtCantidad.Location = new Point(326, 128);
+            txtCantidad.Location = new Point(249, 128);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(186, 20);
             txtCantidad.TabIndex = 101;
@@ -154,12 +156,31 @@
             // 
             pictureBox3.BackColor = Color.FromArgb(222, 151, 54);
             pictureBox3.Image = Properties.Resources.Loading;
-            pictureBox3.Location = new Point(326, 154);
+            pictureBox3.Location = new Point(249, 154);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(186, 22);
+            pictureBox3.Size = new Size(155, 22);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 100;
             pictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(425, 129);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 21);
+            label2.TabIndex = 135;
+            label2.Text = "Categoria ";
+            // 
+            // CbCategoria
+            // 
+            CbCategoria.FormattingEnabled = true;
+            CbCategoria.Location = new Point(425, 153);
+            CbCategoria.Name = "CbCategoria";
+            CbCategoria.Size = new Size(121, 23);
+            CbCategoria.TabIndex = 134;
             // 
             // frmAgregarArreglo
             // 
@@ -167,6 +188,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(222, 151, 54);
             ClientSize = new Size(591, 334);
+            Controls.Add(label2);
+            Controls.Add(CbCategoria);
             Controls.Add(txtCantidad);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox1);
@@ -178,7 +201,9 @@
             Controls.Add(btnClose);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAgregarArreglo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAgregarArreglo";
+            Load += frmAgregarArreglo_Load;
             MouseDown += frmAgregarArreglo_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -198,5 +223,7 @@
         private Button btnClose;
         private TextBox txtCantidad;
         private PictureBox pictureBox3;
+        private Label label2;
+        private ComboBox CbCategoria;
     }
 }
