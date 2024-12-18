@@ -1,5 +1,6 @@
 ﻿using Controladores;
 using Microsoft.Reporting.WinForms;
+using Microsoft.ReportingServices.Interfaces;
 using Modelo.Entidades;
 using Modelo.Repositories;
 using Modelo.Validaciones;
@@ -8,10 +9,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace UIFloristeria
 {
@@ -26,8 +30,10 @@ namespace UIFloristeria
             InitializeComponent();
             _pedidoController = new PedidoController(new PedidosRepository());
             _clienteController = new ClienteController(new ClienteRepository());
+
         }
 
+      
         private void BtnAgregarRemision_Click(object sender, EventArgs e)
         {
             var pedidos = new Pedido
@@ -72,6 +78,8 @@ namespace UIFloristeria
             txtCliente.Clear();
             dtpFechaSoli.Value = DateTime.Now;
             dtpFechaEntrega.Value = DateTime.Now;
+
+       
         }
 
         private void FrmPedido_Load(object sender, EventArgs e)
@@ -222,7 +230,7 @@ namespace UIFloristeria
             reportViewer.LocalReport.ReportPath = reportPath;
 
             ReportParameter[] parametros = new ReportParameter[]
-            {
+            {   
         new ReportParameter("PEnviarseA", pedidoSeleccionado.Enviarse_A),
         new ReportParameter("PNombrecliente", pedidoSeleccionado.NombreCliente),
         new ReportParameter("PDescripcion", pedidoSeleccionado.Descripcion),
@@ -231,7 +239,7 @@ namespace UIFloristeria
     pedidoSeleccionado.Fecha_entrega.HasValue ? pedidoSeleccionado.Fecha_entrega.Value.ToString("dd/MM/yyyy") : "")
 
             };
-            
+
 
             try
             {
@@ -252,5 +260,128 @@ namespace UIFloristeria
                 MessageBox.Show($"Error al cargar el informe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+            // 1. Validar que una fila está seleccionada
+            if (dgvPedidos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, selecciona un pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Obtener el pedido seleccionado
+            var pedidoSeleccionado = dgvPedidos.SelectedRows[0].DataBoundItem as Pedido;
+
+            if (pedidoSeleccionado == null)
+            {
+                MessageBox.Show("El pedido seleccionado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {   
+                // 3. Crear y configurar ReportViewer
+                ReportViewer reportViewer = new ReportViewer
+                {
+                    ProcessingMode = ProcessingMode.Local
+                };
+
+                // Ruta del archivo RDLC
+                string reportPath = Path.Combine(Application.StartupPath, "Reportes", "OrdenDeTrabajo.rdlc");
+
+                if (!File.Exists(reportPath))
+                {
+                    MessageBox.Show("El archivo del informe no se encontró.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                reportViewer.LocalReport.ReportPath = reportPath;
+
+                // 4. Establecer parámetros del reporte
+                ReportParameter[] parametros = new ReportParameter[]
+                {
+            new ReportParameter("PEnviarseA", pedidoSeleccionado.Enviarse_A),
+            new ReportParameter("PNombrecliente", pedidoSeleccionado.NombreCliente),
+            new ReportParameter("PDescripcion", pedidoSeleccionado.Descripcion),
+            new ReportParameter("PTelefonoCliente", pedidoSeleccionado.TelefonoCliente),
+            new ReportParameter("PFechaEntrega",
+                pedidoSeleccionado.Fecha_entrega.HasValue
+                    ? pedidoSeleccionado.Fecha_entrega.Value.ToString("dd/MM/yyyy")
+                    : "")
+                };
+
+                reportViewer.LocalReport.SetParameters(parametros);
+
+                // 5. Refrescar y preparar el reporte
+                reportViewer.RefreshReport();
+
+                // 6. Imprimir el reporte directamente
+                PrintReport(reportViewer.LocalReport);
+
+                MessageBox.Show("El reporte se envió a la impresora correctamente.", "Impresión Exitosa",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al imprimir el informe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void PrintReport(LocalReport localReport)
+        {
+            // Renderizar el informe como EMF (Enhanced Metafile), que es compatible con la impresión
+            var deviceInfo = @"<DeviceInfo>
+                          <OutputFormat>EMF</OutputFormat>
+                          <PageWidth>8.5in</PageWidth>
+                          <PageHeight>11in</PageHeight>
+                          <MarginTop>0.25in</MarginTop>
+                          <MarginLeft>0.25in</MarginLeft>
+                          <MarginRight>0.25in</MarginRight>
+                          <MarginBottom>0.25in</MarginBottom>
+                       </DeviceInfo>";
+
+            Warning[] warnings;
+            var streams = new List<Stream>();
+            var currentPageIndex = 0;
+
+            // Renderizar cada página a un flujo de memoria
+            localReport.Render("Image", deviceInfo,
+                (name, extension, encoding, mimeType, willSeek) =>
+                {
+                    var stream = new MemoryStream();
+                    streams.Add(stream);
+                    return stream;
+                }, out warnings);
+
+            foreach (Stream stream in streams)
+                stream.Position = 0;
+
+            // Imprimir usando el documento de impresión
+            PrintDocument printDoc = new PrintDocument
+            {
+                PrinterSettings = new PrinterSettings
+                {
+                    PrinterName = new PrinterSettings().PrinterName // Impresora predeterminada
+                }
+            };
+
+            printDoc.PrintPage += (sender, e) =>
+            {
+                Metafile pageImage = new Metafile(streams[currentPageIndex]);
+                e.Graphics.DrawImage(pageImage, e.PageBounds);
+
+                currentPageIndex++;
+                e.HasMorePages = (currentPageIndex < streams.Count);
+            };
+
+            printDoc.Print();
+
+            // Limpiar recursos
+            foreach (Stream stream in streams)
+                stream.Dispose();
+        }
     }
+    
 }

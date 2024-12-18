@@ -50,6 +50,7 @@
             label4 = new Label();
             dgvPedidos = new DataGridView();
             BtnEditar = new Button();
+            BtnImprimir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,9 +64,10 @@
             TxtCantidad.BorderStyle = BorderStyle.None;
             TxtCantidad.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TxtCantidad.ForeColor = Color.White;
-            TxtCantidad.Location = new Point(632, 110);
+            TxtCantidad.Location = new Point(722, 147);
+            TxtCantidad.Margin = new Padding(3, 4, 3, 4);
             TxtCantidad.Name = "TxtCantidad";
-            TxtCantidad.Size = new Size(186, 20);
+            TxtCantidad.Size = new Size(213, 25);
             TxtCantidad.TabIndex = 113;
             TxtCantidad.Text = "Cantidad";
             TxtCantidad.Enter += TxtCantidad_Enter;
@@ -76,9 +78,10 @@
             pictureBox5.Anchor = AnchorStyles.Top;
             pictureBox5.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox5.Image = Properties.Resources.Loading;
-            pictureBox5.Location = new Point(632, 136);
+            pictureBox5.Location = new Point(722, 181);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(186, 22);
+            pictureBox5.Size = new Size(213, 29);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 112;
             pictureBox5.TabStop = false;
@@ -90,9 +93,10 @@
             TxtDescripcion.BorderStyle = BorderStyle.None;
             TxtDescripcion.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TxtDescripcion.ForeColor = Color.White;
-            TxtDescripcion.Location = new Point(440, 110);
+            TxtDescripcion.Location = new Point(503, 147);
+            TxtDescripcion.Margin = new Padding(3, 4, 3, 4);
             TxtDescripcion.Name = "TxtDescripcion";
-            TxtDescripcion.Size = new Size(186, 20);
+            TxtDescripcion.Size = new Size(213, 25);
             TxtDescripcion.TabIndex = 111;
             TxtDescripcion.Text = "Descripcion";
             TxtDescripcion.Enter += TxtDescripcion_Enter;
@@ -103,9 +107,10 @@
             pictureBox4.Anchor = AnchorStyles.Top;
             pictureBox4.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox4.Image = Properties.Resources.Loading;
-            pictureBox4.Location = new Point(440, 136);
+            pictureBox4.Location = new Point(503, 181);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(186, 22);
+            pictureBox4.Size = new Size(213, 29);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 110;
             pictureBox4.TabStop = false;
@@ -117,9 +122,9 @@
             label3.BackColor = Color.FromArgb(22, 58, 55);
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(289, 198);
+            label3.Location = new Point(330, 264);
             label3.Name = "label3";
-            label3.Size = new Size(154, 19);
+            label3.Size = new Size(196, 23);
             label3.TabIndex = 115;
             label3.Text = "Fecha de solicitud:";
             label3.Click += label3_Click;
@@ -131,9 +136,10 @@
             dtpFechaSoli.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dtpFechaSoli.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
             dtpFechaSoli.Format = DateTimePickerFormat.Short;
-            dtpFechaSoli.Location = new Point(302, 231);
+            dtpFechaSoli.Location = new Point(345, 308);
+            dtpFechaSoli.Margin = new Padding(3, 4, 3, 4);
             dtpFechaSoli.Name = "dtpFechaSoli";
-            dtpFechaSoli.Size = new Size(121, 23);
+            dtpFechaSoli.Size = new Size(138, 27);
             dtpFechaSoli.TabIndex = 114;
             // 
             // label1
@@ -143,9 +149,9 @@
             label1.BackColor = Color.FromArgb(22, 58, 55);
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(460, 198);
+            label1.Location = new Point(526, 264);
             label1.Name = "label1";
-            label1.Size = new Size(150, 19);
+            label1.Size = new Size(188, 23);
             label1.TabIndex = 117;
             label1.Text = "Fecha de Entrega:";
             // 
@@ -156,9 +162,10 @@
             dtpFechaEntrega.CalendarMonthBackground = Color.FromArgb(24, 64, 57);
             dtpFechaEntrega.CalendarTitleBackColor = Color.FromArgb(24, 64, 57);
             dtpFechaEntrega.Format = DateTimePickerFormat.Short;
-            dtpFechaEntrega.Location = new Point(473, 231);
+            dtpFechaEntrega.Location = new Point(541, 308);
+            dtpFechaEntrega.Margin = new Padding(3, 4, 3, 4);
             dtpFechaEntrega.Name = "dtpFechaEntrega";
-            dtpFechaEntrega.Size = new Size(121, 23);
+            dtpFechaEntrega.Size = new Size(138, 27);
             dtpFechaEntrega.TabIndex = 116;
             // 
             // label2
@@ -168,9 +175,9 @@
             label2.BackColor = Color.FromArgb(22, 58, 55);
             label2.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(222, 151, 54);
-            label2.Location = new Point(317, 31);
+            label2.Location = new Point(362, 41);
             label2.Name = "label2";
-            label2.Size = new Size(264, 36);
+            label2.Size = new Size(336, 44);
             label2.TabIndex = 118;
             label2.Text = "Agregar Remision";
             // 
@@ -180,9 +187,10 @@
             BtnAgregarRemision.BackColor = Color.White;
             BtnAgregarRemision.FlatStyle = FlatStyle.Popup;
             BtnAgregarRemision.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnAgregarRemision.Location = new Point(106, 439);
+            BtnAgregarRemision.Location = new Point(121, 585);
+            BtnAgregarRemision.Margin = new Padding(3, 4, 3, 4);
             BtnAgregarRemision.Name = "BtnAgregarRemision";
-            BtnAgregarRemision.Size = new Size(148, 31);
+            BtnAgregarRemision.Size = new Size(169, 41);
             BtnAgregarRemision.TabIndex = 120;
             BtnAgregarRemision.Text = "Agregar Pedido ";
             BtnAgregarRemision.UseVisualStyleBackColor = false;
@@ -194,9 +202,10 @@
             BtnPreliminar.BackColor = Color.White;
             BtnPreliminar.FlatStyle = FlatStyle.Popup;
             BtnPreliminar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnPreliminar.Location = new Point(446, 439);
+            BtnPreliminar.Location = new Point(510, 585);
+            BtnPreliminar.Margin = new Padding(3, 4, 3, 4);
             BtnPreliminar.Name = "BtnPreliminar";
-            BtnPreliminar.Size = new Size(148, 31);
+            BtnPreliminar.Size = new Size(169, 41);
             BtnPreliminar.TabIndex = 126;
             BtnPreliminar.Text = "Preliminar";
             BtnPreliminar.UseVisualStyleBackColor = false;
@@ -207,9 +216,10 @@
             pictureBox2.Anchor = AnchorStyles.Top;
             pictureBox2.BackColor = Color.FromArgb(22, 58, 55);
             pictureBox2.Image = Properties.Resources.Loading;
-            pictureBox2.Location = new Point(18, 136);
+            pictureBox2.Location = new Point(21, 181);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(186, 22);
+            pictureBox2.Size = new Size(213, 29);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 106;
             pictureBox2.TabStop = false;
@@ -221,9 +231,10 @@
             TxtEnviarseA.BorderStyle = BorderStyle.None;
             TxtEnviarseA.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TxtEnviarseA.ForeColor = Color.White;
-            TxtEnviarseA.Location = new Point(18, 110);
+            TxtEnviarseA.Location = new Point(21, 147);
+            TxtEnviarseA.Margin = new Padding(3, 4, 3, 4);
             TxtEnviarseA.Name = "TxtEnviarseA";
-            TxtEnviarseA.Size = new Size(186, 20);
+            TxtEnviarseA.Size = new Size(213, 25);
             TxtEnviarseA.TabIndex = 107;
             TxtEnviarseA.Text = "Enviarse a";
             TxtEnviarseA.Enter += TxtEnviarseA_Enter;
@@ -233,9 +244,10 @@
             // 
             txtCliente.Anchor = AnchorStyles.Top;
             txtCliente.Enabled = false;
-            txtCliente.Location = new Point(224, 135);
+            txtCliente.Location = new Point(256, 180);
+            txtCliente.Margin = new Padding(3, 4, 3, 4);
             txtCliente.Name = "txtCliente";
-            txtCliente.Size = new Size(133, 23);
+            txtCliente.Size = new Size(151, 27);
             txtCliente.TabIndex = 132;
             // 
             // btnBuscarCliente
@@ -247,9 +259,10 @@
             btnBuscarCliente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscarCliente.Image = (Image)resources.GetObject("btnBuscarCliente.Image");
             btnBuscarCliente.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBuscarCliente.Location = new Point(363, 127);
+            btnBuscarCliente.Location = new Point(415, 169);
+            btnBuscarCliente.Margin = new Padding(3, 4, 3, 4);
             btnBuscarCliente.Name = "btnBuscarCliente";
-            btnBuscarCliente.Size = new Size(42, 33);
+            btnBuscarCliente.Size = new Size(48, 44);
             btnBuscarCliente.TabIndex = 131;
             btnBuscarCliente.UseVisualStyleBackColor = false;
             btnBuscarCliente.Click += btnBuscarCliente_Click;
@@ -261,9 +274,9 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(224, 109);
+            label4.Location = new Point(256, 145);
             label4.Name = "label4";
-            label4.Size = new Size(63, 19);
+            label4.Size = new Size(80, 23);
             label4.TabIndex = 130;
             label4.Text = "Cliente";
             // 
@@ -299,14 +312,16 @@
             dgvPedidos.DefaultCellStyle = dataGridViewCellStyle3;
             dgvPedidos.EditMode = DataGridViewEditMode.EditOnF2;
             dgvPedidos.EnableHeadersVisualStyles = false;
-            dgvPedidos.Location = new Point(88, 271);
+            dgvPedidos.Location = new Point(101, 361);
+            dgvPedidos.Margin = new Padding(3, 4, 3, 4);
             dgvPedidos.MultiSelect = false;
             dgvPedidos.Name = "dgvPedidos";
             dgvPedidos.ReadOnly = true;
             dgvPedidos.RowHeadersVisible = false;
+            dgvPedidos.RowHeadersWidth = 51;
             dgvPedidos.RowTemplate.Height = 40;
             dgvPedidos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPedidos.Size = new Size(686, 126);
+            dgvPedidos.Size = new Size(784, 168);
             dgvPedidos.TabIndex = 133;
             // 
             // BtnEditar
@@ -315,20 +330,37 @@
             BtnEditar.BackColor = Color.White;
             BtnEditar.FlatStyle = FlatStyle.Popup;
             BtnEditar.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnEditar.Location = new Point(275, 439);
+            BtnEditar.Location = new Point(314, 585);
+            BtnEditar.Margin = new Padding(3, 4, 3, 4);
             BtnEditar.Name = "BtnEditar";
-            BtnEditar.Size = new Size(148, 31);
+            BtnEditar.Size = new Size(169, 41);
             BtnEditar.TabIndex = 134;
             BtnEditar.Text = "Editar";
             BtnEditar.UseVisualStyleBackColor = false;
             BtnEditar.Click += BtnEditar_Click;
             // 
+            // BtnImprimir
+            // 
+            BtnImprimir.Anchor = AnchorStyles.Bottom;
+            BtnImprimir.BackColor = Color.White;
+            BtnImprimir.FlatStyle = FlatStyle.Popup;
+            BtnImprimir.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnImprimir.Location = new Point(701, 585);
+            BtnImprimir.Margin = new Padding(3, 4, 3, 4);
+            BtnImprimir.Name = "BtnImprimir";
+            BtnImprimir.Size = new Size(169, 41);
+            BtnImprimir.TabIndex = 135;
+            BtnImprimir.Text = "Imprimir";
+            BtnImprimir.UseVisualStyleBackColor = false;
+            BtnImprimir.Click += BtnImprimir_Click;
+            // 
             // FrmPedido
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 58, 55);
-            ClientSize = new Size(852, 498);
+            ClientSize = new Size(974, 664);
+            Controls.Add(BtnImprimir);
             Controls.Add(BtnEditar);
             Controls.Add(dgvPedidos);
             Controls.Add(txtCliente);
@@ -349,6 +381,7 @@
             Controls.Add(pictureBox2);
             ForeColor = Color.FromArgb(22, 58, 55);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmPedido";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "x";
@@ -382,5 +415,6 @@
         private Label label4;
         private DataGridView dgvPedidos;
         private Button BtnEditar;
+        private Button BtnImprimir;
     }
 }
