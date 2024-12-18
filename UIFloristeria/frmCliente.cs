@@ -139,7 +139,6 @@ namespace UIFloristeria
             {
                 ClienteSeleccionado = dgvClientes.SelectedRows[0].Cells["Nombre_Cliente"].Value.ToString();
                 idClienteSeleccionado = Convert.ToInt32(row.Cells["Id_Cliente"].Value);
-                MessageBox.Show($" ID: {idClienteSeleccionado}");
                 this.DialogResult = DialogResult.OK;
 
                 //Cerrar el formulario 

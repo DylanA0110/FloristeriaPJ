@@ -37,16 +37,26 @@ namespace UIFloristeria
 
         private void BtnAgregarRemision_Click(object sender, EventArgs e)
         {
+            // Declarar la variable para la cantidad
+            int cantidad;
+
+            // Intentar convertir el texto a entero
+            if (!int.TryParse(TxtCantidad.Text, out cantidad))
+            {
+                MessageBox.Show("Por favor, ingresa un valor numérico válido para la cantidad.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir del método si la conversión falla
+            }
+
+            // Crear la instancia de Pedido con la cantidad ya convertida
             var pedidos = new Pedido
             {
                 Enviarse_A = TxtEnviarseA.Text,
                 Descripcion = TxtDescripcion.Text,
-                Cantidad = int.Parse(TxtCantidad.Text),
+                Cantidad = cantidad, // Usar la variable cantidad ya convertida
                 Fecha_solicitud = DateTime.Parse(dtpFechaSoli.Text),
                 Fecha_entrega = DateTime.Parse(dtpFechaEntrega.Text),
                 Id_cliente = ClienteSeleccionado
             };
-
             var errores = ValidadorEntidad.Validar(pedidos);
 
             if (errores.Count > 0)
@@ -74,7 +84,7 @@ namespace UIFloristeria
         {
             TxtCantidad.Clear();
             TxtDescripcion.Clear();
-            txtPrimerNombre.Clear();
+            txtCliente.Clear();
             TxtEnviarseA.Text = string.Empty;
             txtCliente.Clear();
             dtpFechaSoli.Value = DateTime.Now;
@@ -471,23 +481,23 @@ namespace UIFloristeria
             try
             {
                 // 3. Crear y configurar el archivo Excel
-                using (var package = new OfficeOpenXml.ExcelPackage())
+                using (var workbook = new ClosedXML.Excel.XLWorkbook())
                 {
-                    var worksheet = package.Workbook.Worksheets.Add("Pedido");
+                    var worksheet = workbook.Worksheets.Add("Pedido");
 
                     // 4. Crear encabezados
-                    worksheet.Cells[1, 1].Value = "Enviarse A";
-                    worksheet.Cells[1, 2].Value = "Nombre Cliente";
-                    worksheet.Cells[1, 3].Value = "Descripción";
-                    worksheet.Cells[1, 4].Value = "Teléfono Cliente";
-                    worksheet.Cells[1, 5].Value = "Fecha de Entrega";
+                    worksheet.Cell(1, 1).Value = "Enviarse A";
+                    worksheet.Cell(1, 2).Value = "Nombre Cliente";
+                    worksheet.Cell(1, 3).Value = "Descripción";
+                    worksheet.Cell(1, 4).Value = "Teléfono Cliente";
+                    worksheet.Cell(1, 5).Value = "Fecha de Entrega";
 
                     // 5. Llenar datos del pedido seleccionado
-                    worksheet.Cells[2, 1].Value = pedidoSeleccionado.Enviarse_A;
-                    worksheet.Cells[2, 2].Value = pedidoSeleccionado.NombreCliente;
-                    worksheet.Cells[2, 3].Value = pedidoSeleccionado.Descripcion;
-                    worksheet.Cells[2, 4].Value = pedidoSeleccionado.TelefonoCliente;
-                    worksheet.Cells[2, 5].Value = pedidoSeleccionado.Fecha_entrega?.ToString("dd/MM/yyyy") ?? "";
+                    worksheet.Cell(2, 1).Value = pedidoSeleccionado.Enviarse_A;
+                    worksheet.Cell(2, 2).Value = pedidoSeleccionado.NombreCliente;
+                    worksheet.Cell(2, 3).Value = pedidoSeleccionado.Descripcion;
+                    worksheet.Cell(2, 4).Value = pedidoSeleccionado.TelefonoCliente;
+                    worksheet.Cell(2, 5).Value = pedidoSeleccionado.Fecha_entrega?.ToString("dd/MM/yyyy") ?? "";
 
                     // 6. Guardar el archivo
                     using (SaveFileDialog saveFileDialog = new SaveFileDialog())
@@ -498,7 +508,7 @@ namespace UIFloristeria
                         if (saveFileDialog.ShowDialog() == DialogResult.OK)
                         {
                             string filePath = saveFileDialog.FileName;
-                            package.SaveAs(new FileInfo(filePath));
+                            workbook.SaveAs(filePath);
                             MessageBox.Show("El pedido se exportó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
