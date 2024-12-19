@@ -131,14 +131,14 @@ namespace UIFloristeria
                 MessageBox.Show($"Error al buscar clientes: {ex.Message}", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+            
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             var row = dgvClientes.SelectedRows[0];
             if (dgvClientes.SelectedRows.Count > 0)
             {
                 ClienteSeleccionado = dgvClientes.SelectedRows[0].Cells["Nombre_Cliente"].Value.ToString();
-                idClienteSeleccionado = Convert.ToInt32(row.Cells["Id_Cliente"].Value);
+                idClienteSeleccionado = Convert.ToInt32(row.Cells["Id_cliente"].Value);
                 this.DialogResult = DialogResult.OK;
 
                 //Cerrar el formulario 
